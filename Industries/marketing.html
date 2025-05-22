@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing - Gyannetra</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles specific to marketing.html that aren't in the main CSS file */
+        .marketing-hero-image img {
+            max-width: 400px;
+        }
+        
+        /* Only keep page-specific styles that might not be in the main CSS */
+        .feature-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .feature-item {
+            background: rgba(20, 20, 40, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
+            /* Add filter for glow if needed */
+        }
+        
+        .feature-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        /* Ensure the blog cards look good */
+        .insight-card-image {
+            height: 150px;
+            background-color: #333;
+        }
+        
+        /* Any additional customizations for this page */
+        .advantage-list li {
+            border-left: 3px solid #a2b0ff;
+        }
+        
+        /* Marketing hero section styling */
+        .marketing-hero {
+            padding-top: 7rem;
+            padding-bottom: 4rem;
+            text-align: center;
+        }
+        
+        .marketing-hero .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .marketing-hero-content {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 2rem;
+        }
+        
+        .marketing-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .marketing-hero-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+        
+        .marketing-hero-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="atmospheric-bg">
+        <div class="light-effect-top"></div>
+        <div class="light-effect-bottom"></div>
+        <div class="small-light-top"></div>
+        <div class="small-light-bottom"></div>
+        <div class="overlay"></div>
+        <div class="noise"></div>
+    </div>
+    
+    <header class="site-header">
+    <nav class="navbar container">
+      <a href="../index.html" class="logo">GYANNETRA</a>
+      <ul class="nav-links">
+        <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
+          <ul class="dropdown-menu services-dropdown">
+            <li><a href="../Services/machine-learning.html"><div class="dropdown-item-content"><img src="../assets/mlng.png" alt="Machine Learning Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Machine Learning</span><span class="item-description">We build intelligent systems that learn from data to predict outcomes and automate decisions.</span></div></div></a></li>
+            <li><a href="../Services/data-analysis.html"><div class="dropdown-item-content"><img src="../assets/data analytics.png" alt="Data Analysis Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Data Analytics</span><span class="item-description">We transform raw data into actionable insights, helping you understand trends and optimize performance.</span></div></div></a></li>
+            <li><a href="../Services/generative-ai.html"><div class="dropdown-item-content"><img src="../assets/gen ai.png" alt="Generative AI Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Generative AI</span><span class="item-description">We create novel content, from text and images to code, unlocking new possibilities for creativity and efficiency.</span></div></div></a></li>
+            <li><a href="../Services/agentic-ai.html"><div class="dropdown-item-content"><img src="../assets/ai agent.png" alt="Agentic AI Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Agentic AI</span><span class="item-description">We develop autonomous AI agents capable of perceiving their environment and taking actions to achieve specific goals.</span></div></div></a></li>
+            <li><a href="../Services/automation-flows.html"><div class="dropdown-item-content"><img src="../assets/automation flows.png" alt="Automation Flows Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Automation Flows</span><span class="item-description">We design and implement intelligent automation solutions to streamline your workflows and boost productivity.</span></div></div></a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#" class="nav-link">Industries ▾</a>
+          <ul class="dropdown-menu industries-dropdown">
+            <li><a href="finance.html"><div class="dropdown-item-content"><img src="../assets/Finance Ind.png" alt="Finance Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Finance</span><span class="item-description">Applying AI to enhance fraud detection, risk management, and customer experience.</span></div></div></a></li>
+            <li><a href="healthcare.html"><div class="dropdown-item-content"><img src="../assets/healthcare ind.png" alt="Healthcare Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Healthcare</span><span class="item-description">Leveraging AI for faster diagnoses, personalized treatments, and improved patient care.</span></div></div></a></li>
+            <li><a href="manufacturing.html"><div class="dropdown-item-content"><img src="../assets/manufacturing ind.png" alt="Manufacturing Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Manufacturing</span><span class="item-description">Optimizing production processes, predicting maintenance needs, and enhancing quality control with AI.</span></div></div></a></li>
+            <li><a href="marketing.html"><div class="dropdown-item-content"><img src="../assets/marketing ind.png" alt="Marketing Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Marketing</span><span class="item-description">Personalizing campaigns, predicting consumer behavior, and optimizing marketing spend using AI.</span></div></div></a></li>
+            <li><a href="media-entertainment.html"><div class="dropdown-item-content"><img src="../assets/media and entertainment ind.png" alt="Media & Entertainment Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Media & Entertainment</span><span class="item-description">Creating engaging content, personalizing recommendations, and optimizing content delivery with AI.</span></div></div></a></li>
+            <li><a href="travel.html"><div class="dropdown-item-content"><img src="../assets/travel ind.png" alt="Travel Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Travel</span><span class="item-description">Enhancing customer journeys, optimizing pricing, and improving operational efficiency through AI.</span></div></div></a></li>
+            <li><a href="retail.html"><div class="dropdown-item-content"><img src="../assets/retail ind.png" alt="Retail Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Retail</span><span class="item-description">Personalizing shopping experiences, optimizing inventory, and predicting demand with AI.
+            </span></div></div></a></li>
+            <li><a href="case-studies.html"><div class="dropdown-item-content"><img src="../assets/case study ind.png" alt="Case Studies Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Case Studies</span><span class="item-description">Real-world examples showcasing how our AI solutions have delivered tangible results for our clients.</span></div></div></a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#" class="nav-link">Education ▾</a>
+          <ul class="dropdown-menu education-dropdown">
+            <li><a href="../Education/workshops.html"><div class="dropdown-item-content"><img src="../assets/workshops.png" alt="Workshops Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Workshops</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
+            <li><a href="../Education/individual-trainings.html"><div class="dropdown-item-content"><img src="../assets/indi training.png" alt="Individual Trainings Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Individual Trainings</span><span class="item-description">Personalized learning programs tailored to your specific needs and learning pace.</span></div></div></a></li>
+            <li><a href="../Education/corporate-trainings.html"><div class="dropdown-item-content"><img src="../assets/corpo training.png" alt="Corporate Trainings Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Corporate Trainings</span><span class="item-description">Customized training solutions to upskill your teams and drive AI adoption within your organization.
+            </span></div></div></a></li>
+          </ul>
+        </li>
+        <li><a href="../about.html" class="nav-link">About Us</a></li>
+        <li><a href="../contact.html" class="nav-link">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>    <main>
+        <!-- HERO SECTION -->
+        <section class="marketing-hero">
+            <div class="container">
+                <div class="marketing-hero-content">
+                    <h1>MARKETING</h1>
+                    <p>Transforming marketing with AI for enhanced personalization, predictive analytics, and optimized customer journeys</p>
+                </div>
+                <div class="marketing-hero-image">
+                    <img src="../assets/marketing_hero_graphic.svg" alt="AI in Marketing Graphic">
+                    <!-- Placeholder for the head graphic, will create SVG later -->
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section class="features-section">
+            <div class="container">
+                <h2>AI SOLUTIONS FOR MARKETING</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon"><img src="../assets/marketing_icon_personalization.svg" alt="AI Personalization"></div>
+                        <h3>AI-Powered Personalization</h3>
+                        <p>Deliver tailored content and experiences by leveraging AI to analyze customer data and predict preferences</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><img src="../assets/marketing_icon_segmentation.svg" alt="Predictive Segmentation"></div>
+                        <h3>Predictive Customer Segmentation</h3>
+                        <p>Utilize predictive analytics to segment customers based on behavior, enhancing strategies</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><img src="../assets/marketing_icon_content_gen.svg" alt="Automated Content Generation"></div>
+                        <h3>Automated Content Generation</h3>
+                        <p>Accelerate content creation with AI that generates relevant marketing copy and visuals</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><img src="../assets/marketing_icon_campaign_opt.svg" alt="AI Campaign Optimization"></div>
+                        <h3>AI-Driven Campaign Optimization</h3>
+                        <p>Optimize marketing campaigns in real-time using AI insights to maximize performance</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADVANTAGES SECTION -->
+        <section class="advantage-section">
+            <div class="container">
+                <h2>THE GYANNETRA ADVANTAGE IN MARKETING AI</h2>
+                <ul class="advantage-list">
+                    <li>Deep-expertise in marketing analytics</li>
+                    <li>Custom AI models tailored to marketing</li>
+                    <li>Focus on measurable-campaign ROI</li>
+                    <li>Ethical AI implementation in customer communication</li>                </ul>
+            </div>
+        </section>
+
+        <!-- BLOGS & CASE STUDIES SECTION -->
+        <section class="blogs-section">
+            <div class="container">
+                <h2>Blogs & Case Studies</h2>                <div class="blog-items-container">
+                    <div class="blog-item">
+                        <h3>Harnessing AI for Marketing Success</h3>
+                        <p>Discover how AI is revolutionizing marketing strategies and boosting conversion rates.</p>
+                        <a href="case-studies.html">Read Marketing Insights</a>
+                    </div>
+                    <div class="blog-item">
+                        <h3>AI Driven Campaign Optimization</h3>
+                        <p>Case study on improving marketing ROI with AI-powered solutions and analytics.</p>
+                        <a href="case-studies.html">View Marketing Case Study</a>
+                    </div>
+                    <div class="blog-item">
+                        <h3>Customer Journey Personalization</h3>
+                        <p>How AI creates tailored experiences for higher conversion rates and customer loyalty.</p>
+                        <a href="case-studies.html">Read Case Study</a>
+                    </div>
+                </div>
+            </div>
+        </section>        <!-- EXPLORE SOLUTIONS BUTTON -->
+        <section class="explore-button-container">
+            <div class="container">
+                <a href="case-studies.html" class="explore-button">EXPLORE OUR MARKETING AI SOLUTIONS</a>
+            </div>
+        </section>
+    </main>
+  <footer class="container footer">
+    <div class="footer-col">
+      <h3>Ready to get started?</h3>
+      <a href="../contact.html" class="btn-primary">Get Started</a>
+    </div>
+    <div class="footer-col">
+      <h3>CONTACT US</h3>
+      <p>✉️ info@gyannetra.com</p>
+    </div>
+  </footer>
+
+  <script src="../js/menu-dropdown.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

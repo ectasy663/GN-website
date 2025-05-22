@@ -1,0 +1,19 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dnaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#007bff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00c6ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <path fill="none" stroke="url(#dnaGradient)" stroke-width="6" stroke-linecap="round" d="M30 20 Q 50 35, 30 50 Q 10 65, 30 80" />
+  <path fill="none" stroke="url(#dnaGradient)" stroke-width="6" stroke-linecap="round" d="M70 20 Q 50 35, 70 50 Q 90 65, 70 80" />
+  <line x1="30" y1="20" x2="70" y2="20" stroke="#0056b3" stroke-width="3" stroke-linecap="round" />
+  <line x1="32" y1="28" x2="68" y2="28" stroke="#0056b3" stroke-width="3" stroke-linecap="round" />
+  <line x1="35" y1="36" x2="65" y2="36" stroke="#0056b3" stroke-width="3" stroke-linecap="round" />
+  <line x1="32" y1="44" x2="68" y2="44" stroke="#0056b3" stroke-width="3" stroke-linecap="round" />
+  <line x1="30" y1="50" x2="70" y2="50" stroke="#0056b3" stroke-width="3" stroke-linecap="round" />
+  <line x1="32" y1="56" x2="68" y2="56" stroke="#0056b3" stroke-width="3" stroke-linecap="round" />
+  <line x1="35" y1="64" x2="65" y2="64" stroke="#0056b3" stroke-width="3" stroke-linecap="round" />
+  <line x1="32" y1="72" x2="68" y2="72" stroke="#0056b3" stroke-width="3" stroke-linecap="round" />
+  <line x1="30" y1="80" x2="70" y2="80" stroke="#0056b3" stroke-width="3" stroke-linecap="round" />
+</svg>

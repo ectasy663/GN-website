@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="60" height="60">
+  <rect width="100" height="100" fill="none" />
+  <!-- Abstract representation of a person icon with data points -->
+  <circle cx="50" cy="35" r="15" fill="#5a6bff" />
+  <path d="M30 70 Q50 50 70 70 Q50 90 30 70 Z" fill="#5a6bff" />
+  <circle cx="25" cy="25" r="5" fill="#a2b0ff" />
+  <circle cx="75" cy="25" r="5" fill="#a2b0ff" />
+  <circle cx="30" cy="50" r="4" fill="#a2b0ff" />
+  <circle cx="70" cy="50" r="4" fill="#a2b0ff" />
+  <circle cx="50" cy="75" r="6" fill="#a2b0ff" />
+  <text x="50%" y="95%" dominant-baseline="auto" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5a6bff">Personalization</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" width="300" height="150">
+  <rect width="300" height="150" fill="#3a4a6b" />
+  <!-- Abstract wave/graph representing insights -->
+  <path d="M0 100 Q50 50 100 100 T200 100 T300 100" stroke="#a2b0ff" stroke-width="8" fill="none" />
+  <path d="M0 120 Q50 70 100 120 T200 120 T300 120" stroke="#5a6bff" stroke-width="6" fill="none" opacity="0.7"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#ffffff">Harnessing AI Insights</text>
+</svg>

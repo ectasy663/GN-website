@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>AI in Finance - Gyannetra</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Finance Page Specific Styles */
+    body {
+      --primary-color: #007bff; /* Blue tone for finance */
+      --primary-color-hover: #0056b3;
+      --primary-color-glow: rgba(0, 123, 255, 0.5);
+      --card-bg: rgba(25, 35, 55, 0.7); /* Darker, more serious card background */
+      --text-light: #e0e0e0;
+      --text-muted: #b0b0b0;
+    }
+
+    .finance-page-container .hero-section.finance-hero {
+      text-align: center;
+      padding: 80px 20px 60px; /* Adjusted padding */
+      background: linear-gradient(rgba(10, 20, 40, 0.8), rgba(10, 20, 40, 0.95)), url('../assets/finance_hero_bg.jpg') no-repeat center center;
+      background-size: cover;
+      border-bottom: 2px solid var(--primary-color-glow);
+    }
+
+    .finance-page-container .hero-section.finance-hero h1 {
+      font-size: 3.2rem; /* Slightly adjusted */
+      margin-bottom: 15px;
+      color: #fff; /* White for better contrast on dark bg */
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    }
+
+    .finance-page-container .hero-section.finance-hero .subtitle {
+      font-size: 1.4rem; /* Slightly adjusted */
+      margin-bottom: 25px;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .finance-page-container .hero-section.finance-hero p {
+      font-size: 1.1rem;
+      max-width: 750px;
+      margin: 0 auto 30px auto;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    .ai-solutions-finance,
+    .benefits-ai-finance,
+    .blogs-case-studies-finance {
+      padding: 60px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .ai-solutions-finance:last-child,
+    .benefits-ai-finance:last-child,
+    .blogs-case-studies-finance:last-child {
+        border-bottom: none;
+    }
+
+
+    .ai-solutions-finance h2,
+    .benefits-ai-finance h2,
+    .blogs-case-studies-finance h2 {
+      font-size: 2.2rem; /* Slightly adjusted */
+      margin-bottom: 45px;
+      color: var(--primary-color);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Responsive columns */
+      gap: 35px;
+      justify-items: center;
+    }
+
+    .solution-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(var(--primary-color-glow), 0.5);
+    }
+
+    .solution-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .solution-icon {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 20px;
+      /* SVG icons will inherit stroke from their own style, or you can set fill here if needed */
+    }
+
+    .solution-item h3 {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .benefits-list {
+      display: flex;
+      justify-content: space-around; /* Better spacing for two columns */
+      gap: 20px; /* Gap between the two ul lists */
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .benefits-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-basis: calc(50% - 20px); /* Aim for two columns */
+      min-width: 300px; /* Ensure readability on smaller screens before wrapping */
+    }
+
+    .benefits-list li {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      background-color: rgba(var(--primary-color-glow), 0.1);
+      padding: 12px 18px;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .benefits-list li i.fa-check-circle {
+      color: var(--primary-color);
+      margin-right: 12px;
+      font-size: 1.4rem;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .article-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: left;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(var(--primary-color-glow),0.4);
+    }
+
+    .article-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(var(--primary-color-glow), 0.4);
+    }
+
+    .article-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .article-card h3 {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .article-card p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+      flex-grow: 1; /* Allows p to take available space */
+    }
+
+    .read-more-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      align-self: flex-start; /* Align button to the start of the flex item */
+      padding: 8px 15px;
+      border: 1px solid var(--primary-color);
+      border-radius: 5px;
+    }
+
+    .read-more-link:hover {
+      background-color: var(--primary-color-hover);
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="atmospheric-bg">
+    <div class="light-effect-top"></div>
+    <div class="light-effect-bottom"></div>
+    <div class="small-light-top"></div>
+    <div class="small-light-bottom"></div>
+    <div class="overlay"></div>
+    <div class="noise"></div>
+  </div>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <script src="../js/dropdown.js"></script>
+      <a href="../index.html" class="logo">GYANNETRA</a>
+      <ul class="nav-links">
+        <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
+          <ul class="dropdown-menu services-dropdown">
+            <li><a href="../Services/machine-learning.html"><div class="dropdown-item-content"><img src="../assets/mlng.png" alt="Machine Learning Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Machine Learning</span><span class="item-description">We build intelligent systems that learn from data to predict outcomes and automate decisions.</span></div></div></a></li>
+            <li><a href="../Services/data-analysis.html"><div class="dropdown-item-content"><img src="../assets/data analytics.png" alt="Data Analysis Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Data Analytics</span><span class="item-description">We transform raw data into actionable insights, helping you understand trends and optimize performance.</span></div></div></a></li>
+            <li><a href="../Services/generative-ai.html"><div class="dropdown-item-content"><img src="../assets/gen ai.png" alt="Generative AI Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Generative AI</span><span class="item-description">We create novel content, from text and images to code, unlocking new possibilities for creativity and efficiency.</span></div></div></a></li>
+            <li><a href="../Services/agentic-ai.html"><div class="dropdown-item-content"><img src="../assets/ai agent.png" alt="Agentic AI Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Agentic AI</span><span class="item-description">We develop autonomous AI agents capable of perceiving their environment and taking actions to achieve specific goals.</span></div></div></a></li>
+            <li><a href="../Services/automation-flows.html"><div class="dropdown-item-content"><img src="../assets/automation flows.png" alt="Automation Flows Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Automation Flows</span><span class="item-description">We design and implement intelligent automation solutions to streamline your workflows and boost productivity.</span></div></div></a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#" class="nav-link active">Industries ▾</a>
+          <ul class="dropdown-menu industries-dropdown">
+            <li><a href="finance.html"><div class="dropdown-item-content"><img src="../assets/Finance Ind.png" alt="Finance Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Finance</span><span class="item-description">Applying AI to enhance fraud detection, risk management, and customer experience.</span></div></div></a></li>
+            <li><a href="healthcare.html"><div class="dropdown-item-content"><img src="../assets/healthcare ind.png" alt="Healthcare Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Healthcare</span><span class="item-description">Leveraging AI for faster diagnoses, personalized treatments, and improved patient care.</span></div></div></a></li>
+            <li><a href="manufacturing.html"><div class="dropdown-item-content"><img src="../assets/manufacturing ind.png" alt="Manufacturing Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Manufacturing</span><span class="item-description">Optimizing production processes, predicting maintenance needs, and enhancing quality control with AI.</span></div></div></a></li>
+            <li><a href="marketing.html"><div class="dropdown-item-content"><img src="../assets/marketing ind.png" alt="Marketing Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Marketing</span><span class="item-description">Personalizing campaigns, predicting consumer behavior, and optimizing marketing spend using AI.</span></div></div></a></li>
+            <li><a href="media-entertainment.html"><div class="dropdown-item-content"><img src="../assets/media and entertainment ind.png" alt="Media & Entertainment Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Media & Entertainment</span><span class="item-description">Creating engaging content, personalizing recommendations, and optimizing content delivery with AI.</span></div></div></a></li>
+            <li><a href="travel.html"><div class="dropdown-item-content"><img src="../assets/travel ind.png" alt="Travel Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Travel</span><span class="item-description">Enhancing customer journeys, optimizing pricing, and improving operational efficiency through AI.</span></div></div></a></li>
+            <li><a href="retail.html"><div class="dropdown-item-content"><img src="../assets/retail ind.png" alt="Retail Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Retail</span><span class="item-description">Personalizing shopping experiences, optimizing inventory, and predicting demand with AI.
+            </span></div></div></a></li>
+            <li><a href="case-studies.html"><div class="dropdown-item-content"><img src="../assets/case study ind.png" alt="Case Studies Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Case Studies</span><span class="item-description">Real-world examples showcasing how our AI solutions have delivered tangible results for our clients.</span></div></div></a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#" class="nav-link">Education ▾</a>
+          <ul class="dropdown-menu education-dropdown">
+            <li><a href="#"><div class="dropdown-item-content"><img src="../assets/workshops.png" alt="Workshops Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Workshops</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
+            <li><a href="#"><div class="dropdown-item-content"><img src="../assets/indi training.png" alt="Individual Trainings Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Individual Trainings</span><span class="item-description">Personalized learning programs tailored to your specific needs and learning pace.</span></div></div></a></li>
+            <li><a href="#"><div class="dropdown-item-content"><img src="../assets/corpo training.png" alt="Corporate Trainings Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Corporate Trainings</span><span class="item-description">Customized training solutions to upskill your teams and drive AI adoption within your organization.</span></div></div></a></li>
+          </ul>
+        </li>
+        <li><a href="../about.html" class="nav-link">About Us</a></li>
+        <li><a href="../contact.html" class="nav-link">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container finance-page-container">
+    <section class="hero-section finance-hero">
+      <h1>AI IN FINANCE</h1>
+      <p class="subtitle">Transforming the finance industry with innovative AI solutions</p>
+      <p>We leverage cutting-edge artificial intelligence to drive efficiency, accuracy, and financial services, helping institutions stay ahead in a rapidly evolving landscape.</p>
+    </section>
+
+    <section class="ai-solutions-finance">
+      <h2>OUR AI SOLUTIONS FOR FINANCE</h2>
+      <div class="solutions-grid">
+        <div class="solution-item">
+          <img src="../assets/fraud_detection_icon.svg" alt="Fraud Detection Icon" class="solution-icon">
+          <h3>Fraud Detection</h3>
+        </div>
+        <div class="solution-item">
+          <img src="../assets/algorithmic_trading_icon.svg" alt="Algorithmic Trading Icon" class="solution-icon">
+          <h3>Algorithmic Trading</h3>
+        </div>
+        <div class="solution-item">
+          <img src="../assets/risk_management_icon.svg" alt="Risk Management Icon" class="solution-icon">
+          <h3>Risk Management</h3>
+        </div>
+        <div class="solution-item">
+          <img src="../assets/customer_service_automation_icon.svg" alt="Customer Service Automation Icon" class="solution-icon">
+          <h3>Customer Service Automation</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-ai-finance">
+      <h2>BENEFITS OF AI FOR FINANCE WITH GYANNETRA</h2>
+      <div class="benefits-list">
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Increased Efficiency</li>
+          <li><i class="fas fa-check-circle"></i> Enhanced Security</li>
+        </ul>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Improved Accuracy</li>
+          <li><i class="fas fa-check-circle"></i> Better Customer Experience</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="blogs-case-studies-finance">
+      <h2>BLOGS & CASE STUDIES</h2>
+      <div class="articles-grid">        <div class="article-card">
+          <img src="../assets/finance_blog_1.jpg" alt="Future of AI in Finance">
+          <h3>The Future of AI in Finance</h3>
+          <p>Exploring key trends and innovations shaping the financial sector</p>
+          <a href="case-studies.html" class="read-more-link">Read more</a>
+        </div>
+        <div class="article-card">
+          <img src="../assets/finance_blog_2.jpg" alt="Algorithmic Trading Success">
+          <h3>Case Study: Algorithmic Trading Success</h3>
+          <p>Read more</p>
+          <a href="case-studies.html" class="read-more-link">Read more</a>
+        </div>
+        <div class="article-card">
+          <img src="../assets/finance_blog_3.jpg" alt="Enhancing Fraud Detection with AI">
+          <h3>Enhancing Fraud Detection with AI</h3>
+          <p>Exploring customer-efficiency</p>
+          <a href="case-studies.html" class="read-more-link">Read More</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <div class="footer-col">
+      <h3>Ready to get started?</h3>
+      <a href="../contact.html" class="btn-primary">Get Started</a>
+    </div>
+    <div class="footer-col">
+      <h3>CONTACT US</h3>
+      <p>✉️ info@gyannetra.com</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

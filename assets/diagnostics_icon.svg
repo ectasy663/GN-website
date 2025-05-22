@@ -1,0 +1,14 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#007bff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00c6ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <path fill="url(#brainGradient)" stroke="#00c6ff" stroke-width="2" d="M50 10 C 30 10, 20 30, 20 50 C 20 70, 30 90, 50 90 C 60 90, 65 80, 60 70 C 55 60, 60 50, 70 45 C 80 40, 85 30, 80 20 C 75 10, 60 10, 50 10 Z M 50 15 C 55 15, 60 20, 60 25 C 60 30, 55 35, 50 35 C 45 35, 40 30, 40 25 C 40 20, 45 15, 50 15 Z M 30 40 C 35 40, 40 45, 40 50 C 40 55, 35 60, 30 60 C 25 60, 20 55, 20 50 C 20 45, 25 40, 30 40 Z M 70 55 C 75 55, 80 60, 80 65 C 80 70, 75 75, 70 75 C 65 75, 60 70, 60 65 C 60 60, 65 55, 70 55 Z M 45 70 C 48 70, 50 72, 50 75 C 50 78, 48 80, 45 80 C 42 80, 40 78, 40 75 C 40 72, 42 70, 45 70 Z"/>
+  <path fill="none" stroke="#0056b3" stroke-width="1.5" d="M50 10 Q 40 20, 35 30 Q 30 40, 30 50 Q 30 60, 35 70 Q 40 80, 50 90"/>
+  <path fill="none" stroke="#0056b3" stroke-width="1.5" d="M50 10 Q 60 20, 65 30 Q 70 40, 70 50 Q 70 60, 65 70 Q 60 80, 50 90"/>
+  <path fill="none" stroke="#007bff" stroke-width="1" d="M40 25 Q 45 30, 50 30 Q 55 30, 60 25"/>
+  <path fill="none" stroke="#007bff" stroke-width="1" d="M30 50 Q 35 45, 40 45 Q 45 45, 45 50 Q 45 55, 40 55 Q 35 55, 30 50"/>
+  <path fill="none" stroke="#007bff" stroke-width="1" d="M60 65 Q 65 60, 70 60 Q 75 60, 75 65 Q 75 70, 70 70 Q 65 70, 60 65"/>
+</svg>

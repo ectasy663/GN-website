@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="50" height="50">
+  <rect x="10" y="10" width="80" height="80" rx="10" ry="10" fill="#2c3e50" />
+  <circle cx="50" cy="40" r="15" fill="#ecf0f1" />
+  <path d="M35 60 Q50 75 65 60" stroke="#ecf0f1" stroke-width="5" fill="none" />
+  <path d="M30 80 Q50 70 70 80" stroke="#3498db" stroke-width="5" fill="none" />
+  <style>
+    svg {
+      display: block;
+      margin: auto;
+    }
+  </style>
+</svg>

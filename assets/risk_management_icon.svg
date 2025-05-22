@@ -1,0 +1,18 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .st0 {
+      fill: none;
+      stroke: #007bff;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .st1 {
+      fill: #007bff;
+    }
+  </style>
+  <path class="st0" d="M50,10 L90,30 L90,70 L50,90 L10,70 L10,30 Z" />
+  <circle class="st0" cx="50" cy="50" r="15" />
+  <line class="st0" x1="50" y1="35" x2="50" y2="65" />
+  <line class="st0" x1="35" y1="50" x2="65" y2="50" />
+</svg>
