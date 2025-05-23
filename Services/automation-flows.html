@@ -1,11 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Automation Flows - Gyannetra</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Automation Flows - Gyannetra</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      --primary-color: #8b5cf6; /* Purple tone for Automation Flows */
+      --primary-color-hover: #7c3aed;
+      --primary-color-glow: rgba(139, 92, 246, 0.5);
+      --card-bg: rgba(25, 35, 55, 0.7);
+      --text-light: #e0e0e0;
+      --text-muted: #b0b0b0;
+    }
+
+    .hero-section {
+        text-align: center;
+        padding: 80px 20px 60px;
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative; 
+        z-index: 2; 
+    }
+
+    .hero-section h1 {
+        font-size: 3.2rem;
+        margin-bottom: 25px;
+        color: var(--primary-color);
+        text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+        max-width: 750px;
+        margin: 0 auto 30px auto;
+        line-height: 1.7;
+        color: var(--text-muted);
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 35px;
+      justify-items: center;
+      margin-top: 30px;
+    }
+    
+    .solution-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(139, 92, 246, 0.3); /* Purple border */
+      width: 100%;
+      height: 100%; 
+    }
+    
+    .solution-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    
+    .solution-icon {
+      width: 70px; 
+      height: 70px;
+      margin-bottom: 20px;
+      object-fit: contain;
+    }
+    
+    .solution-item h3 {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .solution-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    
+    .article-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: left;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(139, 92, 246, 0.3); /* Purple border */
+      height: 100%; 
+    }
+    
+    .article-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(139, 92, 246, 0.4); /* Purple glow */
+    }
+    
+    .article-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    
+    .article-card h3 {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    
+    .article-card p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+      flex-grow: 1; 
+    }
+    
+    .read-more-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      align-self: flex-start; 
+      padding: 8px 15px;
+      border: 1px solid var(--primary-color);
+      border-radius: 5px;
+    }
+    
+    .read-more-link:hover {
+      background-color: var(--primary-color-hover);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .overview-section h2, 
+    .key-offerings-section h2, 
+    .benefits-section h2, 
+    .blogs-case-studies-section h2, 
+    .related-content-section h2 { 
+      font-size: 2.2rem;
+      margin-bottom: 30px; 
+      color: var(--primary-color);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .key-offerings-section h2 {
+      margin-bottom: 45px; 
+    }
+    
+    .benefits-section ul { 
+      list-style-type: none; 
+      padding: 0;
+      margin-top: 20px;
+      text-align: center; 
+    }
+    
+    .benefits-section li { 
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: var(--text-light);
+    }
+    
+    .blogs-case-studies-section h2 {
+      margin-bottom: 45px; 
+    }
+    
+    .related-content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+      margin-bottom: 40px; 
+    }
+    
+    .related-content-item {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(139, 92, 246, 0.3); /* Purple border */
+    }
+    
+    .related-content-item h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    
+    .related-content-item p {
+      color: var(--text-muted);
+      margin-bottom: 15px;
+    }
+    
+    .read-more { 
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    .section-padding {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }    .site-header .navbar.container {
+        width: 100%;
+        max-width: 1400px;
+        padding: 0.5rem 2.0rem;
+    }
+    .site-footer {
+        background-color: #0f172a; 
+        color: var(--text-muted);
+        padding: 50px 0;
+        font-size: 0.95rem;
+    }
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    .footer-col {
+        flex: 1;
+        min-width: 220px; 
+    }
+    .footer-col-logo .logo {
+        font-size: 1.8rem;
+        color: #fff;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+    .footer-col h3 {
+        font-size: 1.2rem;
+        color: #fff;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+    }
+    .footer-col ul li {
+        margin-bottom: 10px;
+    }
+    .footer-col ul li a {
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .footer-col ul li a:hover {
+        color: var(--primary-color);
+    }
+    .footer-col p {
+        margin-bottom: 10px;
+        line-height: 1.7;
+    }
+    .footer-col .social-links a {
+        color: var(--text-muted);
+        margin-right: 15px;
+        font-size: 1.3rem;
+        transition: color 0.3s ease;
+    }
+    .footer-col .social-links a:hover {
+        color: var(--primary-color);
+    }
+    .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+    }
+    .footer-col p a { 
+        color: var(--text-muted);
+        text-decoration: none;
+    }
+    .footer-col p a:hover {
+        color: var(--primary-color);
+        text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <div class="atmospheric-bg">
@@ -17,110 +317,220 @@
     <div class="noise"></div>
   </div>
 
-  <!-- NAVBAR -->
   <header class="site-header">
     <nav class="navbar container">
-      <a href="../index.html" class="logo">GYANNETRA</a>
-      <ul class="nav-links">
-        <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
-          <ul class="dropdown-menu services-dropdown">
-            <li><a href="machine-learning.html"><div class="dropdown-item-content"><img src="../assets/mlng.png" alt="Machine Learning Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Machine Learning</span><span class="item-description">We build intelligent systems that learn from data to predict outcomes and automate decisions.</span></div></div></a></li>
-            <li><a href="data-analysis.html"><div class="dropdown-item-content"><img src="../assets/data analytics.png" alt="Data Analysis Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Data Analytics</span><span class="item-description">We transform raw data into actionable insights, helping you understand trends and optimize performance.</span></div></div></a></li>
-            <li><a href="generative-ai.html"><div class="dropdown-item-content"><img src="../assets/gen ai.png" alt="Generative AI Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Generative AI</span><span class="item-description">We create novel content, from text and images to code, unlocking new possibilities for creativity and efficiency.</span></div></div></a></li>
-            <li><a href="agentic-ai.html"><div class="dropdown-item-content"><img src="../assets/ai agent.png" alt="Agentic AI Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Agentic AI</span><span class="item-description">We develop autonomous AI agents capable of perceiving their environment and taking actions to achieve specific goals.</span></div></div></a></li>
-            <li><a href="automation-flows.html"><div class="dropdown-item-content"><img src="../assets/automation flows.png" alt="Automation Flows Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Automation Flows</span><span class="item-description">We design and implement intelligent automation solutions to streamline your workflows and boost productivity.</span></div></div></a></li>
-          </ul>
-        </li>
-        <li class="dropdown"><a href="#" class="nav-link">Industries ▾</a>
-          <ul class="dropdown-menu industries-dropdown">            <li><a href="../Industries/finance.html"><div class="dropdown-item-content"><img src="../assets/Finance Ind.png" alt="Finance Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Finance</span><span class="item-description">Applying AI to enhance fraud detection, risk management, and customer experience.</span></div></div></a></li>
-            <li><a href="../Industries/healthcare.html"><div class="dropdown-item-content"><img src="../assets/healthcare ind.png" alt="Healthcare Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Healthcare</span><span class="item-description">Leveraging AI for faster diagnoses, personalized treatments, and improved patient care.</span></div></div></a></li>
-            <li><a href="../Industries/manufacturing.html"><div class="dropdown-item-content"><img src="../assets/manufacturing ind.png" alt="Manufacturing Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Manufacturing</span><span class="item-description">Optimizing production processes, predicting maintenance needs, and enhancing quality control with AI.</span></div></div></a></li>
-            <li><a href="../Industries/marketing.html"><div class="dropdown-item-content"><img src="../assets/marketing ind.png" alt="Marketing Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Marketing</span><span class="item-description">Personalizing campaigns, predicting consumer behavior, and optimizing marketing spend using AI.</span></div></div></a></li>
-            <li><a href="../Industries/media-entertainment.html"><div class="dropdown-item-content"><img src="../assets/media and entertainment ind.png" alt="Media & Entertainment Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Media & Entertainment</span><span class="item-description">Creating engaging content, personalizing recommendations, and optimizing content delivery with AI.</span></div></div></a></li>
-            <li><a href="../Industries/travel.html"><div class="dropdown-item-content"><img src="../assets/travel ind.png" alt="Travel Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Travel</span><span class="item-description">Enhancing customer journeys, optimizing pricing, and improving operational efficiency through AI.</span></div></div></a></li>
-            <li><a href="../Industries/retail.html"><div class="dropdown-item-content"><img src="../assets/retail ind.png" alt="Retail Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Retail</span><span class="item-description">Personalizing shopping experiences, optimizing inventory, and predicting demand with AI.
-            </span></div></div></a></li>
-            <li><a href="../Industries/case-studies.html"><div class="dropdown-item-content"><img src="../assets/case study ind.png" alt="Case Studies Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Case Studies</span><span class="item-description">Real-world examples showcasing how our AI solutions have delivered tangible results for our clients.</span></div></div></a></li>
-
-          </ul>
-        </li>        <li class="dropdown"><a href="#" class="nav-link">Education ▾</a>
-          <ul class="dropdown-menu education-dropdown">
-            <li><a href="../Education/workshops.html"><div class="dropdown-item-content"><img src="../assets/workshops.png" alt="Workshops Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Workshops</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
-            <li><a href="../Education/individual-trainings.html"><div class="dropdown-item-content"><img src="../assets/indi training.png" alt="Individual Training Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Individual Trainings</span><span class="item-description">Personalized learning programs tailored to your specific needs and learning pace.</span></div></div></a></li>
-            <li><a href="../Education/corporate-trainings.html"><div class="dropdown-item-content"><img src="../assets/corpo training.png" alt="Corporate Training Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Corporate Trainings</span><span class="item-description">Customized training solutions to upskill your teams and drive AI adoption within your organization.
-            </span></div></div></a></li>
-          </ul>
-        </li>
-        <li><a href="../about.html" class="nav-link">About Us</a></li>
-        <li><a href="../contact.html" class="nav-link">Contact Us</a></li>
-      </ul>
+        <a href="../index.html" class="logo">GYANNETRA</a>
+        <ul class="nav-links">
+          <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
+            <ul class="dropdown-menu services-dropdown">
+              <li><a href="machine-learning.html"><div class="dropdown-item-content"><img src="../assets/mlng.png" alt="Machine Learning Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Machine Learning</span><span class="item-description">Intelligent systems that learn from data.</span></div></div></a></li>
+              <li><a href="data-analysis.html"><div class="dropdown-item-content"><img src="../assets/data analytics.png" alt="Data Analysis Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Data Analytics</span><span class="item-description">Transform raw data into actionable insights.</span></div></div></a></li>
+              <li><a href="generative-ai.html"><div class="dropdown-item-content"><img src="../assets/gen ai.png" alt="Generative AI Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Generative AI</span><span class="item-description">Create novel content with AI.</span></div></div></a></li>
+              <li><a href="agentic-ai.html"><div class="dropdown-item-content"><img src="../assets/ai agent.png" alt="Agentic AI Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Agentic AI</span><span class="item-description">Autonomous AI agents for specific goals.</span></div></div></a></li>
+              <li><a href="automation-flows.html"><div class="dropdown-item-content"><img src="../assets/automation flows.png" alt="Automation Flows Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Automation Flows</span><span class="item-description">Streamline workflows with intelligent automation.</span></div></div></a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="nav-link">Industries ▾</a>
+            <ul class="dropdown-menu industries-dropdown">
+              <li><a href="../Industries/finance.html"><div class="dropdown-item-content"><img src="../assets/Finance Ind.png" alt="Finance Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Finance</span><span class="item-description">AI for fraud detection, risk management.</span></div></div></a></li>
+              <li><a href="../Industries/healthcare.html"><div class="dropdown-item-content"><img src="../assets/healthcare ind.png" alt="Healthcare Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Healthcare</span><span class="item-description">AI for faster diagnoses, personalized care.</span></div></div></a></li>
+              <li><a href="../Industries/manufacturing.html"><div class="dropdown-item-content"><img src="../assets/manufacturing ind.png" alt="Manufacturing Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Manufacturing</span><span class="item-description">AI for process optimization, quality control.</span></div></div></a></li>
+              <li><a href="../Industries/marketing.html"><div class="dropdown-item-content"><img src="../assets/marketing ind.png" alt="Marketing Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Marketing</span><span class="item-description">AI for campaign personalization, consumer insights.</span></div></div></a></li>
+              <li><a href="../Industries/media-entertainment.html"><div class="dropdown-item-content"><img src="../assets/media and entertainment ind.png" alt="Media & Entertainment Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Media & Entertainment</span><span class="item-description">AI for content creation, recommendations.</span></div></div></a></li>
+              <li><a href="../Industries/travel.html"><div class="dropdown-item-content"><img src="../assets/travel ind.png" alt="Travel Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Travel</span><span class="item-description">AI for customer journey enhancement, pricing.</span></div></div></a></li>
+              <li><a href="../Industries/retail.html"><div class="dropdown-item-content"><img src="../assets/retail ind.png" alt="Retail Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Retail</span><span class="item-description">AI for personalized experiences, inventory optimization.</span></div></div></a></li>
+              <li><a href="../Industries/case-studies.html"><div class="dropdown-item-content"><img src="../assets/case study ind.png" alt="Case Studies Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Case Studies</span><span class="item-description">Real-world examples of our AI solutions.</span></div></div></a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="nav-link">Education ▾</a>
+            <ul class="dropdown-menu education-dropdown">
+              <li><a href="../Education/workshops.html"><div class="dropdown-item-content"><img src="../assets/workshops.png" alt="Workshops Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Workshops</span><span class="item-description">Interactive sessions on AI concepts and skills.</span></div></div></a></li>
+              <li><a href="../Education/individual-trainings.html"><div class="dropdown-item-content"><img src="../assets/indi training.png" alt="Individual Trainings Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Individual Trainings</span><span class="item-description">Personalized AI learning programs.</span></div></div></a></li>
+              <li><a href="../Education/corporate-trainings.html"><div class="dropdown-item-content"><img src="../assets/corpo training.png" alt="Corporate Trainings Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Corporate Trainings</span><span class="item-description">Customized AI training for teams.</span></div></div></a></li>
+            </ul>
+          </li>
+          <li><a href="../about.html" class="nav-link">About Us</a></li>
+          <li><a href="../contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+        <script src="../js/menu-dropdown.js" defer></script>
+        <script src="../js/main.js" defer></script>
     </nav>
-  </header>    <main>
-        <section id="automation-flows" class="container">
-            <div class="automation-flows-header hero-section">
-                <h1>AUTOMATION FLOWS</h1>
-                <p>Harnessing the power of AI to streamline and optimize complex business processes</p>
-            </div>
-        </section>        <section id="featured-solutions" class="overview-section container">
-                <h2 class="section-heading">Featured Automation Solutions</h2>
-                <div class="offerings-grid">
-                    <div class="offering-item">
-                        <img src="../assets/icons/document-processing-icon.svg" alt="Intelligent Document Processing Icon" class="offering-icon">
-                        <h3>Intelligent Document Processing</h3>
-                        <p>Automate data extraction and classification from documents, enhancing efficiency.</p>
-                    </div>
-                    <div class="offering-item">
-                         <img src="../assets/icons/robotic-process-automation-icon.svg" alt="AI-Enhanced Robotic Process Automation Icon" class="offering-icon">
-                        <h3>AI-Enhanced Robotic Process Automation</h3>
-                        <p>Integrate AI with RPA to intelligent automate tasks and decision-making.</p>
-                    </div>
-                    <div class="offering-item">
-                         <img src="../assets/icons/workflow-orchestration-icon.svg" alt="Smart Workflow Orchestration Icon" class="offering-icon">
-                        <h3>Smart Workflow Orchestration</h3>
-                        <p>Design and manage dynamic workflows with AI-driven optimization.</p>
-                    </div>                </div>
-        </section>        <section id="gyannetra-advantage" class="benefits-section container">
-                <h2 class="section-heading">The Gyannetra Advantage in Automation</h2>
-                <ul>
-                    <li>Custom AI Model Integration</li>
-                    <li>Focus on ROI and Scalability</li>
-                    <li>Seamless System Connectivity</li>
-                </ul>
-        </section>
+  </header>
 
-        <section id="related-content" class="related-content-section container">
-                <h2 class="section-heading">BLOGS & CASE STUDIES</h2>
-                 <div class="related-content-grid">                    <div class="related-content-item">
-                        <h3>Case Study</h3>
-                        <h4>Boosting Efficiency with AI Automation</h4>
-                        <p>Learn how we transformed a client's operations by implementing intelligent automation.</p>
-                        <a href="../Industries/case-studies.html" class="btn-book-consultation">Read Case Study</a>
-                    </div>
-                     <div class="related-content-item">
-                        <h3>Blog Post</h3>
-                        <h4>AI and the Future of Business Processes</h4>
-                        <p>Discover the latest trends and advancements in AI-driven automation for enterprises.</p>                        <a href="../Industries/case-studies.html" class="btn-book-consultation">Explore Blog</a>
-                    </div>
-                 </div>
-                 
-                <div class="explore-capabilities">
-                    <a href="../Industries/case-studies.html" class="btn-primary">Explore Our Automation Solutions</a>
-                </div>
-        </section>
+  <main>
+    <section class="hero-section">
+      <h1>Streamline Your World with Intelligent Automation Flows</h1>
+      <p>Gyannetra designs and implements cutting-edge Automation Flows, leveraging AI to optimize your business processes, enhance efficiency, and drive productivity to new heights.</p>
+      <a href="../contact.html" class="btn btn-primary">Automate Your Processes</a>
+      <!-- Consider adding a relevant hero image here if design allows -->
+      <!-- <img src="../assets/automation-flows-hero.jpg" alt="Abstract representation of interconnected automation gears and digital pathways" class="hero-image"> -->
+    </section>
 
-    </main>
+    <section class="overview-section section-padding container">
+      <h2>OVERVIEW OF AUTOMATION FLOW SERVICES</h2>
+      <p>Our Automation Flow services are engineered to identify and automate repetitive, complex, and time-consuming tasks within your organization. We integrate AI and machine learning to create smart, adaptive automation solutions that go beyond traditional RPA, enabling intelligent decision-making, seamless system integration, and continuous process improvement for sustained operational excellence.</p>
+    </section>
+    
+    <section class="key-offerings-section section-padding container">
+      <h2>KEY OFFERINGS</h2>
+      <div class="solutions-grid">
+        <div class="solution-item">
+          <img src="../assets/icons/document-processing.svg" alt="Intelligent Document Processing Icon" class="solution-icon">
+          <h3>Intelligent Document Processing</h3>
+          <p>Automate data extraction, validation, and classification from diverse document types, enhancing accuracy and speed.</p>
+        </div>
+        <div class="solution-item">
+          <img src="../assets/icons/rpa-enhancement.svg" alt="AI-Enhanced RPA Icon" class="solution-icon">
+          <h3>AI-Enhanced Robotic Process Automation (RPA)</h3>
+          <p>Infuse AI capabilities into RPA bots to handle complex exceptions, learn new tasks, and make intelligent decisions.</p>
+        </div>
+        <div class="solution-item">
+          <img src="../assets/icons/workflow-orchestration.svg" alt="Smart Workflow Orchestration Icon" class="solution-icon">
+          <h3>Smart Workflow Orchestration</h3>
+          <p>Design, manage, and optimize dynamic end-to-end workflows with AI-driven task routing and resource allocation.</p>
+        </div>
+        <div class="solution-item">
+          <img src="../assets/icons/process-mining.svg" alt="Process Mining & Optimization Icon" class="solution-icon">
+          <h3>Process Mining & Optimization</h3>
+          <p>Utilize AI to analyze existing processes, identify bottlenecks, and recommend data-driven optimization strategies.</p>
+        </div>
+         <div class="solution-item">
+          <img src="../assets/icons/api-integration.svg" alt="Automated API Integration Icon" class="solution-icon">
+          <h3>Automated API Integration & Management</h3>
+          <p>Streamline data exchange and process connectivity across disparate systems with intelligent API automation.</p>
+        </div>
+        <div class="solution-item">
+          <img src="../assets/icons/compliance-reporting.svg" alt="Compliance & Reporting Automation Icon" class="solution-icon">
+          <h3>Compliance & Reporting Automation</h3>
+          <p>Automate data gathering, validation, and report generation for regulatory compliance and internal governance.</p>
+        </div>
+        <div class="solution-item">
+          <img src="../assets/icons/ai-chatbots.svg" alt="AI-Powered Chatbots Icon" class="solution-icon">
+          <h3>AI-Powered Chatbots & Virtual Assistants</h3>
+          <p>Deploy intelligent chatbots to automate customer service, internal support, and task execution via conversational AI.</p>
+        </div>
+        <div class="solution-item">
+          <img src="../assets/icons/predictive-triggers.svg" alt="Predictive Workflow Triggering Icon" class="solution-icon">
+          <h3>Predictive Workflow Triggering</h3>
+          <p>Leverage AI to anticipate needs and proactively trigger automation flows based on data patterns and predictive analytics.</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- FOOTER -->
-    <footer class="container footer">
-        <div class="footer-col">
-            <h3>Ready to get started?</h3>
-            <a href="../contact.html" class="btn-primary">Get Started</a>
+    <section class="benefits-section section-padding container">
+      <h2>BENEFITS OF CHOOSING GYANNETRA FOR AUTOMATION FLOWS</h2>
+      <ul>
+        <li>Boost operational efficiency and reduce manual effort significantly.</li>
+        <li>Improve accuracy and consistency in critical business processes.</li>
+        <li>Achieve faster turnaround times and enhance service delivery.</li>
+        <li>Gain scalability to handle fluctuating workloads with ease.</li>
+        <li>Unlock valuable insights through AI-driven process analytics.</li>
+        <li>Ensure robust compliance and reduce operational risks.</li>
+      </ul>
+    </section>
+    
+    <section class="blogs-case-studies-section section-padding container">
+      <h2>BLOGS & CASE STUDIES</h2>
+      <div class="articles-grid">
+        <div class="article-card">
+          <img src="../assets/blog/rpa-evolution.jpg" alt="Stylized image showing the evolution of RPA from simple bots to intelligent automation flows">
+          <h3>The Evolution of RPA: From Task Automation to Intelligent Flows</h3>
+          <p>Explore how AI is transforming Robotic Process Automation, enabling more complex and adaptive automation solutions.</p>
+          <a href="../Industries/case-studies.html#rpa-evolution" class="read-more-link">Read Article</a>
+        </div>
+        <div class="article-card">
+          <img src="../assets/case-studies/financial-automation.jpg" alt="Dashboard showcasing efficiency gains from automated financial close processes">
+          <h3>Case Study: Revolutionizing Financial Close with Automated Flows</h3>
+          <p>Discover how Gyannetra helped a financial institution reduce its month-end closing time by 40% through intelligent automation.</p>
+          <a href="../Industries/case-studies.html#financial-automation" class="read-more-link">View Case Study</a>
+        </div>
+        <div class="article-card">
+          <img src="../assets/blog/process-mining-insights.jpg" alt="Abstract visualization of process mining identifying bottlenecks and optimization opportunities">
+          <h3>Unlocking Efficiency: The Power of AI-Driven Process Mining</h3>
+          <p>Learn how process mining can reveal hidden inefficiencies and pave the way for impactful automation strategies.</p>
+          <a href="../Industries/case-studies.html#process-mining" class="read-more-link">Explore Insights</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-content-section section-padding container">
+      <h2>EXPLORE OUR AI CAPABILITIES</h2>
+      <div class="related-content-grid">
+        <div class="related-content-item">
+          <img src="../assets/related/agentic-ai.jpg" alt="Illustration of an AI agent autonomously managing tasks" class="related-content-image">
+          <h3>Intelligent Agentic AI</h3>
+          <p>Discover how our autonomous AI agents can perform complex tasks and make intelligent decisions for your business.</p>
+          <a href="agentic-ai.html" class="read-more">Discover Agentic AI</a>
+        </div>
+        <div class="related-content-item">
+          <img src="../assets/related/data-analysis.jpg" alt="Abstract representation of data transforming into insightful charts and graphs" class="related-content-image">
+          <h3>Advanced Data Analysis</h3>
+          <p>Turn your raw data into actionable intelligence with our comprehensive data analysis and visualization services.</p>
+          <a href="data-analysis.html" class="read-more">Explore Data Analysis</a>
+        </div>
+        <div class="related-content-item">
+          <img src="../assets/related/custom-solutions.jpg" alt="Collaborative design session for custom AI solutions" class="related-content-image">
+          <h3>Custom AI Solutions</h3>
+          <p>Partner with us to develop tailored AI strategies and solutions that address your unique business challenges.</p>
+          <a href="../contact.html#custom-solutions" class="read-more">Build Your Solution</a>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="../contact.html" class="btn btn-primary">Discuss Your Automation Needs</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col footer-col-logo">
+          <a href="../index.html" class="logo">GYANNETRA</a>
+          <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
         <div class="footer-col">
-            <h3>CONTACT US</h3>
-            <p>✉️ info@gyannetra.com</p>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="machine-learning.html">Machine Learning</a></li>
+            <li><a href="data-analysis.html">Data Analysis</a></li>
+            <li><a href="generative-ai.html">Generative AI</a></li>
+            <li><a href="agentic-ai.html">Agentic AI</a></li>
+            <li><a href="automation-flows.html">Automation Flows</a></li>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+          </ul>
         </div>
-    </footer>    <script src="../js/menu-dropdown.js"></script>
-    <script src="../js/main.js"></script>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><p><i class="fas fa-map-marker-alt"></i> 123 AI Street, Innovation City, Techland</p></li>
+            <li><p><i class="fas fa-phone"></i> +1 (555) 123-4567</p></li>
+            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <p>Stay updated with our latest insights and news.</p>
+          <!-- Optional: Newsletter signup form -->
+           <form action="#" method="post" class="newsletter-form" style="display: none;"> <!-- Hidden for now -->
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Gyannetra. All rights reserved. | <a href="../privacy-policy.html">Privacy Policy</a> | <a href="../terms-of-service.html">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/menu-dropdown.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

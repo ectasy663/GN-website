@@ -5,7 +5,158 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Healthcare - Gyannetra</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Healthcare Card Structure Styles */
+    body {
+      --primary-color: #00c6ff; /* Blue tone for healthcare */
+      --primary-color-hover: #0099cc;
+      --primary-color-glow: rgba(0, 198, 255, 0.5);
+      --card-bg: rgba(25, 35, 55, 0.7);
+      --text-light: #e0e0e0;
+      --text-muted: #b0b0b0;
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 35px;
+      justify-items: center;
+      margin-top: 30px;
+    }
+
+    .solution-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(0, 198, 255, 0.3);
+      width: 100%;
+      height: 100%;
+    }
+
+    .solution-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .solution-item img {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 20px;
+      object-fit: contain;
+    }
+
+    .solution-item h3 {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .solution-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .article-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: left;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(0, 198, 255, 0.3);
+      height: 100%;
+    }
+
+    .article-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 198, 255, 0.4);
+    }
+
+    .article-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .article-card h3 {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .article-card p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .read-more-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      align-self: flex-start;
+      padding: 8px 15px;
+      border: 1px solid var(--primary-color);
+      border-radius: 5px;
+    }
+
+    .read-more-link:hover {
+      background-color: var(--primary-color-hover);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .section-heading {
+      font-size: 2.2rem;
+      margin-bottom: 45px;
+      color: var(--primary-color);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .industry-benefits ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .industry-benefits li {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      background-color: rgba(0, 198, 255, 0.1);
+      padding: 12px 18px;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary-color);
+    }
+  </style>
 </head>
 <body>
   <div class="atmospheric-bg">
@@ -85,7 +236,6 @@
       </div>
     </div>
   </section>
-
   <!-- AI SOLUTIONS FOR HEALTHCARE -->
   <section class="industry-solutions container">
     <h2 class="section-heading">AI SOLUTIONS FOR HEALTHCARE</h2>
@@ -93,18 +243,22 @@
       <div class="solution-item">
         <img src="../assets/diagnostics_icon.svg" alt="Diagnostics Icon" />
         <h3>Diagnostics</h3>
+        <p>AI-powered diagnostic tools for faster and more accurate disease detection</p>
       </div>
       <div class="solution-item">
         <img src="../assets/drug_discovery_icon.svg" alt="Drug Discovery Icon" />
         <h3>Drug Discovery</h3>
+        <p>Accelerating pharmaceutical research with machine learning algorithms</p>
       </div>
       <div class="solution-item">
         <img src="../assets/personalized_medicine_icon.svg" alt="Personalized Medicine Icon" />
         <h3>Personalized Medicine</h3>
+        <p>Tailoring treatments to individual patient profiles using AI insights</p>
       </div>
       <div class="solution-item">
         <img src="../assets/patient_care_automation_icon.svg" alt="Patient Care Automation Icon" />
         <h3>Patient Care Automation</h3>
+        <p>Streamlining healthcare workflows with intelligent automation solutions</p>
       </div>
     </div>
   </section>
@@ -119,41 +273,81 @@
       <li>Enhanced research</li>
     </ul>
   </section>
-
   <!-- BLOGS & CASE STUDIES -->
   <section class="industry-blogs container">
-    <h2 class="section-heading">BLOGS & CASE STUDIES</h2>    <div class="blogs-grid">
-      <div class="blog-item">
+    <h2 class="section-heading">BLOGS & CASE STUDIES</h2>
+    <div class="articles-grid">
+      <div class="article-card">
+        <img src="../assets/diagnostics_icon.svg" alt="AI Diagnostics" />
         <h3>AI-Driven Innovations in Diagnostics</h3>
-        <p>How AI is transforming the way we diagnose and treat diseases</p>
-        <a href="case-studies.html" class="read-more">Read More</a>
+        <p>How AI is transforming the way we diagnose and treat diseases through advanced image recognition and pattern analysis</p>
+        <a href="case-studies.html" class="read-more-link">Read More</a>
       </div>
-      <div class="blog-item">
+      <div class="article-card">
+        <img src="../assets/healthcare ind.png" alt="Patient Care" />
         <h3>Case Study: Enhancing Patient Care</h3>
-        <p>Our work with hospitals to improve patient outcomes through AI</p>
-        <a href="case-studies.html" class="read-more">Read More</a>
+        <p>Our work with leading hospitals to improve patient outcomes through AI-powered monitoring systems and predictive analytics</p>
+        <a href="case-studies.html" class="read-more-link">Read More</a>
       </div>
-      <div class="blog-item">
+      <div class="article-card">
+        <img src="../assets/personalized_medicine_icon.svg" alt="Ethical Considerations" />
         <h3>AI in Healthcare: Ethical Considerations</h3>
-        <p>Navigating the ethical challenges of AI applications in healthcare</p>
-        <a href="case-studies.html" class="read-more">Read More</a>
+        <p>Navigating the complex ethical challenges of AI applications in healthcare while ensuring patient privacy and safety</p>
+        <a href="case-studies.html" class="read-more-link">Read More</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="container footer">
-    <div class="footer-col">
-      <h3>Ready to get started?</h3>
-      <a href="../contact.html" class="btn-primary">Get Started</a>
-    </div>
-    <div class="footer-col">
-      <h3>CONTACT US</h3>
-      <p>✉️ info@gyannetra.com</p>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col footer-col-logo">
+          <a href="../index.html" class="logo">GYANNETRA</a>
+          <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Services/machine-learning.html">Machine Learning</a></li>
+            <li><a href="../Services/data-analysis.html">Data Analysis</a></li>
+            <li><a href="../Services/generative-ai.html">Generative AI</a></li>
+            <li><a href="../Services/agentic-ai.html">Agentic AI</a></li>
+            <li><a href="../Services/automation-flows.html">Automation Flows</a></li>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><p><i class="fas fa-map-marker-alt"></i> 123 AI Street, Innovation City, Techland</p></li>
+            <li><p><i class="fas fa-phone"></i> +1 (555) 123-4567</p></li>
+            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <p>Stay updated with our latest insights and news.</p>
+           <form action="#" method="post" class="newsletter-form" style="display: none;">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="../privacy-policy.html">Privacy Policy</a> | <a href="../terms-of-service.html">Terms of Service</a></p>
+      </div>
     </div>
   </footer>
-
-  <script src="../js/menu-dropdown.js"></script>
-  <script src="../js/main.js"></script>
+  <script src="../js/menu-dropdown.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

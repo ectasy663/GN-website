@@ -7,6 +7,312 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      --primary-color: #2563eb; /* Blue tone for Machine Learning */
+      --primary-color-hover: #1d4ed8;
+      --primary-color-glow: rgba(37, 99, 235, 0.5);
+      --card-bg: rgba(25, 35, 55, 0.7); /* Darker card background for contrast */
+      --text-light: #e0e0e0;
+      --text-muted: #b0b0b0;
+    }
+
+    .hero-section {
+        text-align: center;
+        padding: 80px 20px 60px;
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative; /* Ensure hero content is above atmospheric bg */
+        z-index: 2; /* Ensure hero content is above atmospheric bg */
+    }
+
+    .hero-section h1 {
+        font-size: 3.2rem;
+        margin-bottom: 25px;
+        color: var(--primary-color);
+        text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+        max-width: 750px;
+        margin: 0 auto 30px auto;
+        line-height: 1.7;
+        color: var(--text-muted);
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Adjusted minmax for potentially smaller cards */
+      gap: 35px;
+      justify-items: center;
+      margin-top: 30px;
+    }
+    
+    .solution-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(109, 40, 217, 0.3); /* Purple border */
+      width: 100%;
+      height: 100%; /* Ensure items in a row have same height */
+    }
+    
+    .solution-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    
+    .solution-icon {
+      width: 70px; /* Standardized icon size */
+      height: 70px;
+      margin-bottom: 20px;
+      object-fit: contain;
+    }
+    
+    .solution-item h3 {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .solution-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    
+    .article-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: left;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(109, 40, 217, 0.3); /* Purple border */
+      height: 100%; /* Ensure cards in a row have same height */
+    }
+    
+    .article-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(109, 40, 217, 0.4); /* Purple glow */
+    }
+    
+    .article-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    
+    .article-card h3 {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    
+    .article-card p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+      flex-grow: 1; /* Allows paragraph to take available space */
+    }
+    
+    .read-more-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      align-self: flex-start; /* Aligns button to the bottom left */
+      padding: 8px 15px;
+      border: 1px solid var(--primary-color);
+      border-radius: 5px;
+    }
+    
+    .read-more-link:hover {
+      background-color: var(--primary-color-hover);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .overview-section h2,
+    .key-offerings-section h2,
+    .benefits-section h2,
+    .blogs-case-studies-section h2,
+    .related-content-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px; /* Standardized margin */
+      color: var(--primary-color);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .key-offerings-section h2 {
+      margin-bottom: 45px; /* Specific for this section if needed */
+    }
+    
+    .benefits-section ul {
+      list-style-type: none; /* Consider using icons or custom bullets */
+      padding: 0;
+      margin-top: 20px;
+      text-align: center; /* Or left-align if preferred */
+    }
+    
+    .benefits-section li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: var(--text-light);
+      /* Consider adding padding if using background or borders */
+    }
+    
+    .blogs-case-studies-section h2 {
+      margin-bottom: 45px; /* Specific for this section */
+    }
+    
+    .related-content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+      margin-bottom: 40px; /* Space before final CTA */
+    }
+    
+    .related-content-item {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(109, 40, 217, 0.3); /* Purple border */
+    }
+    
+    .related-content-item h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    
+    .related-content-item p {
+      color: var(--text-muted);
+      margin-bottom: 15px;
+    }
+    
+    .read-more { /* General read-more link style if needed */
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    /* Ensure section padding is applied */
+    .section-padding {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    /* General container for consistent width */
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Adjustments for navbar within header */
+    .site-header .navbar.container {
+        width: 100%;
+        max-width: 1400px;
+        padding: 0.5rem 2.0rem;
+    }
+    /* Footer specific styling */
+    .site-footer {
+        background-color: #0f172a; /* Dark background for footer */
+        color: var(--text-muted);
+        padding: 50px 0;
+        font-size: 0.95rem;
+    }
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    .footer-col {
+        flex: 1;
+        min-width: 220px; /* Minimum width for columns */
+    }
+    .footer-col-logo .logo {
+        font-size: 1.8rem;
+        color: #fff;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+    .footer-col h3 {
+        font-size: 1.2rem;
+        color: #fff;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+    }
+    .footer-col ul li {
+        margin-bottom: 10px;
+    }
+    .footer-col ul li a {
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .footer-col ul li a:hover {
+        color: var(--primary-color);
+    }
+    .footer-col p {
+        margin-bottom: 10px;
+        line-height: 1.7;
+    }
+    .footer-col .social-links a {
+        color: var(--text-muted);
+        margin-right: 15px;
+        font-size: 1.3rem;
+        transition: color 0.3s ease;
+    }
+    .footer-col .social-links a:hover {
+        color: var(--primary-color);
+    }
+    .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+    }
+    .footer-col p a { /* Ensure links in paragraphs are styled */
+        color: var(--text-muted);
+        text-decoration: none;
+    }
+    .footer-col p a:hover {
+        color: var(--primary-color);
+        text-decoration: underline;
+    }
+
+  </style>
 </head>
 <body>
   <div class="atmospheric-bg">
@@ -18,116 +324,206 @@
     <div class="noise"></div>
   </div>
 
-  <!-- NAVBAR -->
   <header class="site-header">
     <nav class="navbar container">
-      <script src="../js/dropdown.js"></script>
-      <a href="../index.html" class="logo">GYANNETRA</a>
-      <ul class="nav-links">
-        <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
-          <ul class="dropdown-menu services-dropdown">
-            <li><a href="machine-learning.html"><div class="dropdown-item-content"><img src="../assets/mlng.png" alt="Machine Learning Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Machine Learning</span><span class="item-description">We build intelligent systems that learn from data to predict outcomes and automate decisions.</span></div></div></a></li>
-            <li><a href="data-analysis.html"><div class="dropdown-item-content"><img src="../assets/data analytics.png" alt="Data Analysis Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Data Analytics</span><span class="item-description">We transform raw data into actionable insights, helping you understand trends and optimize performance.</span></div></div></a></li>            <li><a href="generative-ai.html"><div class="dropdown-item-content"><img src="../assets/gen ai.png" alt="Generative AI Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Generative AI</span><span class="item-description">We create novel content, from text and images to code, unlocking new possibilities for creativity and efficiency.</span></div></div></a></li>
-            <li><a href="agentic-ai.html"><div class="dropdown-item-content"><img src="../assets/ai agent.png" alt="Agentic AI Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Agentic AI</span><span class="item-description">We develop autonomous AI agents capable of perceiving their environment and taking actions to achieve specific goals.</span></div></div></a></li>
-            <li><a href="automation-flows.html"><div class="dropdown-item-content"><img src="../assets/automation flows.png" alt="Automation Flows Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Automation Flows</span><span class="item-description">We design and implement intelligent automation solutions to streamline your workflows and boost productivity.</span></div></div></a></li>
-          </ul>
-        </li>
-        <li class="dropdown"><a href="#" class="nav-link">Industries ▾</a>
-          <ul class="dropdown-menu industries-dropdown">            <li><a href="../Industries/finance.html"><div class="dropdown-item-content"><img src="../assets/Finance Ind.png" alt="Finance Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Finance</span><span class="item-description">Applying AI to enhance fraud detection, risk management, and customer experience.</span></div></div></a></li>
-            <li><a href="../Industries/healthcare.html"><div class="dropdown-item-content"><img src="../assets/healthcare ind.png" alt="Healthcare Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Healthcare</span><span class="item-description">Leveraging AI for faster diagnoses, personalized treatments, and improved patient care.</span></div></div></a></li>
-            <li><a href="../Industries/manufacturing.html"><div class="dropdown-item-content"><img src="../assets/manufacturing ind.png" alt="Manufacturing Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Manufacturing</span><span class="item-description">Optimizing production processes, predicting maintenance needs, and enhancing quality control with AI.</span></div></div></a></li>
-            <li><a href="../Industries/marketing.html"><div class="dropdown-item-content"><img src="../assets/marketing ind.png" alt="Marketing Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Marketing</span><span class="item-description">Personalizing campaigns, predicting consumer behavior, and optimizing marketing spend using AI.</span></div></div></a></li>
-            <li><a href="../Industries/media-entertainment.html"><div class="dropdown-item-content"><img src="../assets/media and entertainment ind.png" alt="Media & Entertainment Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Media & Entertainment</span><span class="item-description">Creating engaging content, personalizing recommendations, and optimizing content delivery with AI.</span></div></div></a></li>
-            <li><a href="../Industries/travel.html"><div class="dropdown-item-content"><img src="../assets/travel ind.png" alt="Travel Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Travel</span><span class="item-description">Enhancing customer journeys, optimizing pricing, and improving operational efficiency through AI.</span></div></div></a></li>
-            <li><a href="../Industries/retail.html"><div class="dropdown-item-content"><img src="../assets/retail ind.png" alt="Retail Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Retail</span><span class="item-description">Personalizing shopping experiences, optimizing inventory, and predicting demand with AI.
-            </span></div></div></a></li>
-            <li><a href="../Industries/case-studies.html"><div class="dropdown-item-content"><img src="../assets/case study ind.png" alt="Case Studies Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Case Studies</span><span class="item-description">Real-world examples showcasing how our AI solutions have delivered tangible results for our clients.</span></div></div></a></li>
-
-          </ul>
-        </li>        <li class="dropdown"><a href="#" class="nav-link">Education ▾</a>
-          <ul class="dropdown-menu education-dropdown">
-            <li><a href="../Education/workshops.html"><div class="dropdown-item-content"><img src="../assets/workshops.png" alt="Workshops Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Workshops</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
-            <li><a href="../Education/individual-trainings.html"><div class="dropdown-item-content"><img src="../assets/indi training.png" alt="Individual Trainings Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Individual Trainings</span><span class="item-description">Personalized learning programs tailored to your specific needs and learning pace.</span></div></div></a></li>
-            <li><a href="../Education/corporate-trainings.html"><div class="dropdown-item-content"><img src="../assets/corpo training.png" alt="Corporate Trainings Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Corporate Trainings</span><span class="item-description">Customized training solutions to upskill your teams and drive AI adoption within your organization.
-            </span></div></div></a></li>
-          </ul>
-        </li>
-        <li><a href="../about.html" class="nav-link">About Us</a></li>
-        <li><a href="../contact.html" class="nav-link">Contact Us</a></li>
-      </ul>
+        <a href="../index.html" class="logo">GYANNETRA</a>
+        <ul class="nav-links">
+          <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
+            <ul class="dropdown-menu services-dropdown">
+              <li><a href="machine-learning.html"><div class="dropdown-item-content"><img src="../assets/mlng.png" alt="Machine Learning Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Machine Learning</span><span class="item-description">Intelligent systems that learn from data.</span></div></div></a></li>
+              <li><a href="data-analysis.html"><div class="dropdown-item-content"><img src="../assets/data analytics.png" alt="Data Analysis Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Data Analytics</span><span class="item-description">Transform raw data into actionable insights.</span></div></div></a></li>
+              <li><a href="generative-ai.html"><div class="dropdown-item-content"><img src="../assets/gen ai.png" alt="Generative AI Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Generative AI</span><span class="item-description">Create novel content with AI.</span></div></div></a></li>
+              <li><a href="agentic-ai.html"><div class="dropdown-item-content"><img src="../assets/ai agent.png" alt="Agentic AI Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Agentic AI</span><span class="item-description">Autonomous AI agents for specific goals.</span></div></div></a></li>
+              <li><a href="automation-flows.html"><div class="dropdown-item-content"><img src="../assets/automation flows.png" alt="Automation Flows Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Automation Flows</span><span class="item-description">Streamline workflows with intelligent automation.</span></div></div></a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="nav-link">Industries ▾</a>
+            <ul class="dropdown-menu industries-dropdown">
+              <li><a href="../Industries/finance.html"><div class="dropdown-item-content"><img src="../assets/Finance Ind.png" alt="Finance Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Finance</span><span class="item-description">AI for fraud detection, risk management.</span></div></div></a></li>
+              <li><a href="../Industries/healthcare.html"><div class="dropdown-item-content"><img src="../assets/healthcare ind.png" alt="Healthcare Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Healthcare</span><span class="item-description">AI for faster diagnoses, personalized care.</span></div></div></a></li>
+              <li><a href="../Industries/manufacturing.html"><div class="dropdown-item-content"><img src="../assets/manufacturing ind.png" alt="Manufacturing Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Manufacturing</span><span class="item-description">AI for process optimization, quality control.</span></div></div></a></li>
+              <li><a href="../Industries/marketing.html"><div class="dropdown-item-content"><img src="../assets/marketing ind.png" alt="Marketing Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Marketing</span><span class="item-description">AI for campaign personalization, consumer insights.</span></div></div></a></li>
+              <li><a href="../Industries/media-entertainment.html"><div class="dropdown-item-content"><img src="../assets/media and entertainment ind.png" alt="Media & Entertainment Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Media & Entertainment</span><span class="item-description">AI for content creation, recommendations.</span></div></div></a></li>
+              <li><a href="../Industries/travel.html"><div class="dropdown-item-content"><img src="../assets/travel ind.png" alt="Travel Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Travel</span><span class="item-description">AI for customer journey enhancement, pricing.</span></div></div></a></li>
+              <li><a href="../Industries/retail.html"><div class="dropdown-item-content"><img src="../assets/retail ind.png" alt="Retail Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Retail</span><span class="item-description">AI for personalized experiences, inventory optimization.</span></div></div></a></li>
+              <li><a href="../Industries/case-studies.html"><div class="dropdown-item-content"><img src="../assets/case study ind.png" alt="Case Studies Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Case Studies</span><span class="item-description">Real-world examples of our AI solutions.</span></div></div></a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="nav-link">Education ▾</a>
+            <ul class="dropdown-menu education-dropdown">
+              <li><a href="../Education/workshops.html"><div class="dropdown-item-content"><img src="../assets/workshops.png" alt="Workshops Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Workshops</span><span class="item-description">Interactive sessions on AI concepts and skills.</span></div></div></a></li>
+              <li><a href="../Education/individual-trainings.html"><div class="dropdown-item-content"><img src="../assets/indi training.png" alt="Individual Trainings Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Individual Trainings</span><span class="item-description">Personalized AI learning programs.</span></div></div></a></li>
+              <li><a href="../Education/corporate-trainings.html"><div class="dropdown-item-content"><img src="../assets/corpo training.png" alt="Corporate Trainings Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Corporate Trainings</span><span class="item-description">Customized AI training for teams.</span></div></div></a></li>
+            </ul>
+          </li>
+          <li><a href="../about.html" class="nav-link">About Us</a></li>
+          <li><a href="../contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
     </nav>
   </header>
-
-  <main class="container">
+  
+  <main>
     <section class="hero-section">
-      <h1>MACHINE LEARNING</h1>
-      <p>Empowering you business with advanced ML solutions</p>
+      <h1>Unlock Potential with Machine Learning</h1>
+      <p>Gyannetra delivers cutting-edge Machine Learning solutions, enabling your business to predict trends, automate processes, and gain deeper insights from your data.</p>
+      <a href="../contact.html" class="btn btn-primary">Harness ML Power</a>
     </section>
 
-    <section class="overview-section">
+    <section class="overview-section section-padding container">
       <h2>OVERVIEW OF MACHINE LEARNING SERVICES</h2>
-      <p>Leveraging the power of machine learning to deliver custom solutions to predictive analytics, natural language processing and computer vision</p>
+      <p>We specialize in developing and deploying bespoke machine learning models that address your unique challenges. From predictive analytics and natural language processing to computer vision and deep learning, our expertise helps you transform data into a strategic asset, driving innovation and efficiency.</p>
     </section>
-
-    <section class="key-offerings-section">
+    
+    <section class="key-offerings-section section-padding container">
       <h2>KEY OFFERINGS</h2>
-      <div class="offerings-grid">
-        <div class="offering-item">
-          <img src="../assets/predictive-modelling.png" alt="Predictive Modelling Icon" class="offering-icon">
+      <div class="solutions-grid">
+        <div class="solution-item">
+          <img src="../assets/predictive.png" alt="Predictive Modelling Icon" class="solution-icon">
           <h3>Predictive Modelling</h3>
-          <p>Developing models to forecast future trends and outcomes</p>
+          <p>Develop sophisticated models to forecast future trends, customer behavior, and operational outcomes with high accuracy.</p>
         </div>
-        <div class="offering-item">
-          <img src="../assets/natural-language-processing.png" alt="Natural Language Processing Icon" class="offering-icon">
-          <h3>Natural Language Processing</h3>
-          <p>Enabling machines to understand and interpret human language</p>
+        <div class="solution-item">
+          <img src="../assets/icon-nlp.png" alt="Natural Language Processing Icon" class="solution-icon">
+          <h3>Natural Language Processing (NLP)</h3>
+          <p>Enable machines to understand, interpret, and respond to human language for applications like sentiment analysis and chatbots.</p>
         </div>
-        <div class="offering-item">
-          <img src="../assets/computer-vision.png" alt="Computer Vision Icon" class="offering-icon">
+        <div class="solution-item">
+          <img src="../assets/icon-cv.png" alt="Computer Vision Icon" class="solution-icon">
           <h3>Computer Vision Development</h3>
-          <p>Creating systems to analyze and interpret visual information</p>
+          <p>Create systems that analyze and interpret visual information from images and videos for automation and insight generation.</p>
+        </div>
+        <div class="solution-item">
+          <img src="../assets/icon-dl.png" alt="Deep Learning Solutions Icon" class="solution-icon">
+          <h3>Deep Learning Solutions</h3>
+          <p>Build and train advanced neural networks for complex pattern recognition tasks in large datasets.</p>
+        </div>
+        <div class="solution-item">
+          <img src="../assets/personalized-recommendations.svg" alt="Recommendation Systems Icon" class="solution-icon">
+          <h3>Recommendation Systems</h3>
+          <p>Design personalized recommendation engines to enhance user engagement and drive conversions.</p>
+        </div>
+        <div class="solution-item">
+          <img src="../assets/fraud_detection_icon.svg" alt="Anomaly Detection Icon" class="solution-icon">
+          <h3>Anomaly Detection</h3>
+          <p>Identify unusual patterns and outliers in your data that may indicate fraud, errors, or opportunities.</p>
         </div>
       </div>
     </section>
-
-    <section class="benefits-section">
+    
+    <section class="benefits-section section-padding container">
       <h2>BENEFITS OF CHOOSING GYANNETRA FOR MACHINE LEARNING</h2>
       <ul>
-        <li>Experienced team of ML experts</li>
-        <li>Tailored solutions to meet your unique needs</li>
-        <li>Strong focus on ethical AI practices</li>
+        <li>Gain competitive advantage with data-driven decisions.</li>
+        <li>Improve operational efficiency through intelligent automation.</li>
+        <li>Unlock new revenue streams with innovative ML applications.</li>
+        <li>Benefit from our experienced team of ML experts and data scientists.</li>
+        <li>Receive tailored solutions designed to meet your specific business needs.</li>
+        <li>Partner with a company committed to ethical and responsible AI practices.</li>
       </ul>
     </section>
 
-    <section class="related-content-section">
-      <h2>RELATED BLOGS & CASE STUDIES</h2>
-      <div class="related-content-grid">        <div class="related-content-item">
-          <h3>How Machine Learning Transforms Industries</h3>
-          <p>Explore the impact of ML experts</p>
-          <a href="../Industries/case-studies.html" class="read-more">Read More</a>
+    <section class="blogs-case-studies-section section-padding container">
+      <h2>BLOGS & CASE STUDIES</h2>
+      <div class="articles-grid">
+        <div class="article-card">
+          <img src="../assets/analytics (1).png" alt="Machine Learning in Business Article Thumbnail">
+          <h3>Advanced Machine Learning Applications in Business</h3>
+          <p>Discover how machine learning is transforming business operations and creating new value across diverse industries.</p>
+          <a href="../Industries/case-studies.html" class="read-more-link">Read Article</a>
         </div>
-        <div class="related-content-item">
-          <h3>Case Study: Predictive Analytics Success</h3>
-          <p>A eceeses sory to impercecting raclitoe orelyxes</p>
-          <a href="../Industries/case-studies.html" class="read-more">Read More</a>
+        <div class="article-card">
+          <img src="../assets/retail ind.png" alt="Retail ML Case Study Thumbnail">
+          <h3>Case Study: ML-Powered Sales Forecasting for Retail</h3>
+          <p>Learn how a leading retail client increased sales forecast accuracy by 35% using our predictive modeling solutions.</p>
+          <a href="../Industries/case-studies.html" class="read-more-link">View Case Study</a>
+        </div>
+        <div class="article-card">
+          <img src="../assets/mlng.png" alt="ML Breakthroughs Article Thumbnail">
+          <h3>Recent Breakthroughs and Future of Machine Learning</h3>
+          <p>Exploring the cutting-edge developments in ML technology and their potential impact on the future.</p>
+          <a href="../Industries/case-studies.html" class="read-more-link">Explore Insights</a>
         </div>
       </div>
-      <a href="../Industries/case-studies.html" class="btn-primary">Explore Our Machine Learning Solutions</a>
+    </section>
+
+    <section class="related-content-section section-padding container">
+      <h2>EXPLORE OUR AI CAPABILITIES</h2>
+      <div class="related-content-grid">
+        <div class="related-content-item">
+          <img src="../assets/data analytics.png" alt="Data Analysis Services" class="related-content-image">
+          <h3>Data Analysis & Visualization</h3>
+          <p>Transform your raw data into clear, actionable insights with our expert data analysis and visualization services.</p>
+          <a href="data-analysis.html" class="read-more">Learn More</a>
+        </div>
+        <div class="related-content-item">
+          <img src="../assets/gen ai.png" alt="Generative AI Solutions" class="related-content-image">
+          <h3>Generative AI Solutions</h3>
+          <p>Unlock creative potential and automate content creation with our cutting-edge Generative AI models.</p>
+          <a href="generative-ai.html" class="read-more">Discover GenAI</a>
+        </div>
+        <div class="related-content-item">
+          <img src="../assets/ai agent.png" alt="AI Strategy Consulting" class="related-content-image">
+          <h3>AI Strategy Consulting</h3>
+          <p>Develop a robust AI strategy tailored to your business goals with our expert consulting services.</p>
+          <a href="../contact.html" class="read-more">Consult Experts</a>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="../contact.html" class="btn btn-primary">Discuss Your ML Project</a>
+      </div>
     </section>
   </main>
 
   <!-- FOOTER -->
-  <footer class="container footer">
-    <div class="footer-col">
-      <h3>Ready to get started?</h3>
-      <a href="../contact.html" class="btn-primary">Get Started</a>
-    </div>
-    <div class="footer-col">
-      <h3>CONTACT US</h3>
-      <p>✉️ info@gyannetra.com</p>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col footer-col-logo">
+          <a href="../index.html" class="logo">GYANNETRA</a>
+          <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="machine-learning.html">Machine Learning</a></li>
+            <li><a href="data-analysis.html">Data Analysis</a></li>
+            <li><a href="generative-ai.html">Generative AI</a></li>
+            <li><a href="agentic-ai.html">Agentic AI</a></li>
+            <li><a href="automation-flows.html">Automation Flows</a></li>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><p><i class="fas fa-map-marker-alt"></i> 123 AI Street, Innovation City, Techland</p></li>
+            <li><p><i class="fas fa-phone"></i> +1 (555) 123-4567</p></li>
+            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <p>Stay updated with our latest insights and news.</p>
+           <form action="#" method="post" class="newsletter-form" style="display: none;"> 
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="../privacy-policy.html">Privacy Policy</a> | <a href="../terms-of-service.html">Terms of Service</a></p>
+      </div>
     </div>
   </footer>
-
-  <script src="../js/main.js"></script>
+  <script src="../js/menu-dropdown.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

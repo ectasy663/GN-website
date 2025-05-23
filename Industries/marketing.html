@@ -6,59 +6,17 @@
     <title>Marketing - Gyannetra</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Styles specific to marketing.html that aren't in the main CSS file */
-        .marketing-hero-image img {
-            max-width: 400px;
-        }
-        
-        /* Only keep page-specific styles that might not be in the main CSS */
-        .feature-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">    <style>
+        /* Marketing Card Structure Styles */
+        body {
+            --primary-color: #ec4899; /* Pink tone for marketing */
+            --primary-color-hover: #db2777;
+            --primary-color-glow: rgba(236, 72, 153, 0.5);
+            --card-bg: rgba(25, 35, 55, 0.7);
+            --text-light: #e0e0e0;
+            --text-muted: #b0b0b0;
         }
 
-        .feature-item {
-            background: rgba(20, 20, 40, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 1.5rem;
-            /* Add filter for glow if needed */
-        }
-        
-        .feature-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        
-        /* Ensure the blog cards look good */
-        .insight-card-image {
-            height: 150px;
-            background-color: #333;
-        }
-        
-        /* Any additional customizations for this page */
-        .advantage-list li {
-            border-left: 3px solid #a2b0ff;
-        }
-        
         /* Marketing hero section styling */
         .marketing-hero {
             padding-top: 7rem;
@@ -82,6 +40,7 @@
         .marketing-hero-content h1 {
             font-size: 3rem;
             margin-bottom: 1.5rem;
+            color: var(--primary-color);
         }
         
         .marketing-hero-content p {
@@ -95,6 +54,171 @@
             min-width: 300px;
             display: flex;
             justify-content: center;
+        }
+
+        .marketing-hero-image img {
+            max-width: 400px;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 35px;
+            justify-items: center;
+            margin-top: 30px;
+        }
+
+        .solution-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            width: 100%;
+            height: 100%;
+        }
+
+        .solution-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .solution-icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        .solution-item h3 {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .solution-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: left;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            height: 100%;
+        }
+
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(236, 72, 153, 0.4);
+        }
+
+        .article-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .article-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .article-card p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .read-more-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            align-self: flex-start;
+            padding: 8px 15px;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+        }
+
+        .read-more-link:hover {
+            background-color: var(--primary-color-hover);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .features-section h2,
+        .advantage-section h2,
+        .blogs-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 45px;
+            color: var(--primary-color);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .advantage-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .advantage-list li {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            background-color: rgba(236, 72, 153, 0.1);
+            padding: 12px 18px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .explore-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        .explore-button:hover {
+            background-color: var(--primary-color-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -159,30 +283,28 @@
                     <!-- Placeholder for the head graphic, will create SVG later -->
                 </div>
             </div>
-        </section>
-
-        <!-- FEATURES SECTION -->
+        </section>        <!-- FEATURES SECTION -->
         <section class="features-section">
             <div class="container">
                 <h2>AI SOLUTIONS FOR MARKETING</h2>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <div class="feature-icon"><img src="../assets/marketing_icon_personalization.svg" alt="AI Personalization"></div>
+                <div class="solutions-grid">
+                    <div class="solution-item">
+                        <img src="../assets/marketing_icon_personalization.svg" alt="AI Personalization" class="solution-icon">
                         <h3>AI-Powered Personalization</h3>
                         <p>Deliver tailored content and experiences by leveraging AI to analyze customer data and predict preferences</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon"><img src="../assets/marketing_icon_segmentation.svg" alt="Predictive Segmentation"></div>
+                    <div class="solution-item">
+                        <img src="../assets/marketing_icon_segmentation.svg" alt="Predictive Segmentation" class="solution-icon">
                         <h3>Predictive Customer Segmentation</h3>
                         <p>Utilize predictive analytics to segment customers based on behavior, enhancing strategies</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon"><img src="../assets/marketing_icon_content_gen.svg" alt="Automated Content Generation"></div>
+                    <div class="solution-item">
+                        <img src="../assets/marketing_icon_content_gen.svg" alt="Automated Content Generation" class="solution-icon">
                         <h3>Automated Content Generation</h3>
                         <p>Accelerate content creation with AI that generates relevant marketing copy and visuals</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon"><img src="../assets/marketing_icon_campaign_opt.svg" alt="AI Campaign Optimization"></div>
+                    <div class="solution-item">
+                        <img src="../assets/marketing_icon_campaign_opt.svg" alt="AI Campaign Optimization" class="solution-icon">
                         <h3>AI-Driven Campaign Optimization</h3>
                         <p>Optimize marketing campaigns in real-time using AI insights to maximize performance</p>
                     </div>
@@ -200,51 +322,88 @@
                     <li>Focus on measurable-campaign ROI</li>
                     <li>Ethical AI implementation in customer communication</li>                </ul>
             </div>
-        </section>
-
-        <!-- BLOGS & CASE STUDIES SECTION -->
+        </section>        <!-- BLOGS & CASE STUDIES SECTION -->
         <section class="blogs-section">
             <div class="container">
-                <h2>Blogs & Case Studies</h2>                <div class="blog-items-container">
-                    <div class="blog-item">
+                <h2>BLOGS & CASE STUDIES</h2>
+                <div class="articles-grid">
+                    <div class="article-card">
+                        <img src="../assets/marketing_insight_harnessing.svg" alt="AI Marketing Success">
                         <h3>Harnessing AI for Marketing Success</h3>
-                        <p>Discover how AI is revolutionizing marketing strategies and boosting conversion rates.</p>
-                        <a href="case-studies.html">Read Marketing Insights</a>
+                        <p>Discover how AI is revolutionizing marketing strategies and boosting conversion rates through advanced analytics and behavioral prediction</p>
+                        <a href="case-studies.html" class="read-more-link">Read More</a>
                     </div>
-                    <div class="blog-item">
-                        <h3>AI Driven Campaign Optimization</h3>
-                        <p>Case study on improving marketing ROI with AI-powered solutions and analytics.</p>
-                        <a href="case-studies.html">View Marketing Case Study</a>
+                    <div class="article-card">
+                        <img src="../assets/marketing_icon_campaign_opt.svg" alt="Campaign Optimization">
+                        <h3>AI-Driven Campaign Optimization</h3>
+                        <p>Case study: How we helped a global brand improve marketing ROI by 45% through AI-powered optimization and real-time analytics</p>
+                        <a href="case-studies.html" class="read-more-link">Read More</a>
                     </div>
-                    <div class="blog-item">
+                    <div class="article-card">
+                        <img src="../assets/marketing_icon_personalization.svg" alt="Customer Journey">
                         <h3>Customer Journey Personalization</h3>
-                        <p>How AI creates tailored experiences for higher conversion rates and customer loyalty.</p>
-                        <a href="case-studies.html">Read Case Study</a>
+                        <p>How AI creates tailored experiences that increased conversion rates by 37% and boosted customer loyalty for an e-commerce client</p>
+                        <a href="case-studies.html" class="read-more-link">Read More</a>
                     </div>
                 </div>
             </div>
-        </section>        <!-- EXPLORE SOLUTIONS BUTTON -->
+        </section><!-- EXPLORE SOLUTIONS BUTTON -->
         <section class="explore-button-container">
             <div class="container">
                 <a href="case-studies.html" class="explore-button">EXPLORE OUR MARKETING AI SOLUTIONS</a>
             </div>
         </section>
     </main>
-  <footer class="container footer">
-    <div class="footer-col">
-      <h3>Ready to get started?</h3>
-      <a href="../contact.html" class="btn-primary">Get Started</a>
-    </div>
-    <div class="footer-col">
-      <h3>CONTACT US</h3>
-      <p>✉️ info@gyannetra.com</p>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col footer-col-logo">
+          <a href="../index.html" class="logo">GYANNETRA</a>
+          <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Services/machine-learning.html">Machine Learning</a></li>
+            <li><a href="../Services/data-analysis.html">Data Analysis</a></li>
+            <li><a href="../Services/generative-ai.html">Generative AI</a></li>
+            <li><a href="../Services/agentic-ai.html">Agentic AI</a></li>
+            <li><a href="../Services/automation-flows.html">Automation Flows</a></li>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><p><i class="fas fa-map-marker-alt"></i> 123 AI Street, Innovation City, Techland</p></li>
+            <li><p><i class="fas fa-phone"></i> +1 (555) 123-4567</p></li>
+            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <p>Stay updated with our latest insights and news.</p>
+           <form action="#" method="post" class="newsletter-form" style="display: none;">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="../privacy-policy.html">Privacy Policy</a> | <a href="../terms-of-service.html">Terms of Service</a></p>
+      </div>
     </div>
   </footer>
-
-  <script src="../js/menu-dropdown.js"></script>
-  <script src="../js/main.js"></script>
-  <script>
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
-  </script>
+  <script src="../js/menu-dropdown.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

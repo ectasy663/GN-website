@@ -5,8 +5,195 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>AI in Manufacturing - Gyannetra</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Manufacturing Page Specific Styles */
+    body {
+      --primary-color: #3498db; /* Blue tone for manufacturing */
+      --primary-color-hover: #2980b9;
+      --primary-color-glow: rgba(52, 152, 219, 0.5);
+      --card-bg: rgba(25, 35, 55, 0.7); /* Darker card background */
+      --text-light: #e0e0e0;
+      --text-muted: #b0b0b0;
+    }
 
+    /* Hero section */
+    .manufacturing-hero {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: linear-gradient(rgba(10, 20, 40, 0.8), rgba(10, 20, 40, 0.95)), url('../assets/manufacturing_hero_bg.jpg') no-repeat center center;
+      background-size: cover;
+      border-bottom: 2px solid var(--primary-color-glow);
+    }
+
+    .manufacturing-hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 15px;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    }
+
+    .manufacturing-hero p {
+      font-size: 1.1rem;
+      max-width: 750px;
+      margin: 0 auto 30px auto;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    /* Solutions grid */
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 35px;
+    }
+
+    .solution-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(var(--primary-color-glow),0.4);
+    }
+
+    .solution-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(var(--primary-color-glow), 0.4);
+    }
+
+    .solution-item img {
+      height: 70px;
+      margin-bottom: 20px;
+    }
+
+    .solution-item h3 {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .solution-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Benefits section */
+    .benefits-section {
+      padding: 4rem 0;
+    }
+
+    .benefits-list {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .benefits-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-basis: calc(50% - 20px);
+      min-width: 300px;
+    }
+
+    .benefits-section li {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      background-color: rgba(var(--primary-color-glow), 0.1);
+      padding: 12px 18px;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .benefits-section li i {
+      color: var(--primary-color);
+      margin-right: 12px;
+      font-size: 1.4rem;
+    }
+
+    /* Articles/case studies section */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .article-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: left;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(var(--primary-color-glow),0.4);
+    }
+
+    .article-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(var(--primary-color-glow), 0.4);
+    }
+
+    .article-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .article-card h3 {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .article-card p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .read-more-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      align-self: flex-start;
+      padding: 8px 15px;
+      border: 1px solid var(--primary-color);
+      border-radius: 5px;
+    }
+
+    .read-more-link:hover {
+      background-color: var(--primary-color-hover);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .section-heading {
+      text-align: center;
+      font-size: 2.3rem;
+      margin-bottom: 3rem;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
   <div class="atmospheric-bg">
@@ -56,88 +243,127 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero-manufacturing">
-    <h1>AI IN MANUFACTURING</h1>
-    <p>AI is optimizing manufacturing processes, enhancing productivity, and reducing costs. Gyannetra brings deep expertise in developing AI-driven solutions tailored for the manufacturing sector.</p>
-  </section>
+  <main class="container manufacturing-page-container">
+    <section class="hero-section manufacturing-hero">
+      <h1>AI IN MANUFACTURING</h1>
+      <p>AI is optimizing manufacturing processes, enhancing productivity, and reducing costs. Gyannetra brings deep expertise in developing AI-driven solutions tailored for the manufacturing sector.</p>
+    </section>
 
-  <!-- FEATURES GRID -->
-  <section class="features-grid">
-    <div class="feature-items-container">
-      <div class="feature-item">
-        <img src="../assets/predictive_maintenance_icon.svg" alt="Predictive Maintenance" />
-        <p>Predictive Maintenance</p>
+    <section class="ai-solutions-manufacturing">
+      <h2 class="section-heading">KEY AI APPLICATIONS IN MANUFACTURING</h2>
+      <div class="solutions-grid">
+        <div class="solution-item">
+          <img src="../assets/predictive_maintenance_icon.svg" alt="Predictive Maintenance Icon" class="solution-icon">
+          <h3>Predictive Maintenance</h3>
+          <p>Minimize downtime and reduce maintenance costs by predicting equipment failures before they occur.</p>
+        </div>
+        <div class="solution-item">
+          <img src="../assets/quality_control_icon.svg" alt="Quality Control Icon" class="solution-icon">
+          <h3>Quality Control</h3>
+          <p>Improve product quality and reduce defects through automated visual inspection and anomaly detection.</p>
+        </div>
+        <div class="solution-item">
+          <img src="../assets/supply_chain_icon.svg" alt="Supply Chain Optimization Icon" class="solution-icon">
+          <h3>Supply Chain Optimization</h3>
+          <p>Enhance efficiency and resilience in your supply chain with AI-driven forecasting and logistics.</p>
+        </div>
+        <div class="solution-item">
+          <img src="../assets/robotic_automation_icon.svg" alt="Robotic Automation Icon" class="solution-icon">
+          <h3>Robotic Automation</h3>
+          <p>Increase productivity and safety by deploying intelligent robots for complex manufacturing tasks.</p>
+        </div>
       </div>
-      <div class="feature-item">
-        <img src="../assets/quality_control_icon.svg" alt="Quality Control" />
-        <p>Quality Control</p>
-      </div>
-      <div class="feature-item">
-        <img src="../assets/supply_chain_icon.svg" alt="Supply Chain Optimization" />
-        <p>Supply Chain Optimization</p>
-      </div>
-      <div class="feature-item">
-        <img src="../assets/robotic_automation_icon.svg" alt="Robotic Automation" />
-        <p>Robotic Automation</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- BENEFITS SECTION -->
-  <section class="benefits-section">
-    <h2>Benefits of AI for Manufacturing with Gyannetra</h2>
-    <div class="benefits-list">
-      <ul>
-        <li>Increased efficiency</li>
-        <li>Improved quality</li>
-      </ul>
-      <ul>
-        <li>Reduced downtime</li>
-        <li>Optimized production</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- BLOGS & CASE STUDIES SECTION -->
-  <section class="blogs-section">
-    <h2>Blogs & Case Studies</h2>    <div class="blog-items-container">
-      <div class="blog-item">
-        <h3>How AI is Transforming Manufacturing</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</p>
-        <a href="case-studies.html">Read More</a>
+    <section class="benefits-section">
+      <h2 class="section-heading">BENEFITS OF AI FOR MANUFACTURING WITH GYANNETRA</h2>
+      <div class="benefits-list">
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Increased operational efficiency and throughput</li>
+          <li><i class="fas fa-check-circle"></i> Improved product quality and reduced waste</li>
+          <li><i class="fas fa-check-circle"></i> Lower maintenance costs and reduced downtime</li>
+        </ul>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Enhanced worker safety through automation</li>
+          <li><i class="fas fa-check-circle"></i> Greater flexibility and adaptability in production</li>
+        </ul>
       </div>
-      <div class="blog-item">
-        <h3>Case Study: Predictive Maintenance</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</p>
-        <a href="case-studies.html">Read Case Study</a>
-      </div>
-      <div class="blog-item">
-        <h3>Enhancing Quality Control with AI</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</p>
-        <a href="case-studies.html">Read More</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- EXPLORE SOLUTIONS BUTTON -->
-  <section class="explore-button-container">
-    <a href="case-studies.html" class="explore-button">EXPLORE OUR MANUFACTURING AI SOLUTIONS</a>
-  </section>
+    <section class="manufacturing-case-studies">
+      <h2 class="section-heading">CASE STUDIES & INSIGHTS</h2>
+      <div class="articles-grid">
+        <div class="article-card">
+          <img src="../assets/manufacturing_case1.jpg" alt="Predictive Maintenance Success">
+          <h3>Predictive Maintenance Success</h3>
+          <p>How a manufacturing plant reduced downtime by 35% with our AI-powered predictive maintenance solution.</p>
+          <a href="case-studies.html" class="read-more-link">Read more</a>
+        </div>
+        <div class="article-card">
+          <img src="../assets/manufacturing_case2.jpg" alt="Quality Control Revolution">
+          <h3>Quality Control Revolution</h3>
+          <p>Learn how computer vision and machine learning transformed quality inspection processes.</p>
+          <a href="case-studies.html" class="read-more-link">Read more</a>
+        </div>
+        <div class="article-card">
+          <img src="../assets/manufacturing_case3.jpg" alt="Supply Chain Optimization">
+          <h3>Supply Chain Optimization</h3>
+          <p>Case study: How AI forecasting models improved inventory management and supplier relationships.</p>
+          <a href="case-studies.html" class="read-more-link">Read more</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <!-- FOOTER -->
-  <footer class="container footer">
-    <div class="footer-col">
-      <h3>Ready to get started?</h3>
-      <a href="../contact.html" class="btn-primary">Get Started</a>
-    </div>
-    <div class="footer-col">
-      <h3>CONTACT US</h3>
-      <p>✉️ info@gyannetra.com</p> <!-- Corrected email -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col footer-col-logo">
+          <a href="../index.html" class="logo">GYANNETRA</a>
+          <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Services/machine-learning.html">Machine Learning</a></li>
+            <li><a href="../Services/data-analysis.html">Data Analysis</a></li>
+            <li><a href="../Services/generative-ai.html">Generative AI</a></li>
+            <li><a href="../Services/agentic-ai.html">Agentic AI</a></li>
+            <li><a href="../Services/automation-flows.html">Automation Flows</a></li>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><p><i class="fas fa-map-marker-alt"></i> 123 AI Street, Innovation City, Techland</p></li>
+            <li><p><i class="fas fa-phone"></i> +1 (555) 123-4567</p></li>
+            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <p>Stay updated with our latest insights and news.</p>
+           <form action="#" method="post" class="newsletter-form" style="display: none;">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="../privacy-policy.html">Privacy Policy</a> | <a href="../terms-of-service.html">Terms of Service</a></p>
+      </div>
     </div>
   </footer>
-
-  <script src="../js/menu-dropdown.js"></script>
-  <script src="../js/main.js"></script>
+  <script src="../js/menu-dropdown.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

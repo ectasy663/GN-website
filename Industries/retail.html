@@ -3,9 +3,291 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Retail - Gyannetra</title>
+  <title>AI in Retail - Gyannetra</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Retail Page Specific Styles */
+    body {
+      --primary-color: #e74c3c; /* Red tone for retail */
+      --primary-color-hover: #c0392b;
+      --primary-color-glow: rgba(231, 76, 60, 0.5);
+      --card-bg: rgba(25, 35, 55, 0.7); /* Darker card background */
+      --text-light: #e0e0e0;
+      --text-muted: #b0b0b0;
+    }
+
+    /* Hero section */
+    .retail-hero {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: linear-gradient(rgba(10, 20, 40, 0.8), rgba(10, 20, 40, 0.95)), url('../assets/retail_hero_bg.jpg') no-repeat center center;
+      background-size: cover;
+      border-bottom: 2px solid var(--primary-color-glow);
+    }
+
+    .retail-hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 15px;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    }
+
+    .retail-hero p {
+      font-size: 1.1rem;
+      max-width: 750px;
+      margin: 0 auto 30px auto;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    /* Solutions grid */
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 35px;
+    }
+
+    .solution-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(var(--primary-color-glow),0.4);
+    }
+
+    .solution-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(var(--primary-color-glow), 0.4);
+    }
+
+    .solution-item img {
+      height: 70px;
+      margin-bottom: 20px;
+    }
+
+    .solution-item h3 {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .solution-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Gyannetra advantage section */
+    .advantage-columns {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .advantage-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-basis: calc(50% - 20px);
+      min-width: 300px;
+    }
+
+    .advantage-list li {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      background-color: rgba(var(--primary-color-glow), 0.1);
+      padding: 12px 18px;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .advantage-list li:before {
+      content: "\f00c";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      color: var(--primary-color);
+      margin-right: 12px;
+      font-size: 1.4rem;
+    }
+
+    /* Articles/case studies section */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .article-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: left;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(var(--primary-color-glow),0.4);
+    }
+
+    .article-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(var(--primary-color-glow), 0.4);
+    }
+
+    .article-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .article-card h3 {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .article-card p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .read-more-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      align-self: flex-start;
+      padding: 8px 15px;
+      border: 1px solid var(--primary-color);
+      border-radius: 5px;
+    }
+
+    .read-more-link:hover {
+      background-color: var(--primary-color-hover);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .section-heading {
+      text-align: center;
+      font-size: 2.3rem;
+      margin-bottom: 3rem;
+      margin-top: 2rem;
+    }
+    
+    .section-padding {
+      padding: 4rem 0;
+    }
+
+    /* Footer styles */
+    .site-footer {
+      background-color: #111;
+      color: #bbb;
+      padding: 40px 0;
+      font-size: 0.9rem;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-col {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .footer-col h3 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .footer-col a {
+      color: #bbb;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+    }
+
+    .footer-col-logo {
+      max-width: 250px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      color: #bbb;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #222;
+      padding-top: 20px;
+      text-align: center;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 5px;
+      background-color: #222;
+      color: #fff;
+    }
+
+    .newsletter-form button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: var(--primary-color);
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .newsletter-form button:hover {
+      background-color: var(--primary-color-hover);
+    }
+  </style>
 </head>
 <body>
   <div class="atmospheric-bg">
@@ -57,95 +339,131 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section id="retail-hero" class="industry-hero" style="background-image: url('../assets/retail-hero-bg.jpg');">
-    <div class="hero-overlay"></div>
-    <div class="hero-content container">
-      <p class="hero-company-name">GYANNETRA PVT LTD</p>
+  <section class="hero-section retail-hero">
+    <div class="container">
       <h1>AI SOLUTIONS FOR RETAIL</h1>
       <p>AI is reshaping the retail industry by enhancing personalized shopping, optimizing inventory, and driving data-driven decisions. At Gyannetra, we provide innovative AI solutions to transform the retail experience.</p>
-      <button class="btn-primary">REIMAGINE YOUR RETAIL EXPERIENCE</button>
+      <a href="../contact.html" class="btn-primary">REIMAGINE YOUR RETAIL EXPERIENCE</a>
     </div>
   </section>
 
   <!-- AI SOLUTIONS FOR RETAIL -->
-  <section id="ai-solutions-retail" class="container section-padding">
+  <section class="container section-padding">
     <h2 class="section-heading">AI SOLUTIONS FOR RETAIL</h2>
     <div class="solutions-grid">
       <div class="solution-item">
         <img src="../assets/personalized-product-recommendations.svg" alt="Personalized Product Recommendations Icon" />
         <h3>Personalized Product Recommendations</h3>
-        <p>Deliver tailored shopping suggestions</p>
+        <p>Deliver tailored shopping suggestions based on customer behavior and preferences</p>
       </div>
       <div class="solution-item">
         <img src="../assets/ai-powered-inventory-optimization.svg" alt="AI-Powered Inventory Optimization Icon" />
         <h3>AI-Powered Inventory Optimization</h3>
-        <p>Manage stock levels efficiently</p>
+        <p>Manage stock levels efficiently to reduce costs and avoid stockouts</p>
       </div>
       <div class="solution-item">
         <img src="../assets/chatbots-customer-service.svg" alt="Chatbots for Customer Service Icon" />
         <h3>Chatbots for Customer Service</h3>
-        <p>Enhance shopper interactions</p>
+        <p>Enhance shopper interactions with 24/7 intelligent customer support</p>
       </div>
       <div class="solution-item">
         <img src="../assets/predictive-analytics-demand-forecasting.svg" alt="Predictive Analytics for Demand Forecasting Icon" />
         <h3>Predictive Analytics for Demand Forecasting</h3>
-        <p>Gain insights into future sales</p>
+        <p>Gain insights into future sales trends for better planning</p>
       </div>
     </div>
   </section>
 
   <!-- THE GYANNETRA ADVANTAGE -->
-  <section id="gyannetra-advantage-retail" class="container section-padding gyannetra-advantage-section">
+  <section class="container section-padding">
     <h2 class="section-heading">THE GYANNETRA ADVANTAGE</h2>
     <div class="advantage-columns">
-        <ul class="advantage-list">
-            <li>Deep Retail Industry Knowledge</li>
-            <li>Drive Sales and Loyalty</li>
-        </ul>
-        <ul class="advantage-list">
-            <li>Seamless System Integration</li>
-            <li>Drive Sales and Lactay</li>
-        </ul>
+      <ul class="advantage-list">
+        <li>Deep Retail Industry Knowledge</li>
+        <li>Drive Sales and Loyalty</li>
+      </ul>
+      <ul class="advantage-list">
+        <li>Seamless System Integration</li>
+        <li>Scalable AI Solutions</li>
+      </ul>
     </div>
   </section>
 
   <!-- INDUSTRY INSIGHTS & SUCCESS STORIES -->
-  <section id="insights-stories-retail" class="container section-padding">
+  <section class="container section-padding">
     <h2 class="section-heading">INDUSTRY INSIGHTS & SUCCESS STORIES</h2>
-    <div class="insights-grid">
-      <div class="insight-item">
-        <!-- <img src="../assets/retail-insight-1.jpg" alt="Leveraging AI for Retail-Success" /> -->
-        <h4>Leveraging AI for Retail-Success</h4>
-        <p>Explore how AI is transforming the retail.</p>        <a href="case-studies.html" class="read-more">READ OUR RETAIL BLOG</a>
+    <div class="articles-grid">
+      <div class="article-card">
+        <img src="../assets/retail_insight_1.jpg" alt="Leveraging AI for Retail Success" />
+        <h3>Leveraging AI for Retail Success</h3>
+        <p>Explore how AI is transforming the retail landscape and creating new opportunities for growth</p>
+        <a href="case-studies.html" class="read-more-link">Read more</a>
       </div>
-      <div class="insight-item">
-        <!-- <img src="../assets/retail-insight-2.jpg" alt="Case Study: AI-Powered Personalization" /> -->
-        <h4>Case Study: AI-Powered Personalization</h4>
-        <p>Discover how we improved customer engagement.</p>
-        <a href="case-studies.html" class="read-more">VIEW RETAIL CASE STUDY</a>
+      <div class="article-card">
+        <img src="../assets/retail_insight_2.jpg" alt="Case Study: AI-Powered Personalization" />
+        <h3>Case Study: AI-Powered Personalization</h3>
+        <p>Discover how we improved customer engagement and boosted sales for a major retailer</p>
+        <a href="case-studies.html" class="read-more-link">Read more</a>
       </div>
-      <div class="insight-item">
-        <!-- <img src="../assets/retail-insight-3.jpg" alt="Optimizing Inventory with AI" /> -->
-        <h4>Optimizing Inventory with AI</h4>
-        <p>Learn about our approach to smart inventory management.</p>
-        <a href="case-studies.html" class="read-more">READ CASE STUDY</a>
+      <div class="article-card">
+        <img src="../assets/retail_insight_3.jpg" alt="Optimizing Inventory with AI" />
+        <h3>Optimizing Inventory with AI</h3>
+        <p>Learn about our approach to smart inventory management that reduced costs by 22%</p>
+        <a href="case-studies.html" class="read-more-link">Read more</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="container footer">
-    <div class="footer-col">
-      <h3>Ready to get started?</h3>
-      <a href="../contact.html" class="btn-primary">Get Started</a>
-    </div>
-    <div class="footer-col">
-      <h3>CONTACT US</h3>
-      <p>✉️ info@gyannetra.com</p>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col footer-col-logo">
+          <a href="../index.html" class="logo">GYANNETRA</a>
+          <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Services/machine-learning.html">Machine Learning</a></li>
+            <li><a href="../Services/data-analysis.html">Data Analysis</a></li>
+            <li><a href="../Services/generative-ai.html">Generative AI</a></li>
+            <li><a href="../Services/agentic-ai.html">Agentic AI</a></li>
+            <li><a href="../Services/automation-flows.html">Automation Flows</a></li>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><p><i class="fas fa-map-marker-alt"></i> 123 AI Street, Innovation City, Techland</p></li>
+            <li><p><i class="fas fa-phone"></i> +1 (555) 123-4567</p></li>
+            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <p>Stay updated with our latest insights and news.</p>
+           <form action="#" method="post" class="newsletter-form" style="display: none;">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="../privacy-policy.html">Privacy Policy</a> | <a href="../terms-of-service.html">Terms of Service</a></p>
+      </div>
     </div>
   </footer>
-
-  <script src="../js/menu-dropdown.js"></script>
-  <script src="../js/main.js"></script>
+  <script src="../js/menu-dropdown.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

@@ -3,9 +3,202 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Travel - Gyannetra</title>
+  <title>AI in Travel - Gyannetra</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Travel Page Specific Styles */
+    body {
+      --primary-color: #0ea5e9; /* Blue tone for travel */
+      --primary-color-hover: #0284c7;
+      --primary-color-glow: rgba(14, 165, 233, 0.5);
+      --card-bg: rgba(25, 35, 55, 0.7); /* Darker card background */
+      --text-light: #e0e0e0;
+      --text-muted: #b0b0b0;
+    }
+
+    /* Hero section */
+    .travel-hero {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: linear-gradient(rgba(10, 20, 40, 0.8), rgba(10, 20, 40, 0.95)), url('../assets/travel_hero_bg.jpg') no-repeat center center;
+      background-size: cover;
+      border-bottom: 2px solid var(--primary-color-glow);
+    }
+
+    .travel-hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 15px;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    }
+
+    .travel-hero p {
+      font-size: 1.1rem;
+      max-width: 750px;
+      margin: 0 auto 30px auto;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    /* Solutions grid */
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 35px;
+    }
+
+    .solution-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(var(--primary-color-glow),0.4);
+    }
+
+    .solution-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(var(--primary-color-glow), 0.4);
+    }
+
+    .solution-item img {
+      height: 70px;
+      margin-bottom: 20px;
+    }
+
+    .solution-item h3 {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .solution-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Advantage section */
+    #gyannetra-advantage ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+      margin: 2rem auto;
+      max-width: 900px;
+    }
+
+    #gyannetra-advantage li {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      background-color: rgba(var(--primary-color-glow), 0.1);
+      padding: 12px 18px;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary-color);
+      flex-basis: calc(33% - 20px);
+      min-width: 280px;
+    }
+
+    #gyannetra-advantage li:before {
+      content: "\f00c";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      color: var(--primary-color);
+      margin-right: 12px;
+      font-size: 1.4rem;
+    }
+
+    /* Articles/case studies section */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .article-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: left;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(var(--primary-color-glow),0.4);
+    }
+
+    .article-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(var(--primary-color-glow), 0.4);
+    }
+
+    .article-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .article-card h3 {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .article-card p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .article-card .date {
+      font-size: 0.9rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .read-more-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      align-self: flex-start;
+      padding: 8px 15px;
+      border: 1px solid var(--primary-color);
+      border-radius: 5px;
+    }
+
+    .read-more-link:hover {
+      background-color: var(--primary-color-hover);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .section-heading {
+      text-align: center;
+      font-size: 2.3rem;
+      margin-bottom: 3rem;
+      margin-top: 2rem;
+    }
+
+    section {
+      margin: 4rem 0;
+    }
+  </style>
 </head>
 <body>
   <div class="atmospheric-bg">
@@ -57,12 +250,11 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section id="travel-hero" class="industry-hero" style="background-image: url('../assets/travel-hero-bg.jpg');">
-    <div class="hero-overlay"></div>
-    <div class="hero-content container">
-      <h1>TRAVEL</h1>
+  <section class="hero-section travel-hero">
+    <div class="container">
+      <h1>AI IN TRAVEL</h1>
       <p>AI is transforming the travel industry by enhancing customer journeys and streamlining operations. We deliver innovative AI solutions to create personalized travel experiences and improve efficiency.</p>
-      <button class="btn-primary">Transform Your Travel Business</button>
+      <a href="../contact.html" class="btn-primary">Transform Your Travel Business</a>
     </div>
   </section>
 
@@ -73,22 +265,22 @@
       <div class="solution-item">
         <img src="../assets/personalized-recommendations.svg" alt="Personalized Travel Recommendations" />
         <h3>Personalized Travel Recommendations</h3>
-        <p>Deliver customized recommendations, based on user-preferences and behavior</p>
+        <p>Deliver customized recommendations based on user preferences and behavior</p>
       </div>
       <div class="solution-item">
         <img src="../assets/dynamic-pricing.svg" alt="Dynamic Pricing Optimization" />
         <h3>Dynamic Pricing Optimization</h3>
-        <p>Adjust prices in time based on market trends a demand</p>
+        <p>Adjust prices in real-time based on market trends and demand</p>
       </div>
       <div class="solution-item">
         <img src="../assets/ai-customer-support.svg" alt="AI-Powered Customer Support" />
         <h3>AI-Powered Customer Support</h3>
-        <p>Provide instant, n-round cook assistance through AI chat</p>
+        <p>Provide instant, around-the-clock assistance through AI chatbots</p>
       </div>
       <div class="solution-item">
         <img src="../assets/predictive-demand-analysis.svg" alt="Predictive Travel Demand Analysis" />
         <h3>Predictive Travel Demand Analysis</h3>
-        <p>Forecast travel trends, to optimize inventory and resource allocation</p>
+        <p>Forecast travel trends to optimize inventory and resource allocation</p>
       </div>
     </div>
   </section>
@@ -106,33 +298,81 @@
   <!-- INSIGHTS & SUCCESS STORIES -->
   <section id="insights-stories" class="container">
     <h2 class="section-heading">INSIGHTS & SUCCESS STORIES</h2>
-    <div class="insights-grid">      <div class="insight-item">
-        <img src="../assets/insights-placeholder-1.svg" alt="Insight Story 1" />
+    <div class="articles-grid">
+      <div class="article-card">
+        <img src="../assets/insights-placeholder-1.svg" alt="The Role of AI in Modernizing Travel" />
         <p class="date">Feb 19, 2024</p>
-        <h4>The Role of AI in Modernizing Travel</h4>
-        <a href="case-studies.html" class="read-more">Read More &rarr;</a>
+        <h3>The Role of AI in Modernizing Travel</h3>
+        <p>Discover how artificial intelligence is transforming customer experiences and operational efficiency in the travel industry.</p>
+        <a href="case-studies.html" class="read-more-link">Read More</a>
       </div>
-      <div class="insight-item">
-        <img src="../assets/insights-placeholder-2.svg" alt="Insight Story 2" />
-        <h4>Case Study</h4>
-        <a href="case-studies.html" class="read-more">Read More &rarr;</a>
+      <div class="article-card">
+        <img src="../assets/insights-placeholder-2.svg" alt="Personalization Case Study" />
+        <p class="date">Mar 05, 2024</p>
+        <h3>Case Study: AI-Powered Personalization</h3>
+        <p>How a major travel company increased bookings by 28% using our AI recommendation system.</p>
+        <a href="case-studies.html" class="read-more-link">Read More</a>
+      </div>
+      <div class="article-card">
+        <img src="../assets/insights-placeholder-1.svg" alt="Dynamic Pricing Success" />
+        <p class="date">Apr 10, 2024</p>
+        <h3>Dynamic Pricing Success Story</h3>
+        <p>Learn how our AI-driven pricing optimization helped a travel provider increase revenue by 15%.</p>
+        <a href="case-studies.html" class="read-more-link">Read More</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="container footer">
-    <div class="footer-col">
-      <h3>Ready to get started?</h3>
-      <a href="../contact.html" class="btn-primary">Get Started</a>
-    </div>
-    <div class="footer-col">
-      <h3>CONTACT US</h3>
-      <p>✉️ info@gyannetra.com</p>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col footer-col-logo">
+          <a href="../index.html" class="logo">GYANNETRA</a>
+          <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Services/machine-learning.html">Machine Learning</a></li>
+            <li><a href="../Services/data-analysis.html">Data Analysis</a></li>
+            <li><a href="../Services/generative-ai.html">Generative AI</a></li>
+            <li><a href="../Services/agentic-ai.html">Agentic AI</a></li>
+            <li><a href="../Services/automation-flows.html">Automation Flows</a></li>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><p><i class="fas fa-map-marker-alt"></i> 123 AI Street, Innovation City, Techland</p></li>
+            <li><p><i class="fas fa-phone"></i> +1 (555) 123-4567</p></li>
+            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <p>Stay updated with our latest insights and news.</p>
+           <form action="#" method="post" class="newsletter-form" style="display: none;">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="../../privacy-policy.html">Privacy Policy</a> | <a href="../../terms-of-service.html">Terms of Service</a></p>
+      </div>
     </div>
   </footer>
-
-  <script src="../js/menu-dropdown.js"></script>
-  <script src="../js/main.js"></script>
+  <script src="../js/menu-dropdown.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

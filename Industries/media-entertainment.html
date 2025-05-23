@@ -6,270 +6,212 @@
     <title>AI in Media & Entertainment - Gyannetra</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Page-specific styles for media-entertainment.html */
-        .media-hero {
-            padding-top: 10rem;
-            padding-bottom: 4rem;
-            text-align: left;
-            /* background: url('../assets/media_hero_bg.jpg') no-repeat center center/cover; */ /* Optional: Add a background image */
+        /* Media & Entertainment Page Specific Styles */
+        body {
+            --primary-color: #9333ea; /* Purple tone for media & entertainment */
+            --primary-color-hover: #7e22ce;
+            --primary-color-glow: rgba(147, 51, 234, 0.5);
+            --card-bg: rgba(25, 35, 55, 0.7); /* Darker card background */
+            --text-light: #e0e0e0;
+            --text-muted: #b0b0b0;
         }
 
-        .media-hero .container {
-            /* For this page, the hero content is centered and doesn't have a side image based on the provided image */
+        /* Hero section */
+        .media-hero {
             text-align: center;
+            padding: 80px 20px 60px;
+            background: linear-gradient(rgba(10, 20, 40, 0.8), rgba(10, 20, 40, 0.95)), url('../assets/media_hero_bg.jpg') no-repeat center center;
+            background-size: cover;
+            border-bottom: 2px solid var(--primary-color-glow);
         }
 
         .media-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+
+        .media-hero .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--text-light);
+            font-weight: 500;
         }
 
         .media-hero p {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2rem;
-            max-width: 800px; /* Adjust as needed */
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 1.1rem;
+            max-width: 750px;
+            margin: 0 auto 30px auto;
+            line-height: 1.7;
+            color: var(--text-muted);
         }
 
-        .solutions-section {
-            padding: 4rem 0;
-        }
-        
-        .solutions-section h2 {
-            text-align: center; /* Centered as per image */
-            font-size: 2.5rem; /* Larger heading */
-            margin-bottom: 3rem;
-        }
-
+        /* Solutions grid */
         .solutions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 4 columns */
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 35px;
         }
 
         .solution-item {
-            background: rgba(20, 20, 40, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(var(--primary-color-glow),0.4);
         }
 
         .solution-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(var(--primary-color-glow), 0.4);
         }
 
-        .solution-icon {
-            width: 60px; /* Adjust size as needed */
-            height: 60px;
-            margin-bottom: 1.5rem;
-            filter: drop-shadow(0 0 10px #00c6ff); /* Blue glow for icons */
-        }
-        
-        .solution-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+        .solution-item img, .solution-item svg {
+            height: 70px;
+            margin-bottom: 20px;
         }
 
         .solution-item h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-            color: var(--fg);
-            text-shadow: none;
-            background: none;
-            -webkit-background-clip: initial;
-            background-clip: initial;
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .solution-item p {
+            color: var(--text-muted);
             font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
         }
 
-        .benefits-section {
-            padding: 4rem 0;
-        }
-
-        .benefits-section h2 {
-            text-align: center; /* Centered as per image */
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
+        /* Benefits section */
         .benefits-list-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem; /* Gap between columns of lists */
-            margin-top: 2rem;
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .benefits-list {
             list-style: none;
             padding: 0;
+            margin: 0;
+            flex-basis: calc(50% - 20px);
+            min-width: 300px;
         }
 
         .benefits-list li {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-            padding: 0.75rem 0;
-            position: relative;
-            padding-left: 25px; /* Space for custom bullet */
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            background-color: rgba(var(--primary-color-glow), 0.1);
+            padding: 12px 18px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
         }
 
-        .benefits-list li::before {
-            content: '\2022'; /* Bullet character */
-            color: #00c6ff; /* Accent color for bullet */
-            font-weight: bold;
-            display: inline-block; 
-            width: 1em;
-            margin-left: -1.5em; /* Position bullet */
-            position: absolute;
-            left: 10px;
+        .benefits-list li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-right: 12px;
+            font-size: 1.4rem;
         }
 
-        .blogs-casestudies-section {
-            padding: 4rem 0;
-        }
-
-        .blogs-casestudies-section h2 {
-            text-align: center; /* Centered as per image */
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .blogs-grid {
+        /* Articles/case studies section */
+        .articles-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 columns */
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
-        .blog-card {
-            background: rgba(20, 20, 40, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .article-card {
+            background-color: var(--card-bg);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 25px;
             text-align: left;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
+            border: 1px solid rgba(var(--primary-color-glow),0.4);
         }
 
-        .blog-card-image {
-            width: 100%;
-            height: 180px; /* Adjust as needed */
-            background-color: #333; /* Placeholder */
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(var(--primary-color-glow), 0.4);
         }
 
-        .blog-card-image img {
+        .article-card img {
             width: 100%;
-            height: 100%;
+            height: 220px;
             object-fit: cover;
-        }
-
-        .blog-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--fg);
-            text-shadow: none;
-            background: none;
-            -webkit-background-clip: initial;
-            background-clip: initial;
-        }
-        
-        .blog-card .description {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.5;
-            margin-bottom: 1rem; /* Space before Read More */
-            flex-grow: 1; /* Pushes Read More down if content is short */
-        }
-
-        .blog-card .read-more {
-            font-size: 0.9rem;
-            color: #a2b0ff; /* Link color */
-            text-decoration: none;
-            margin-top: auto; /* Pushes the link to the bottom */
-            display: inline-block; /* Allows margin-top to work */
-        }
-        .blog-card .read-more:hover {
-            text-decoration: underline;
-        }
-
-        .explore-button-section {
-            text-align: center;
-            padding: 3rem 0;
-        }
-
-        .explore-button {
-            background-color: #007bff; /* Example button color */
-            color: white;
-            padding: 1rem 2.5rem;
-            border: none;
             border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .article-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .article-card p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .read-more-link {
+            color: var(--primary-color);
             text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            align-self: flex-start;
+            padding: 8px 15px;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
         }
 
-        .explore-button:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
+        .read-more-link:hover {
+            background-color: var(--primary-color-hover);
+            color: #fff;
+            text-decoration: none;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 992px) {
-            .media-hero h1 {
-                font-size: 3rem;
-            }
-            .media-hero p {
-                font-size: 1.1rem;
-            }
-            .solutions-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
-            .benefits-list-container {
-                grid-template-columns: 1fr; /* Stack benefits columns on smaller screens */
-            }
-            .blogs-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            .media-hero h1 {
-                font-size: 2.5rem;
-            }
-            .media-hero p {
-                font-size: 1rem;
-            }
-            .solutions-section h2, .benefits-section h2, .blogs-casestudies-section h2 {
-                font-size: 2rem;
-            }
-            .solutions-grid {
-                grid-template-columns: 1fr; /* Stack solutions on very small screens */
-            }
-            .blogs-grid {
-                grid-template-columns: 1fr; /* Stack blogs on very small screens */
-            }
+        .section-heading {
+            text-align: center;
+            font-size: 2.3rem;
+            margin-bottom: 3rem;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
+    <div class="atmospheric-bg">
+        <div class="light-effect-top"></div>
+        <div class="light-effect-bottom"></div>
+        <div class="small-light-top"></div>
+        <div class="small-light-bottom"></div>
+        <div class="overlay"></div>
+        <div class="noise"></div>
+    </div>
+    
+    <!-- NAVBAR -->
     <header class="site-header">
     <nav class="navbar container">
       <a href="../index.html" class="logo">GYANNETRA</a>
@@ -308,104 +250,135 @@
     </nav>
   </header>
 
-    <main>
-        <section class="media-hero">
-            <div class="container">
-                <h1>AI in Media & Entertainment</h1>
-                <p>Revolutionizing content creation, distribution, and consumption with intelligent AI solutions.</p>
-            </div>
+    <main class="container media-entertainment-container">
+        <section class="hero-section media-hero">
+            <h1>AI IN MEDIA & ENTERTAINMENT</h1>
+            <p class="subtitle">Creating engaging experiences and transforming content delivery</p>
+            <p>We harness AI technologies to power content creation, personalize recommendations, optimize content delivery, and enhance audience engagement for the media and entertainment industry.</p>
         </section>
 
         <section class="solutions-section">
-            <div class="container">
-                <h2>Our AI Solutions for Media & Entertainment</h2>
-                <div class="solutions-grid">
-                    <div class="solution-item">
-                        <div class="solution-icon"><img src="../assets/content_creation_icon.png" alt="Content Creation Icon"></div>
-                        <h3>AI-Powered Content Creation</h3>
-                        <p>Generate scripts, music, visuals, and more, accelerating production workflows.</p>
-                    </div>
-                    <div class="solution-item">
-                        <div class="solution-icon"><img src="../assets/personalization_icon.png" alt="Personalization Icon"></div>
-                        <h3>Personalized Recommendations</h3>
-                        <p>Deliver tailored content suggestions to viewers, increasing engagement and retention.</p>
-                    </div>
-                    <div class="solution-item">
-                        <div class="solution-icon"><img src="../assets/audience_analytics_icon.png" alt="Audience Analytics Icon"></div>
-                        <h3>Audience Analytics & Insights</h3>
-                        <p>Understand viewer behavior and preferences to optimize content strategy and delivery.</p>
-                    </div>
-                    <div class="solution-item">
-                        <div class="solution-icon"><img src="../assets/monetization_icon.png" alt="Monetization Icon"></div>
-                        <h3>Optimized Monetization</h3>
-                        <p>Enhance ad targeting, subscription models, and revenue streams with AI-driven strategies.</p>
-                    </div>
+            <h2 class="section-heading">AI SOLUTIONS FOR MEDIA & ENTERTAINMENT</h2>
+            <div class="solutions-grid">
+                <div class="solution-item">
+                    <img src="../assets/solution_icon_content_generation.svg" alt="Content Generation Icon">
+                    <h3>Content Generation</h3>
+                    <p>Create engaging content with AI-powered tools and technologies</p>
+                </div>
+                <div class="solution-item">
+                    <img src="../assets/solution_icon_personalization.svg" alt="Personalization Icon">
+                    <h3>Personalization</h3>
+                    <p>Deliver tailored content experiences based on user preferences</p>
+                </div>
+                <div class="solution-item">
+                    <img src="../assets/solution_icon_recommendation_systems.svg" alt="Recommendation Systems Icon">
+                    <h3>Recommendation Systems</h3>
+                    <p>Enhance content discovery with advanced recommendation algorithms</p>
+                </div>
+                <div class="solution-item">
+                    <img src="../assets/solution_icon_content_analysis.svg" alt="Content Analysis Icon">
+                    <h3>Content Analysis</h3>
+                    <p>Extract insights from content performance and audience engagement</p>
                 </div>
             </div>
         </section>
 
         <section class="benefits-section">
-            <div class="container">
-                <h2>Benefits of AI in Media & Entertainment</h2>
-                <div class="benefits-list-container">
-                    <ul class="benefits-list">
-                        <li>Increased efficiency in content production</li>
-                        <li>Enhanced viewer engagement and personalization</li>
-                        <li>Improved content discovery and accessibility</li>
-                        <li>Optimized advertising and revenue generation</li>
-                    </ul>
-                    <ul class="benefits-list">
-                        <li>Better understanding of audience trends</li>
-                        <li>Reduced costs through automation</li>
-                        <li>Faster time-to-market for new content</li>
-                        <li>Competitive advantage in a dynamic market</li>
-                    </ul>
-                </div>
+            <h2 class="section-heading">BENEFITS OF AI FOR MEDIA & ENTERTAINMENT</h2>
+            <div class="benefits-list-container">
+                <ul class="benefits-list">
+                    <li>Increased efficiency in content production</li>
+                    <li>Enhanced viewer engagement and personalization</li>
+                    <li>Improved content discovery and accessibility</li>
+                    <li>Optimized advertising and revenue generation</li>
+                </ul>
+                <ul class="benefits-list">
+                    <li>Better understanding of audience trends</li>
+                    <li>Reduced costs through automation</li>
+                    <li>Faster time-to-market for new content</li>
+                    <li>Competitive advantage in a dynamic market</li>
+                </ul>
             </div>
         </section>
 
         <section class="blogs-casestudies-section">
-            <div class="container">
-                <h2>Blogs & Case Studies</h2>
-                <div class="blogs-grid">                    <div class="blog-card">
-                        <div class="blog-card-image"><img src="../assets/blog_placeholder_1.jpg" alt="Blog Image"></div>
-                        <h3>The Future of Storytelling with Generative AI</h3>
-                        <p class="description">Explore how AI is transforming narrative creation and interactive experiences.</p>
-                        <a href="case-studies.html" class="read-more">Read More</a>
-                    </div>
-                    <div class="blog-card">
-                        <div class="blog-card-image"><img src="../assets/blog_placeholder_2.jpg" alt="Blog Image"></div>
-                        <h3>Personalizing the Viewer Experience: An AI Approach</h3>
-                        <p class="description">Learn how AI algorithms are used to deliver highly personalized content recommendations.</p>
-                        <a href="case-studies.html" class="read-more">Read More</a>
-                    </div>
-                    <div class="blog-card">
-                        <div class="blog-card-image"><img src="../assets/blog_placeholder_3.jpg" alt="Blog Image"></div>
-                        <h3>Case Study: Boosting Engagement with AI Analytics</h3>
-                        <p class="description">Discover how a major streaming service used AI analytics to increase viewer retention.</p>
-                        <a href="case-studies.html" class="read-more">Read More</a>
-                    </div>
+            <h2 class="section-heading">BLOGS & CASE STUDIES</h2>
+            <div class="articles-grid">
+                <div class="article-card">
+                    <img src="../assets/blog_placeholder_1.jpg" alt="Blog Image">
+                    <h3>The Future of Storytelling with Generative AI</h3>
+                    <p>Explore how AI is transforming narrative creation and interactive experiences.</p>
+                    <a href="case-studies.html" class="read-more-link">Read More</a>
+                </div>
+                <div class="article-card">
+                    <img src="../assets/blog_placeholder_2.jpg" alt="Blog Image">
+                    <h3>Personalizing the Viewer Experience: An AI Approach</h3>
+                    <p>Learn how AI algorithms are used to deliver highly personalized content recommendations.</p>
+                    <a href="case-studies.html" class="read-more-link">Read More</a>
+                </div>
+                <div class="article-card">
+                    <img src="../assets/blog_placeholder_3.jpg" alt="Blog Image">
+                    <h3>Case Study: Boosting Engagement with AI Analytics</h3>
+                    <p>Discover how a major streaming service used AI analytics to increase viewer retention.</p>
+                    <a href="case-studies.html" class="read-more-link">Read More</a>
                 </div>
             </div>
         </section>
 
-        <section class="explore-button-section">
-            <div class="container">
-                <a href="../contact.html" class="explore-button">Explore Our Solutions</a>
-            </div>
+        <section class="explore-button-section" style="text-align: center; margin: 4rem 0;">
+            <a href="../contact.html" class="btn-primary">Explore Our Solutions</a>
         </section>
     </main>
 
-  <footer class="container footer">
-    <div class="footer-col">
-      <h3>Ready to get started?</h3>
-      <a href="../contact.html" class="btn-primary">Get Started</a>
-    </div>
-    <div class="footer-col">
-      <h3>CONTACT US</h3>
-      <p>✉️ info@gyannetra.com</p>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col footer-col-logo">
+          <a href="../index.html" class="logo">GYANNETRA</a>
+          <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Services/machine-learning.html">Machine Learning</a></li>
+            <li><a href="../Services/data-analysis.html">Data Analysis</a></li>
+            <li><a href="../Services/generative-ai.html">Generative AI</a></li>
+            <li><a href="../Services/agentic-ai.html">Agentic AI</a></li>
+            <li><a href="../Services/automation-flows.html">Automation Flows</a></li>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><p><i class="fas fa-map-marker-alt"></i> 123 AI Street, Innovation City, Techland</p></li>
+            <li><p><i class="fas fa-phone"></i> +1 (555) 123-4567</p></li>
+            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <p>Stay updated with our latest insights and news.</p>
+           <form action="#" method="post" class="newsletter-form" style="display: none;">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="../privacy-policy.html">Privacy Policy</a> | <a href="../terms-of-service.html">Terms of Service</a></p>
+      </div>
     </div>
   </footer>
-
+  <script src="../js/menu-dropdown.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>
