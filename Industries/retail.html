@@ -3,20 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>AI in Retail - Gyannetra</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <title>AI in Retail - Gyannetra</title>  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/benefits-cards.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">  <style>
     /* Retail Page Specific Styles */
-    body {
-      --primary-color: #e74c3c; /* Red tone for retail */
-      --primary-color-hover: #c0392b;
-      --primary-color-glow: rgba(231, 76, 60, 0.5);
-      --card-bg: rgba(25, 35, 55, 0.7); /* Darker card background */
-      --text-light: #e0e0e0;
-      --text-muted: #b0b0b0;
-    }
 
     /* Hero section */
     .retail-hero {
@@ -289,7 +280,7 @@
     }
   </style>
 </head>
-<body>
+<body class="theme-retail">
   <div class="atmospheric-bg">
     <div class="light-effect-top"></div>
     <div class="light-effect-bottom"></div>
@@ -302,7 +293,9 @@
   <!-- NAVBAR -->
   <header class="site-header">
     <nav class="navbar container">
-      <a href="../index.html" class="logo">GYANNETRA</a>
+      <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN Name logo.svg" alt="Gyannetra Logo" class="logo-img">
+      </a>
       <ul class="nav-links">
         <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
           <ul class="dropdown-menu services-dropdown">
@@ -373,19 +366,38 @@
       </div>
     </div>
   </section>
-
   <!-- THE GYANNETRA ADVANTAGE -->
   <section class="container section-padding">
     <h2 class="section-heading">THE GYANNETRA ADVANTAGE</h2>
-    <div class="advantage-columns">
-      <ul class="advantage-list">
-        <li>Deep Retail Industry Knowledge</li>
-        <li>Drive Sales and Loyalty</li>
-      </ul>
-      <ul class="advantage-list">
-        <li>Seamless System Integration</li>
-        <li>Scalable AI Solutions</li>
-      </ul>
+    <div class="benefits-cards-grid">
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+          <i class="fas fa-store"></i>
+        </div>
+        <h3>Retail Industry Knowledge</h3>
+        <p>Deep understanding of retail operations, consumer behavior, and industry-specific challenges.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Drive Sales and Loyalty</h3>
+        <p>AI solutions designed to increase customer engagement, boost conversion rates, and strengthen brand loyalty.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+          <i class="fas fa-plug"></i>
+        </div>
+        <h3>Seamless Integration</h3>
+        <p>Effortless integration with your existing retail systems, e-commerce platforms, and inventory management software.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+          <i class="fas fa-expand"></i>
+        </div>
+        <h3>Scalable Solutions</h3>
+        <p>AI systems that grow with your business, from single stores to global retail enterprises.</p>
+      </div>
     </div>
   </section>
 
@@ -419,7 +431,9 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-col footer-col-logo">
-          <a href="../index.html" class="logo">GYANNETRA</a>
+          <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="footer-logo-img">
+      </a>
           <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
           <div class="social-links">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -463,7 +477,14 @@
       </div>
     </div>
   </footer>
+    <script src="../js/main.js" defer></script>
   <script src="../js/menu-dropdown.js" defer></script>
-  <script src="../js/main.js" defer></script>
-</body>
+  <script src="../js/form-subscribe.js" defer></script>
+  <script src="../js/unified-neural-interactions.js" defer></script>
+  <script src="../js/tech-marquee.js" defer></script>
+  <script src="../js/data-node-interactions.js" defer></script>
+
 </html>
+
+
+

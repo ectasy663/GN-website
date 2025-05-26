@@ -3,20 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>AI in Travel - Gyannetra</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <title>AI in Travel - Gyannetra</title>  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/benefits-cards.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">  <style>
     /* Travel Page Specific Styles */
-    body {
-      --primary-color: #0ea5e9; /* Blue tone for travel */
-      --primary-color-hover: #0284c7;
-      --primary-color-glow: rgba(14, 165, 233, 0.5);
-      --card-bg: rgba(25, 35, 55, 0.7); /* Darker card background */
-      --text-light: #e0e0e0;
-      --text-muted: #b0b0b0;
-    }
 
     /* Hero section */
     .travel-hero {
@@ -200,7 +191,7 @@
     }
   </style>
 </head>
-<body>
+<body class="theme-travel">
   <div class="atmospheric-bg">
     <div class="light-effect-top"></div>
     <div class="light-effect-bottom"></div>
@@ -213,7 +204,9 @@
   <!-- NAVBAR -->
   <header class="site-header">
     <nav class="navbar container">
-      <a href="../index.html" class="logo">GYANNETRA</a>
+      <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN Name logo.svg" alt="Gyannetra Logo" class="logo-img">
+      </a>
       <ul class="nav-links">
         <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
           <ul class="dropdown-menu services-dropdown">
@@ -284,15 +277,38 @@
       </div>
     </div>
   </section>
-
   <!-- THE GYANNETRA ADVANTAGE -->
   <section id="gyannetra-advantage" class="container">
-    <h2 class="section-heading">THE GYANNETRA ADVANTAGE FOR TRAVEL</h2>
-    <ul>
-      <li>Deep expertise in addressing travel industry challenges</li>
-      <li>Customer-centric and innovative AI solutions</li>
-      <li>Scalable and robust AI implementations</li>
-    </ul>
+    <h2 class="section-heading">THE GYANNETRA ADVANTAGE FOR TRAVEL</h2>    <div class="benefits-cards-grid">
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+          <i class="fas fa-plane"></i>
+        </div>
+        <h3>Industry Expertise</h3>
+        <p>Deep expertise in addressing travel industry challenges through specialized AI solutions.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3>Customer-Centric Design</h3>
+        <p>Innovative AI solutions that prioritize enhancing traveler experiences and satisfaction.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </div>
+        <h3>Scalable Solutions</h3>
+        <p>Robust AI implementations that grow with your business and adapt to seasonal demand fluctuations.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Data-Driven Insights</h3>
+        <p>Transform travel data into actionable insights for better business decisions and competitive advantage.</p>
+      </div>
+    </div>
   </section>
 
   <!-- INSIGHTS & SUCCESS STORIES -->
@@ -328,7 +344,9 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-col footer-col-logo">
-          <a href="../index.html" class="logo">GYANNETRA</a>
+          <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="footer-logo-img">
+      </a>
           <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
           <div class="social-links">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -372,7 +390,14 @@
       </div>
     </div>
   </footer>
+    <script src="../js/main.js" defer></script>
   <script src="../js/menu-dropdown.js" defer></script>
-  <script src="../js/main.js" defer></script>
-</body>
+  <script src="../js/form-subscribe.js" defer></script>
+  <script src="../js/unified-neural-interactions.js" defer></script>
+  <script src="../js/tech-marquee.js" defer></script>
+  <script src="../js/data-node-interactions.js" defer></script>
+
 </html>
+
+
+

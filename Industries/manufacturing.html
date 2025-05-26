@@ -3,20 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>AI in Manufacturing - Gyannetra</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <title>AI in Manufacturing - Gyannetra</title>  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/benefits-cards.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">  <style>
     /* Manufacturing Page Specific Styles */
-    body {
-      --primary-color: #3498db; /* Blue tone for manufacturing */
-      --primary-color-hover: #2980b9;
-      --primary-color-glow: rgba(52, 152, 219, 0.5);
-      --card-bg: rgba(25, 35, 55, 0.7); /* Darker card background */
-      --text-light: #e0e0e0;
-      --text-muted: #b0b0b0;
-    }
 
     /* Hero section */
     .manufacturing-hero {
@@ -195,7 +186,7 @@
     }
   </style>
 </head>
-<body>
+<body class="theme-manufacturing">
   <div class="atmospheric-bg">
     <div class="light-effect-top"></div>
     <div class="light-effect-bottom"></div>
@@ -207,7 +198,9 @@
   <!-- NAVBAR -->
   <header class="site-header">
     <nav class="navbar container">
-      <a href="../index.html" class="logo">GYANNETRA</a>
+      <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN Name logo.svg" alt="Gyannetra Logo" class="logo-img">
+      </a>
       <ul class="nav-links">
         <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
           <ul class="dropdown-menu services-dropdown">
@@ -273,20 +266,36 @@
           <p>Increase productivity and safety by deploying intelligent robots for complex manufacturing tasks.</p>
         </div>
       </div>
-    </section>
-
-    <section class="benefits-section">
-      <h2 class="section-heading">BENEFITS OF AI FOR MANUFACTURING WITH GYANNETRA</h2>
-      <div class="benefits-list">
-        <ul>
-          <li><i class="fas fa-check-circle"></i> Increased operational efficiency and throughput</li>
-          <li><i class="fas fa-check-circle"></i> Improved product quality and reduced waste</li>
-          <li><i class="fas fa-check-circle"></i> Lower maintenance costs and reduced downtime</li>
-        </ul>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> Enhanced worker safety through automation</li>
-          <li><i class="fas fa-check-circle"></i> Greater flexibility and adaptability in production</li>
-        </ul>
+    </section>    <section class="benefits-section">
+      <h2 class="section-heading">BENEFITS OF AI FOR MANUFACTURING WITH GYANNETRA</h2>      <div class="benefits-cards-grid">
+        <div class="benefit-card">
+          <div class="benefit-card-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3>Operational Efficiency</h3>
+          <p>Increased operational efficiency and throughput with AI-optimized manufacturing processes and production flexibility.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-card-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Product Quality</h3>
+          <p>Improved product quality and significantly reduced waste through intelligent quality control systems.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-card-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Maintenance Optimization</h3>
+          <p>Lower maintenance costs and reduced downtime with predictive maintenance strategies.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-card-icon">
+            <i class="fas fa-hard-hat"></i>
+          </div>
+          <h3>Worker Safety</h3>
+          <p>Enhanced worker safety through smart automation of dangerous and repetitive tasks.</p>
+        </div>
       </div>
     </section>
 
@@ -319,7 +328,9 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-col footer-col-logo">
-          <a href="../index.html" class="logo">GYANNETRA</a>
+          <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="footer-logo-img">
+      </a>
           <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
           <div class="social-links">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -363,7 +374,14 @@
       </div>
     </div>
   </footer>
+    <script src="../js/main.js" defer></script>
   <script src="../js/menu-dropdown.js" defer></script>
-  <script src="../js/main.js" defer></script>
-</body>
+  <script src="../js/form-subscribe.js" defer></script>
+  <script src="../js/unified-neural-interactions.js" defer></script>
+  <script src="../js/tech-marquee.js" defer></script>
+  <script src="../js/data-node-interactions.js" defer></script>
+
 </html>
+
+
+

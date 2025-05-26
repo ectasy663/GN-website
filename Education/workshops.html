@@ -4,8 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workshops - Gyannetra</title>    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/benefits-cards.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .benefit-card.workshop-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(25, 35, 55, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .benefit-card.workshop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .benefit-card.workshop-card .benefit-card-icon {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .benefit-card.workshop-card .benefit-card-icon img {
+            max-height: 60px;
+            max-width: 60px;
+        }
+        
+        .benefit-card.workshop-card p {
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+        
+        .workshop-details {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="atmospheric-bg">
@@ -18,7 +69,9 @@
     </div>
     <header class="site-header">
     <nav class="navbar container">
-      <a href="../index.html" class="logo">GYANNETRA</a>
+      <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN Name logo.svg" alt="Gyannetra Logo" class="logo-img">
+      </a>
       <ul class="nav-links">
         <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
           <ul class="dropdown-menu services-dropdown">
@@ -63,47 +116,92 @@
                 <h1>AI Workshops & Training</h1>
                 <p>Enhance your skills with our hands-on workshops and training programs in artificial intelligence.</p>
             </div>
-        </section>
-
-        <section id="featured-workshops" class="container">
+        </section>        <section id="featured-workshops" class="container">
             <h2 class="section-heading">Featured Workshops</h2>
-            <div class="workshops-grid">
+            <div class="benefits-cards-grid">
                 <!-- Workshop Card 1 -->
-                <div class="workshop-card card-style">
-                    <img src="../assets/workshop-icons/intro-ai.svg" alt="Intro to AI Icon" class="workshop-icon">
+                <div class="benefit-card workshop-card">
+                    <div class="benefit-card-icon">
+                        <img src="../assets/mlng.png" alt="Intro to AI Icon" class="workshop-icon">
+                    </div>
                     <h3>Introduction to AI</h3>
-                    <p>Learn the fundamentals of Artificial Intelligence, machine learning, and deep learning.</p>
-                    <a href="#" class="btn-primary">Learn More</a>
+                    <p>Learn the fundamentals of Artificial Intelligence, machine learning, and deep learning. This workshop covers essential concepts for beginners.</p>
+                    <div class="card-footer">
+                        <span class="workshop-details">Duration: 2 days</span>
+                        <a href="#" class="btn-primary">Learn More</a>
+                    </div>
                 </div>
                 <!-- Workshop Card 2 -->
-                <div class="workshop-card card-style">
-                    <img src="../assets/workshop-icons/gen-ai.svg" alt="Generative AI Icon" class="workshop-icon">
+                <div class="benefit-card workshop-card">
+                    <div class="benefit-card-icon">
+                        <img src="../assets/gen ai.png" alt="Generative AI Icon" class="workshop-icon">
+                    </div>
                     <h3>Generative AI Basics</h3>
-                    <p>Explore the concepts and applications of generative models like GANs and Transformers.</p>
-                    <a href="#" class="btn-primary">Learn More</a>
+                    <p>Explore the concepts and applications of generative models like GANs and Transformers. Create AI-generated content with hands-on exercises.</p>
+                    <div class="card-footer">
+                        <span class="workshop-details">Duration: 3 days</span>
+                        <a href="#" class="btn-primary">Learn More</a>
+                    </div>
                 </div>
                 <!-- Workshop Card 3 -->
-                <div class="workshop-card card-style">
-                    <img src="../assets/workshop-icons/data-science.svg" alt="Data Science Icon" class="workshop-icon">
+                <div class="benefit-card workshop-card">
+                    <div class="benefit-card-icon">
+                        <img src="../assets/data analytics.png" alt="Data Science Icon" class="workshop-icon">
+                    </div>
                     <h3>Data Science Essentials</h3>
-                    <p>Get hands-on experience with data cleaning, analysis, and visualization using Python.</p>
-                    <a href="#" class="btn-primary">Learn More</a>
+                    <p>Get hands-on experience with data cleaning, analysis, and visualization using Python. Learn to extract insights from real-world datasets.</p>
+                    <div class="card-footer">
+                        <span class="workshop-details">Duration: 4 days</span>
+                        <a href="#" class="btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <!-- Workshop Card 4 -->
+                <div class="benefit-card workshop-card">
+                    <div class="benefit-card-icon">
+                        <img src="../assets/ai agent.png" alt="Agentic AI Icon" class="workshop-icon">
+                    </div>
+                    <h3>AI Agents Workshop</h3>
+                    <p>Learn how to build autonomous AI agents that can perceive their environment and take actions to achieve specific goals effectively.</p>
+                    <div class="card-footer">
+                        <span class="workshop-details">Duration: 3 days</span>
+                        <a href="#" class="btn-primary">Learn More</a>
+                    </div>
                 </div>
             </div>
-            <div class="view-all-workshops">
+            <div class="view-all-workshops text-center" style="margin-top: 2rem;">
                 <a href="#" class="btn-primary">View All Workshops</a>
             </div>
-        </section>
-
-        <section id="workshop-benefits" class="container benefits-section">
-            <h2 class="section-heading">Benefits of Our Workshops</h2>
-            <ul>
-                <li>Gain practical, hands-on experience with AI tools and techniques.</li>
-                <li>Learn from industry experts with real-world knowledge.</li>
-                <li>Network with peers and professionals in the AI field.</li>
-                <li>Receive up-to-date insights into the latest AI trends and applications.</li>
-                <li>Boost your career prospects in the rapidly growing field of AI.</li>
-            </ul>
+        </section><section id="workshop-benefits" class="container benefits-section">
+            <h2 class="section-heading">Benefits of Our Workshops</h2>            <div class="benefits-cards-grid">
+                <div class="benefit-card">
+                    <div class="benefit-card-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Hands-on Experience</h3>
+                    <p>Gain practical, hands-on experience with AI tools and techniques through interactive exercises and projects.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-card-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Expert Instruction</h3>
+                    <p>Learn directly from industry experts with real-world knowledge and extensive experience in AI implementation.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-card-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Networking Opportunities</h3>
+                    <p>Connect with peers and professionals in the AI field to share insights and build valuable relationships.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Career Advancement</h3>
+                    <p>Boost your career prospects in the rapidly growing field of AI with skills that are in high demand.</p>
+                </div>
+            </div>
         </section>
 
         <!-- Add more sections as needed, e.g., testimonials, instructors -->
@@ -114,7 +212,9 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-col footer-col-logo">
-          <a href="../index.html" class="logo">GYANNETRA</a>
+          <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="footer-logo-img">
+      </a>
           <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
           <div class="social-links">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -158,7 +258,13 @@
       </div>
     </div>
   </footer>
+    <script src="../js/main.js" defer></script>
   <script src="../js/menu-dropdown.js" defer></script>
-  <script src="../js/main.js" defer></script>
-</body>
+  <script src="../js/form-subscribe.js" defer></script>
+  <script src="../js/unified-neural-interactions.js" defer></script>
+  <script src="../js/tech-marquee.js" defer></script>
+  <script src="../js/data-node-interactions.js" defer></script>
+
 </html>
+
+

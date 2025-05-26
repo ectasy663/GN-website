@@ -5,14 +5,83 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Individual Training - Gyannetra</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/benefits-cards.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .benefit-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: rgba(25, 35, 55, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+    }
+    
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .benefit-card .benefit-card-icon {
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+    }
+    
+    .benefit-card .benefit-card-icon img {
+      max-height: 60px;
+      max-width: 60px;
+    }
+    
+    .benefit-card h3 {
+      margin-bottom: 1rem;
+      color: var(--text-light);
+      font-size: 1.4rem;
+    }
+    
+    .program-details {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .program-details p {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+    
+    .program-outcomes {
+      flex-grow: 1;
+      margin-bottom: 1.5rem;
+    }
+    
+    .program-outcomes ul {
+      padding-left: 1.2rem;
+    }
+    
+    .program-outcomes li {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .btn-primary {
+      align-self: flex-start;
+      margin-top: auto;
+    }
+  </style>
 </head>
 <body>
   <div class="atmospheric-bg"></div>
   <!-- NAVBAR -->
   <header class="site-header">
     <nav class="navbar container">
-      <a href="../index.html" class="logo">GYANNETRA</a>
+      <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN Name logo.svg" alt="Gyannetra Logo" class="logo-img">
+      </a>
       <ul class="nav-links">
         <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
           <ul class="dropdown-menu services-dropdown">
@@ -62,65 +131,128 @@
   <!-- TRAINING PROGRAMS -->
   <section class="training-programs-section container">
     <h2 class="section-heading">TRAINING PROGRAMS</h2>
-    <div class="cards-container">
-      <div class="training-card">
+    <div class="benefits-cards-grid">
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+            <img src="../assets/mlng.png" alt="Machine Learning Icon">
+        </div>
         <h3>Introduction to Machine Learning</h3>
-        <p><strong>SkillLevel:</strong> Online:Self-pace</p>
-        <p><strong>Duration:</strong> 8 weeks.</p>
-        <p><strong>Skill Learning Outcomes.</strong></p>
-        <ul>
-          <li>Understand basic algorithms</li>
-          <li>Dalis preprocessing</li>
-        </ul>
-        <a href="../contact.html" class="btn-secondary">Learn More</a>
+        <div class="program-details">
+          <p><strong>Skill Level:</strong> Beginner</p>
+          <p><strong>Format:</strong> Online, Self-paced</p>
+          <p><strong>Duration:</strong> 8 weeks</p>
+        </div>
+        <div class="program-outcomes">
+          <p><strong>Key Learning Outcomes:</strong></p>
+          <ul>
+            <li>Understand basic ML algorithms</li>
+            <li>Master data preprocessing techniques</li>
+            <li>Build and evaluate simple models</li>
+            <li>Apply ML to real-world problems</li>
+          </ul>
+        </div>
+        <a href="../contact.html" class="btn-primary">Enroll Now</a>
       </div>
-      <div class="training-card">
+      
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+            <img src="../assets/gen ai.png" alt="Deep Learning Icon">
+        </div>
         <h3>Deep Learning Fundamentals</h3>
-        <p><strong>Skill Level:</strong> Intermediate</p>
-        <p><strong>Duration:</strong> 10 week</p>
-        <p><strong>Key Learning Outames</strong></p>
-        <ul>
-          <li>Build CHNs</li>
-          <li>Implement RNNs</li>
-        </ul>
-        <p><strong>Prequisites</strong></p>
-        <ul>
-          <li>Knowledge of machine learnes</li>
-        </ul>
-        <a href="../contact.html" class="btn-secondary">Learn More</a>
+        <div class="program-details">
+          <p><strong>Skill Level:</strong> Intermediate</p>
+          <p><strong>Format:</strong> Instructor-led</p>
+          <p><strong>Duration:</strong> 10 weeks</p>
+        </div>
+        <div class="program-outcomes">
+          <p><strong>Key Learning Outcomes:</strong></p>
+          <ul>
+            <li>Build neural networks from scratch</li>
+            <li>Implement CNNs for image processing</li>
+            <li>Create RNNs for sequence data</li>
+            <li>Deploy models to production</li>
+          </ul>
+        </div>
+        <a href="../contact.html" class="btn-primary">Enroll Now</a>
       </div>
-      <div class="training-card">
+      
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+            <img src="../assets/education-cap-icon.svg" alt="AI Ethics Icon">
+        </div>
         <h3>AI Ethics for Individuals</h3>
-        <p><strong>SkillAvdanced</strong> 4 weeek</p>
-        <p><strong>Duration:</strong> 4 week</p>
-        <p><strong>Keyrnyeeds: Outcomes</strong></p>
-        <ul>
-          <li>Understand ethical praniciples</li>
-          <li>Address bias and fairness</li>
-        </ul>
-        <a href="../contact.html" class="btn-secondary">Learn More</a>
+        <div class="program-details">
+          <p><strong>Skill Level:</strong> Advanced</p>
+          <p><strong>Format:</strong> Hybrid</p>
+          <p><strong>Duration:</strong> 4 weeks</p>
+        </div>
+        <div class="program-outcomes">
+          <p><strong>Key Learning Outcomes:</strong></p>
+          <ul>
+            <li>Understand ethical implications of AI</li>
+            <li>Identify and mitigate AI biases</li>
+            <li>Implement responsible AI practices</li>
+            <li>Develop ethical AI governance frameworks</li>
+          </ul>
+        </div>
+        <a href="../contact.html" class="btn-primary">Enroll Now</a>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+            <img src="../assets/ai agent.png" alt="AI Applications Icon">
+        </div>
+        <h3>Applied AI Projects</h3>
+        <div class="program-details">
+          <p><strong>Skill Level:</strong> Intermediate to Advanced</p>
+          <p><strong>Format:</strong> Project-based</p>
+          <p><strong>Duration:</strong> 6 weeks</p>
+        </div>
+        <div class="program-outcomes">
+          <p><strong>Key Learning Outcomes:</strong></p>
+          <ul>
+            <li>Design end-to-end AI solutions</li>
+            <li>Work on real industry problems</li>
+            <li>Build a portfolio of AI projects</li>
+            <li>Collaborate with AI professionals</li>
+          </ul>
+        </div>
+        <a href="../contact.html" class="btn-primary">Enroll Now</a>
       </div>
     </div>
   </section>
 
   <!-- WHY CHOOSE US SECTION -->
-  <section class="why-choose-us-section container">
+  <section class="why-choose-us-section container benefits-section">
     <h2 class="section-heading">WHY CHOOSE GYANNETRA FOR INDIVIDUAL TRAINING?</h2>
-    <div class="cards-container">
+    <div class="benefits-cards-grid">
       <div class="benefit-card">
-        <img src="../assets/personalized_learning_icon.svg" alt="Personalized Learning Icon" class="benefit-icon">
+        <div class="benefit-card-icon">
+          <i class="fas fa-user-graduate"></i>
+        </div>
         <h3>Personalized Learning Paths</h3>
         <p>We tailor the training content and pace to your individual learning style, goals, and prior knowledge, ensuring an effective and engaging experience.</p>
       </div>
       <div class="benefit-card">
-        <img src="../assets/expert_mentorship_icon.svg" alt="Expert Mentorship Icon" class="benefit-icon">
+        <div class="benefit-card-icon">
+          <i class="fas fa-chalkboard-teacher"></i>
+        </div>
         <h3>Expert Mentorship</h3>
         <p>Learn from industry experts and seasoned AI practitioners who provide one-on-one guidance, support, and real-world insights throughout your training journey.</p>
       </div>
       <div class="benefit-card">
-        <img src="../assets/career_advancement_icon.svg" alt="Career Advancement Icon" class="benefit-icon">
+        <div class="benefit-card-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
         <h3>Career Advancement</h3>
         <p>Acquire in-demand AI skills and knowledge that can significantly boost your career prospects, open new opportunities, and help you achieve your professional aspirations.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <h3>Hands-on Projects</h3>
+        <p>Apply your learning to real-world AI projects with personalized guidance, building a portfolio that demonstrates your practical skills to potential employers.</p>
       </div>
     </div>
     <a href="../contact.html" class="btn-primary centered-btn">Enroll in a Program Today</a>
@@ -131,7 +263,9 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-col footer-col-logo">
-          <a href="../index.html" class="logo">GYANNETRA</a>
+          <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="footer-logo-img">
+      </a>
           <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
           <div class="social-links">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -175,7 +309,13 @@
       </div>
     </div>
   </footer>
+    <script src="../js/main.js" defer></script>
   <script src="../js/menu-dropdown.js" defer></script>
-  <script src="../js/main.js" defer></script>
-</body>
+  <script src="../js/form-subscribe.js" defer></script>
+  <script src="../js/unified-neural-interactions.js" defer></script>
+  <script src="../js/tech-marquee.js" defer></script>
+  <script src="../js/data-node-interactions.js" defer></script>
+
 </html>
+
+

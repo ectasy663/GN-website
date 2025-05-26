@@ -3,19 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketing - Gyannetra</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">    <style>
+    <title>Marketing - Gyannetra</title>    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/benefits-cards.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
         /* Marketing Card Structure Styles */
-        body {
-            --primary-color: #ec4899; /* Pink tone for marketing */
-            --primary-color-hover: #db2777;
-            --primary-color-glow: rgba(236, 72, 153, 0.5);
-            --card-bg: rgba(25, 35, 55, 0.7);
-            --text-light: #e0e0e0;
-            --text-muted: #b0b0b0;
-        }
 
         /* Marketing hero section styling */
         .marketing-hero {
@@ -42,10 +34,9 @@
             margin-bottom: 1.5rem;
             color: var(--primary-color);
         }
-        
-        .marketing-hero-content p {
+          .marketing-hero-content p {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-muted);
             margin-bottom: 2rem;
         }
         
@@ -66,9 +57,7 @@
             gap: 35px;
             justify-items: center;
             margin-top: 30px;
-        }
-
-        .solution-item {
+        }        .solution-item {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -77,7 +66,7 @@
             background-color: var(--card-bg);
             border-radius: 12px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(236, 72, 153, 0.3);
+            border: 1px solid rgba(var(--primary-color-rgb), 0.3);
             width: 100%;
             height: 100%;
         }
@@ -110,9 +99,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-        }
-
-        .article-card {
+        }        .article-card {
             background-color: var(--card-bg);
             border-radius: 12px;
             padding: 25px;
@@ -121,13 +108,11 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
-            border: 1px solid rgba(236, 72, 153, 0.3);
+            border: 1px solid rgba(var(--primary-color-rgb), 0.3);
             height: 100%;
-        }
-
-        .article-card:hover {
+        }        .article-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(236, 72, 153, 0.4);
+            box-shadow: 0 12px 25px rgba(var(--primary-color-rgb), 0.4);
         }
 
         .article-card img {
@@ -188,14 +173,12 @@
             gap: 20px;
             list-style: none;
             padding: 0;
-        }
-
-        .advantage-list li {
+        }        .advantage-list li {
             font-size: 1.15rem;
             color: var(--text-light);
             display: flex;
             align-items: center;
-            background-color: rgba(236, 72, 153, 0.1);
+            background-color: rgba(var(--primary-color-rgb), 0.1);
             padding: 12px 18px;
             border-radius: 8px;
             border-left: 4px solid var(--primary-color);
@@ -222,7 +205,7 @@
         }
     </style>
 </head>
-<body>
+<body class="theme-marketing">
     <div class="atmospheric-bg">
         <div class="light-effect-top"></div>
         <div class="light-effect-bottom"></div>
@@ -234,7 +217,9 @@
     
     <header class="site-header">
     <nav class="navbar container">
-      <a href="../index.html" class="logo">GYANNETRA</a>
+      <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN Name logo.svg" alt="Gyannetra Logo" class="logo-img">
+      </a>
       <ul class="nav-links">
         <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
           <ul class="dropdown-menu services-dropdown">
@@ -310,19 +295,42 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- ADVANTAGES SECTION -->
-        <section class="advantage-section">
+        </section>        <!-- ADVANTAGES SECTION -->
+        <section class="advantage-section benefits-section">
             <div class="container">
                 <h2>THE GYANNETRA ADVANTAGE IN MARKETING AI</h2>
-                <ul class="advantage-list">
-                    <li>Deep-expertise in marketing analytics</li>
-                    <li>Custom AI models tailored to marketing</li>
-                    <li>Focus on measurable-campaign ROI</li>
-                    <li>Ethical AI implementation in customer communication</li>                </ul>
+                <div class="benefits-cards-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-card-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Marketing Analytics Expertise</h3>
+                        <p>Leverage our deep expertise in marketing analytics to uncover actionable insights from your data.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-card-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Custom AI Solutions</h3>
+                        <p>Benefit from custom AI models specifically tailored to address unique marketing challenges.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-card-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h3>ROI-Driven Approach</h3>
+                        <p>Focus on measurable campaign ROI with data-driven strategies that maximize marketing returns.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-card-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Ethical AI Implementation</h3>
+                        <p>Ensure customer trust with ethical AI implementation in all marketing communications.</p>
+                    </div>
+                </div>
             </div>
-        </section>        <!-- BLOGS & CASE STUDIES SECTION -->
+        </section><!-- BLOGS & CASE STUDIES SECTION -->
         <section class="blogs-section">
             <div class="container">
                 <h2>BLOGS & CASE STUDIES</h2>
@@ -359,7 +367,9 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-col footer-col-logo">
-          <a href="../index.html" class="logo">GYANNETRA</a>
+          <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="footer-logo-img">
+      </a>
           <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
           <div class="social-links">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -403,7 +413,14 @@
       </div>
     </div>
   </footer>
+    <script src="../js/main.js" defer></script>
   <script src="../js/menu-dropdown.js" defer></script>
-  <script src="../js/main.js" defer></script>
-</body>
+  <script src="../js/form-subscribe.js" defer></script>
+  <script src="../js/unified-neural-interactions.js" defer></script>
+  <script src="../js/tech-marquee.js" defer></script>
+  <script src="../js/data-node-interactions.js" defer></script>
+
 </html>
+
+
+

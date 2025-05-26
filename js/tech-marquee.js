@@ -39,37 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-    
-    // Function to add pulse effect to random icons in a marquee
-    function addPulseEffects() {
-        // Get all tech marquees
-        const marquees = document.querySelectorAll('.tech-marquee-container');
-        
-        marquees.forEach(marquee => {
-            // Get all items in this marquee
-            const marqueeItems = marquee.querySelectorAll('.tech-marquee-item');
-            
-            // Select 1-2 random items to pulse
-            const numberOfPulses = Math.floor(Math.random() * 2) + 1;
-            
-            for (let i = 0; i < numberOfPulses; i++) {
-                const randomIndex = Math.floor(Math.random() * marqueeItems.length);
-                const randomItem = marqueeItems[randomIndex];
-                const iconContainer = randomItem.querySelector('.tech-icon-container');
-                
-                if (iconContainer && !iconContainer.classList.contains('tech-pulse-highlight')) {
-                    iconContainer.classList.add('tech-pulse-highlight');
-                    
-                    setTimeout(() => {
-                        iconContainer.classList.remove('tech-pulse-highlight');
-                    }, 2000);
-                }
-            }
-        });
-    }
-    
-    // Add subtle pulse effects periodically
-    setInterval(addPulseEffects, 3000);
+      // Removed pulse effects functionality - displaying raw icons without glow effects
       // Add a parallax effect to create depth between the two marquees
     window.addEventListener('mousemove', function(e) {
         const containers = document.querySelectorAll('.tech-marquee-container');

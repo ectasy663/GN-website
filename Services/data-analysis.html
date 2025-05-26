@@ -3,15 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Data Analysis - Gyannetra</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <title>Data Analysis - Gyannetra</title>  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/benefits-cards.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">  <style>
     body {
-      --primary-color: #f59e0b; /* Amber tone for Data Analysis */
-      --primary-color-hover: #d97706;
-      --primary-color-glow: rgba(245, 158, 11, 0.5);
+      /* Using standardized colors from main CSS */
       --card-bg: rgba(25, 35, 55, 0.7);
       --text-light: #e0e0e0;
       --text-muted: #b0b0b0;
@@ -55,10 +52,9 @@
       align-items: center;
       text-align: center;
       padding: 20px;
-      background-color: var(--card-bg);
-      border-radius: 12px;
+      background-color: var(--card-bg);      border-radius: 12px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid rgba(14, 165, 233, 0.3);
+      border: 1px solid rgba(var(--primary-color-rgb), 0.3);
       width: 100%;
       height: 100%;
     }
@@ -98,17 +94,15 @@
       border-radius: 12px;
       padding: 25px;
       text-align: left;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);      transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
-      border: 1px solid rgba(14, 165, 233, 0.3);
+      border: 1px solid rgba(var(--primary-color-rgb), 0.3);
       height: 100%;
     }
-    
-    .article-card:hover {
+      .article-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(14, 165, 233, 0.4);
+      box-shadow: 0 12px 25px rgba(var(--primary-color-rgb), 0.4);
     }
     
     .article-card img {
@@ -193,11 +187,10 @@
       margin-bottom: 40px;
     }
     
-    .related-content-item {
-      background-color: var(--card-bg);
+    .related-content-item {      background-color: var(--card-bg);
       padding: 20px;
       border-radius: 10px;
-      border: 1px solid rgba(14, 165, 233, 0.3);
+      border: 1px solid rgba(var(--primary-color-rgb), 0.3);
     }
     
     .related-content-item h3 {
@@ -296,7 +289,9 @@
   </div>
   <header class="site-header">
     <nav class="navbar container">
-        <a href="../index.html" class="logo">GYANNETRA</a>
+        <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN Name logo.svg" alt="Gyannetra Logo" class="logo-img">
+      </a>
         <ul class="nav-links">
           <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
             <ul class="dropdown-menu services-dropdown">
@@ -377,18 +372,37 @@
                 <p>Providing expert guidance to help you develop and implement effective data strategies that align with your business goals.</p>
             </div>
         </div>
-    </section>
-
-    <section class="benefits-section section-padding container">
-        <h2>BENEFITS OF CHOOSING GYANNETRA FOR DATA ANALYSIS</h2>
-        <ul>
-            <li>Gain deeper insights from your data with our team of experienced analysts and data scientists.</li>
-            <li>Utilize advanced analytical tools and cutting-edge methodologies for comprehensive analysis.</li>
-            <li>Receive clear, actionable recommendations to solve complex problems and improve business outcomes.</li>
-            <li>Enhance decision-making capabilities across all levels of your organization.</li>
-            <li>Identify new opportunities for growth, efficiency, and innovation through robust data exploration.</li>
-            <li>Achieve a competitive advantage by transforming raw data into a strategic, actionable asset.</li>
-        </ul>
+    </section>    <section class="benefits-section section-padding container">
+        <h2>BENEFITS OF CHOOSING GYANNETRA FOR DATA ANALYSIS</h2>        <div class="benefits-cards-grid">
+            <div class="benefit-card">
+                <div class="benefit-card-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Deep Insights</h3>
+                <p>Gain deeper insights from your data with our team of experienced analysts and data scientists.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-card-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Advanced Analytics</h3>
+                <p>Utilize advanced analytical tools and cutting-edge methodologies for comprehensive analysis.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-card-icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h3>Actionable Recommendations</h3>
+                <p>Receive clear, actionable recommendations to solve complex problems and improve business outcomes.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-card-icon">
+                    <i class="fas fa-chess"></i>
+                </div>
+                <h3>Better Decision-Making</h3>
+                <p>Enhance decision-making capabilities across all levels of your organization with data-driven insights.</p>
+            </div>
+        </div>
     </section>
     
     <section class="blogs-case-studies-section section-padding container">
@@ -445,7 +459,9 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-col footer-col-logo">
-          <a href="../index.html" class="logo">GYANNETRA</a>
+          <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="footer-logo-img">
+      </a>
           <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
           <div class="social-links">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -489,7 +505,13 @@
       </div>
     </div>
   </footer>
+    <script src="../js/main.js" defer></script>
   <script src="../js/menu-dropdown.js" defer></script>
-  <script src="../js/main.js" defer></script>
-</body>
+  <script src="../js/form-subscribe.js" defer></script>
+  <script src="../js/unified-neural-interactions.js" defer></script>
+  <script src="../js/tech-marquee.js" defer></script>
+  <script src="../js/data-node-interactions.js" defer></script>
+
 </html>
+
+

@@ -3,20 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI in Media & Entertainment - Gyannetra</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>AI in Media & Entertainment - Gyannetra</title>    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/benefits-cards.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">    <style>
         /* Media & Entertainment Page Specific Styles */
-        body {
-            --primary-color: #9333ea; /* Purple tone for media & entertainment */
-            --primary-color-hover: #7e22ce;
-            --primary-color-glow: rgba(147, 51, 234, 0.5);
-            --card-bg: rgba(25, 35, 55, 0.7); /* Darker card background */
-            --text-light: #e0e0e0;
-            --text-muted: #b0b0b0;
-        }
 
         /* Hero section */
         .media-hero {
@@ -201,7 +192,7 @@
         }
     </style>
 </head>
-<body>
+<body class="theme-media">
     <div class="atmospheric-bg">
         <div class="light-effect-top"></div>
         <div class="light-effect-bottom"></div>
@@ -214,7 +205,9 @@
     <!-- NAVBAR -->
     <header class="site-header">
     <nav class="navbar container">
-      <a href="../index.html" class="logo">GYANNETRA</a>
+      <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN Name logo.svg" alt="Gyannetra Logo" class="logo-img">
+      </a>
       <ul class="nav-links">
         <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
           <ul class="dropdown-menu services-dropdown">
@@ -281,23 +274,37 @@
                     <p>Extract insights from content performance and audience engagement</p>
                 </div>
             </div>
-        </section>
-
-        <section class="benefits-section">
+        </section>        <section class="benefits-section">
             <h2 class="section-heading">BENEFITS OF AI FOR MEDIA & ENTERTAINMENT</h2>
-            <div class="benefits-list-container">
-                <ul class="benefits-list">
-                    <li>Increased efficiency in content production</li>
-                    <li>Enhanced viewer engagement and personalization</li>
-                    <li>Improved content discovery and accessibility</li>
-                    <li>Optimized advertising and revenue generation</li>
-                </ul>
-                <ul class="benefits-list">
-                    <li>Better understanding of audience trends</li>
-                    <li>Reduced costs through automation</li>
-                    <li>Faster time-to-market for new content</li>
-                    <li>Competitive advantage in a dynamic market</li>
-                </ul>
+            <div class="benefits-cards-grid">
+                <div class="benefit-card">
+                    <div class="benefit-card-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Production Efficiency</h3>
+                    <p>Increased efficiency in content production through AI-powered tools and workflows, accelerating content creation and distribution.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-card-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Enhanced Engagement</h3>
+                    <p>Create more compelling viewer experiences with personalized content recommendations and AI-driven audience insights.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-card-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3>Revenue Optimization</h3>
+                    <p>Optimized advertising and revenue generation through intelligent audience targeting and data-driven content strategies.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-card-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Competitive Edge</h3>
+                    <p>Stay ahead with innovative AI solutions in an increasingly competitive market, building audience loyalty and market share.</p>
+                </div>
             </div>
         </section>
 
@@ -334,7 +341,9 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-col footer-col-logo">
-          <a href="../index.html" class="logo">GYANNETRA</a>
+          <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="footer-logo-img">
+      </a>
           <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
           <div class="social-links">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -378,7 +387,14 @@
       </div>
     </div>
   </footer>
+    <script src="../js/main.js" defer></script>
   <script src="../js/menu-dropdown.js" defer></script>
-  <script src="../js/main.js" defer></script>
-</body>
+  <script src="../js/form-subscribe.js" defer></script>
+  <script src="../js/unified-neural-interactions.js" defer></script>
+  <script src="../js/tech-marquee.js" defer></script>
+  <script src="../js/data-node-interactions.js" defer></script>
+
 </html>
+
+
+

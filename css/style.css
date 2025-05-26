@@ -13,17 +13,164 @@
     --text-light: #e0e0e0;
     --text-muted: #b0b0b0;
     
-    /* Default accent color (can be overridden per page) */
+    /* Default primary color scheme (purple) */
     --primary-color: #6d28d9;
     --primary-color-rgb: 109, 40, 217;
     --primary-color-hover: #5b21b6;
-    --primary-color-glow: rgba(109, 40, 217, 0.5);
+    
+    /* Industry-specific color schemes */
+    /* Finance - Professional Blue */
+    --finance-primary: #007bff;
+    --finance-primary-rgb: 0, 123, 255;
+    --finance-primary-hover: #0056b3;
+    
+    /* Healthcare - Medical Blue */
+    --healthcare-primary: #00c6ff;
+    --healthcare-primary-rgb: 0, 198, 255;
+    --healthcare-primary-hover: #0099cc;
+    
+    /* Retail - Commercial Red */
+    --retail-primary: #e74c3c;
+    --retail-primary-rgb: 231, 76, 60;
+    --retail-primary-hover: #c0392b;
+    
+    /* Manufacturing - Industrial Blue */
+    --manufacturing-primary: #3498db;
+    --manufacturing-primary-rgb: 52, 152, 219;
+    --manufacturing-primary-hover: #2980b9;
+    
+    /* Marketing - Creative Pink */
+    --marketing-primary: #ec4899;
+    --marketing-primary-rgb: 236, 72, 153;
+    --marketing-primary-hover: #db2777;
+    
+    /* Travel - Sky Blue */
+    --travel-primary: #0ea5e9;
+    --travel-primary-rgb: 14, 165, 233;
+    --travel-primary-hover: #0284c7;
+    
+    /* Media & Entertainment - Purple */
+    --media-primary: #9333ea;
+    --media-primary-rgb: 147, 51, 234;
+    --media-primary-hover: #7e22ce;
+      /* Services color schemes */
+    /* Machine Learning - Deep Blue */
+    --machine-learning-primary: #2563eb;
+    --machine-learning-primary-rgb: 37, 99, 235;
+    --machine-learning-primary-hover: #1d4ed8;
+    
+    /* Generative AI - Emerald Green */
+    --generative-ai-primary: #10b981;
+    --generative-ai-primary-rgb: 16, 185, 129;
+    --generative-ai-primary-hover: #059669;
+    
+    /* Data Analysis - Amber */
+    --data-analysis-primary: #f59e0b;
+    --data-analysis-primary-rgb: 245, 158, 11;
+    --data-analysis-primary-hover: #d97706;
+    
+    /* Automation - Purple */
+    --automation-primary: #8b5cf6;
+    --automation-primary-rgb: 139, 92, 246;
+    --automation-primary-hover: #7c3aed;
+    
+    /* Agentic AI - Pink */
+    --agentic-ai-primary: #ec4899;
+    --agentic-ai-primary-rgb: 236, 72, 153;
+    --agentic-ai-primary-hover: #db2777;--primary-color-glow: rgba(109, 40, 217, 0.5);
+    --accent: #a2abff;
+    --accent-rgb: 162, 171, 255;
     
     /* Spacing variables */
     --section-margin: 4rem;
     --section-padding: 1rem;
     --card-padding: 25px;
     --grid-gap: 30px;
+}
+
+/* Color Theme Utility Classes */
+.theme-finance {
+    --primary-color: var(--finance-primary);
+    --primary-color-rgb: var(--finance-primary-rgb);
+    --primary-color-hover: var(--finance-primary-hover);
+    --primary-color-glow: rgba(var(--finance-primary-rgb), 0.5);
+}
+
+.theme-healthcare {
+    --primary-color: var(--healthcare-primary);
+    --primary-color-rgb: var(--healthcare-primary-rgb);
+    --primary-color-hover: var(--healthcare-primary-hover);
+    --primary-color-glow: rgba(var(--healthcare-primary-rgb), 0.5);
+}
+
+.theme-retail {
+    --primary-color: var(--retail-primary);
+    --primary-color-rgb: var(--retail-primary-rgb);
+    --primary-color-hover: var(--retail-primary-hover);
+    --primary-color-glow: rgba(var(--retail-primary-rgb), 0.5);
+}
+
+.theme-manufacturing {
+    --primary-color: var(--manufacturing-primary);
+    --primary-color-rgb: var(--manufacturing-primary-rgb);
+    --primary-color-hover: var(--manufacturing-primary-hover);
+    --primary-color-glow: rgba(var(--manufacturing-primary-rgb), 0.5);
+}
+
+.theme-marketing {
+    --primary-color: var(--marketing-primary);
+    --primary-color-rgb: var(--marketing-primary-rgb);
+    --primary-color-hover: var(--marketing-primary-hover);
+    --primary-color-glow: rgba(var(--marketing-primary-rgb), 0.5);
+}
+
+.theme-travel {
+    --primary-color: var(--travel-primary);
+    --primary-color-rgb: var(--travel-primary-rgb);
+    --primary-color-hover: var(--travel-primary-hover);
+    --primary-color-glow: rgba(var(--travel-primary-rgb), 0.5);
+}
+
+.theme-media {
+    --primary-color: var(--media-primary);
+    --primary-color-rgb: var(--media-primary-rgb);
+    --primary-color-hover: var(--media-primary-hover);
+    --primary-color-glow: rgba(var(--media-primary-rgb), 0.5);
+}
+
+.theme-machine-learning {
+    --primary-color: var(--machine-learning-primary);
+    --primary-color-rgb: var(--machine-learning-primary-rgb);
+    --primary-color-hover: var(--machine-learning-primary-hover);
+    --primary-color-glow: rgba(var(--machine-learning-primary-rgb), 0.5);
+}
+
+.theme-generative-ai {
+    --primary-color: var(--generative-ai-primary);
+    --primary-color-rgb: var(--generative-ai-primary-rgb);
+    --primary-color-hover: var(--generative-ai-primary-hover);
+    --primary-color-glow: rgba(var(--generative-ai-primary-rgb), 0.5);
+}
+
+.theme-data-analysis {
+    --primary-color: var(--data-analysis-primary);
+    --primary-color-rgb: var(--data-analysis-primary-rgb);
+    --primary-color-hover: var(--data-analysis-primary-hover);
+    --primary-color-glow: rgba(var(--data-analysis-primary-rgb), 0.5);
+}
+
+.theme-automation {
+    --primary-color: var(--automation-primary);
+    --primary-color-rgb: var(--automation-primary-rgb);
+    --primary-color-hover: var(--automation-primary-hover);
+    --primary-color-glow: rgba(var(--automation-primary-rgb), 0.5);
+}
+
+.theme-agentic-ai {
+    --primary-color: var(--agentic-ai-primary);
+    --primary-color-rgb: var(--agentic-ai-primary-rgb);
+    --primary-color-hover: var(--agentic-ai-primary-hover);
+    --primary-color-glow: rgba(var(--agentic-ai-primary-rgb), 0.5);
 }
 
 * {
@@ -458,17 +605,35 @@ section h2 {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    padding: 0.5rem 0.8rem;
+    padding: 0.3rem 1rem; /* Adjusted padding */
     border: 2px solid rgba(90, 107, 255, 0.3);
-    border-radius: 8px;
+    border-radius: 10px;
     transition: all 0.3s ease;
     text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px; /* Decreased minimum height */
 }
 
 .logo:hover {
     border-color: rgba(140, 154, 255, 0.6);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(140, 154, 255, 0.2);
+}
+
+/* Logo image styles */
+.logo-img {
+    height: 50px; /* Decreased height */
+    width: auto; /* Keep width auto to maintain aspect ratio */
+    max-width: 350px; /* Increased max-width to allow wider appearance */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-img {
+    filter: drop-shadow(0 4px 8px rgba(90, 107, 255, 0.4));
+    transform: scale(1.05);
 }
 
 .nav-links {
@@ -662,10 +827,376 @@ section h2 {
     background: none;
 }
 
+.hero-container {
+    display: flex;
+    width: 100%;
+    max-width: var(--max-w);
+    margin: 0 auto;
+    height: 100%;
+    align-items: center;
+    padding: 0 4%;
+}
+
 .hero-content {
     position: relative;
+    z-index: 20;
+    flex: 1;
+    max-width: 600px;
+    padding-right: 3rem;
+}
+
+.hero-animation {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-width: 400px;
     z-index: 1;
+    pointer-events: none; /* This lets clicks go through to underlying elements */
+}
+
+/* Ensure data nodes inside hero-animation are clickable */
+.hero-animation .data-node {
+    pointer-events: auto;
+}
+
+.network-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+.central-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(162, 171, 255, 0.1);
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.central-logo .logo-icon {
+    width: 50px;
+    height: 50px;
+    filter: brightness(1.2);
+}
+
+.node-network {
+    position: relative;
     width: 100%;
+    height: 100%;
+}
+
+.node {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(162, 171, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.node:hover {
+    background: rgba(162, 171, 255, 0.2);
+    border-color: var(--accent);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(162, 171, 255, 0.4);
+}
+
+.node-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 2px;
+}
+
+.node-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.node-label {
+    font-size: 0.7rem;
+    color: var(--fg);
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Service nodes positioning - inner ring around the center */
+.service-node:nth-child(1) {
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: float-node 4s ease-in-out infinite;
+}
+
+.service-node:nth-child(2) {
+    top: 30%;
+    right: 20%;
+    animation: float-node 4s ease-in-out infinite 0.8s;
+}
+
+.service-node:nth-child(3) {
+    bottom: 30%;
+    right: 20%;
+    animation: float-node 4s ease-in-out infinite 1.6s;
+}
+
+.service-node:nth-child(4) {
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: float-node 4s ease-in-out infinite 2.4s;
+}
+
+.service-node:nth-child(5) {
+    top: 30%;
+    left: 20%;
+    animation: float-node 4s ease-in-out infinite 3.2s;
+}
+
+/* Technology nodes positioning - middle ring */
+.tech-node:nth-child(6) {
+    top: 5%;
+    left: 35%;
+    animation: float-node 3.5s ease-in-out infinite 0.5s;
+}
+
+.tech-node:nth-child(7) {
+    top: 5%;
+    right: 35%;
+    animation: float-node 3.5s ease-in-out infinite 1s;
+}
+
+.tech-node:nth-child(8) {
+    top: 45%;
+    right: 5%;
+    animation: float-node 3.5s ease-in-out infinite 1.5s;
+}
+
+.tech-node:nth-child(9) {
+    bottom: 45%;
+    right: 5%;
+    animation: float-node 3.5s ease-in-out infinite 2s;
+}
+
+.tech-node:nth-child(10) {
+    bottom: 5%;
+    right: 35%;
+    animation: float-node 3.5s ease-in-out infinite 2.5s;
+}
+
+.tech-node:nth-child(11) {
+    bottom: 5%;
+    left: 35%;
+    animation: float-node 3.5s ease-in-out infinite 3s;
+}
+
+/* Industry nodes positioning - outer ring */
+.industry-node:nth-child(12) {
+    top: 8%;
+    left: 15%;
+    animation: float-node 5s ease-in-out infinite 1s;
+}
+
+.industry-node:nth-child(13) {
+    top: 8%;
+    right: 15%;
+    animation: float-node 5s ease-in-out infinite 1.5s;
+}
+
+.industry-node:nth-child(14) {
+    top: 45%;
+    left: 5%;
+    animation: float-node 5s ease-in-out infinite 2s;
+}
+
+.industry-node:nth-child(15) {
+    bottom: 45%;
+    left: 5%;
+    animation: float-node 5s ease-in-out infinite 2.5s;
+}
+
+.industry-node:nth-child(16) {
+    bottom: 8%;
+    left: 15%;
+    animation: float-node 5s ease-in-out infinite 3s;
+}
+
+.connection-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.connection-line {
+    stroke: rgba(162, 171, 255, 0.3);
+    stroke-width: 1;
+    fill: none;
+    opacity: 0;
+    animation: draw-line 2s ease-in-out forwards;
+}
+
+.connection-line.active {
+    stroke: var(--accent);
+    stroke-width: 2;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 3px rgba(162, 171, 255, 0.5));
+}
+
+/* Animations */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(162, 171, 255, 0.3);
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(162, 171, 255, 0.6);
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+@keyframes float-node {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.02);
+    }
+}
+
+@keyframes draw-line {
+    0% {
+        stroke-dasharray: 0 1000;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        stroke-dasharray: 1000 0;
+        opacity: 0.3;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 2%;
+    }
+    
+    .hero-content {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 3rem;
+    }
+    
+    .hero-animation {
+        flex: none;
+        width: 100%;
+        height: 500px;
+        min-width: auto;
+    }
+    
+    .network-container {
+        width: 450px;
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        padding: 0 1rem;
+    }
+    
+    .hero-animation {
+        height: 400px;
+    }
+    
+    .network-container {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .central-logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .central-logo .logo-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .node {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .node-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .node-label {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .network-container {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .central-logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .central-logo .logo-icon {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .node {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .node-icon {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .node-label {
+        font-size: 0.5rem;
+    }
 }
 
 .hero-content h1 {
@@ -924,47 +1455,112 @@ h6 {
 }
 
 .tech-icon-container {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 
-                inset 0 2px 5px rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
-    overflow: hidden;
     transition: all 0.3s ease;
 }
 
-.tech-icon-container::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: rgba(255, 255, 255, 0.1);
-    transform: rotate(30deg);
-    pointer-events: none;
-}
+/* Removed decorative overlay - displaying raw icons */
 
 .tech-icon-container:hover {
     transform: scale(1.1);
-    box-shadow: 0 8px 25px rgba(var(--primary-color-rgb, 109, 40, 217), 0.4);
+}
+
+.tech-icon:hover {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
 }
 
 .tech-icon {
-    width: 50px;
-    height: 50px;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    flex: 1;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     transition: transform 0.3s ease;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    aspect-ratio: 1;
+    /* Add background to improve visibility on dark theme */
+    background-color: rgba(255, 255, 255, 0.8); /* Increased opacity */
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    /* Ensure contrast for all icons */
+    position: relative;
+    background-blend-mode: normal;
+}
+
+/* Additional dark theme optimizations for tech icons */
+/* Removed redundant .tech-icon rule */
+
+/* Add a subtle glow effect on hover for better visibility */
+.tech-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-icon:hover::before {
+    opacity: 1;
+}
+
+/* Specific adjustments for logos that might be invisible on dark backgrounds */
+.tech-icon.openai,
+.tech-icon.anthropic,
+.tech-icon.mistral {
+    filter: brightness(1.1) contrast(1.2);
+}
+
+/* For GitHub avatars that might be too dark */
+.tech-icon.llamaindex,
+.tech-icon.vllm,
+.tech-icon.docker {
+    background-image: url('../assets/tech-icons/docker.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.faiss {
+    filter: brightness(1.1) saturate(1.1);
+}
+
+/* Special handling for light logos on dark theme */
+.tech-icon.weaviate {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure proper spacing and visibility for text logos */
+.tech-icon.langchain,
+.tech-icon.qdrant,
+.tech-icon.haystack {
+    background-size: 80% auto;
+    background-color: rgba(255, 255, 255, 0.95) !important;
 }
 
 .tech-marquee-item p {
@@ -977,102 +1573,185 @@ h6 {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-/* Icons for each technology */
+/* Icons for each technology - Using direct image URLs from official sources */
 .tech-icon.ollama {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="%23fff" d="M60 10c27.614 0 50 22.386 50 50s-22.386 50-50 50S10 87.614 10 60s22.386-50 50-50zm0 20c-16.569 0-30 13.431-30 30 0 16.569 13.431 30 30 30 16.569 0 30-13.431 30-30 0-16.569-13.431-30-30-30z"/></svg>');
+    background-image: url('https://avatars.githubusercontent.com/u/151674099?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.1);
 }
 
 .tech-icon.langchain {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="%2300A3E0" d="M20 100L60 20l40 80z"/><path fill="%23fff" d="M60 70a10 10 0 100-20 10 10 0 000 20z"/></svg>');
+    background-image: url('https://python.langchain.com/img/brand/wordmark.png');
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .tech-icon.chroma {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="%23FF4081" d="M30 30h60v60H30z"/><path fill="%23fff" d="M50 50h20v20H50z"/></svg>');
+    background-image: url('../assets/tech-icons/Chroma.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.4) contrast(1.5) saturate(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
 }
 
 .tech-icon.pinecone {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="%23784421" d="M60 20L40 50 60 80 80 50z"/><path fill="%23A5682A" d="M60 80L40 50 60 110 80 50z"/></svg>');
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg');
+    background-color: rgba(46, 160, 67, 0.9);
+    filter: brightness(1.4) contrast(1.5) hue-rotate(60deg);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(46, 160, 67, 0.3);
+    position: relative;
+}
+
+.tech-icon.pinecone::after {
+    content: '🌲';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    z-index: 2;
 }
 
 .tech-icon.vectordb {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="%23ffcc00" d="M20 20h20v20H20zM80 20h20v20H80zM20 80h20v20H20zM80 80h20v20H80z"/><path fill="%23ffcc00" d="M30 30L90 90M30 90L90 30" stroke="%23ffcc00" stroke-width="5"/></svg>');
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(180deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
 }
 
 .tech-icon.openai {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><circle cx="60" cy="60" r="40" fill="%2310a37f"/><path fill="%23fff" d="M41 46h38v28H41z"/></svg>');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.2) contrast(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .tech-icon.huggingface {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><circle cx="40" cy="40" r="15" fill="%23FF9D00"/><circle cx="80" cy="40" r="15" fill="%23FF9D00"/><path fill="%23FF9D00" d="M40 85Q60 100 80 85L80 60L40 60z"/></svg>');
+    background-image: url('https://huggingface.co/front/assets/huggingface_logo-noborder.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
 }
 
 .tech-icon.pytorch {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="%23EE4C2C" d="M60 20A40 40 0 0 1 100 60 40 40 0 0 1 60 100 40 40 0 0 1 20 60 40 40 0 0 1 60 20zm0 15A25 25 0 0 0 35 60 25 25 0 0 0 60 85 25 25 0 0 0 85 60 25 25 0 0 0 60 35z"/><circle cx="85" cy="35" r="10" fill="%23EE4C2C"/></svg>');
+    background-image: url('https://pytorch.org/assets/images/pytorch-logo.png');
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .tech-icon.tensorflow {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="%23FF6F00" d="M20 100L60 20 100 100z"/><path fill="%23FF6F00" d="M20 100L60 60 100 100z"/><path fill="%23fff" d="M60 60L40 100 60 80 80 100z"/></svg>');
+    background-image: url('https://www.tensorflow.org/images/tf_logo_social.png');
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* New Technology Icons */
+/* Remaining Technology Icons - Using direct image URLs */
 .tech-icon.weaviate {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="%23FF5A1F" d="M30 30L60 50L90 30L60 10z"/><path fill="%23FF5A1F" d="M30 90L60 70L90 90L60 110z"/><path fill="%23FF5A1F" d="M30 30L30 90L60 70L60 50z"/><path fill="%23FF5A1F" d="M90 30L90 90L60 70L60 50z"/></svg>');
+    background-image: url('https://avatars.githubusercontent.com/u/37794290?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.1);
 }
 
 .tech-icon.qdrant {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="%23AA00FF" d="M60 20L20 40v40l40 20 40-20V40z"/><path fill="%23fff" d="M60 65a15 15 0 100-30 15 15 0 000 30z"/></svg>');
+    background-image: url('https://qdrant.tech/images/logo_with_text.png');
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .tech-icon.haystack {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect x="20" y="40" width="80" height="15" fill="%23FFD700"/><rect x="30" y="60" width="60" height="15" fill="%23FFD700"/><rect x="40" y="80" width="40" height="15" fill="%23FFD700"/></svg>');
+    background-image: url('https://raw.githubusercontent.com/deepset-ai/haystack/main/docs/img/haystack_logo_colored.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .tech-icon.mistral {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="%230096FF" d="M40 30c0 11.046 8.954 20 20 20s20-8.954 20-20h20v60H20V30h20z"/><path fill="%23fff" d="M60 70a20 20 0 100-40 20 20 0 000 40z"/></svg>');
+    background-image: url('https://docs.mistral.ai/img/logo.svg');
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .tech-icon.anthropic {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><circle cx="60" cy="60" r="40" fill="%23B83280"/><path fill="%23fff" d="M40 50h40v20H40z"/></svg>');
+    background-image: url('../assets/tech-icons/anthropic claude.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.2) contrast(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .tech-icon.groq {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><circle cx="60" cy="60" r="40" fill="%237B3FF2"/><path fill="%23fff" d="M45 45h30v30H45z"/></svg>');
+    background-image: url('https://groq.com/wp-content/uploads/2024/03/PBG-mark1-color.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
 }
 
 .tech-icon.gemini {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><circle cx="40" cy="40" r="20" fill="%234285F4"/><circle cx="80" cy="40" r="20" fill="%2334A853"/><circle cx="40" cy="80" r="20" fill="%23FBBC05"/><circle cx="80" cy="80" r="20" fill="%23EA4335"/></svg>');
+    background-image: url('https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
 }
 
 .tech-icon.llamaindex {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="%23FF4B4B" d="M40 30L20 60l20 30h40l20-30-20-30z"/><path fill="%23fff" d="M60 75a15 15 0 100-30 15 15 0 000 30z"/></svg>');
+    background-image: url('https://avatars.githubusercontent.com/u/130722866?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
 }
 
 .tech-icon.vllm {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="%2300BFFF" d="M30 30l30 60 30-60z"/><path fill="%23fff" d="M30 90h60"/><path stroke="%23fff" stroke-width="5" d="M30 90h60"/></svg>');
+    background-image: url('https://avatars.githubusercontent.com/u/132581166?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
 }
 
 .tech-icon.rag {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect x="20" y="20" width="30" height="30" fill="%23FFA500"/><rect x="70" y="20" width="30" height="30" fill="%2300CED1"/><rect x="20" y="70" width="30" height="30" fill="%23FF6347"/><rect x="70" y="70" width="30" height="30" fill="%23DA70D6"/><path stroke="%23fff" stroke-width="3" d="M35 35L85 85M85 35L35 85"/></svg>');
+    background-image: url('https://img.icons8.com/color/96/artificial-intelligence.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
 }
 
 .tech-icon.transformers {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><circle cx="30" cy="40" r="15" fill="%23FFD700"/><circle cx="90" cy="40" r="15" fill="%23FFD700"/><circle cx="30" cy="80" r="15" fill="%23FFD700"/><circle cx="90" cy="80" r="15" fill="%23FFD700"/><path stroke="%23FFD700" stroke-width="3" d="M30 40L90 40M30 80L90 80M30 40L30 80M90 40L90 80"/></svg>');
+    background-image: url('https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
 }
 
 .tech-icon.spacy {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="%2309A3D5" d="M20 60a40 40 0 0080 0h-20a20 20 0 01-40 0H20z"/><path fill="%23fff" d="M20 60a40 40 0 0180 0h-20a20 20 0 00-40 0H20z"/></svg>');
+    background-image: url('https://raw.githubusercontent.com/explosion/spaCy/master/website/src/images/logo.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(10deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .tech-icon.llama {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="%23A78BFA" d="M35 90c-8.284 0-15-20-15-45s6.716-25 15-25h50c8.284 0 15 0 15 25s-6.716 45-15 45H35z"/><circle cx="45" cy="40" r="7" fill="%23fff"/><circle cx="75" cy="40" r="7" fill="%23fff"/><path fill="%23fff" d="M45 65h30v5H45z"/></svg>');
+    background-image: url('../assets/tech-icons/meta-color.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(-10deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .tech-icon.milvus {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><path fill="%230CC9FF" d="M60 20L20 40v40l40 20 40-20V40z"/><path fill="%23fff" d="M40 60L60 40l20 20-20 20z"/></svg>');
+    background-image: url('../assets/tech-icons/Milvus.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) saturate(1.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.docker {
+    background-image: url('../assets/tech-icons/docker.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .tech-icon.faiss {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><circle cx="30" cy="30" r="15" fill="%234285F4"/><circle cx="90" cy="30" r="15" fill="%234285F4"/><circle cx="30" cy="90" r="15" fill="%234285F4"/><circle cx="90" cy="90" r="15" fill="%234285F4"/><circle cx="60" cy="60" r="20" fill="%234285F4"/><path stroke="%23fff" stroke-width="3" d="M30 30L60 60M90 30L60 60M30 90L60 60M90 90L60 60"/></svg>');
+    background-image: url('https://raw.githubusercontent.com/facebookresearch/faiss/main/docs/img/faiss.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .tech-shadow {
@@ -1094,21 +1773,7 @@ h6 {
     background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
 }
 
-/* Additional animations and effects for the technology marquee */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 0.9;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
+/* Removed pulse animation - displaying raw icons */
 
 @keyframes float {
     0% {
@@ -1122,9 +1787,7 @@ h6 {
     }
 }
 
-.tech-icon-container:hover .tech-icon {
-    animation: pulse 1.5s infinite ease-in-out;
-}
+/* Removed pulse hover effect - displaying raw icons */
 
 .tech-marquee-item {
     animation: float 3s infinite ease-in-out;
@@ -1142,22 +1805,7 @@ h6 {
     animation-play-state: paused;
 }
 
-/* Glow effects for tech icons */
-.tech-icon-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 50%;
-    box-shadow: 0 0 15px 5px rgba(var(--primary-color-rgb, 109, 40, 217), 0);
-    transition: box-shadow 0.3s ease;
-}
-
-.tech-icon-container:hover::before {
-    box-shadow: 0 0 15px 5px rgba(var(--primary-color-rgb, 109, 40, 217), 0.6);
-}
+/* Removed glow effects - displaying raw icons */
 
 /* Custom loading animation for the technology marquee */
 @keyframes techLoading {
@@ -1190,25 +1838,7 @@ h6 {
     pointer-events: none;
 }
 
-/* Pulse highlight animation for random icons */
-@keyframes techIconHighlight {
-    0% {
-        box-shadow: 0 0 5px 2px rgba(var(--primary-color-rgb), 0.3);
-        transform: scale(1);
-    }
-    50% {
-        box-shadow: 0 0 20px 5px rgba(var(--primary-color-rgb), 0.6);
-        transform: scale(1.1);
-    }
-    100% {
-        box-shadow: 0 0 5px 2px rgba(var(--primary-color-rgb), 0.3);
-        transform: scale(1);
-    }
-}
-
-.tech-pulse-highlight {
-    animation: techIconHighlight 2s ease-in-out;
-}
+/* Removed highlight glow effects - displaying raw icons */
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -1216,14 +1846,11 @@ h6 {
         margin: 0 15px;
     }
     
-    .tech-icon-container {
-        width: 60px;
-        height: 60px;
-    }
-    
     .tech-icon {
-        width: 40px;
-        height: 40px;
+        min-width: 35px;
+        min-height: 35px;
+        max-width: 65px;
+        max-height: 65px;
     }
     
     .tech-marquee-item p {
@@ -1236,14 +1863,11 @@ h6 {
         margin: 0 10px;
     }
     
-    .tech-icon-container {
-        width: 50px;
-        height: 50px;
-    }
-    
     .tech-icon {
-        width: 30px;
-        height: 30px;
+        min-width: 30px;
+        min-height: 30px;
+        max-width: 50px;
+        max-height: 50px;
     }
 }
 
@@ -1359,13 +1983,29 @@ h6 {
 .footer-col-logo .logo {
     font-size: 1.8rem;
     color: #fff; /* White logo text */
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     display: inline-block;
     /* Removed gradient for simpler, consistent look */
     background: none; 
     -webkit-background-clip: initial;
     background-clip: initial;
     text-shadow: none; /* Remove text shadow if not desired */
+    border: none;
+    padding: 0;
+}
+
+/* Footer logo image styles */
+.footer-logo-img {
+    height: 80px;
+    width: auto;
+    max-width: 250px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.footer-col-logo .logo:hover .footer-logo-img {
+    filter: drop-shadow(0 4px 8px rgba(90, 107, 255, 0.3));
+    transform: scale(1.02);
 }
 
 .footer-col h3 {
@@ -1473,9 +2113,7 @@ h6 {
 #contact-us-section .contact-header p {
     font-size: 1.1rem;
     color: #ccc;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
+    margin-bottom: 10px;
 }
 
 .contact-content {
@@ -2244,6 +2882,12 @@ h6 {
     }
 
     .search-filter {
+
+    .dropdown-filter .dropdown-toggle-filter {
+        width: 100%;
+    }
+
+    .search-filter {
         max-width: none;
     }
 
@@ -2318,3 +2962,38 @@ h6 {
     font-size: 1.25rem;
     color: #ffffff;
 }
+
+/* Responsive styles for logo images */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 55px;
+        max-width: 240px;
+    }
+    
+    .footer-logo-img {
+        height: 65px;
+        max-width: 200px;
+    }
+    
+    .logo {
+        min-height: 60px;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 45px;
+        max-width: 180px;
+    }
+    
+    .footer-logo-img {
+        height: 55px;
+        max-width: 170px;
+    }
+    
+    .logo {
+        min-height: 50px;
+        padding: 0.3rem 0.6rem;
+    }
+}}

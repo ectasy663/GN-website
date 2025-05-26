@@ -5,12 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corporate Trainings - Gyannetra</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/benefits-cards.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .hero-section {
             padding-top: 12rem;
             padding-bottom: 6rem;
+        }
+        
+        .benefit-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(25, 35, 55, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .benefit-card .benefit-card-icon {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .benefit-card .benefit-card-icon img {
+            max-height: 60px;
+            max-width: 60px;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            font-size: 1.4rem;
+        }
+        
+        .benefit-card p {
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .program-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .highlight-item i {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+        
+        .btn-primary {
+            align-self: flex-start;
+            margin-top: auto;
+            background-color: var(--primary-color, #4d79ff);
+            border-color: var(--primary-color, #4d79ff);
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-color-hover, #3a66e0);
+            transform: translateY(-2px);
         }
         
         .testimonial-quote {
@@ -51,7 +132,9 @@
     </div>
     <header class="site-header">
     <nav class="navbar container">
-      <a href="../index.html" class="logo">GYANNETRA</a>
+      <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN Name logo.svg" alt="Gyannetra Logo" class="logo-img">
+      </a>
       <ul class="nav-links">
         <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
           <ul class="dropdown-menu services-dropdown">
@@ -103,42 +186,91 @@
 
         <section id="key-training-areas" class="training-programs-section container">
             <h2 class="section-heading">KEY TRAINING AREAS</h2>
-            <div class="cards-container">
-                <div class="training-card">
+            <div class="benefits-cards-grid">
+                <div class="benefit-card">
+                    <div class="benefit-card-icon">
+                        <img src="../assets/mlng.png" alt="AI Fundamentals Icon">
+                    </div>
                     <h3>AI Fundamentals</h3>
-                    <p>Comprehensive introduction to AI concepts, machine learning basics, and practical applications in business contexts.</p>
-                    <a href="../contact.html" class="btn-secondary">Learn More</a>
+                    <p>Comprehensive introduction to AI concepts, machine learning basics, and practical applications in business contexts. Tailored for all experience levels.</p>
+                    <div class="program-highlights">
+                        <span class="highlight-item"><i class="fas fa-users"></i> For all teams</span>
+                        <span class="highlight-item"><i class="fas fa-calendar"></i> 2-5 days</span>
+                    </div>
+                    <a href="../contact.html" class="btn-primary">Learn More</a>
                 </div>
-                <div class="training-card">
-                    <h3>Specific AI Technologies</h3>
-                    <p>Focused training on specific AI tools and technologies relevant to your industry and business needs.</p>
-                    <a href="../contact.html" class="btn-secondary">Learn More</a>
+                
+                <div class="benefit-card">
+                    <div class="benefit-card-icon">
+                        <img src="../assets/gen ai.png" alt="Specific AI Technologies Icon">
+                    </div>
+                    <h3>Generative AI for Business</h3>
+                    <p>Focused training on generative AI tools and technologies that can transform content creation, product development, and customer experiences.</p>
+                    <div class="program-highlights">
+                        <span class="highlight-item"><i class="fas fa-users"></i> Technical teams</span>
+                        <span class="highlight-item"><i class="fas fa-calendar"></i> 3-7 days</span>
+                    </div>
+                    <a href="../contact.html" class="btn-primary">Learn More</a>
                 </div>
-                <div class="training-card">
+                
+                <div class="benefit-card">
+                    <div class="benefit-card-icon">
+                        <img src="../assets/education-cap-icon.svg" alt="AI Ethics Icon">
+                    </div>
                     <h3>AI Ethics for Business</h3>
-                    <p>Understanding ethical considerations, responsible AI implementation, and governance frameworks.</p>
-                    <a href="../contact.html" class="btn-secondary">Learn More</a>
+                    <p>Understanding ethical considerations, responsible AI implementation, and governance frameworks to ensure your AI initiatives align with company values.</p>
+                    <div class="program-highlights">
+                        <span class="highlight-item"><i class="fas fa-users"></i> Leadership</span>
+                        <span class="highlight-item"><i class="fas fa-calendar"></i> 1-3 days</span>
+                    </div>
+                    <a href="../contact.html" class="btn-primary">Learn More</a>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-card-icon">
+                        <img src="../assets/ai agent.png" alt="AI Implementation Icon">
+                    </div>
+                    <h3>AI Implementation Strategy</h3>
+                    <p>Strategic training for leadership on how to effectively implement AI solutions, manage change, and measure ROI from AI initiatives.</p>
+                    <div class="program-highlights">
+                        <span class="highlight-item"><i class="fas fa-users"></i> Executives</span>
+                        <span class="highlight-item"><i class="fas fa-calendar"></i> 2-4 days</span>
+                    </div>
+                    <a href="../contact.html" class="btn-primary">Learn More</a>
                 </div>
             </div>
         </section>
 
-        <section id="benefits-corporate-training" class="why-choose-us-section container">
+        <section id="benefits-corporate-training" class="why-choose-us-section container benefits-section">
             <h2 class="section-heading">BENEFITS OF OUR CORPORATE TRAINING</h2>
-            <div class="cards-container">
+            <div class="benefits-cards-grid">
                 <div class="benefit-card">
-                    <img src="../assets/tailored-content-icon.svg" alt="Tailored Content Icon" class="benefit-icon">
+                    <div class="benefit-card-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
                     <h3>Tailored Content</h3>
                     <p>Our training programs are customized to address your organization's specific needs, goals, and skill gaps.</p>
                 </div>
                 <div class="benefit-card">
-                    <img src="../assets/expert-instructors-icon.svg" alt="Expert Instructors Icon" class="benefit-icon">
+                    <div class="benefit-card-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
                     <h3>Expert Instructors</h3>
                     <p>Learn from industry professionals with hands-on experience implementing AI solutions across various sectors.</p>
                 </div>
                 <div class="benefit-card">
-                    <img src="../assets/upskilled-workforce-icon.svg" alt="Upskilled Workforce Icon" class="benefit-icon">
+                    <div class="benefit-card-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
                     <h3>Upskilled Workforce</h3>
                     <p>Equip your team with the knowledge and practical skills they need to leverage AI effectively in their roles.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>ROI-Focused Training</h3>
+                    <p>Maximize your investment with training that delivers measurable business outcomes and practical implementation skills.</p>
                 </div>
             </div>
         </section>
@@ -161,7 +293,9 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-col footer-col-logo">
-          <a href="../index.html" class="logo">GYANNETRA</a>
+          <a href="../index.html" class="logo">
+        <img src="../assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="footer-logo-img">
+      </a>
           <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
           <div class="social-links">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -205,13 +339,19 @@
       </div>
     </div>
   </footer>
-  <script src="../js/menu-dropdown.js" defer></script>
-  <script src="../js/main.js" defer></script>
   <script>
     // Add any page-specific JS here if needed
     document.addEventListener('DOMContentLoaded', function() {
       // Initialize any scripts needed for this page
     });
   </script>
-</body>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/menu-dropdown.js" defer></script>
+  <script src="../js/form-subscribe.js" defer></script>
+  <script src="../js/unified-neural-interactions.js" defer></script>
+  <script src="../js/tech-marquee.js" defer></script>
+  <script src="../js/data-node-interactions.js" defer></script>
+
 </html>
+
+
