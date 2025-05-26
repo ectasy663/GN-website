@@ -3,11 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Gyannetra — AI Services & Solutions</title>  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/hero-animation.css" />
+  <title>Gyannetra — AI Services & Solutions</title>
+    <!-- Critical FOUC Prevention - Must be first before any CSS -->
+  <style>
+    /* Immediate FOUC prevention - applies before any other CSS loads */
+    .data-node {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transform: translateX(-3000px) translateY(-3000px) !important;
+      position: absolute !important;
+    }
+    /* Prevent any flash during CSS loading */
+    .data-constellation {
+      opacity: 0 !important;
+      visibility: hidden !important;
+    }
+  </style>
+  
+  <script>
+    // Immediate FOUC prevention for data nodes - more aggressive approach
+    document.documentElement.style.setProperty('--data-node-visibility', 'hidden');
+    document.documentElement.style.setProperty('--data-node-opacity', '0');
+    document.documentElement.style.setProperty('--data-node-position', '-3000px');
+    
+    // Hide all potential data node containers immediately
+    const style = document.createElement('style');
+    style.textContent = `
+      .data-node, .data-constellation {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateX(-5000px) translateY(-5000px) !important;
+      }
+    `;
+    document.head.appendChild(style);
+    window.foucPreventionStyle = style;
+  </script>
+  
+  <link rel="stylesheet" href="css/style.css" />  <link rel="stylesheet" href="css/hero-animation.css" />
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Enable data nodes after all CSS is loaded -->
+  <script>
+    // Wait for all stylesheets to load before enabling nodes
+    function enableDataNodes() {
+      // Check if all CSS files are loaded
+      const cssLoaded = Array.from(document.styleSheets).every(sheet => {
+        try {
+          return sheet.cssRules || sheet.rules;
+        } catch (e) {
+          return false;
+        }
+      });
+      
+      if (cssLoaded && document.readyState !== 'loading') {
+        // Remove the aggressive FOUC prevention style
+        if (window.foucPreventionStyle) {
+          window.foucPreventionStyle.remove();
+        }
+        
+        // Enable nodes with proper CSS variables
+        document.documentElement.style.setProperty('--data-node-visibility', 'visible');
+        document.documentElement.style.setProperty('--data-node-opacity', '1');
+        document.documentElement.style.setProperty('--data-node-position', 'unset');
+        
+        // Force enable all data nodes and constellations
+        const dataNodes = document.querySelectorAll('.data-node, .data-constellation');
+        dataNodes.forEach(node => {
+          node.style.removeProperty('opacity');
+          node.style.removeProperty('visibility');
+          node.style.removeProperty('transform');
+        });
+      } else {
+        // Retry after a short delay
+        setTimeout(enableDataNodes, 50);
+      }
+    }
+    
+    // Start checking when DOM is interactive
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', enableDataNodes);
+    } else {
+      enableDataNodes();
+    }
+    
+    // Fallback: ensure nodes are enabled after full page load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        // Remove the aggressive FOUC prevention style
+        if (window.foucPreventionStyle) {
+          window.foucPreventionStyle.remove();
+        }
+        
+        document.documentElement.style.setProperty('--data-node-visibility', 'visible');
+        document.documentElement.style.setProperty('--data-node-opacity', '1');
+        document.documentElement.style.setProperty('--data-node-position', 'unset');
+        
+        // Force enable all data nodes and constellations
+        const dataNodes = document.querySelectorAll('.data-node, .data-constellation');
+        dataNodes.forEach(node => {
+          node.style.removeProperty('opacity');
+          node.style.removeProperty('visibility');
+          node.style.removeProperty('transform');
+        });
+      }, 150);
+    });
+  </script>
 </head>
 <body>
   <div class="atmospheric-bg">
@@ -688,8 +789,9 @@
       <div class="footer-bottom">
         <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
       </div>
-    </div>
-  </footer>  <script src="js/menu-dropdown.js" defer></script>
+    </div>  </footer>
+
+  <script src="js/menu-dropdown.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/tech-marquee.js" defer></script>
   <script src="js/hero-animation-new.js" defer></script>

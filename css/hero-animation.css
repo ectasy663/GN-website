@@ -141,6 +141,12 @@
 /* Data Constellation */
 /* Data Nodes Positioning */
 
+.data-constellation {
+  /* Hide constellation container until ready */
+  opacity: var(--data-node-opacity, 0) !important;
+  visibility: var(--data-node-visibility, hidden) !important;
+}
+
 .data-node {
   position: absolute;
   width: 80px;
@@ -149,149 +155,295 @@
   animation: nodeFloat 6s ease-in-out infinite;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 5;
+  
+  /* Ultra-strong FOUC prevention using CSS variables set by JavaScript */
+  opacity: var(--data-node-opacity, 0) !important;
+  visibility: var(--data-node-visibility, hidden) !important;
+  top: var(--data-node-position, -3000px) !important;
+  left: var(--data-node-position, -3000px) !important;
+  transform: none !important;
 }
 
-/* Core Service Nodes - Enhanced organic scatter on right side */
-.node-ml {
-  top: 18%;
-  right: 28%;
-  animation-delay: 0s;
-  z-index: 5;
+/* Critical: Only show nodes when they have been properly positioned by media queries */
+@media (min-width: 769px) {
+  .data-constellation {
+    --data-node-opacity: 1;
+    --data-node-visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .data-node[class*="node-"] {
+    --data-node-opacity: 1;
+    --data-node-visibility: visible;
+    --data-node-position: unset;
+    opacity: 1 !important;
+    visibility: visible !important;
+    top: unset !important;
+    left: unset !important;
+  }
 }
 
-.node-ai {
-  top: 42%;
-  right: 12%;
-  animation-delay: 1.5s;
-  z-index: 5;
+@media (max-width: 768px) {
+  .data-constellation {
+    --data-node-opacity: 1;
+    --data-node-visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .data-node[class*="node-"] {
+    --data-node-opacity: 1;
+    --data-node-visibility: visible;
+    --data-node-position: unset;
+    opacity: 1 !important;
+    visibility: visible !important;
+    top: unset !important;
+    left: unset !important;
+  }
 }
 
-.node-analytics {
-  bottom: 32%;
-  right: 22%;
-  animation-delay: 3s;
-  z-index: 5;
+/* Core Service Nodes - Natural organic scatter across right side (Desktop only) */
+@media (min-width: 769px) {
+  .node-ml {
+    top: 14%;
+    right: 35%;
+    animation-delay: 0s;
+    z-index: 5;
+  }
+
+  .node-ai {
+    top: 38%;
+    right: 9%;
+    animation-delay: 1.5s;
+    z-index: 5;
+  }
+
+  .node-analytics {
+    bottom: 35%;
+    right: 29%;
+    animation-delay: 3s;
+    z-index: 5;
+  }
+
+  .node-automation {
+    bottom: 9%;
+    right: 41%;
+    animation-delay: 4.5s;
+    z-index: 5;
+  }
 }
 
-.node-automation {
-  bottom: 12%;
-  right: 38%;
-  animation-delay: 4.5s;
-  z-index: 5;
+/* Tablet positioning - Moderate scatter for medium screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .node-ml {
+    top: 18%;
+    right: 28%;
+    animation-delay: 0s;
+    z-index: 5;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .node-ai {
+    top: 42%;
+    right: 12%;
+    animation-delay: 1.5s;
+    z-index: 5;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .node-analytics {
+    bottom: 32%;
+    right: 25%;
+    animation-delay: 3s;
+    z-index: 5;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .node-automation {
+    bottom: 12%;
+    right: 38%;
+    animation-delay: 4.5s;
+    z-index: 5;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  .node-finance {
+    top: 28%;
+    right: 6%;
+    animation-delay: 0.5s;
+    z-index: 4;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .node-healthcare {
+    top: 55%;
+    right: 16%;
+    animation-delay: 2s;
+    z-index: 4;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .node-retail {
+    bottom: 22%;
+    right: 8%;
+    animation-delay: 3.5s;
+    z-index: 4;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .node-manufacturing {
+    top: 45%;
+    right: 32%;
+    animation-delay: 5s;
+    z-index: 4;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
 }
 
-/* Industry Nodes - Enhanced organic scattering on right side */
-.node-finance {
-  top: 28%;
-  right: 6%;
-  animation-delay: 0.5s;
-  z-index: 4;
+/* Industry Nodes - Enhanced organic scattering with varied depths (Desktop only) */
+@media (min-width: 769px) {
+  .node-finance {
+    top: 26%;
+    right: 4%;
+    animation-delay: 0.5s;
+    z-index: 4;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .node-healthcare {
+    top: 59%;
+    right: 14%;
+    animation-delay: 2s;
+    z-index: 4;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .node-retail {
+    bottom: 19%;
+    right: 6%;
+    animation-delay: 3.5s;
+    z-index: 4;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .node-manufacturing {
+    top: 49%;
+    right: 36%;
+    animation-delay: 5s;
+    z-index: 4;
+  }
 }
 
-.node-healthcare {
-  top: 62%;
-  right: 16%;
-  animation-delay: 2s;
-  z-index: 4;
-}
+/* Strategic Nodes - Natural organic scatter across right quadrant (Desktop only) */
+@media (min-width: 769px) {
+  .node-agentic {
+    top: 72%;
+    right: 24%;
+    animation-delay: 6.5s;
+    z-index: 3;
+  }
 
-.node-retail {
-  bottom: 22%;
-  right: 8%;
-  animation-delay: 3.5s;
-  z-index: 4;
-}
+  .node-marketing {
+    top: 8%;
+    right: 48%;
+    animation-delay: 7.5s;
+    z-index: 3;
+  }
 
-.node-manufacturing {
-  top: 52%;
-  right: 32%;
-  animation-delay: 5s;
-  z-index: 4;
-}
+  .node-media {
+    bottom: 6%;
+    right: 14%;
+    animation-delay: 8.5s;
+    z-index: 3;
+  }
 
-/* Strategic Nodes - Natural organic scatter across right quadrant */
-.node-agentic {
-  top: 72%;
-  right: 24%;
-  animation-delay: 6.5s;
-  z-index: 3;
-}
+  /* Additional nodes for enhanced organic distribution */
+  .node-travel {
+    top: 78%;
+    right: 42%;
+    animation-delay: 9s;
+    z-index: 3;
+  }
 
-.node-marketing {
-  top: 8%;
-  right: 48%;
-  animation-delay: 7.5s;
-  z-index: 3;
-}
+  .node-education {
+    bottom: 48%;
+    right: 46%;
+    animation-delay: 10s;
+    z-index: 3;
+  }
 
-.node-media {
-  bottom: 6%;
-  right: 14%;
-  animation-delay: 8.5s;
-  z-index: 3;
-}
+  .node-technology {
+    top: 32%;
+    right: 44%;
+    animation-delay: 11s;
+    z-index: 3;
+  }
 
-/* Additional nodes for enhanced organic distribution */
-.node-travel {
-  top: 78%;
-  right: 42%;
-  animation-delay: 9s;
-  z-index: 3;
-}
+  /* Right-side hero animation nodes - Natural scattered positioning */
+  .node-education-right {
+    top: 22%;
+    right: 18%;
+    animation-delay: 10s;
+    z-index: 4;
+  }
 
-.node-education {
-  bottom: 48%;
-  right: 46%;
-  animation-delay: 10s;
-  z-index: 3;
-}
+  .node-technology-right {
+    top: 58%;
+    right: 28%;
+    animation-delay: 11s;  .node-technology-right {
+    top: 58%;
+    right: 28%;
+    animation-delay: 11s;
+    z-index: 4;
+  }
 
-.node-technology {
-  top: 32%;
-  right: 44%;
-  animation-delay: 11s;
-  z-index: 3;
-}
+  .node-travel-right {
+    top: 88%;
+    right: 32%;
+    animation-delay: 12s;
+    z-index: 4;
+  }
 
-/* Right-side hero animation nodes - Natural scattered positioning */
-.node-education-right {
-  top: 22%;
-  right: 18%;
-  animation-delay: 10s;
-  z-index: 4;
-}
+  /* New Strategic Nodes - Filling gaps for better organic scatter */
+  .node-predictive {
+    top: 48%;
+    right: 8%;
+    animation-delay: 12s;
+  }
 
-.node-technology-right {
-  top: 58%;
-  right: 28%;
-  animation-delay: 11s;
-  z-index: 4;
-}
+  .node-supply-chain {
+    top: 38%;
+    left: 8%;
+    animation-delay: 13s;
+  }
 
-.node-travel-right {
-  top: 88%;
-  right: 32%;
-  animation-delay: 12s;
-  z-index: 4;
-}
-
-/* New Strategic Nodes - Filling gaps for better organic scatter */
-.node-predictive {
-  top: 48%;
-  right: 8%;
-  animation-delay: 12s;
-}
-
-.node-supply-chain {
-  top: 38%;
-  left: 8%;
-  animation-delay: 13s;
-}
-
-.node-risk {
-  top: 12%;
-  right: 34%;
-  animation-delay: 14s;
+  .node-risk {
+    top: 12%;
+    right: 34%;
+    animation-delay: 14s;
+  }
 }
 
 .node-core {
@@ -723,10 +875,38 @@
     width: 35px;
     height: 35px;
   }
+  .data-constellation {
+    /* Ensure constellation is visible on tablet */
+    opacity: var(--data-node-opacity, 0) !important;
+    visibility: var(--data-node-visibility, hidden) !important;
+  }
   
   .data-node {
     width: 65px;
     height: 65px;
+    /* Ensure FOUC prevention works on tablet too */
+    opacity: var(--data-node-opacity, 0) !important;
+    visibility: var(--data-node-visibility, hidden) !important;
+    top: var(--data-node-position, -3000px) !important;
+    left: var(--data-node-position, -3000px) !important;
+  }
+  
+  /* Override for visible constellation and nodes on tablet */
+  .data-constellation {
+    --data-node-opacity: 1;
+    --data-node-visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .data-node[class*="node-"] {
+    --data-node-opacity: 1;
+    --data-node-visibility: visible;
+    --data-node-position: unset;
+    opacity: 1 !important;
+    visibility: visible !important;
+    top: unset !important;
+    left: unset !important;
   }
   
   .node-core, .industry-core {
@@ -817,10 +997,38 @@
   .neural-network-container {
     height: 450px;
   }
+    .data-constellation {
+    /* Ensure constellation is visible on mobile */
+    opacity: var(--data-node-opacity, 0) !important;
+    visibility: var(--data-node-visibility, hidden) !important;
+  }
   
   .data-node {
     width: 55px;
     height: 55px;
+    /* Ensure FOUC prevention works on mobile too */
+    opacity: var(--data-node-opacity, 0) !important;
+    visibility: var(--data-node-visibility, hidden) !important;
+    top: var(--data-node-position, -3000px) !important;
+    left: var(--data-node-position, -3000px) !important;
+  }
+  
+  /* Override for visible constellation and nodes on mobile */
+  .data-constellation {
+    --data-node-opacity: 1;
+    --data-node-visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .data-node[class*="node-"] {
+    --data-node-opacity: 1;
+    --data-node-visibility: visible;
+    --data-node-position: unset;
+    opacity: 1 !important;
+    visibility: visible !important;
+    top: unset !important;
+    left: unset !important;
   }
   
   .node-core, .industry-core {
@@ -894,51 +1102,50 @@
   z-index: 15;
 }
 
-/* Improved node distribution with a more organized pattern */
-.hero-animation .node-ml {
-  top: 25%;
-  left: 25%;
-  animation-delay: 0.2s;
-}
+/* Enhanced organic scattering - Focus on right-side distribution (Desktop only) */
+@media (min-width: 769px) {
+  .hero-animation .node-ml {
+    top: 16%;
+    right: 32%;
+    animation-delay: 0.2s;
+  }
 
-.hero-animation .node-ai {
-  top: 25%;
-  right: 25%;
-  animation-delay: 0.7s;
-}
+  .hero-animation .node-ai {
+    top: 45%;
+    right: 18%;
+    animation-delay: 0.7s;
+  }
 
-.hero-animation .node-analytics {
-  bottom: 25%; 
-  left: 25%;
-  animation-delay: 1.2s;
-}
+  .hero-animation .node-analytics {
+    bottom: 28%; 
+    right: 26%;
+    animation-delay: 1.2s;
+  }
 
-.hero-animation .node-automation {
-  bottom: 25%;
-  right: 25%;
-  animation-delay: 1.7s;
-}
+  .hero-animation .node-automation {
+    bottom: 8%;
+    right: 42%;
+    animation-delay: 1.7s;
+  }
 
-/* Right-side nodes positioned at mid-points */
-.hero-animation .node-education-right {
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  animation-delay: 2.2s;
-}
+  /* Right-side nodes with natural scattered positioning */
+  .hero-animation .node-education-right {
+    top: 35%;
+    right: 8%;
+    animation-delay: 2.2s;
+  }
 
-.hero-animation .node-technology-right {
-  bottom: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  animation-delay: 2.7s;
-}
+  .hero-animation .node-technology-right {
+    top: 68%;
+    right: 35%;
+    animation-delay: 2.7s;
+  }
 
-.hero-animation .node-travel-right {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  animation-delay: 3.2s;
+  .hero-animation .node-travel-right {
+    top: 82%;
+    right: 15%;
+    animation-delay: 3.2s;
+  }
 }
 
 .data-node:hover ~ .data-node {
@@ -1137,3 +1344,103 @@
 .node-manufacturing { 
   transform: translateX(2px) translateY(-3px) rotate(-1deg);
 }
+
+/* Additional strategic nodes for better right-side scatter coverage */
+.node-cluster-scattered-1 {
+  top: 22%;
+  right: 52%;
+  animation-delay: 16.5s;
+  width: 70px;
+  height: 70px;
+  z-index: 2;
+  animation: nodeFloatTertiary 7.5s ease-in-out infinite;
+}
+
+.node-cluster-scattered-2 {
+  top: 66%;
+  right: 48%;
+  animation-delay: 17.5s;
+  width: 73px;
+  height: 73px;
+  z-index: 2;
+  animation: nodeFloatSecondary 8.2s ease-in-out infinite;
+}
+
+.node-cluster-scattered-3 {
+  top: 44%;
+  right: 2%;
+  animation-delay: 18.2s;
+  width: 68px;
+  height: 68px;
+  z-index: 2;
+  animation: nodeFloatEnhanced 6.8s ease-in-out infinite;
+}
+
+.node-cluster-scattered-4 {
+  top: 84%;
+  right: 50%;
+  animation-delay: 19s;
+  width: 71px;
+  height: 71px;
+  z-index: 2;
+  animation: nodeFloat 7.2s ease-in-out infinite;
+}
+
+/* Enhanced random positioning variations for ultra-organic feel */
+.data-node:nth-child(7n) {
+  transform: translateX(4px) translateY(-2px) rotate(2.5deg);
+}
+
+.data-node:nth-child(7n+1) {
+  transform: translateX(-2px) translateY(3px) rotate(-1.8deg);
+}
+
+.data-node:nth-child(7n+2) {
+  transform: translateX(3px) translateY(-1px) rotate(1.2deg);
+}
+
+/* Right-side specific micro-adjustments for natural clustering */
+.hero-animation .data-node:nth-child(even) {
+  transform: translateX(2px) translateY(-1px) rotate(1deg);
+}
+
+.hero-animation .data-node:nth-child(odd) {
+  transform: translateX(-1px) translateY(2px) rotate(-1deg);
+}
+
+/* Additional depth variations with subtle opacity changes */
+.data-node:nth-child(5n) {
+  opacity: 0.95;
+  filter: brightness(1.05);
+}
+
+.data-node:nth-child(5n+2) {
+  opacity: 0.92;
+  filter: brightness(0.98);
+}
+
+/* Dynamic scatter enhancement - creates more natural randomness */
+@media (min-width: 1200px) {
+  .hero-animation .node-ml {
+    top: 14%;
+    right: 33%;
+    transform: translateX(3px) translateY(-2px) rotate(2.5deg);
+  }
+  
+  .hero-animation .node-ai {
+    top: 43%;
+    right: 16%;
+    transform: translateX(-2px) translateY(3px) rotate(-1.5deg);
+  }
+  
+  .hero-animation .node-analytics {
+    bottom: 26%;
+    right: 28%;
+    transform: translateX(4px) translateY(-1px) rotate(1.8deg);
+  }
+  
+  .hero-animation .node-automation {
+    bottom: 6%;
+    right: 44%;
+    transform: translateX(-3px) translateY(2px) rotate(-2.2deg);
+  }
