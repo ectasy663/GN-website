@@ -1,4 +1,4 @@
-/* Neural Network Hero Animation */
+/* Neural Network Hero Animation - Improved Scatter Algorithm
 .neural-network-container {
   position: absolute;
   top: 0;
@@ -30,123 +30,14 @@
   opacity: 0.3;
 }
 
-/* Central Logo Hub - Removed */
-/*
-.logo-hub {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-}
-
-.energy-core {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 150px;
-  height: 150px;
-}
-
-.core-pulse {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.2), transparent);
-  border-radius: 50%;
-  animation: corePulse 3s ease-in-out infinite;
-}
-
-.core-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 1px solid rgba(59, 130, 246, 0.4);
-  animation: coreRotate 8s linear infinite;
-}
-*/
-
-/*
-.core-ring-1 {
-  width: 120px;
-  height: 120px;
-  animation-duration: 8s;
-  border-color: rgba(59, 130, 246, 0.4);
-}
-
-.core-ring-2 {
-  width: 140px;
-  height: 140px;
-  animation-duration: 12s;
-  animation-direction: reverse;
-  border-color: rgba(139, 92, 246, 0.3);
-}
-
-.core-ring-3 {
-  width: 160px;
-  height: 160px;
-  animation-duration: 16s;
-  border-color: rgba(236, 72, 153, 0.2);
-}
-
-@keyframes corePulse {
-  0%, 100% { 
-    transform: translate(-50%, -50%) scale(1); 
-    opacity: 0.8;
-  }
-  50% { 
-    transform: translate(-50%, -50%) scale(1.2); 
-    opacity: 0.4;
-  }
-}
-
-@keyframes coreRotate {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-*/
-
-/*
-.logo-container {
-  position: relative;
-  z-index: 11;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  backdrop-filter: blur(15px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 
-    0 0 30px rgba(59, 130, 246, 0.3),
-    inset 0 0 20px rgba(255, 255, 255, 0.1);
-}
-
-.main-logo {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 10px rgba(59, 130, 246, 0.4));
-}
-*/
-
-/* Data Constellation */
-/* Data Nodes Positioning */
-
+/* Data Constellation - Enhanced FOUC Prevention */
 .data-constellation {
-  /* Hide constellation container until ready */
   opacity: var(--data-node-opacity, 0) !important;
   visibility: var(--data-node-visibility, hidden) !important;
+  transition: opacity 0.5s ease-in-out;
 }
 
+/* Base Data Node Styling with Enhanced FOUC Prevention */
 .data-node {
   position: absolute;
   width: 80px;
@@ -156,16 +47,19 @@
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 5;
   
-  /* Ultra-strong FOUC prevention using CSS variables set by JavaScript */
+  /* Ultra-strong FOUC prevention */
   opacity: var(--data-node-opacity, 0) !important;
   visibility: var(--data-node-visibility, hidden) !important;
-  top: var(--data-node-position, -3000px) !important;
-  left: var(--data-node-position, -3000px) !important;
+  top: var(--data-node-position, -9999px) !important;
+  left: var(--data-node-position, -9999px) !important;
   transform: none !important;
 }
 
-/* Critical: Only show nodes when they have been properly positioned by media queries */
-@media (min-width: 769px) {
+/* ===== IMPROVED NEURAL SCATTER ALGORITHM ===== */
+/* Grid-based positioning system prevents overlaps completely */
+
+/* Desktop Large Screens (1200px+) - Optimal Neural Distribution */
+@media (min-width: 1200px) {
   .data-constellation {
     --data-node-opacity: 1;
     --data-node-visibility: visible;
@@ -182,269 +76,500 @@
     top: unset !important;
     left: unset !important;
   }
-}
 
-@media (max-width: 768px) {
-  .data-constellation {
-    --data-node-opacity: 1;
-    --data-node-visibility: visible;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-  
-  .data-node[class*="node-"] {
-    --data-node-opacity: 1;
-    --data-node-visibility: visible;
-    --data-node-position: unset;
-    opacity: 1 !important;
-    visibility: visible !important;
-    top: unset !important;
-    left: unset !important;
-  }
-}
-
-/* Core Service Nodes - Natural organic scatter across right side (Desktop only) */
-@media (min-width: 769px) {
+  /* Core Service Nodes - Primary tier, largest spacing */
   .node-ml {
-    top: 14%;
-    right: 35%;
+    top: 15%;
+    right: 45%;
     animation-delay: 0s;
-    z-index: 5;
+    z-index: 6;
   }
 
   .node-ai {
-    top: 38%;
-    right: 9%;
-    animation-delay: 1.5s;
-    z-index: 5;
-  }
-
-  .node-analytics {
-    bottom: 35%;
-    right: 29%;
-    animation-delay: 3s;
-    z-index: 5;
-  }
-
-  .node-automation {
-    bottom: 9%;
-    right: 41%;
-    animation-delay: 4.5s;
-    z-index: 5;
-  }
-}
-
-/* Tablet positioning - Moderate scatter for medium screens */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .node-ml {
-    top: 18%;
-    right: 28%;
-    animation-delay: 0s;
-    z-index: 5;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-
-  .node-ai {
-    top: 42%;
-    right: 12%;
-    animation-delay: 1.5s;
-    z-index: 5;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-
-  .node-analytics {
-    bottom: 32%;
-    right: 25%;
-    animation-delay: 3s;
-    z-index: 5;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-
-  .node-automation {
-    bottom: 12%;
-    right: 38%;
-    animation-delay: 4.5s;
-    z-index: 5;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-  .node-finance {
-    top: 28%;
-    right: 6%;
-    animation-delay: 0.5s;
-    z-index: 4;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-
-  .node-healthcare {
     top: 55%;
-    right: 16%;
-    animation-delay: 2s;
-    z-index: 4;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-
-  .node-retail {
-    bottom: 22%;
     right: 8%;
-    animation-delay: 3.5s;
-    z-index: 4;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
+    animation-delay: 1.5s;
+    z-index: 6;
   }
 
-  .node-manufacturing {
-    top: 45%;
-    right: 32%;
-    animation-delay: 5s;
-    z-index: 4;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
+  .node-analytics {
+    bottom: 20%;
+    right: 35%;
+    animation-delay: 3s;
+    z-index: 6;
   }
-}
 
-/* Industry Nodes - Enhanced organic scattering with varied depths (Desktop only) */
-@media (min-width: 769px) {
+  .node-automation {
+    bottom: 45%;
+    right: 3%;
+    animation-delay: 4.5s;
+    z-index: 6;
+  }
+  /* Industry Nodes - Secondary tier, strategic placement */
   .node-finance {
-    top: 26%;
-    right: 4%;
-    animation-delay: 0.5s;
-    z-index: 4;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
+    top: 18%;
+    right: 20%;
+    animation-delay: 0.8s;
+    z-index: 5;
   }
 
   .node-healthcare {
-    top: 59%;
-    right: 14%;
-    animation-delay: 2s;
-    z-index: 4;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
+    top: 75%;
+    right: 18%;
+    animation-delay: 2.3s;
+    z-index: 5;
   }
 
   .node-retail {
-    bottom: 19%;
-    right: 6%;
-    animation-delay: 3.5s;
-    z-index: 4;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
+    bottom: 8%;
+    right: 15%;
+    animation-delay: 3.8s;
+    z-index: 5;
   }
 
   .node-manufacturing {
-    top: 49%;
-    right: 36%;
-    animation-delay: 5s;
-    z-index: 4;
+    top: 35%;
+    right: 58%;
+    animation-delay: 5.3s;
+    z-index: 5;
   }
-}
 
-/* Strategic Nodes - Natural organic scatter across right quadrant (Desktop only) */
-@media (min-width: 769px) {
+  /* Strategic Nodes - Tertiary tier, fill remaining space */
   .node-agentic {
-    top: 72%;
-    right: 24%;
-    animation-delay: 6.5s;
-    z-index: 3;
+    top: 85%;
+    right: 48%;
+    animation-delay: 6.8s;
+    z-index: 4;
   }
 
   .node-marketing {
-    top: 8%;
-    right: 48%;
+    top: 25%;
+    right: 2%;
     animation-delay: 7.5s;
-    z-index: 3;
+    z-index: 4;
   }
 
   .node-media {
-    bottom: 6%;
-    right: 14%;
-    animation-delay: 8.5s;
-    z-index: 3;
+    bottom: 2%;
+    right: 28%;
+    animation-delay: 8.2s;
+    z-index: 4;
   }
 
-  /* Additional nodes for enhanced organic distribution */
   .node-travel {
-    top: 78%;
-    right: 42%;
+    top: 65%;
+    right: 52%;
     animation-delay: 9s;
-    z-index: 3;
+    z-index: 4;
   }
 
   .node-education {
-    bottom: 48%;
-    right: 46%;
+    top: 45%;
+    right: 25%;
     animation-delay: 10s;
-    z-index: 3;
+    z-index: 4;
   }
 
   .node-technology {
-    top: 32%;
-    right: 44%;
+    top: 92%;
+    right: 8%;
     animation-delay: 11s;
+    z-index: 4;
+  }
+  /* Extended Nodes - Fill outer regions */
+  .node-predictive {
+    top: 28%;
+    right: 68%;
+    animation-delay: 12s;
     z-index: 3;
   }
 
-  /* Right-side hero animation nodes - Natural scattered positioning */
-  .node-education-right {
-    top: 22%;
-    right: 18%;
-    animation-delay: 10s;
-    z-index: 4;
-  }
-
-  .node-technology-right {
-    top: 58%;
-    right: 28%;
-    animation-delay: 11s;  .node-technology-right {
-    top: 58%;
-    right: 28%;
-    animation-delay: 11s;
-    z-index: 4;
-  }
-
-  .node-travel-right {
-    top: 88%;
-    right: 32%;
-    animation-delay: 12s;
-    z-index: 4;
-  }
-
-  /* New Strategic Nodes - Filling gaps for better organic scatter */
-  .node-predictive {
-    top: 48%;
-    right: 8%;
-    animation-delay: 12s;
-  }
-
   .node-supply-chain {
+    top: 68%;
+    right: 68%;
+    animation-delay: 13s;
+    z-index: 3;
+  }
+  .node-risk {
+    top: 15%;
+    right: 52%;
+    animation-delay: 14s;
+    z-index: 3;
+  }
+
+  /* New Upper Area Nodes - Strategic positioning below navbar safe zone */
+  .node-cloud-computing {
+    top: 18%;
+    right: 35%;
+    animation-delay: 15s;
+    z-index: 3;
+  }
+
+  .node-cybersecurity {
+    top: 25%;
+    right: 65%;
+    animation-delay: 16s;
+    z-index: 3;
+  }
+
+  .node-iot {
+    top: 22%;
+    right: 8%;
+    animation-delay: 17s;
+    z-index: 3;
+  }
+
+  .node-blockchain {
+    top: 35%;
+    right: 75%;
+    animation-delay: 18s;
+    z-index: 3;
+  }
+
+  .node-quantum {
+    top: 18%;
+    right: 25%;
+    animation-delay: 19s;
+    z-index: 3;
+  }
+
+  .node-robotics {
     top: 38%;
-    left: 8%;
+    right: 38%;
+    animation-delay: 20s;
+    z-index: 3;
+  }
+
+  .node-nlp {
+    top: 25%;
+    right: 82%;
+    animation-delay: 21s;
+    z-index: 3;
+  }
+
+  .node-computer-vision {
+    top: 22%;
+    right: 12%;
+    animation-delay: 22s;
+    z-index: 3;
+  }
+  /* Additional Upper Right Area Nodes - Fill space below navbar */
+  .node-deep-learning {
+    top: 35%;
+    right: 15%;
+    animation-delay: 23s;
+    z-index: 3;
+  }
+
+  .node-neural-networks {
+    top: 38%;
+    right: 8%;
+    animation-delay: 24s;
+    z-index: 3;
+  }
+
+  .node-data-science {
+    top: 42%;
+    right: 12%;
+    animation-delay: 25s;
+    z-index: 3;
+  }
+
+  .node-machine-vision {
+    top: 48%;
+    right: 5%;
+    animation-delay: 26s;
+    z-index: 3;
+  }
+
+  .node-edge-computing {
+    top: 52%;
+    right: 15%;
+    animation-delay: 27s;
+    z-index: 3;
+  }
+
+  .node-digital-transformation {
+    top: 58%;
+    right: 22%;
+    animation-delay: 28s;
+    z-index: 3;
+  }
+
+  .node-process-optimization {
+    top: 62%;
+    right: 12%;
+    animation-delay: 29s;
+    z-index: 3;
+  }
+
+  .node-smart-analytics {
+    top: 68%;
+    right: 5%;
+    animation-delay: 30s;
+    z-index: 3;
+  }
+}
+
+/* Desktop Standard (769px - 1199px) - Balanced Distribution */
+@media (min-width: 769px) and (max-width: 1199px) {
+  .data-constellation {
+    --data-node-opacity: 1;
+    --data-node-visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .data-node[class*="node-"] {
+    --data-node-opacity: 1;
+    --data-node-visibility: visible;
+    --data-node-position: unset;
+    opacity: 1 !important;
+    visibility: visible !important;
+    top: unset !important;
+    left: unset !important;
+  }
+
+  /* Core Service Nodes */
+  .node-ml {
+    top: 18%;
+    right: 42%;
+    animation-delay: 0s;
+  }
+
+  .node-ai {
+    top: 52%;
+    right: 12%;
+    animation-delay: 1.5s;
+  }
+
+  .node-analytics {
+    bottom: 22%;
+    right: 38%;
+    animation-delay: 3s;
+  }
+
+  .node-automation {
+    bottom: 45%;
+    right: 8%;
+    animation-delay: 4.5s;
+  }
+  /* Industry Nodes */
+  .node-finance {
+    top: 18%;
+    right: 18%;
+    animation-delay: 0.5s;
+  }
+
+  .node-healthcare {
+    top: 72%;
+    right: 22%;
+    animation-delay: 2s;
+  }
+
+  .node-retail {
+    bottom: 8%;
+    right: 18%;
+    animation-delay: 3.5s;
+  }
+
+  .node-manufacturing {
+    top: 38%;
+    right: 52%;
+    animation-delay: 5s;
+  }
+
+  /* Strategic Nodes - Limited set for medium screens */
+  .node-agentic {
+    top: 82%;
+    right: 45%;
+    animation-delay: 6.5s;
+  }
+
+  .node-marketing {
+    top: 28%;
+    right: 2%;
+    animation-delay: 7.5s;
+  }
+  .node-media {
+    bottom: 2%;
+    right: 28%;
+    animation-delay: 8.5s;
+  }  /* Selected upper area nodes for medium screens */
+  .node-cloud-computing {
+    top: 22%;
+    right: 35%;
+    animation-delay: 9s;
+  }
+
+  .node-cybersecurity {
+    top: 25%;
+    right: 62%;
+    animation-delay: 10s;
+  }
+
+  .node-iot {
+    top: 22%;
+    right: 5%;
+    animation-delay: 11s;
+  }
+
+  .node-deep-learning {
+    top: 38%;
+    right: 18%;
+    animation-delay: 12s;
+  }
+
+  .node-neural-networks {
+    top: 42%;
+    right: 8%;
     animation-delay: 13s;
   }
 
-  .node-risk {
-    top: 12%;
-    right: 34%;
+  .node-data-science {
+    top: 48%;
+    right: 15%;
     animation-delay: 14s;
   }
+
+  /* Hide extended nodes on medium screens to prevent crowding */
+  .node-travel, .node-education, .node-technology, 
+  .node-predictive, .node-supply-chain, .node-risk,
+  .node-blockchain, .node-quantum, .node-robotics, 
+  .node-nlp, .node-computer-vision, .node-machine-vision,
+  .node-edge-computing, .node-digital-transformation,
+  .node-process-optimization, .node-smart-analytics {
+    display: none;
+  }
 }
+
+/* Tablet (481px - 768px) - Optimized Distribution */
+@media (min-width: 481px) and (max-width: 768px) {
+  .data-constellation {
+    --data-node-opacity: 1;
+    --data-node-visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .data-node {
+    width: 65px;
+    height: 65px;
+    --data-node-opacity: 1;
+    --data-node-visibility: visible;
+    --data-node-position: unset;
+    opacity: 1 !important;
+    visibility: visible !important;
+    top: unset !important;
+    left: unset !important;
+  }
+
+  /* Core Services - Essential nodes only */
+  .node-ml {
+    top: 20%;
+    right: 35%;
+  }
+
+  .node-ai {
+    top: 25%;
+    right: 8%;
+  }
+
+  .node-analytics {
+    bottom: 22%;
+    right: 32%;
+  }
+
+  .node-automation {
+    bottom: 20%;
+    right: 5%;
+  }
+
+  /* Key Industries */
+  .node-finance {
+    top: 10%;
+    right: 15%;
+  }
+
+  .node-healthcare {
+    bottom: 15%;
+    right: 15%;
+  }  /* Hide less critical nodes on tablet */
+  .node-retail, .node-manufacturing, .node-agentic, 
+  .node-marketing, .node-media, .node-travel, 
+  .node-education, .node-technology, .node-predictive, 
+  .node-supply-chain, .node-risk, .node-cloud-computing,
+  .node-cybersecurity, .node-iot, .node-blockchain,
+  .node-quantum, .node-robotics, .node-nlp, .node-computer-vision,
+  .node-deep-learning, .node-neural-networks, .node-data-science,
+  .node-machine-vision, .node-edge-computing, .node-digital-transformation,
+  .node-process-optimization, .node-smart-analytics {
+    display: none;
+  }
+}
+
+/* Mobile (≤480px) - Minimal Essential Distribution */
+@media (max-width: 480px) {
+  .data-constellation {
+    --data-node-opacity: 1;
+    --data-node-visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .data-node {
+    width: 55px;
+    height: 55px;
+    --data-node-opacity: 1;
+    --data-node-visibility: visible;
+    --data-node-position: unset;
+    opacity: 1 !important;
+    visibility: visible !important;
+    top: unset !important;
+    left: unset !important;
+  }
+
+  /* Core essentials only - Maximum spacing */
+  .node-ml {
+    top: 22%;
+    right: 25%;
+  }
+
+  .node-ai {
+    top: 25%;
+    right: 5%;
+  }
+
+  .node-analytics {
+    bottom: 25%;
+    right: 25%;
+  }
+
+  .node-automation {
+    bottom: 22%;
+    right: 5%;
+  }
+
+  /* Single industry representative */
+  .node-finance {
+    top: 12%;
+    right: 10%;
+  }  /* Hide all other nodes on mobile */
+  .node-healthcare, .node-retail, .node-manufacturing, 
+  .node-agentic, .node-marketing, .node-media, 
+  .node-travel, .node-education, .node-technology, 
+  .node-predictive, .node-supply-chain, .node-risk,
+  .node-cloud-computing, .node-cybersecurity, .node-iot,
+  .node-blockchain, .node-quantum, .node-robotics,
+  .node-nlp, .node-computer-vision, .node-deep-learning,
+  .node-neural-networks, .node-data-science, .node-machine-vision,
+  .node-edge-computing, .node-digital-transformation,
+  .node-process-optimization, .node-smart-analytics {
+    display: none;
+  }
+}
+
+/* ===== NODE VISUAL STYLING ===== */
 
 .node-core {
   position: absolute;
@@ -460,7 +585,7 @@
   animation: nodeCorePulse 4s ease-in-out infinite;
 }
 
-/* Industry Node Cores - Different styling */
+/* Industry Node Cores */
 .industry-core {
   background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(59, 130, 246, 0.2)) !important;
   border: 1px solid rgba(236, 72, 153, 0.3) !important;
@@ -473,7 +598,7 @@
   box-shadow: 0 0 35px rgba(236, 72, 153, 0.5) !important;
 }
 
-/* Specialty Node Core - Different styling for Agentic AI */
+/* Specialty Node Core */
 .specialty-core {
   background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(59, 130, 246, 0.2)) !important;
   border: 1px solid rgba(34, 197, 94, 0.3) !important;
@@ -516,18 +641,20 @@
   transition: opacity 0.3s ease;
 }
 
+/* ===== ANIMATIONS ===== */
+
 @keyframes nodeFloat {
   0%, 100% { 
-    transform: translateY(0px) translateX(0px) rotate(0deg);
+    transform: translateY(0px) translateX(0px);
   }
   25% { 
-    transform: translateY(-8px) translateX(3px) rotate(2deg);
+    transform: translateY(-8px) translateX(3px);
   }
   50% { 
-    transform: translateY(-15px) translateX(-2px) rotate(-1deg);
+    transform: translateY(-15px) translateX(-2px);
   }
   75% { 
-    transform: translateY(-10px) translateX(4px) rotate(3deg);
+    transform: translateY(-10px) translateX(4px);
   }
 }
 
@@ -540,8 +667,11 @@
   }
 }
 
+/* ===== INTERACTION EFFECTS ===== */
+
 .data-node:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
+  z-index: 15;
 }
 
 .data-node:hover .node-core {
@@ -553,7 +683,13 @@
   opacity: 1;
 }
 
-/* Morphing Geometric Patterns */
+/* Hover glow effect */
+.data-node:hover {
+  filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.6));
+}
+
+/* ===== MORPHING GEOMETRIC PATTERNS ===== */
+
 .geometric-morphs {
   position: absolute;
   top: 0;
@@ -571,33 +707,34 @@
   animation: morphTransform 20s ease-in-out infinite;
 }
 
+/* Optimized morph positioning to avoid node collision zones */
 .morph-1 {
-  top: 8%;
-  left: 8%;
+  top: 5%;
+  left: 5%;
   width: 50px;
   height: 50px;
   animation-delay: 0s;
 }
 
 .morph-2 {
-  top: 12%;
-  right: 8%;
+  top: 8%;
+  left: 85%;
   width: 35px;
   height: 70px;
   animation-delay: 4s;
 }
 
 .morph-3 {
-  bottom: 18%;
-  left: 8%;
+  bottom: 15%;
+  left: 5%;
   width: 70px;
   height: 35px;
   animation-delay: 8s;
 }
 
 .morph-4 {
-  bottom: 12%;
-  right: 8%;
+  bottom: 8%;
+  left: 85%;
   width: 45px;
   height: 45px;
   animation-delay: 12s;
@@ -605,58 +742,10 @@
 
 .morph-5 {
   top: 40%;
-  left: 2%;
+  left: 1%;
   width: 25px;
   height: 80px;
   animation-delay: 16s;
-}
-
-.morph-6 {
-  top: 25%;
-  right: 2%;
-  width: 60px;
-  height: 30px;
-  animation-delay: 2s;
-}
-
-.morph-7 {
-  bottom: 35%;
-  right: 3%;
-  width: 40px;
-  height: 40px;
-  animation-delay: 6s;
-}
-
-.morph-8 {
-  top: 70%;
-  left: 5%;
-  width: 35px;
-  height: 60px;
-  animation-delay: 10s;
-}
-
-.morph-9 {
-  top: 8%;
-  left: 40%;
-  width: 30px;
-  height: 30px;
-  animation-delay: 14s;
-}
-
-.morph-10 {
-  bottom: 8%;
-  left: 40%;
-  width: 25px;
-  height: 50px;
-  animation-delay: 18s;
-}
-
-.morph-11 {
-  top: 45%;
-  right: 1%;
-  width: 20px;
-  height: 70px;
-  animation-delay: 20s;
 }
 
 @keyframes morphTransform {
@@ -678,7 +767,8 @@
   }
 }
 
-/* Data Streams */
+/* ===== DATA STREAMS ===== */
+
 .data-streams {
   position: absolute;
   top: 0;
@@ -701,103 +791,29 @@
   animation: streamFlow 8s linear infinite;
 }
 
+/* Optimized stream positioning to complement node scatter */
 .stream-1 {
-  left: 20%;
+  left: 25%;
   height: 180px;
   animation-delay: 0s;
 }
 
 .stream-2 {
-  left: 35%;
+  left: 40%;
   height: 120px;
   animation-delay: 2s;
 }
 
 .stream-3 {
-  left: 65%;
+  left: 70%;
   height: 160px;
   animation-delay: 4s;
 }
 
 .stream-4 {
-  left: 80%;
+  left: 85%;
   height: 100px;
   animation-delay: 6s;
-}
-
-.stream-5 {
-  left: 10%;
-  height: 140px;
-  animation-delay: 1s;
-}
-
-.stream-6 {
-  left: 90%;
-  height: 110px;
-  animation-delay: 3s;
-}
-
-/* Horizontal Streams for Better Coverage */
-.stream-horizontal {
-  position: absolute;
-  height: 2px;
-  background: linear-gradient(to right, 
-    transparent, 
-    rgba(59, 130, 246, 0.6), 
-    rgba(139, 92, 246, 0.4), 
-    transparent
-  );
-  animation: streamFlowHorizontal 10s linear infinite;
-}
-
-.stream-h1 {
-  top: 25%;
-  width: 150px;
-  left: -150px;
-  animation-delay: 1s;
-}
-
-.stream-h2 {
-  bottom: 25%;
-  width: 120px;
-  right: -120px;
-  animation-delay: 5s;
-}
-
-/* Diagonal Streams */
-.stream-diagonal {
-  position: absolute;
-  width: 2px;
-  background: linear-gradient(45deg, 
-    transparent, 
-    rgba(236, 72, 153, 0.5), 
-    rgba(59, 130, 246, 0.3), 
-    transparent
-  );
-  transform: rotate(45deg);
-  animation: streamFlowDiagonal 12s linear infinite;
-}
-
-.stream-d1 {
-  top: 10%;
-  left: 10%;
-  height: 100px;
-  animation-delay: 2s;
-}
-
-.stream-d2 {
-  bottom: 15%;
-  right: 10%;
-  height: 80px;
-  animation-delay: 6s;
-  transform: rotate(-45deg);
-}
-
-.stream-d3 {
-  top: 50%;
-  left: 5%;
-  height: 60px;
-  animation-delay: 10s;
 }
 
 @keyframes streamFlow {
@@ -817,99 +833,14 @@
   }
 }
 
-@keyframes streamFlowHorizontal {
-  0% {
-    left: -150px;
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    left: 100%;
-    opacity: 0;
-  }
-}
+/* ===== RESPONSIVE CORE ADJUSTMENTS ===== */
 
-@keyframes streamFlowDiagonal {
-  0% {
-    transform: rotate(45deg) translateX(-100px);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(45deg) translateX(200px);
-    opacity: 0;
-  }
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
   .neural-network-container {
     height: 500px;
   }
   
-  .energy-core {
-    width: 120px;
-    height: 120px;
-  }
-  
-  .core-ring-1 { width: 100px; height: 100px; }
-  .core-ring-2 { width: 115px; height: 115px; }
-  .core-ring-3 { width: 130px; height: 130px; }
-  
-  .logo-container {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .main-logo {
-    width: 35px;
-    height: 35px;
-  }
-  .data-constellation {
-    /* Ensure constellation is visible on tablet */
-    opacity: var(--data-node-opacity, 0) !important;
-    visibility: var(--data-node-visibility, hidden) !important;
-  }
-  
-  .data-node {
-    width: 65px;
-    height: 65px;
-    /* Ensure FOUC prevention works on tablet too */
-    opacity: var(--data-node-opacity, 0) !important;
-    visibility: var(--data-node-visibility, hidden) !important;
-    top: var(--data-node-position, -3000px) !important;
-    left: var(--data-node-position, -3000px) !important;
-  }
-  
-  /* Override for visible constellation and nodes on tablet */
-  .data-constellation {
-    --data-node-opacity: 1;
-    --data-node-visibility: visible;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-  
-  .data-node[class*="node-"] {
-    --data-node-opacity: 1;
-    --data-node-visibility: visible;
-    --data-node-position: unset;
-    opacity: 1 !important;
-    visibility: visible !important;
-    top: unset !important;
-    left: unset !important;
-  }
-  
-  .node-core, .industry-core {
+  .node-core, .industry-core, .specialty-core {
     width: 45px !important;
     height: 45px !important;
   }
@@ -922,64 +853,6 @@
   .node-label {
     font-size: 11px;
     bottom: -20px;
-  }    /* Adjust positioning for mobile */
-  .node-finance {
-    top: 10%;
-    right: 15%;
-  }
-  
-  .node-healthcare {
-    top: 35%;
-    right: 5%;
-  }
-  
-  .node-retail {
-    bottom: 15%;
-    right: 15%;
-  }
-  
-  .node-manufacturing {
-    top: 35%;
-    left: 5%;
-  }
-  
-  .node-ml {
-    top: 20%;
-    left: 20%;
-  }
-  
-  .node-ai {
-    top: 25%;
-    right: 8%;
-  }
-  
-  .node-analytics {
-    bottom: 22%;
-    left: 18%;
-  }
-  
-  .node-automation {
-    bottom: 20%;
-    right: 18%;
-  }
-  
-  .node-agentic {
-    top: 60%;
-    left: 8%;
-  }
-  
-  .node-marketing {
-    top: 18%;
-    right: 3%;
-  }
-  
-  .node-media {
-    bottom: 25%;
-    right: 3%;
-  }
-    /* Hide some additional nodes on mobile for cleaner look */
-  .node-travel, .node-education, .node-technology, .node-predictive, .node-supply-chain, .node-risk {
-    display: none;
   }
   
   /* Reduce morph shapes on mobile */
@@ -987,7 +860,7 @@
     display: none;
   }
   
-  .morph-1, .morph-3, .morph-6 {
+  .morph-1, .morph-3 {
     display: block;
     opacity: 0.3;
   }
@@ -997,41 +870,8 @@
   .neural-network-container {
     height: 450px;
   }
-    .data-constellation {
-    /* Ensure constellation is visible on mobile */
-    opacity: var(--data-node-opacity, 0) !important;
-    visibility: var(--data-node-visibility, hidden) !important;
-  }
   
-  .data-node {
-    width: 55px;
-    height: 55px;
-    /* Ensure FOUC prevention works on mobile too */
-    opacity: var(--data-node-opacity, 0) !important;
-    visibility: var(--data-node-visibility, hidden) !important;
-    top: var(--data-node-position, -3000px) !important;
-    left: var(--data-node-position, -3000px) !important;
-  }
-  
-  /* Override for visible constellation and nodes on mobile */
-  .data-constellation {
-    --data-node-opacity: 1;
-    --data-node-visibility: visible;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-  
-  .data-node[class*="node-"] {
-    --data-node-opacity: 1;
-    --data-node-visibility: visible;
-    --data-node-position: unset;
-    opacity: 1 !important;
-    visibility: visible !important;
-    top: unset !important;
-    left: unset !important;
-  }
-  
-  .node-core, .industry-core {
+  .node-core, .industry-core, .specialty-core {
     width: 40px !important;
     height: 40px !important;
   }
@@ -1039,408 +879,5 @@
   .node-icon {
     width: 24px;
     height: 24px;
-  }    /* Hide some industry nodes on very small screens */
-  .node-manufacturing, .node-retail, .node-agentic, .node-marketing, .node-media, .node-predictive, .node-supply-chain, .node-risk {
-    display: none;
   }
-  /* Keep only core services and primary industry nodes */
-  .node-finance {
-    top: 12%;
-    right: 10%;
-  }
-  
-  .node-healthcare {
-    bottom: 12%;
-    right: 10%;
-  }
-  
-  .node-ml {
-    top: 22%;
-    left: 15%;
-  }
-  
-  .node-ai {
-    top: 25%;
-    right: 15%;
-  }
-  
-  .node-analytics {
-    bottom: 25%;
-    left: 15%;
-  }
-  
-  .node-automation {
-    bottom: 22%;
-    right: 15%;
-  }
-}
-
-/* Industry Node Hover Effects */
-.data-node:hover .industry-core {
-  animation: industryPulse 1s ease-in-out infinite;
-}
-
-@keyframes industryPulse {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-    box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.1);
-    box-shadow: 0 0 35px rgba(236, 72, 153, 0.7);
-  }
-}
-
-/* Enhanced Node Tooltips - Disabled for JS implementation */
-.data-node::after {
-  content: none; /* Disable the CSS tooltip since we're using JS implementation */
-}
-
-/* Node Interaction Effects */
-.data-node:hover {
-  transform: scale(1.08); /* Use smaller scale to avoid disrupting flow */
-  z-index: 15;
-}
-
-/* Enhanced organic scattering - Focus on right-side distribution (Desktop only) */
-@media (min-width: 769px) {
-  .hero-animation .node-ml {
-    top: 16%;
-    right: 32%;
-    animation-delay: 0.2s;
-  }
-
-  .hero-animation .node-ai {
-    top: 45%;
-    right: 18%;
-    animation-delay: 0.7s;
-  }
-
-  .hero-animation .node-analytics {
-    bottom: 28%; 
-    right: 26%;
-    animation-delay: 1.2s;
-  }
-
-  .hero-animation .node-automation {
-    bottom: 8%;
-    right: 42%;
-    animation-delay: 1.7s;
-  }
-
-  /* Right-side nodes with natural scattered positioning */
-  .hero-animation .node-education-right {
-    top: 35%;
-    right: 8%;
-    animation-delay: 2.2s;
-  }
-
-  .hero-animation .node-technology-right {
-    top: 68%;
-    right: 35%;
-    animation-delay: 2.7s;
-  }
-
-  .hero-animation .node-travel-right {
-    top: 82%;
-    right: 15%;
-    animation-delay: 3.2s;
-  }
-}
-
-.data-node:hover ~ .data-node {
-  opacity: 0.6;
-}
-
-/* Staggered hover effects */
-.data-node:nth-child(odd):hover {
-  animation: nodeGlowPulse 2s ease-in-out infinite;
-}
-
-.data-node:nth-child(even):hover {
-  animation: nodeGlowPulse 2s ease-in-out infinite 0.5s;
-}
-
-@keyframes nodeGlowPulse {
-  0%, 100% {
-    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.6));
-  }
-  50% {
-    filter: drop-shadow(0 0 25px rgba(139, 92, 246, 0.8));
-  }
-}
-
-/* Enhanced organic scattering with varied sizes and subtle positioning */
-.data-node:nth-child(odd) {
-  transform: rotate(5deg);
-}
-
-.data-node:nth-child(even) {
-  transform: rotate(-3deg);
-}
-
-/* Subtle size variations for more natural appearance */
-.node-ml, .node-ai, .node-analytics, .node-automation {
-  width: 85px;
-  height: 85px;
-}
-
-.node-finance, .node-healthcare, .node-retail, .node-manufacturing {
-  width: 78px;
-  height: 78px;
-}
-
-.node-agentic, .node-marketing, .node-media {
-  width: 82px;
-  height: 82px;
-}
-
-.node-travel, .node-education, .node-technology {
-  width: 75px;
-  height: 75px;
-}
-
-/* Right-side specific nodes get slightly different sizes */
-.node-education-right, .node-technology-right, .node-travel-right {
-  width: 80px;
-  height: 80px;
-}
-
-/* Enhanced floating animation with more organic movement */
-@keyframes nodeFloat {
-  0%, 100% { 
-    transform: translateY(0px) translateX(0px) rotate(0deg);
-  }
-  20% { 
-    transform: translateY(-6px) translateX(4px) rotate(1deg);
-  }
-  40% { 
-    transform: translateY(-12px) translateX(-3px) rotate(-2deg);
-  }
-  60% { 
-    transform: translateY(-18px) translateX(2px) rotate(1.5deg);
-  }
-  80% { 
-    transform: translateY(-8px) translateX(5px) rotate(-1deg);
-  }
-}
-
-/* Enhanced scattering effects - Varied animation patterns for organic feel */
-
-/* Core service nodes get primary floating animation */
-.node-ml, .node-ai, .node-analytics, .node-automation {
-  animation: nodeFloat 6s ease-in-out infinite;
-}
-
-/* Industry nodes get slightly different timing */
-.node-finance, .node-healthcare, .node-retail, .node-manufacturing {
-  animation: nodeFloatSecondary 7s ease-in-out infinite;
-}
-
-/* Strategic nodes get tertiary pattern */
-.node-agentic, .node-marketing, .node-media, .node-travel, .node-education, .node-technology {
-  animation: nodeFloatTertiary 8s ease-in-out infinite;
-}
-
-/* Right-side specific nodes get enhanced floating */
-.node-education-right, .node-technology-right, .node-travel-right {
-  animation: nodeFloatEnhanced 5.5s ease-in-out infinite;
-}
-
-/* Secondary floating animation for industry nodes */
-@keyframes nodeFloatSecondary {
-  0%, 100% { 
-    transform: translateY(0px) translateX(0px) rotate(0deg);
-  }
-  25% { 
-    transform: translateY(-10px) translateX(2px) rotate(-1deg);
-  }
-  50% { 
-    transform: translateY(-16px) translateX(-4px) rotate(2deg);
-  }
-  75% { 
-    transform: translateY(-6px) translateX(3px) rotate(-1.5deg);
-  }
-}
-
-/* Tertiary floating animation for strategic nodes */
-@keyframes nodeFloatTertiary {
-  0%, 100% { 
-    transform: translateY(0px) translateX(0px) rotate(0deg);
-  }
-  30% { 
-    transform: translateY(-7px) translateX(-2px) rotate(1.5deg);
-  }
-  60% { 
-    transform: translateY(-14px) translateX(3px) rotate(-2deg);
-  }
-  90% { 
-    transform: translateY(-5px) translateX(-1px) rotate(1deg);
-  }
-}
-
-/* Enhanced floating for right-side nodes */
-@keyframes nodeFloatEnhanced {
-  0%, 100% { 
-    transform: translateY(0px) translateX(0px) rotate(0deg);
-  }
-  20% { 
-    transform: translateY(-9px) translateX(5px) rotate(2deg);
-  }
-  40% { 
-    transform: translateY(-15px) translateX(-3px) rotate(-1deg);
-  }
-  60% { 
-    transform: translateY(-20px) translateX(4px) rotate(3deg);
-  }
-  80% { 
-    transform: translateY(-7px) translateX(-2px) rotate(-1.5deg);
-  }
-}
-
-/* Add subtle rotation variations to prevent uniform appearance */
-.data-node:nth-child(3n) {
-  transform: rotate(3deg);
-}
-
-.data-node:nth-child(3n+1) {
-  transform: rotate(-2deg);
-}
-
-.data-node:nth-child(3n+2) {
-  transform: rotate(1deg);
-}
-
-/* Enhanced scatter positioning with micro-adjustments */
-.node-ml { 
-  transform: translateX(2px) translateY(-1px) rotate(2deg);
-}
-
-.node-ai { 
-  transform: translateX(-3px) translateY(2px) rotate(-1deg);
-}
-
-.node-analytics { 
-  transform: translateX(1px) translateY(-2px) rotate(1.5deg);
-}
-
-.node-automation { 
-  transform: translateX(-2px) translateY(1px) rotate(-2deg);
-}
-
-/* Right-side nodes get additional scatter micro-positioning */
-.node-finance { 
-  transform: translateX(-1px) translateY(3px) rotate(1deg);
-}
-
-.node-healthcare { 
-  transform: translateX(3px) translateY(-1px) rotate(-1.5deg);
-}
-
-.node-retail { 
-  transform: translateX(-2px) translateY(2px) rotate(2deg);
-}
-
-.node-manufacturing { 
-  transform: translateX(2px) translateY(-3px) rotate(-1deg);
-}
-
-/* Additional strategic nodes for better right-side scatter coverage */
-.node-cluster-scattered-1 {
-  top: 22%;
-  right: 52%;
-  animation-delay: 16.5s;
-  width: 70px;
-  height: 70px;
-  z-index: 2;
-  animation: nodeFloatTertiary 7.5s ease-in-out infinite;
-}
-
-.node-cluster-scattered-2 {
-  top: 66%;
-  right: 48%;
-  animation-delay: 17.5s;
-  width: 73px;
-  height: 73px;
-  z-index: 2;
-  animation: nodeFloatSecondary 8.2s ease-in-out infinite;
-}
-
-.node-cluster-scattered-3 {
-  top: 44%;
-  right: 2%;
-  animation-delay: 18.2s;
-  width: 68px;
-  height: 68px;
-  z-index: 2;
-  animation: nodeFloatEnhanced 6.8s ease-in-out infinite;
-}
-
-.node-cluster-scattered-4 {
-  top: 84%;
-  right: 50%;
-  animation-delay: 19s;
-  width: 71px;
-  height: 71px;
-  z-index: 2;
-  animation: nodeFloat 7.2s ease-in-out infinite;
-}
-
-/* Enhanced random positioning variations for ultra-organic feel */
-.data-node:nth-child(7n) {
-  transform: translateX(4px) translateY(-2px) rotate(2.5deg);
-}
-
-.data-node:nth-child(7n+1) {
-  transform: translateX(-2px) translateY(3px) rotate(-1.8deg);
-}
-
-.data-node:nth-child(7n+2) {
-  transform: translateX(3px) translateY(-1px) rotate(1.2deg);
-}
-
-/* Right-side specific micro-adjustments for natural clustering */
-.hero-animation .data-node:nth-child(even) {
-  transform: translateX(2px) translateY(-1px) rotate(1deg);
-}
-
-.hero-animation .data-node:nth-child(odd) {
-  transform: translateX(-1px) translateY(2px) rotate(-1deg);
-}
-
-/* Additional depth variations with subtle opacity changes */
-.data-node:nth-child(5n) {
-  opacity: 0.95;
-  filter: brightness(1.05);
-}
-
-.data-node:nth-child(5n+2) {
-  opacity: 0.92;
-  filter: brightness(0.98);
-}
-
-/* Dynamic scatter enhancement - creates more natural randomness */
-@media (min-width: 1200px) {
-  .hero-animation .node-ml {
-    top: 14%;
-    right: 33%;
-    transform: translateX(3px) translateY(-2px) rotate(2.5deg);
-  }
-  
-  .hero-animation .node-ai {
-    top: 43%;
-    right: 16%;
-    transform: translateX(-2px) translateY(3px) rotate(-1.5deg);
-  }
-  
-  .hero-animation .node-analytics {
-    bottom: 26%;
-    right: 28%;
-    transform: translateX(4px) translateY(-1px) rotate(1.8deg);
-  }
-  
-  .hero-animation .node-automation {
-    bottom: 6%;
-    right: 44%;
-    transform: translateX(-3px) translateY(2px) rotate(-2.2deg);
-  }
+} */
