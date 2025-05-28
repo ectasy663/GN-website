@@ -1,27 +1,26 @@
-// Tech Marquee Animation Enhancement
+// Tech Cards Animation Enhancement
 document.addEventListener('DOMContentLoaded', function() {
-    const techMarqueeContents = document.querySelectorAll('.tech-marquee-content');
-    const techItems = document.querySelectorAll('.tech-marquee-item');
+    const techCardsContainer = document.querySelector('.tech-cards-container');
+    const techCards = document.querySelectorAll('.tech-card');
     
-    // Adjust animation speed for each marquee
-    techMarqueeContents.forEach((marquee, index) => {
-        const isReversed = marquee.classList.contains('tech-marquee-content-reversed');
-        const marqueeItems = marquee.querySelectorAll('.tech-marquee-item');
-        const itemCount = marqueeItems.length / 2; // Account for duplicated items
+    // No animation delay or dancing effects
+    techCards.forEach((card) => {
+        // Just add basic hover interaction
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+        });
         
-        // Set slightly different speeds for each marquee
-        const baseSpeed = isReversed ? 65 : 60;
-        const animationDuration = Math.max(30, Math.min(70, itemCount * 5)); // Between 30s and 70s
-        marquee.style.animationDuration = `${baseSpeed + (index * 10)}s`;
-    });
-    
-    // Add 3D tilt effect on mouse move for each tech icon
-    techItems.forEach(item => {
-        const iconContainer = item.querySelector('.tech-icon-container');
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });    
+    // Add 3D tilt effect on mouse move for each tech card
+    techCards.forEach(card => {
+        const iconWrapper = card.querySelector('.tech-icon-wrapper');
         
-        if (iconContainer) {
-            item.addEventListener('mousemove', function(e) {
-                const rect = iconContainer.getBoundingClientRect();
+        if (iconWrapper) {
+            card.addEventListener('mousemove', function(e) {
+                const rect = iconWrapper.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
                 
@@ -31,37 +30,40 @@ document.addEventListener('DOMContentLoaded', function() {
                 const tiltX = (centerX - x) / 10;
                 const tiltY = (y - centerY) / 10;
                 
-                iconContainer.style.transform = `perspective(500px) rotateX(${tiltY}deg) rotateY(${-tiltX}deg) scale3d(1.05, 1.05, 1.05)`;
+                iconWrapper.style.transform = `perspective(500px) rotateX(${tiltY}deg) rotateY(${-tiltX}deg) scale3d(1.1, 1.1, 1.1)`;
             });
             
-            item.addEventListener('mouseleave', function() {
-                iconContainer.style.transform = '';
+            card.addEventListener('mouseleave', function() {
+                iconWrapper.style.transform = '';
             });
         }
     });
-      // Removed pulse effects functionality - displaying raw icons without glow effects
-      // Add a parallax effect to create depth between the two marquees
+    
+    // Add a parallax effect to create depth in the tech cards container
     window.addEventListener('mousemove', function(e) {
-        const containers = document.querySelectorAll('.tech-marquee-container');
-        
-        containers.forEach((container, index) => {
-            const isReversed = container.classList.contains('tech-marquee-reversed');
-            const depth = isReversed ? 25 : 15; // Reduced sensitivity due to full width
+        if (techCardsContainer) {
+            const depth = 20;
             const moveX = (e.clientX - window.innerWidth / 2) / depth;
             const moveY = (e.clientY - window.innerHeight / 2) / depth;
             
-            // Limit the movement for a subtler effect with the full-width design
-            const maxMove = 10;
+            // Limit the movement for a subtler effect
+            const maxMove = 5;
             const limitedMoveX = Math.max(-maxMove, Math.min(maxMove, moveX));
             const limitedMoveY = Math.max(-maxMove, Math.min(maxMove, moveY));
             
-            container.style.transform = `translate(${limitedMoveX}px, ${limitedMoveY}px)`;
-        });
+            techCardsContainer.style.transform = `translate(${limitedMoveX}px, ${limitedMoveY}px)`;
+        }
     });
     
-    // Add entrance animation for each tech item
-    const allMarquees = document.querySelectorAll('.tech-marquee-container');
-    allMarquees.forEach((marquee, marqueeIndex) => {
-        marquee.style.animationDelay = `${marqueeIndex * 0.2}s`;
-    });
+        // Add entrance animation for the tech cards container
+    if (techCardsContainer) {
+        techCardsContainer.style.opacity = '0';
+        techCardsContainer.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            techCardsContainer.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            techCardsContainer.style.opacity = '1';
+            techCardsContainer.style.transform = 'translateY(0)';
+        }, 200);
+    }
 });

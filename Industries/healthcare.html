@@ -3,10 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Healthcare - Gyannetra</title>  <link rel="stylesheet" href="../css/style.css" />
+  <title>Healthcare - Gyannetra</title>  
+  <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/benefits-cards.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Navbar scroll effect styles -->
+  <style>
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: transparent !important;
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-bottom: 1px solid transparent;
+      box-shadow: none;
+    }
+    
+    .site-header.scrolled {
+      background: transparent !important;
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar {
+      padding: 1rem 2rem;
+      max-width: none !important;
+      margin: 0 !important;
+      background: transparent !important;
+      border-radius: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    
+    /* Override any existing navbar container styles */
+    .site-header .navbar,
+    .site-header .container,
+    .navbar .container {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+    }
+    
+    /* Ensure body has top padding to account for fixed navbar */
+    body {
+      padding-top: 80px;
+    }
+
     /* Healthcare Card Structure Styles */
 
     .solutions-grid {
@@ -117,12 +168,10 @@
       background-color: var(--primary-color-hover);
       color: #fff;
       text-decoration: none;
-    }
-
-    .section-heading {
+    }    .section-heading {
       font-size: 2.2rem;
       margin-bottom: 45px;
-      color: var(--primary-color);
+      /* Inherit the beautiful gradient and glow from main h2 styling */
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -160,10 +209,18 @@
   </div>
   <!-- NAVBAR -->
   <header class="site-header">
-    <nav class="navbar container">
+    <nav class="navbar">
       <a href="../index.html" class="logo">
         <img src="../assets/Company Icons/GN Name logo.svg" alt="Gyannetra Logo" class="logo-img">
       </a>
+      
+      <!-- Hamburger menu button for mobile -->
+      <button class="hamburger-menu" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
       <ul class="nav-links">
         <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
           <ul class="dropdown-menu services-dropdown">
@@ -342,12 +399,11 @@
             <li><a href="../about.html">About Us</a></li>
             <li><a href="../contact.html">Contact Us</a></li>
           </ul>
-        </div>
-        <div class="footer-col">
+        </div>        <div class="footer-col">
           <h3>Contact Us</h3>
           <ul>
-            <li><p><i class="fas fa-map-marker-alt"></i> 123 AI Street, Innovation City, Techland</p></li>
-            <li><p><i class="fas fa-phone"></i> +1 (555) 123-4567</p></li>
+            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
+            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
             <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
           </ul>
         </div>
@@ -372,7 +428,42 @@
   <script src="../js/tech-marquee.js" defer></script>
   <script src="../js/data-node-interactions.js" defer></script>
 
+  <!-- Navbar scroll effect script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('.site-header');
+      
+      function handleScroll() {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > 30) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      
+      // Throttle scroll events for better performance
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            handleScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+      
+      window.addEventListener('scroll', onScroll, { passive: true });
+      
+      // Initial check
+      handleScroll();
+    });
+  </script>
+
 </html>
+
 
 
 

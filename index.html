@@ -1,49 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
+<head>  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>Gyannetra — AI Services & Solutions</title>
-    <!-- Critical FOUC Prevention - Must be first before any CSS -->
+  
+  <link rel="stylesheet" href="css/style.css?v=202412191300" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Navbar scroll effect styles -->
   <style>
-    /* Immediate FOUC prevention - applies before any other CSS loads */
-    .data-node {
-      opacity: 0 !important;
-      visibility: hidden !important;
-      transform: translateX(-3000px) translateY(-3000px) !important;
-      position: absolute !important;
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: transparent !important;
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-bottom: 1px solid transparent;
+      box-shadow: none;
     }
-    /* Prevent any flash during CSS loading */
-    .data-constellation {
-      opacity: 0 !important;
-      visibility: hidden !important;
+    
+    .site-header.scrolled {
+      background: transparent !important;
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar {
+      padding: 1rem 2rem;
+      max-width: none !important;
+      margin: 0 !important;
+      background: transparent !important;
+      border-radius: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    
+    /* Override any existing navbar container styles */
+    .site-header .navbar,
+    .site-header .container,
+    .navbar .container {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+    }
+    
+    /* Ensure body has top padding to account for fixed navbar */
+    body {
+      padding-top: 80px;
     }
   </style>
   
-  <script>
-    // Immediate FOUC prevention for data nodes - more aggressive approach
-    document.documentElement.style.setProperty('--data-node-visibility', 'hidden');
-    document.documentElement.style.setProperty('--data-node-opacity', '0');
-    document.documentElement.style.setProperty('--data-node-position', '-3000px');
-    
-    // Hide all potential data node containers immediately
-    const style = document.createElement('style');
-    style.textContent = `
-      .data-node, .data-constellation {
-        opacity: 0 !important;
-        visibility: hidden !important;
-        transform: translateX(-5000px) translateY(-5000px) !important;
-      }
-    `;
-    document.head.appendChild(style);
-    window.foucPreventionStyle = style;
-  </script>
-  
-  <link rel="stylesheet" href="css/style.css" />  <link rel="stylesheet" href="css/hero-animation.css" />
-  <link rel="stylesheet" href="css/animations.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Enable data nodes after all CSS is loaded -->
+  <!-- Enable data nodes after all CSS is loaded -->
   <script>
     // Wait for all stylesheets to load before enabling nodes
     function enableDataNodes() {
@@ -119,10 +137,18 @@
     <div class="overlay"></div>
     <div class="noise"></div>
   </div>  <!-- NAVBAR -->  <header class="site-header">
-    <nav class="navbar container">
+    <nav class="navbar">
       <a href="index.html" class="logo">
         <img src="assets/Company Icons/GN Name logo.svg" alt="Gyannetra Logo" class="logo-img">
       </a>
+      
+      <!-- Hamburger menu button for mobile -->
+      <button class="hamburger-menu" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
       <ul class="nav-links">
         <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
           <ul class="dropdown-menu services-dropdown">
@@ -158,266 +184,11 @@
     </nav>
   </header>  <!-- HERO -->  <section id="hero">
     <div class="hero-overlay"></div>
-      <!-- Full-width Neural Network Background -->
-    <div class="neural-network-container">
-      <!-- AI Neural Network Background -->
-      <div class="neural-mesh">
-        <canvas class="mesh-canvas" width="1200" height="800"></canvas>
-      </div>
-      
-      <!-- Floating Data Nodes -->
-      <div class="data-constellation">
-        <!-- Core Services (Inner Ring) -->
-        <div class="data-node node-ml" data-tech="Machine Learning">
-          <div class="node-core"></div>
-          <div class="node-icon">
-            <img src="assets/mlng.png" alt="ML">
-          </div>
-          <div class="node-label">ML</div>
-        </div>
-        
-        <div class="data-node node-ai" data-tech="Generative AI">
-          <div class="node-core"></div>
-          <div class="node-icon">
-            <img src="assets/gen ai.png" alt="Gen AI">
-          </div>
-          <div class="node-label">Gen AI</div>
-        </div>
-        
-        <div class="data-node node-analytics" data-tech="Data Analytics">
-          <div class="node-core"></div>
-          <div class="node-icon">
-            <img src="assets/data analytics.png" alt="Analytics">
-          </div>
-          <div class="node-label">Analytics</div>
-        </div>
-        
-        <div class="data-node node-automation" data-tech="Automation">
-          <div class="node-core"></div>
-          <div class="node-icon">
-            <img src="assets/automation flows.png" alt="Automation">
-          </div>
-          <div class="node-label">Automation</div>
-        </div>
-
-        <!-- Industry Applications (Outer Ring) -->
-        <div class="data-node node-finance" data-tech="Finance">
-          <div class="node-core industry-core"></div>
-          <div class="node-icon">
-            <img src="assets/Finance Ind.png" alt="Finance">
-          </div>
-          <div class="node-label">Finance</div>
-        </div>
-        
-        <div class="data-node node-healthcare" data-tech="Healthcare">
-          <div class="node-core industry-core"></div>
-          <div class="node-icon">
-            <img src="assets/healthcare ind.png" alt="Healthcare">
-          </div>
-          <div class="node-label">Healthcare</div>
-        </div>
-        
-        <div class="data-node node-retail" data-tech="Retail">
-          <div class="node-core industry-core"></div>
-          <div class="node-icon">
-            <img src="assets/retail ind.png" alt="Retail">
-          </div>
-          <div class="node-label">Retail</div>
-        </div>
-        
-        <div class="data-node node-manufacturing" data-tech="Manufacturing">
-          <div class="node-core industry-core"></div>
-          <div class="node-icon">
-            <img src="assets/manufacturing ind.png" alt="Manufacturing">
-          </div>
-          <div class="node-label">Manufacturing</div>
-        </div>
-        
-        <!-- Additional Strategic Nodes -->
-        <div class="data-node node-agentic" data-tech="Agentic AI">
-          <div class="node-core specialty-core"></div>
-          <div class="node-icon">
-            <img src="assets/ai agent.png" alt="Agentic AI">
-          </div>
-          <div class="node-label">Agentic AI</div>
-        </div>
-        
-        <div class="data-node node-marketing" data-tech="Marketing">
-          <div class="node-core industry-core"></div>
-          <div class="node-icon">
-            <img src="assets/marketing ind.png" alt="Marketing">
-          </div>
-          <div class="node-label">Marketing</div>
-        </div>
-          <div class="data-node node-media" data-tech="Media & Entertainment">
-          <div class="node-core industry-core"></div>
-          <div class="node-icon">
-            <img src="assets/media and entertainment ind.png" alt="Media">
-          </div>
-          <div class="node-label">Media</div>
-        </div>
-        
-        <!-- New Strategic Nodes - positioned to avoid text content -->
-        <div class="data-node node-travel" data-tech="Travel">
-          <div class="node-core industry-core"></div>
-          <div class="node-icon">
-            <img src="assets/travel ind.png" alt="Travel">
-          </div>
-          <div class="node-label">Travel</div>
-        </div>
-        
-        <div class="data-node node-education" data-tech="Education">
-          <div class="node-core specialty-core"></div>
-          <div class="node-icon">
-            <img src="assets/education-cap-icon.svg" alt="Education">
-          </div>
-          <div class="node-label">Education</div>
-        </div>
-        
-        <div class="data-node node-technology" data-tech="Technology">
-          <div class="node-core specialty-core"></div>
-          <div class="node-icon">
-            <img src="assets/technology.png" alt="Technology">
-          </div>
-          <div class="node-label">Technology</div>
-        </div>
-      </div>
-      
-      <!-- Morphing Geometric Patterns -->
-      <div class="geometric-morphs">
-        <div class="morph-shape morph-1"></div>
-        <div class="morph-shape morph-2"></div>
-        <div class="morph-shape morph-3"></div>
-        <div class="morph-shape morph-4"></div>
-        <div class="morph-shape morph-5"></div>
-        
-        <!-- Additional Morphing Shapes -->
-        <div class="morph-shape morph-6"></div>
-        <div class="morph-shape morph-7"></div>
-        <div class="morph-shape morph-8"></div>
-        
-        <!-- New Morphing Shapes for better distribution -->
-        <div class="morph-shape morph-9"></div>
-        <div class="morph-shape morph-10"></div>
-        <div class="morph-shape morph-11"></div>
-      </div>
-      
-      <!-- Data Stream Effects -->
-      <div class="data-streams">
-        <div class="stream stream-1"></div>
-        <div class="stream stream-2"></div>
-        <div class="stream stream-3"></div>
-        <div class="stream stream-4"></div>
-        
-        <!-- Additional Data Streams -->
-        <div class="stream stream-5"></div>
-        <div class="stream stream-6"></div>
-        
-        <!-- Horizontal Streams for Better Coverage -->
-        <div class="stream-horizontal stream-h1"></div>
-        <div class="stream-horizontal stream-h2"></div>
-        
-        <!-- New Diagonal Streams -->
-        <div class="stream-diagonal stream-d1"></div>
-        <div class="stream-diagonal stream-d2"></div>
-        <div class="stream-diagonal stream-d3"></div>
-      </div>
-    </div>
     
-    <div class="hero-container">
-      <div class="hero-content">
+    <div class="hero-container">      <div class="hero-content">
         <h1>AI SERVICES<br />AND SOLUTIONS</h1>
         <p>Inventing the future, powered by intelligence: We unlock the infinite potential of artificial intelligence to create groundbreaking solutions that anticipate tomorrow's needs.</p>
         <a href="contact.html" class="btn-primary">Get Started</a>
-      </div>      <div class="hero-animation">
-            <!-- Floating Data Nodes -->
-          <div class="data-constellation">
-            <!-- Core Services (Inner Ring) -->
-            <div class="data-node node-ml" data-tech="Machine Learning">
-              <div class="node-core"></div>
-              <div class="node-icon">
-                <img src="assets/mlng.png" alt="ML">
-              </div>
-              <div class="node-label">ML</div>
-            </div>
-            
-            <div class="data-node node-ai" data-tech="Generative AI">
-              <div class="node-core"></div>
-              <div class="node-icon">
-                <img src="assets/gen ai.png" alt="Gen AI">
-              </div>
-              <div class="node-label">Gen AI</div>
-            </div>
-            
-            <div class="data-node node-analytics" data-tech="Data Analytics">
-              <div class="node-core"></div>
-              <div class="node-icon">
-                <img src="assets/data analytics.png" alt="Analytics">
-              </div>
-              <div class="node-label">Analytics</div>
-            </div>
-            
-            <div class="data-node node-automation" data-tech="Automation">
-              <div class="node-core"></div>
-              <div class="node-icon">
-                <img src="assets/automation flows.png" alt="Automation">
-              </div>
-              <div class="node-label">Automation</div>
-            </div>            <!-- Custom Secondary Animation Nodes -->
-            <div class="data-node node-education-right" data-tech="Education">
-              <div class="node-core specialty-core"></div>
-              <div class="node-icon">
-                <img src="assets/education-cap-icon.svg" alt="Education">
-              </div>
-              <div class="node-label">Education</div>
-            </div>
-            
-            <div class="data-node node-technology-right" data-tech="Technology">
-              <div class="node-core specialty-core"></div>
-              <div class="node-icon">
-                <img src="assets/technology.png" alt="Technology">
-              </div>
-              <div class="node-label">Technology</div>
-            </div>
-            
-            <div class="data-node node-travel-right" data-tech="Travel">
-              <div class="node-core industry-core"></div>
-              <div class="node-icon">
-                <img src="assets/travel ind.png" alt="Travel">
-              </div>
-              <div class="node-label">Travel</div>
-            </div>
-          </div>
-          
-          <!-- Morphing Geometric Patterns -->
-          <div class="geometric-morphs">
-            <div class="morph-shape morph-1"></div>
-            <div class="morph-shape morph-2"></div>
-            <div class="morph-shape morph-3"></div>
-            <div class="morph-shape morph-4"></div>
-            <div class="morph-shape morph-5"></div>
-            
-            <!-- Additional Morphing Shapes -->
-            <div class="morph-shape morph-6"></div>
-            <div class="morph-shape morph-7"></div>
-            <div class="morph-shape morph-8"></div>
-          </div>
-          
-          <!-- Data Stream Effects -->
-          <div class="data-streams">
-            <div class="stream stream-1"></div>
-            <div class="stream stream-2"></div>
-            <div class="stream stream-3"></div>
-            <div class="stream stream-4"></div>
-            
-            <!-- Additional Data Streams -->
-            <div class="stream stream-5"></div>
-            <div class="stream stream-6"></div>
-            
-            <!-- Horizontal Streams for Better Coverage -->
-            <div class="stream-horizontal stream-h1"></div>
-            <div class="stream-horizontal stream-h2"></div>
-          </div>
       </div>
     </div>
   </section><!-- TECHNOLOGIES -->
@@ -426,302 +197,272 @@
       <h2 class="section-heading">TECHNOLOGIES WE USE</h2>
     </div>
     
-    <!-- First marquee (right to left) -->
-    <div class="tech-marquee-container">
-      <div class="tech-marquee">
-        <div class="tech-marquee-content">
-          <!-- First set of items -->
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
+    <!-- Tech Cards Container -->
+    <div class="tech-cards-container">
+      <div class="tech-cards-track">
+        <!-- First row of cards -->
+        <div class="tech-card" data-tech="ollama">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
               <div class="tech-icon ollama"></div>
             </div>
-            <p>Ollama</p>
+            <h3>Ollama</h3>
+            <p>Local LLM deployment</p>
           </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
+        </div>
+          <div class="tech-card" data-tech="langchain">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
               <div class="tech-icon langchain"></div>
             </div>
-            <p>LangChain</p>
+            <h3>LangChain</h3>
+            <p>LLM application framework</p>
           </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon chroma"></div>
+        </div>
+        
+        <div class="tech-card" data-tech="openai">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon openai"></div>
             </div>
-            <p>Chroma</p>
+            <h3>OpenAI</h3>
+            <p>Advanced AI models</p>
           </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon pinecone"></div>
-            </div>
-            <p>Pinecone</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon vectordb"></div>
-            </div>
-            <p>OpenAI</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon huggingface"></div>
-            </div>
-            <p>Hugging Face</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
+        </div>
+        
+        <div class="tech-card" data-tech="pytorch">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
               <div class="tech-icon pytorch"></div>
             </div>
-            <p>PyTorch</p>
+            <h3>PyTorch</h3>
+            <p>Deep learning framework</p>
           </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
+        </div>
+        
+        <div class="tech-card" data-tech="tensorflow">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
               <div class="tech-icon tensorflow"></div>
             </div>
-            <p>TensorFlow</p>
+            <h3>TensorFlow</h3>
+            <p>ML platform</p>
           </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
+        </div>
+        
+        <div class="tech-card" data-tech="huggingface">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon huggingface"></div>
+            </div>
+            <h3>Hugging Face</h3>
+            <p>ML model hub</p>
+          </div>
+        </div>
+        
+        <div class="tech-card" data-tech="pinecone">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon pinecone"></div>
+            </div>
+            <h3>Pinecone</h3>
+            <p>Vector database</p>
+          </div>
+        </div>
+        
+        <div class="tech-card" data-tech="chroma">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon chroma"></div>
+            </div>
+            <h3>Chroma</h3>
+            <p>Embedding database</p>
+          </div>
+        </div>
+        
+        <div class="tech-card" data-tech="anthropic">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon anthropic"></div>
+            </div>
+            <h3>Anthropic</h3>
+            <p>Claude AI models</p>
+          </div>
+        </div>
+        
+        <div class="tech-card" data-tech="gemini">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon gemini"></div>
+            </div>
+            <h3>Gemini</h3>
+            <p>Google AI models</p>
+          </div>
+        </div>
+        
+        <div class="tech-card" data-tech="llama">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
               <div class="tech-icon llama"></div>
             </div>
-            <p>Llama</p>
+            <h3>Llama</h3>
+            <p>Meta's LLM</p>
           </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon milvus"></div>
+        </div>
+        
+        <div class="tech-card" data-tech="mistral">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon mistral"></div>
             </div>
-            <p>Milvus</p>
+            <h3>Mistral AI</h3>
+            <p>European AI leader</p>
           </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
+        </div>
+        
+        <div class="tech-card" data-tech="llamaindex">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon llamaindex"></div>
+            </div>
+            <h3>LlamaIndex</h3>
+            <p>Data framework</p>
+          </div>
+        </div>
+        
+        <div class="tech-card" data-tech="weaviate">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon weaviate"></div>
+            </div>
+            <h3>Weaviate</h3>
+            <p>Vector search engine</p>
+          </div>
+        </div>
+        
+        <div class="tech-card" data-tech="qdrant">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon qdrant"></div>
+            </div>
+            <h3>Qdrant</h3>
+            <p>Vector similarity search</p>
+          </div>
+        </div>
+        
+        <div class="tech-card" data-tech="docker">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
               <div class="tech-icon docker"></div>
             </div>
-            <p>Docker</p>
+            <h3>Docker</h3>
+            <p>Containerization</p>
           </div>
-          
-          <!-- Duplicated set for seamless looping -->
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
+        </div>
+        
+        <div class="tech-card" data-tech="groq">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon groq"></div>
+            </div>
+            <h3>Groq</h3>
+            <p>Lightning-fast inference</p>
+          </div>
+        </div>
+        
+        <div class="tech-card" data-tech="vllm">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon vllm"></div>
+            </div>
+            <h3>vLLM</h3>
+            <p>High-throughput serving</p>
+          </div>
+        </div>
+        
+        <div class="tech-card" data-tech="rag">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon rag"></div>
+            </div>
+            <h3>RAG</h3>
+            <p>Retrieval augmented generation</p>
+          </div>
+        </div>
+        
+        <div class="tech-card" data-tech="spacy">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon spacy"></div>
+            </div>
+            <h3>spaCy</h3>
+            <p>NLP library</p>
+          </div>
+        </div>
+        
+        <div class="tech-card" data-tech="haystack">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon haystack"></div>
+            </div>
+            <h3>Haystack</h3>
+            <p>NLP framework</p>
+          </div>
+        </div>
+        
+        <div class="tech-card" data-tech="milvus">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon milvus"></div>
+            </div>
+            <h3>Milvus</h3>
+            <p>Vector database</p>
+          </div>
+        </div>
+        
+        <!-- Duplicate cards for seamless loop -->
+        <div class="tech-card" data-tech="ollama">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
               <div class="tech-icon ollama"></div>
             </div>
-            <p>Ollama</p>
+            <h3>Ollama</h3>
+            <p>Local LLM deployment</p>
           </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
+        </div>
+        
+        <div class="tech-card" data-tech="langchain">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
               <div class="tech-icon langchain"></div>
             </div>
-            <p>LangChain</p>
+            <h3>LangChain</h3>
+            <p>LLM application framework</p>
           </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon chroma"></div>
+        </div>
+        
+        <div class="tech-card" data-tech="openai">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
+              <div class="tech-icon openai"></div>
             </div>
-            <p>Chroma</p>
+            <h3>OpenAI</h3>
+            <p>Advanced AI models</p>
           </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon pinecone"></div>
-            </div>
-            <p>Pinecone</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon vectordb"></div>
-            </div>
-            <p>OpenAI</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon huggingface"></div>
-            </div>
-            <p>Hugging Face</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
+        </div>
+        
+        <div class="tech-card" data-tech="pytorch">
+          <div class="tech-card-inner">
+            <div class="tech-icon-wrapper">
               <div class="tech-icon pytorch"></div>
             </div>
-            <p>PyTorch</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon tensorflow"></div>
-            </div>
-            <p>TensorFlow</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon llama"></div>
-            </div>
-            <p>Llama</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon milvus"></div>
-            </div>
-            <p>Milvus</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon docker"></div>
-            </div>
-            <p>Docker</p>
+            <h3>PyTorch</h3>
+            <p>Deep learning framework</p>
           </div>
         </div>
       </div>
-      <div class="tech-shadow tech-shadow-left"></div>
-      <div class="tech-shadow tech-shadow-right"></div>
     </div>
-      <!-- Divider between marquees -->
-    <div class="tech-marquee-divider"></div>
-    
-    <!-- Second marquee (left to right) -->
-    <div class="tech-marquee-container tech-marquee-reversed">
-      <div class="tech-marquee">
-        <div class="tech-marquee-content tech-marquee-content-reversed">
-          <!-- First set of items for reverse direction -->
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon weaviate"></div>
-            </div>
-            <p>Weaviate</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon qdrant"></div>
-            </div>
-            <p>Qdrant</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon haystack"></div>
-            </div>
-            <p>Haystack</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon mistral"></div>
-            </div>
-            <p>Mistral AI</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon anthropic"></div>
-            </div>
-            <p>Anthropic</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon groq"></div>
-            </div>
-            <p>Groq</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon gemini"></div>
-            </div>
-            <p>Gemini</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon llamaindex"></div>
-            </div>
-            <p>LlamaIndex</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon vllm"></div>
-            </div>
-            <p>vLLM</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon rag"></div>
-            </div>
-            <p>RAG</p>
-          </div>
-
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon spacy"></div>
-            </div>
-            <p>spaCy</p>
-          </div>
-          
-          <!-- Duplicated set for seamless looping -->
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon weaviate"></div>
-            </div>
-            <p>Weaviate</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon qdrant"></div>
-            </div>
-            <p>Qdrant</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon haystack"></div>
-            </div>
-            <p>Haystack</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon mistral"></div>
-            </div>
-            <p>Mistral AI</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon anthropic"></div>
-            </div>
-            <p>Anthropic</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon groq"></div>
-            </div>
-            <p>Groq</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon gemini"></div>
-            </div>
-            <p>Gemini</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon llamaindex"></div>
-            </div>
-            <p>LlamaIndex</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon vllm"></div>
-            </div>
-            <p>vLLM</p>
-          </div>
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon rag"></div>
-            </div>
-            <p>RAG</p>
-          </div>
-
-          <div class="tech-marquee-item">
-            <div class="tech-icon-container">
-              <div class="tech-icon spacy"></div>
-            </div>
-            <p>spaCy</p>
-          </div>
-        </div>
-      </div>
-      <div class="tech-shadow tech-shadow-left"></div>
-      <div class="tech-shadow tech-shadow-right"></div>
-  </div>
   </section>
-
-  <div class="tech-section-spacer"></div>
 
   <!-- EXPERTISE -->
   <section id="expertise" class="container">
@@ -772,8 +513,8 @@
         <div class="footer-col">
           <h3>Contact Us</h3>
           <ul>
-            <li><p><i class="fas fa-map-marker-alt"></i> 123 AI Street, Innovation City, Techland</p></li>
-            <li><p><i class="fas fa-phone"></i> +1 (555) 123-4567</p></li>
+            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
+            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
             <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
           </ul>
         </div>
@@ -790,14 +531,45 @@
         <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
       </div>
     </div>  </footer>
-
   <script src="js/menu-dropdown.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/tech-marquee.js" defer></script>
-  <script src="js/hero-animation-new.js" defer></script>
-  <script src="js/data-node-interactions.js" defer></script>
   <script src="js/page-specific.js" defer></script>
   <script src="js/dynamic-content.js" defer></script>
   <script src="js/form-handler.js" defer></script>
+  
+  <!-- Navbar scroll effect script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('.site-header');
+      
+      function handleScroll() {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > 30) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      
+      // Throttle scroll events for better performance
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            handleScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+      
+      window.addEventListener('scroll', onScroll, { passive: true });
+      
+      // Initial check
+      handleScroll();
+    });
+  </script>
 </body>
 </html>

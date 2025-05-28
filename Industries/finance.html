@@ -3,12 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>AI in Finance - Gyannetra</title>  <link rel="stylesheet" href="../css/style.css" />
+  <title>AI in Finance - Gyannetra</title>  
+  <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/benefits-cards.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Navbar scroll effect styles -->
+  <style>
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: transparent !important;
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-bottom: 1px solid transparent;
+      box-shadow: none;
+    }
+    
+    .site-header.scrolled {
+      background: transparent !important;
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar {
+      padding: 1rem 2rem;
+      max-width: none !important;
+      margin: 0 !important;
+      background: transparent !important;
+      border-radius: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    
+    /* Override any existing navbar container styles */
+    .site-header .navbar,
+    .site-header .container,
+    .navbar .container {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+    }
+    
+    /* Ensure body has top padding to account for fixed navbar */
+    body {
+      padding-top: 80px;
+    }
+
     /* Finance Page Specific Styles - Using standardized theme class */
     body {
+      /* You can add body-specific styles here if needed */
+    }
 
     .finance-page-container .hero-section.finance-hero {
       text-align: center;
@@ -16,12 +69,10 @@
       background: linear-gradient(rgba(10, 20, 40, 0.8), rgba(10, 20, 40, 0.95)), url('../assets/finance_hero_bg.jpg') no-repeat center center;
       background-size: cover;
       border-bottom: 2px solid var(--primary-color-glow);
-    }
-
-    .finance-page-container .hero-section.finance-hero h1 {
+    }    .finance-page-container .hero-section.finance-hero h1 {
       font-size: 3.2rem; /* Slightly adjusted */
       margin-bottom: 15px;
-      color: #fff; /* White for better contrast on dark bg */
+      /* Inherit the beautiful gradient and glow from main h1 styling */
       text-shadow: 0 2px 10px rgba(0,0,0,0.7);
     }
 
@@ -242,18 +293,26 @@
     <div class="overlay"></div>
     <div class="noise"></div>
   </div>
-  <!-- NAVBAR -->
+  <!-- NAVBAR -->  
   <header class="site-header">
-    <nav class="navbar container">
+    <nav class="navbar">
       <script src="../js/dropdown.js"></script>
       <a href="../index.html" class="logo">
         <img src="../assets/Company Icons/GN Name logo.svg" alt="Gyannetra Logo" class="logo-img">
       </a>
+      
+      <!-- Hamburger menu button for mobile -->
+      <button class="hamburger-menu" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
       <ul class="nav-links">
         <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
           <ul class="dropdown-menu services-dropdown">
             <li><a href="../Services/machine-learning.html"><div class="dropdown-item-content"><img src="../assets/mlng.png" alt="Machine Learning Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Machine Learning</span><span class="item-description">We build intelligent systems that learn from data to predict outcomes and automate decisions.</span></div></div></a></li>
-            <li><a href="../Services/data-analysis.html"><div class="dropdown-item-content"><img src="../assets/data analytics.png" alt="Data Analysis Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Data Analytics</span><span class="item-description">We transform raw data into actionable insights, helping you understand trends and optimize performance.</span></div></div></a></li>
+            <li><a href="../Services/data-analysis.html"><div class="dropdown-item-content"><img src="../assets/data analytics.png" alt="Data Analysis Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Data Analysis</span><span class="item-description">We transform raw data into actionable insights, helping you understand trends and optimize performance.</span></div></div></a></li>
             <li><a href="../Services/generative-ai.html"><div class="dropdown-item-content"><img src="../assets/gen ai.png" alt="Generative AI Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Generative AI</span><span class="item-description">We create novel content, from text and images to code, unlocking new possibilities for creativity and efficiency.</span></div></div></a></li>
             <li><a href="../Services/agentic-ai.html"><div class="dropdown-item-content"><img src="../assets/ai agent.png" alt="Agentic AI Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Agentic AI</span><span class="item-description">We develop autonomous AI agents capable of perceiving their environment and taking actions to achieve specific goals.</span></div></div></a></li>
             <li><a href="../Services/automation-flows.html"><div class="dropdown-item-content"><img src="../assets/automation flows.png" alt="Automation Flows Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Automation Flows</span><span class="item-description">We design and implement intelligent automation solutions to streamline your workflows and boost productivity.</span></div></div></a></li>
@@ -396,12 +455,11 @@
             <li><a href="../about.html">About Us</a></li>
             <li><a href="../contact.html">Contact Us</a></li>
           </ul>
-        </div>
-        <div class="footer-col">
+        </div>        <div class="footer-col">
           <h3>Contact Us</h3>
           <ul>
-            <li><p><i class="fas fa-map-marker-alt"></i> 123 AI Street, Innovation City, Techland</p></li>
-            <li><p><i class="fas fa-phone"></i> +1 (555) 123-4567</p></li>
+            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
+            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
             <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
           </ul>
         </div>
@@ -426,6 +484,40 @@
   <script src="../js/unified-neural-interactions.js" defer></script>
   <script src="../js/tech-marquee.js" defer></script>
   <script src="../js/data-node-interactions.js" defer></script>
+
+  <!-- Navbar scroll effect script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('.site-header');
+      
+      function handleScroll() {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > 30) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      
+      // Throttle scroll events for better performance
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            handleScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+      
+      window.addEventListener('scroll', onScroll, { passive: true });
+      
+      // Initial check
+      handleScroll();
+    });
+  </script>
 
 </html>
 

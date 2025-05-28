@@ -3,10 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Data Analysis - Gyannetra</title>  <link rel="stylesheet" href="../css/style.css" />
+  <title>Data Analysis - Gyannetra</title>  
+  <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/benefits-cards.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Navbar scroll effect styles -->
+  <style>
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: transparent !important;
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-bottom: 1px solid transparent;
+      box-shadow: none;
+    }
+    
+    .site-header.scrolled {
+      background: transparent !important;
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar {
+      padding: 1rem 2rem;
+      max-width: none !important;
+      margin: 0 !important;
+      background: transparent !important;
+      border-radius: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    
+    /* Override any existing navbar container styles */
+    .site-header .navbar,
+    .site-header .container,
+    .navbar .container {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+    }
+    
+    /* Ensure body has top padding to account for fixed navbar */
+    body {
+      padding-top: 80px;
+    }
+
+    /* Data Analysis Page Specific Styles */
     body {
       /* Using standardized colors from main CSS */
       --card-bg: rgba(25, 35, 55, 0.7);
@@ -21,13 +73,10 @@
         margin: 0 auto;
         position: relative; /* Ensure hero content is above atmospheric bg */
         z-index: 2; /* Ensure hero content is above atmospheric bg */
-    }
-
-    .hero-section h1 {
+    }    .hero-section h1 {
         font-size: 3.2rem;
         margin-bottom: 25px;
-        color: var(--primary-color);
-        text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        /* Inherit the beautiful gradient and glow from main h1 styling */
     }
 
     .hero-section p {
@@ -148,11 +197,10 @@
     .overview-section h2,
     .key-offerings-section h2,
     .benefits-section h2,
-    .blogs-case-studies-section h2,
-    .related-content-section h2 {
+    .blogs-case-studies-section h2,    .related-content-section h2 {
       font-size: 2.2rem;
       margin-bottom: 30px;
-      color: var(--primary-color);
+      /* Inherit the beautiful gradient and glow from main h2 styling */
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -203,11 +251,17 @@
       color: var(--text-muted);
       margin-bottom: 15px;
     }
-    
-    .read-more {
+      .read-more {
       color: var(--primary-color);
       text-decoration: none;
       font-weight: 600;
+    }
+    
+    .related-content-image {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+      border-radius: 8px;
     }
     /* Removed conflicting section styling that was here:
     section:not(.hero-section) { 
@@ -288,11 +342,19 @@
     <div class="noise"></div>
   </div>
   <header class="site-header">
-    <nav class="navbar container">
-        <a href="../index.html" class="logo">
+    <nav class="navbar">
+      <a href="../index.html" class="logo">
         <img src="../assets/Company Icons/GN Name logo.svg" alt="Gyannetra Logo" class="logo-img">
       </a>
-        <ul class="nav-links">
+      
+      <!-- Hamburger menu button for mobile -->
+      <button class="hamburger-menu" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <ul class="nav-links">
           <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
             <ul class="dropdown-menu services-dropdown">
               <li><a href="machine-learning.html"><div class="dropdown-item-content"><img src="../assets/mlng.png" alt="Machine Learning Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Machine Learning</span><span class="item-description">We build intelligent systems that learn from data to predict outcomes and automate decisions.</span></div></div></a></li>
@@ -365,14 +427,23 @@
                 <img src="../assets/predictive-analytics-icon.png" alt="Predictive Analytics Icon" class="solution-icon">
                 <h3>Predictive Analytics</h3>
                 <p>Leveraging historical data and machine learning to forecast future outcomes, identify risks, and uncover opportunities.</p>
-            </div>
-            <div class="solution-item">
+            </div>            <div class="solution-item">
                 <img src="../assets/data-strategy-icon.png" alt="Data-Driven Strategy Consulting Icon" class="solution-icon">
                 <h3>Data-Driven Strategy Consulting</h3>
                 <p>Providing expert guidance to help you develop and implement effective data strategies that align with your business goals.</p>
             </div>
+            <div class="solution-item">
+                <img src="../assets/analytics (1).png" alt="Real-time Analytics Icon" class="solution-icon">
+                <h3>Real-time Analytics & Monitoring</h3>
+                <p>Implement live data processing and monitoring systems to track business metrics and respond to changes instantly.</p>
+            </div>
+            <div class="solution-item">
+                <img src="../assets/data analytics.png" alt="Advanced Data Modeling Icon" class="solution-icon">
+                <h3>Advanced Data Modeling</h3>
+                <p>Build sophisticated data models that capture complex relationships and enable deeper analytical insights across your organization.</p>
+            </div>
         </div>
-    </section>    <section class="benefits-section section-padding container">
+    </section><section class="benefits-section section-padding container">
         <h2>BENEFITS OF CHOOSING GYANNETRA FOR DATA ANALYSIS</h2>        <div class="benefits-cards-grid">
             <div class="benefit-card">
                 <div class="benefit-card-icon">
@@ -404,48 +475,26 @@
             </div>
         </div>
     </section>
-    
-    <section class="blogs-case-studies-section section-padding container">
-        <h2>BLOGS & CASE STUDIES</h2>
-        <div class="articles-grid">
-            <div class="article-card">
-                <img src="../assets/blog-descriptive-analytics.jpg" alt="The Power of Descriptive Analytics in Business Intelligence">
-                <h3>The Power of Descriptive Analytics in Business Intelligence</h3>
-                <p>Understanding how descriptive analysis provides a foundational view of your business data for informed decision-making and strategic planning.</p>
-                <a href="../Industries/case-studies.html#descriptive-analytics" class="read-more-link">Read More</a>
-            </div>
-            <div class="article-card">
-                <img src="../assets/blog-predictive-modeling-techniques.jpg" alt="Exploring Advanced Predictive Modeling Techniques">
-                <h3>Exploring Advanced Predictive Modeling Techniques</h3>
-                <p>A deep dive into various methods for forecasting future trends and outcomes across diverse industries and complex business applications.</p>
-                <a href="../Industries/case-studies.html#predictive-modeling" class="read-more-link">Read More</a>
-            </div>
-            <div class="article-card">
-                <img src="../assets/case-study-retail-data-mining.jpg" alt="Case Study: Improving Retail Sales with Data Mining">
-                <h3>Case Study: Improving Retail Sales by 28% with Data Mining</h3>
-                <p>Discover how a prominent retail client leveraged strategic data mining insights to achieve significant quarterly sales growth and enhance customer segmentation.</p>
-                <a href="../Industries/case-studies.html#data-mining-retail" class="read-more-link">Read More</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="related-content-section section-padding container">
-        <h2>RELATED BLOGS & CASE STUDIES</h2>
+      <section class="related-content-section section-padding container">
+        <h2>EXPLORE OUR CAPABILITIES</h2>
         <div class="related-content-grid">
             <div class="related-content-item">
-                <h3>Machine Learning Insights</h3>
-                <p>Explore how our Machine Learning services can complement your data analysis efforts for predictive power.</p>
+                <img src="../assets/mlng.png" alt="Machine Learning Services" class="related-content-image">
+                <h3>Machine Learning Solutions</h3>
+                <p>Enhance your data analysis with predictive models and intelligent algorithms that learn from your data to forecast outcomes.</p>
                 <a href="machine-learning.html" class="read-more">Learn More</a>
             </div>
             <div class="related-content-item">
-                <h3>Generative AI for Data Augmentation</h3>
-                <p>Discover how Generative AI can create synthetic data to enhance your analytical models.</p>
-                <a href="generative-ai.html" class="read-more">Learn More</a>
+                <img src="../assets/gen ai.png" alt="Generative AI Solutions" class="related-content-image">
+                <h3>Generative AI for Data</h3>
+                <p>Create synthetic data, generate insights, and automate report creation with our advanced Generative AI capabilities.</p>
+                <a href="generative-ai.html" class="read-more">Discover GenAI</a>
             </div>
-             <div class="related-content-item">
-                <h3>Automating Data Pipelines</h3>
-                <p>Learn how our Automation Flow services can streamline your data collection and preparation processes.</p>
-                <a href="automation-flows.html" class="read-more">Learn More</a>
+            <div class="related-content-item">
+                <img src="../assets/automation flows.png" alt="Automation Flows" class="related-content-image">
+                <h3>Data Pipeline Automation</h3>
+                <p>Streamline your data collection, processing, and analysis workflows with intelligent automation solutions.</p>
+                <a href="automation-flows.html" class="read-more">Automate Now</a>
             </div>
         </div>
         <div style="text-align: center; margin-top: 40px;">
@@ -482,12 +531,11 @@
             <li><a href="../about.html">About Us</a></li>
             <li><a href="../contact.html">Contact Us</a></li>
           </ul>
-        </div>
-        <div class="footer-col">
+        </div>        <div class="footer-col">
           <h3>Contact Us</h3>
           <ul>
-            <li><p><i class="fas fa-map-marker-alt"></i> 123 AI Street, Innovation City, Techland</p></li>
-            <li><p><i class="fas fa-phone"></i> +1 (555) 123-4567</p></li>
+            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
+            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
             <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
           </ul>
         </div>
@@ -512,6 +560,42 @@
   <script src="../js/tech-marquee.js" defer></script>
   <script src="../js/data-node-interactions.js" defer></script>
 
+  <!-- Navbar scroll effect script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('.site-header');
+      
+      function handleScroll() {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > 30) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      
+      // Throttle scroll events for better performance
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            handleScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+      
+      window.addEventListener('scroll', onScroll, { passive: true });
+      
+      // Initial check
+      handleScroll();
+    });
+  </script>
+
+</body>
 </html>
+
 
 

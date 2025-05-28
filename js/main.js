@@ -68,7 +68,7 @@ function initSectionTransitions() {
 
 // Custom cursor effects for interactive elements
 function initCursorEffects() {
-    const interactiveElements = document.querySelectorAll('a, button, .data-node, .tech-marquee-item');
+    const interactiveElements = document.querySelectorAll('a, button, .data-node, .tech-card');
     const body = document.body;
     
     // Create custom cursor elements
