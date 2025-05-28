@@ -53,17 +53,87 @@
       border: none !important;
       box-shadow: none !important;
       border-radius: 0 !important;
-    }
-    
-    /* Ensure body has top padding to account for fixed navbar */
+    }      /* Ensure body has top padding to account for fixed navbar */
     body {
       padding-top: 80px;
     }
+    
+    /* Mobile adjustments for navbar spacing */
+    @media (max-width: 768px) {
+      body {
+        padding-top: 70px; /* Reduced for mobile */
+      }
+      
+      #hero {
+        min-height: calc(100vh - 70px);
+        height: calc(100vh - 70px);
+        padding-top: 1rem; /* Add some top padding for mobile */
+      }
+      
+      .hero-container {
+        padding-top: 2rem; /* Ensure content doesn't touch navbar */
+      }
+    }
+    
+    @media (max-width: 480px) {
+      body {
+        padding-top: 65px; /* Further reduced for small screens */
+      }
+      
+      #hero {
+        min-height: calc(100vh - 65px);
+        height: calc(100vh - 65px);
+        padding-top: 1.5rem;
+      }
+      
+      .hero-container {
+        padding-top: 2.5rem; /* Extra spacing for very small screens */
+      }
+    }
+    
+    /* HERO SECTION LAYOUT STABILIZATION */
+    #hero {
+      /* Prevent layout shift during load */
+      min-height: calc(100vh - 80px);
+      height: calc(100vh - 80px);
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    
+    .hero-container {
+      /* Stabilize hero content positioning */
+      height: 100%;
+      min-height: inherit;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    
+    .hero-content {
+      /* Prevent content shifting */
+      position: relative;
+      transform: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    
+    /* Prevent FOUC and layout shifts */
+    .hero-content h1,
+    .hero-content p,
+    .hero-content .btn-primary {
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+    }
   </style>
-  
-  <!-- Enable data nodes after all CSS is loaded -->
+    <!-- Hero section layout stabilization script -->
   <script>
-    // Wait for all stylesheets to load before enabling nodes
+    // Immediate layout stabilization
+    document.documentElement.style.setProperty('--hero-visibility', 'visible');
+    document.documentElement.style.setProperty('--hero-opacity', '1');
+    
+    // Wait for all stylesheets to load before enabling data nodes
     function enableDataNodes() {
       // Check if all CSS files are loaded
       const cssLoaded = Array.from(document.styleSheets).every(sheet => {
@@ -80,21 +150,44 @@
           window.foucPreventionStyle.remove();
         }
         
-        // Enable nodes with proper CSS variables
+        // Enable nodes with proper CSS variables (but keep hero stable)
         document.documentElement.style.setProperty('--data-node-visibility', 'visible');
         document.documentElement.style.setProperty('--data-node-opacity', '1');
         document.documentElement.style.setProperty('--data-node-position', 'unset');
         
-        // Force enable all data nodes and constellations
+        // Force enable all data nodes and constellations (excluding hero content)
         const dataNodes = document.querySelectorAll('.data-node, .data-constellation');
         dataNodes.forEach(node => {
-          node.style.removeProperty('opacity');
-          node.style.removeProperty('visibility');
-          node.style.removeProperty('transform');
-        });
+          // Skip if it's inside hero section
+          if (!node.closest('#hero')) {
+            node.style.removeProperty('opacity');
+            node.style.removeProperty('visibility');
+            node.style.removeProperty('transform');
+          }        });
+        
+        // Ensure hero content remains stable
+        const heroContent = document.querySelector('.hero-content');
+        if (heroContent) {
+          heroContent.style.opacity = '1';
+          heroContent.style.visibility = 'visible';
+          heroContent.style.transform = 'none';
+          heroContent.style.textAlign = 'center';
+          heroContent.style.marginLeft = 'auto';
+          heroContent.style.marginRight = 'auto';
+          
+          // Force center alignment for all hero content children
+          const heroChildren = heroContent.querySelectorAll('h1, p, .btn-primary');
+          heroChildren.forEach(child => {
+            child.style.textAlign = 'center';
+            child.style.marginLeft = 'auto';
+            child.style.marginRight = 'auto';
+            child.style.transform = 'none';
+            child.style.animation = 'none';
+          });
+        }
       } else {
         // Retry after a short delay
-        setTimeout(enableDataNodes, 50);
+        setTimeout(enableDataNodes, 30);
       }
     }
     
@@ -116,15 +209,25 @@
         document.documentElement.style.setProperty('--data-node-visibility', 'visible');
         document.documentElement.style.setProperty('--data-node-opacity', '1');
         document.documentElement.style.setProperty('--data-node-position', 'unset');
-        
-        // Force enable all data nodes and constellations
+          // Force enable all data nodes and constellations (excluding hero content)
         const dataNodes = document.querySelectorAll('.data-node, .data-constellation');
         dataNodes.forEach(node => {
-          node.style.removeProperty('opacity');
-          node.style.removeProperty('visibility');
-          node.style.removeProperty('transform');
+          // Skip if it's inside hero section
+          if (!node.closest('#hero')) {
+            node.style.removeProperty('opacity');
+            node.style.removeProperty('visibility');
+            node.style.removeProperty('transform');
+          }
         });
-      }, 150);
+        
+        // Ensure hero content remains stable
+        const heroContent = document.querySelector('.hero-content');
+        if (heroContent) {
+          heroContent.style.opacity = '1';
+          heroContent.style.visibility = 'visible';
+          heroContent.style.transform = 'none';
+        }
+      }, 100);
     });
   </script>
 </head>
@@ -137,9 +240,8 @@
     <div class="overlay"></div>
     <div class="noise"></div>
   </div>  <!-- NAVBAR -->  <header class="site-header">
-    <nav class="navbar">
-      <a href="index.html" class="logo">
-        <img src="assets/Company Icons/GN Name logo.svg" alt="Gyannetra Logo" class="logo-img">
+    <nav class="navbar">      <a href="index.html" class="logo">
+        <img src="assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="logo-img">
       </a>
       
       <!-- Hamburger menu button for mobile -->
@@ -484,18 +586,11 @@
   </section>
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container">      <div class="footer-content">
-        <div class="footer-col footer-col-logo">
+    <div class="container">      <div class="footer-content">        <div class="footer-col footer-col-logo">
           <a href="index.html" class="logo">
-            <img src="assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="footer-logo-img">
+            <img src="assets/Company Icons/company logo square.svg" alt="Gyannetra Logo" class="footer-logo-img">
           </a>
           <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          </div>
         </div>
         <div class="footer-col">
           <h3>Quick Links</h3>
@@ -517,18 +612,21 @@
             <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
             <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
           </ul>
-        </div>
-        <div class="footer-col">
+        </div>        <div class="footer-col">
           <h3>Follow Us</h3>
-          <p>Stay updated with our latest insights and news.</p>
+          <p>Stay updated with our latest insights and news.</p>          <div class="social-links">
+            <a href="mailto:info@gyannetra.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/918949135299" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/company/gyannetra-pvt-ltd/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@Gyannetra-o3y" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
            <form action="#" method="post" class="newsletter-form" style="display: none;">
             <input type="email" name="email" placeholder="Enter your email" required>
             <button type="submit" class="btn btn-secondary">Subscribe</button>
           </form>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+      </div>      <div class="footer-bottom">
+        <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms and Conditions</a></p>
       </div>
     </div>  </footer>
   <script src="js/menu-dropdown.js" defer></script>

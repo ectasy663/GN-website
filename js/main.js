@@ -18,7 +18,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Animate elements when they enter viewport
 function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.exp-item, .section-heading, .hero-content, .btn-primary');
+    // Exclude hero content from scroll animations to prevent layout shifts
+    const animatedElements = document.querySelectorAll('.exp-item, .section-heading, .btn-primary:not(#hero .btn-primary)');
+    
+    // Ensure hero content is always visible and stable
+    const heroContent = document.querySelector('#hero .hero-content');
+    if (heroContent) {
+        heroContent.style.opacity = '1';
+        heroContent.style.visibility = 'visible';
+        heroContent.style.transform = 'none';
+        heroContent.style.textAlign = 'center';
+        heroContent.style.marginLeft = 'auto';
+        heroContent.style.marginRight = 'auto';
+        heroContent.classList.add('animated'); // Mark as already animated
+        
+        // Force center alignment for all hero content children
+        const heroChildren = heroContent.querySelectorAll('h1, p, .btn-primary');
+        heroChildren.forEach(child => {
+            child.style.textAlign = 'center';
+            child.style.marginLeft = 'auto';
+            child.style.marginRight = 'auto';
+            child.style.transform = 'none';
+            child.style.animation = 'none';
+        });
+    }
     
     // Create intersection observer
     const observer = new IntersectionObserver((entries) => {
@@ -34,7 +57,7 @@ function initScrollAnimations() {
         rootMargin: '0px 0px -10% 0px'
     });
     
-    // Observe all animated elements
+    // Observe all animated elements (excluding hero content)
     animatedElements.forEach(element => {
         observer.observe(element);
         // Add base animation class
@@ -45,14 +68,30 @@ function initScrollAnimations() {
 // Parallax background effects
 function initParallaxEffects() {
     const parallaxElements = document.querySelectorAll('.atmospheric-bg, .light-effect-top, .light-effect-bottom');
+    const heroSection = document.querySelector('#hero');
     
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
         
+        // Get hero section boundaries
+        const heroRect = heroSection ? heroSection.getBoundingClientRect() : null;
+        const heroTop = heroSection ? heroSection.offsetTop : 0;
+        const heroBottom = heroSection ? heroTop + heroSection.offsetHeight : 0;
+        
         parallaxElements.forEach((element, index) => {
-            // Different parallax speeds based on element
-            const speed = index * 0.1 + 0.1;
-            element.style.transform = `translateY(${scrollY * speed}px)`;
+            // Check if we're in the hero section area
+            const isInHeroArea = scrollY >= heroTop - window.innerHeight && scrollY <= heroBottom;
+            
+            if (isInHeroArea) {
+                // Make background static in hero area - no parallax movement
+                element.style.transform = 'translateY(0px)';
+            } else {
+                // Apply parallax effects outside hero area
+                const speed = index * 0.1 + 0.1;
+                // Adjust the parallax calculation to account for hero section offset
+                const adjustedScrollY = scrollY > heroBottom ? scrollY - heroBottom + heroTop : scrollY;
+                element.style.transform = `translateY(${adjustedScrollY * speed}px)`;
+            }
         });
     });
 }
