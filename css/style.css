@@ -273,14 +273,14 @@ section h2 {
 .solution-item h3,
 .related-content-item h3 {
     font-size: 1.4rem;
-    color: var(--primary-color);
+    color: #52eef5;
     margin-bottom: 12px;
     font-weight: 600;
 }
 
 .solution-item h3 {
     font-size: 1.25rem;
-    color: var(--text-light);
+    color: #52eef5;
 }
 
 .article-card p,
@@ -477,7 +477,7 @@ section h2 {
     text-align: center;
     font-size: 2em;
     margin-bottom: 40px;
-    color: var(--primary-color);
+    color: #52eef5;
 }
 
 .offerings-cards,
@@ -746,6 +746,7 @@ section h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
     text-align: center;
+    color: #52eef5;
 }
 
 .overview-section p {
@@ -792,6 +793,7 @@ section h2 {
 .related-content-item h3 {
     font-size: 1.4rem;
     margin-bottom: 0.8rem;
+    color: #52eef5;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
@@ -1317,16 +1319,9 @@ section h2 {
     font-family: 'VT323', monospace;
     color: #52eef5;
     text-shadow: 0px 4px 10px rgba(82, 238, 245, 0.8), 0px 2px 5px rgba(0, 0, 0, 0.5);
-    color: transparent;
-    text-shadow: 0px 4px 10px rgba(124, 137, 255, 0.8), 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
     font-family: 'VT323', monospace;
     color: #52eef5;
     text-shadow: 0px 4px 10px rgba(82, 238, 245, 0.8), 0px 2px 5px rgba(0, 0, 0, 0.5);
@@ -2000,6 +1995,7 @@ h6 {
 .about-section h2 {
     font-size: 2em;
     margin-bottom: 20px;
+    color: #52eef5;
 }
 
 .about-section p {
@@ -2518,7 +2514,7 @@ h6 {
 
 .discuss-project-cta h2 {
     font-size: 1.8rem;
-    color: #ffffff;
+    color: #52eef5;
     margin: 0;
     background: none;
     -webkit-background-clip: unset;
@@ -2662,6 +2658,7 @@ h6 {
 .blogs-case-studies h2 {
     font-size: 2.5em;
     margin-bottom: 30px;
+    color: #52eef5;
 }
 
 .why-choose-items {
@@ -2769,7 +2766,7 @@ h6 {
 .industry-blogs .section-heading {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 2.5rem;
-    color: #ffffff;
+    color: #52eef5;
     margin-bottom: 40px;
     text-align: left;
     padding-left: 15px;
