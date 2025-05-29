@@ -111,13 +111,20 @@
     .solution-item:hover {
       transform: translateY(-8px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    }
-    
-    .solution-icon {
+    }    .solution-icon {
       width: 70px;
       height: 70px;
       margin-bottom: 20px;
       object-fit: contain;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Make SVG images white for better visibility */
+    .solution-item img[src$=".svg"] {
+      filter: brightness(0) invert(1);
+      padding: 8px; /* Add some padding for better visibility */
     }
     
     .solution-item h3 {
@@ -402,14 +409,12 @@
 
     <section class="key-offerings-section section-padding container">
         <h2>KEY OFFERINGS</h2>
-        <div class="solutions-grid">
-            <div class="solution-item">
-                <img src="../assets/data-visualization.png" alt="Data Visualization and Dashboards Icon" class="solution-icon">
+        <div class="solutions-grid">            <div class="solution-item">
+                <img src="../assets/data-visualization.svg" alt="Data Visualization and Dashboards Icon" class="solution-icon">
                 <h3>Data Visualization & Dashboards</h3>
                 <p>Presenting complex data in clear, intuitive, and interactive visual formats and dashboards for easy understanding and monitoring.</p>
-            </div>
-            <div class="solution-item">
-                <img src="../assets/statistical-modeling-icon.png" alt="Statistical Modeling and Analysis Icon" class="solution-icon">
+            </div>            <div class="solution-item">
+                <img src="../assets/analysis.svg" alt="Statistical Modeling and Analysis Icon" class="solution-icon">
                 <h3>Statistical Modeling & Analysis</h3>
                 <p>Building robust statistical models to understand relationships, test hypotheses, and make accurate predictions based on your data.</p>
             </div>

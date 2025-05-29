@@ -153,13 +153,17 @@
       transform: translateY(-8px);
       box-shadow: 0 12px 25px rgba(var(--primary-color-rgb), 0.4);
     }
-    
-    .article-card img {
+      .article-card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
       border-radius: 8px;
       margin-bottom: 20px;
+    }    /* Enhanced styling for SVG images in article cards */
+    .article-card img[src$=".svg"] {
+      object-fit: contain;
+      padding: 30px;
+      filter: brightness(0) invert(1);
     }
     
     .article-card h3 {
@@ -227,19 +231,40 @@
     .blogs-case-studies-section h2 {
       margin-bottom: 45px; /* Specific for this section */
     }
-    
-    .related-content-grid {
+      .related-content-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       margin-top: 30px;
       margin-bottom: 40px; /* Space before final CTA */
-    }
-      .related-content-item {
+      justify-items: center; /* Center align items when there's only one */
+    }    .related-content-item {
       background-color: var(--card-bg);
       padding: 20px;
       border-radius: 10px;
       border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 400px; /* Limit width when centered */
+      text-align: center; /* Center align content within the item */
+    }
+    
+    .related-content-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(var(--primary-color-rgb), 0.3);
+    }      .related-content-image {
+      width: 75px;
+      height: 75px;
+      object-fit: contain;
+      margin-bottom: 15px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+    
+    /* Make SVG images in related content white */
+    .related-content-item img[src$=".svg"] {
+      filter: brightness(0) invert(1);
+      padding: 10px; /* Add some padding for better visibility */
     }
     
     .related-content-item h3 {
@@ -500,21 +525,18 @@
 
     <section class="blogs-case-studies-section section-padding container">
       <h2>BLOGS & CASE STUDIES</h2>
-      <div class="articles-grid">
-        <div class="article-card">
-          <img src="../assets/analytics (1).png" alt="Machine Learning in Business Article Thumbnail">
+      <div class="articles-grid">        <div class="article-card">
+          <img src="../assets/machine-learning-03.svg" alt="Machine Learning in Business Article Thumbnail">
           <h3>Advanced Machine Learning Applications in Business</h3>
           <p>Discover how machine learning is transforming business operations and creating new value across diverse industries.</p>
           <a href="../Industries/case-studies.html" class="read-more-link">Read Article</a>
-        </div>
-        <div class="article-card">
-          <img src="../assets/retail ind.png" alt="Retail ML Case Study Thumbnail">
+        </div>        <div class="article-card">
+          <img src="../assets/sales-amount.svg" alt="Sales Forecasting Chart">
           <h3>Case Study: ML-Powered Sales Forecasting for Retail</h3>
           <p>Learn how a leading retail client increased sales forecast accuracy by 35% using our predictive modeling solutions.</p>
           <a href="../Industries/case-studies.html" class="read-more-link">View Case Study</a>
-        </div>
-        <div class="article-card">
-          <img src="../assets/mlng.png" alt="ML Breakthroughs Article Thumbnail">
+        </div>        <div class="article-card">
+          <img src="../assets/machine-learning (1).svg" alt="ML Breakthroughs Article Thumbnail">
           <h3>Recent Breakthroughs and Future of Machine Learning</h3>
           <p>Exploring the cutting-edge developments in ML technology and their potential impact on the future.</p>
           <a href="../Industries/case-studies.html" class="read-more-link">Explore Insights</a>
@@ -524,9 +546,8 @@
 
     <section class="related-content-section section-padding container">
       <h2>EXPLORE OUR AI CAPABILITIES</h2>
-      <div class="related-content-grid">
-        <div class="related-content-item">
-          <img src="../assets/data analytics.png" alt="Data Analysis Services" class="related-content-image">
+      <div class="related-content-grid">        <div class="related-content-item">
+          <img src="../assets/data-analysis.svg" alt="Data Analysis Services" class="related-content-image">
           <h3>Data Analysis & Visualization</h3>
           <p>Transform your raw data into clear, actionable insights with our expert data analysis and visualization services.</p>
           <a href="data-analysis.html" class="read-more">Learn More</a>
