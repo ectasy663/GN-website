@@ -2,60 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Contact Us - Gyannetra</title>  <link rel="stylesheet" href="css/style.css?v=202412291400" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />  <title>Contact Us - Gyannetra</title>
+  <link rel="stylesheet" href="css/style.css?v=202412291400" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: transparent !important;
-      backdrop-filter: blur(0px);
-      -webkit-backdrop-filter: blur(0px);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      border-bottom: 1px solid transparent;
-      box-shadow: none;
-    }
-    
-    .site-header.scrolled {
-      background: transparent !important;
-      backdrop-filter: blur(30px);
-      -webkit-backdrop-filter: blur(30px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-    
-    .navbar {
-      padding: 1rem 2rem;
-      max-width: none !important;
-      margin: 0 !important;
-      background: transparent !important;
-      border-radius: 0 !important;
-      border: none !important;
-      box-shadow: none !important;
-    }
-    
-    /* Override any existing navbar container styles */
-    .site-header .navbar,
-    .site-header .container,
-    .navbar .container {
-      background: transparent !important;
-      border: none !important;
-      box-shadow: none !important;
-      border-radius: 0 !important;
-    }
-    
-    /* Ensure body has top padding to account for fixed navbar */
-    body {
-      padding-top: 80px;
-    }
-  </style>
-</head>
-<body>
+<body class="contact-page">
   <div class="atmospheric-bg">
     <div class="light-effect-top"></div>
     <div class="light-effect-bottom"></div>
@@ -124,8 +75,9 @@
         <h1>CONTACT US</h1>
         <p>Reach out to our team for inquiries, consultations, or partnership opportunities.</p>
       </div>
-      <div class="contact-content">
-        <div class="contact-form-container">
+      <div class="contact-content">        <div class="contact-form-container">
+          <h2>Get In Touch</h2>
+          <div id="form-message" class="form-message"></div>
           <form id="contact-form">
             <div class="form-group">
               <label for="your-name">Your Name</label>
@@ -216,9 +168,9 @@
         <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms and Conditions</a></p>
       </div>
     </div>
-  </footer>
-  <script src="js/menu-dropdown.js" defer></script>
+  </footer>  <script src="js/menu-dropdown.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/form-handler.js" defer></script>
   <script src="js/data-node-interactions.js" defer></script>
 
   <!-- Navbar scroll effect script -->
