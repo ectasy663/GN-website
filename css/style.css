@@ -456,8 +456,31 @@ section h2 {
     animation-delay: 0.6s;
 }
 
-.tech-item {
+.section-subheading {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    animation-delay: 0.7s;
+}
+
+.section-intro {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
     animation-delay: 0.8s;
+}
+
+.tech-item {
+    animation-delay: 0.9s;
 }
 
 .exp-item {
@@ -670,6 +693,165 @@ section h2 {
     font-size: 1.1rem;
     text-align: center;
     flex-grow: 1;
+}
+
+/* Specialization Section Styles */
+#specializations {
+    padding: 4rem 0;
+    position: relative;
+}
+
+#specializations .section-subheading {
+    background: linear-gradient(90deg, var(--primary-color), #52eef5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(82, 238, 245, 0.2);
+    margin-top: 2rem;
+}
+
+#specializations .section-intro {
+    position: relative;
+    z-index: 2;
+}
+
+/* Specialization Cards Styles */
+.specializations-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.specialization-card {
+    background: linear-gradient(135deg, rgba(25, 35, 55, 0.9) 0%, rgba(35, 45, 65, 0.95) 100%);
+    border: 1px solid rgba(var(--primary-color-rgb, 109, 40, 217), 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.specialization-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.specialization-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(var(--primary-color-rgb, 109, 40, 217), 0.4);
+    border-color: rgba(var(--primary-color-rgb, 109, 40, 217), 0.6);
+}
+
+.specialization-card:hover::before {
+    opacity: 1;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.specialization-card-icon {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--primary-color-rgb, 109, 40, 217), 0.15);
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(var(--primary-color-rgb, 109, 40, 217), 0.2);
+}
+
+.specialization-card:hover .specialization-card-icon {
+    transform: scale(1.1);
+    background: rgba(var(--primary-color-rgb, 109, 40, 217), 0.25);
+    box-shadow: 0 8px 20px rgba(var(--primary-color-rgb, 109, 40, 217), 0.3);
+}
+
+.specialization-card-icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(var(--primary-color-rgb, 109, 40, 217), 0.3));
+}
+
+.specialization-card h3 {
+    font-size: 1.8rem;
+    color: #52eef5;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.specialization-description {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.specialization-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+.highlight-badge {
+    background: rgba(var(--primary-color-rgb, 109, 40, 217), 0.2);
+    color: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(var(--primary-color-rgb, 109, 40, 217), 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.specialization-card:hover .highlight-badge {
+    background: rgba(var(--primary-color-rgb, 109, 40, 217), 0.3);
+    transform: translateY(-2px);
+}
+
+.specialization-btn {
+    align-self: center;
+    padding: 10px 25px;
+    margin-top: 5px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .specializations-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .specialization-card {
+        padding: 25px;
+    }
+    
+    .specialization-card h3 {
+        font-size: 1.6rem;
+    }
 }
 
 /* Additional benefit card variants for specific pages */
