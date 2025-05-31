@@ -241,9 +241,18 @@
     <div class="hero-overlay"></div>
     
     <div class="hero-container">      <div class="hero-content">
-        <h1>AI SERVICES<br />AND <span class="typewriter-text" id="typewriter">SOLUTIONS</span><span class="cursor"></span></h1>
-        <p>Inventing the future, powered by intelligence: We unlock the infinite potential of artificial intelligence to create groundbreaking solutions that anticipate tomorrow's needs.</p>
-        <a href="contact.html" class="btn-primary">Get Started</a>
+        <h1>We Turn Ideas Into AI-Powered Reality</h1>
+        <div class="hero-typewriter-section">
+          <p class="hero-subheading">We deliver:</p>
+          <div class="typewriter-container">
+            <span class="typewriter-text" id="typewriter">AI Strategy & Roadmaps</span><span class="cursor"></span>
+          </div>
+        </div>
+        <p class="hero-supporting-text">Your partner in building intelligent, scalable AI systems that drive innovation and growth.</p>
+        <div class="hero-cta-buttons">
+          <a href="contact.html" class="btn-primary primary-cta">Book a Free Consultation</a>
+          <a href="Industries/case-studies.html" class="btn-secondary secondary-cta">See Our Work</a>
+        </div>
       </div>
     </div>
   </section><!-- TECHNOLOGIES -->
@@ -724,13 +733,20 @@
             const speed = this.isDeleting ? this.deleteSpeed : this.typeSpeed;
             setTimeout(() => this.type(), speed);
         }
-    }
-
-    // Initialize when page loads
+    }    // Initialize when page loads
     document.addEventListener('DOMContentLoaded', function() {
         const typewriterElement = document.getElementById('typewriter');
-        const words = ['SOLUTIONS', 'GENERATIVE AI', 'AUTOMATION FLOWS', 'AGENTIC AI'];
-          new TypewriterEffect(typewriterElement, words);
+        const words = [
+            'AI Strategy & Roadmaps',
+            'Custom LLM Solutions', 
+            'AI Automation & Workflows',
+            'Data-Driven Business Intelligence',
+            'Computer Vision Systems',
+            'NLP & Chatbot Integrations',
+            'AI for EdTech & Healthcare',
+            'Predictive Analytics Tools'
+        ];
+        new TypewriterEffect(typewriterElement, words);
     });
     
     // EMERGENCY: Direct hamburger menu toggle function
