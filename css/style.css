@@ -706,7 +706,7 @@ section h2 {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(82, 238, 245, 0.2);
+    text-shadow: 0 0 20px rgba(82,238,245,0.2);
     margin-top: 2rem;
 }
 
@@ -3196,11 +3196,6 @@ h1,h2,h3,h4,h5,h6 {
     color: white;    text-decoration: none;
     font-size: 1.2rem;
     transition: all 0.3s ease;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--fg);
-    font-size: 1.2rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input[type="text"]::placeholder,
@@ -3611,7 +3606,7 @@ h1,h2,h3,h4,h5,h6 {
     margin-top: 20px;
 }
 
-/* Removed marketing-hero specific styling as we're using standardized hero-section */
+/* Removed marketing-hero specific styling */
 
 .hero-image-container {
     width: 200px;
@@ -4365,7 +4360,7 @@ body {
 
 .webinar-main-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 60px rgba(var(--primary-color-rgb), 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Webinar Card Headers - Reduced margins for compact layout */
@@ -4403,6 +4398,7 @@ body {
 /* Upcoming Webinars Content - Reduced gap between items */
 .upcoming-webinars-content {
     display: flex;
+   
     flex-direction: column;
     gap: 1.2rem;
 }
@@ -4593,12 +4589,13 @@ body {
 
 .webinar-video-card {
     background: rgba(20, 30, 50, 0.6);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
     border-radius: 15px;
     padding: 1.5rem;
-    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .webinar-video-card::before {
@@ -4618,18 +4615,18 @@ body {
     box-shadow: 0 8px 25px rgba(var(--primary-color-rgb), 0.2);
 }
 
-.video-container {
+/* Video Container with reduced aspect ratio for more compact display */
+.gn-video-container {
     position: relative;
     width: 100%;
     height: 0;
-    padding-bottom: 56.25%; /*  16:9 aspect ratio */
-    margin-bottom: 1.5rem;
-    border-radius: 10px;
+    padding-bottom: 45%; /* Reduced from 56.25% (16:9) to 45% for shorter videos */
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
 }
 
-.video-container iframe {
+.gn-video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -4639,51 +4636,137 @@ body {
     border-radius: 10px;
 }
 
-.video-info h3 {
-    font-size: 1.4rem;
+/* Video Info */
+.gn-video-info h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
     color: #52eef5;
     margin-bottom: 0.8rem;
     font-weight: 600;
-    line-height: 1.3;
 }
 
-.video-info p {
-    color: var(--text-light);
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    font-size: 1.05rem;
-}
-
-.video-duration {
-    display: inline-block;
-    background: rgba(var(--primary-color-rgb), 0.2);
+.gn-video-info h4 i {
+    font-size: 1.1rem;
     color: var(--primary-color);
-    padding: 0.3rem 0.8rem;
-    border-radius: 15px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
 }
 
-/* Section Spacing - Reduced for better layout */
-.upcoming-webinars-section {
-    padding: 0.5rem 0;
+.gn-video-info p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
     margin: 0;
-    position: relative;
 }
 
-.webinar-videos-section {
-    padding: 0.5rem 0;
-    margin: 0;
-    position: relative;
+/* Responsive Design for Dual Column Layout */
+@media (max-width: 1024px) {
+    .gn-app-dual-column-container {
+        gap: 2rem;
+    }
+    
+    .gn-app-section-wrapper {
+        padding: 0 1.5rem;
+    }
+    
+    .gn-download-links-container {
+        gap: 1rem;
+    }
 }
 
-/* Remove additional gap between sections */
-.webinar-videos-section::before {
-    display: none;
+@media (max-width: 768px) {
+    /* Collapse to single column on mobile */
+    .gn-app-dual-column-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .gyannetra-app-section-redesigned {
+        padding: 3rem 0;
+        margin: 2rem auto;
+    }
+    
+    .gn-app-section-wrapper {
+        padding: 0 1rem;
+    }
+    
+    .gn-app-main-heading {
+        font-size: 2rem;
+    }
+    
+    .gn-app-features-card,
+    .gn-app-download-section,
+    .gn-video-tutorial-card {
+        padding: 1.5rem;
+    }
+    
+    .gn-download-links-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .gn-download-link {
+        min-width: 220px;
+        padding: 0.8rem 1.3rem;
+    }
+    
+    .gn-video-info h4 {
+        font-size: 1.1rem;
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: center;
+    }
 }
 
-/* Shimmer Animation */
+@media (max-width: 480px) {
+    .gyannetra-app-section-redesigned {
+        padding: 2rem 0;
+    }
+    
+    .gn-app-section-wrapper {
+        padding: 0 0.8rem;
+    }
+    
+    .gn-app-main-heading {
+        font-size: 1.6rem;
+    }
+    
+    .gn-app-features-card,
+    .gn-app-download-section,
+    .gn-video-tutorial-card {
+        padding: 1.2rem;
+    }
+    
+    .gn-feature-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+    
+    .gn-feature-icon {
+        align-self: center;
+    }
+    
+    .gn-download-link {
+        min-width: 180px;
+        padding: 0.7rem 1rem;
+    }
+    
+    .gn-download-icon {
+        font-size: 1.7rem;
+    }
+    
+    .gn-download-title {
+        font-size: 0.8rem;
+    }
+    
+    .gn-download-store {
+        font-size: 1rem;
+    }
+}
+
+/* Shimmer animation for video cards */
 @keyframes shimmer {
     0% {
         transform: translateX(-100%);
@@ -4913,7 +4996,7 @@ body {
 .benefit-item:hover {
     transform: translateY(-5px);
     border-color: rgba(var(--primary-color-rgb), 0.6);
-    box-shadow: 0 8px 25px rgba(var(--primary-color-rgb), 0.2);
+    box-shadow: 0 12px 25px rgba(var(--primary-color-rgb), 0.4);
 }
 
 .benefit-item i {
@@ -5055,6 +5138,7 @@ body {
     left: 0;
     color: var(--primary-color);
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
 .step-connector {
@@ -5171,8 +5255,6 @@ body {
     }
 
     .workflow-step {
-        flex-direction: column;
-        gap: 1.5rem;
         padding: 1.5rem;
         margin-bottom: 2rem;
     }
@@ -5199,12 +5281,8 @@ body {
         font-size: 1.4rem;
     }
 
-    .step-content p {
-        font-size: 1rem;
-    }
-
-    .step-connector {
-        display: none;
+    .step-details span {
+        font-size: 0.9rem;
     }
 
     .workflow-cta {
@@ -5284,4 +5362,1640 @@ body {
     }
 }
 
-/* ===== END CUSTOM TRAINING WORKFLOW SECTION STYLES ===== */
+/* ===== GYANNETRA MOBILE APP SECTION STYLES ===== */
+
+.gyannetra-app-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(15, 15, 25, 0.95) 0%, rgba(25, 25, 45, 0.9) 100%);
+    border-radius: 20px;
+    margin: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.gyannetra-app-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(var(--primary-color-rgb), 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(82, 238, 245, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Wrapper for centering and max-width control */
+.gn-app-section-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Main Heading */
+.gn-app-main-heading {
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+    color: #52eef5;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'VT323', monospace;
+}
+
+/* Dual Column Container */
+.gn-app-dual-column-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Left Column Styling */
+.gn-app-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Right Column Styling */
+.gn-app-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* App Features Card */
+.gn-app-features-card {
+    background: rgba(25, 35, 55, 0.8);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gn-app-features-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 12px 30px rgba(var(--primary-color-rgb), 0.3);
+}
+
+/* App Intro Text */
+.gn-app-intro-text {
+    margin-bottom: 2rem;
+}
+
+.gn-app-intro-text p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+}
+
+/* App Features List */
+.gn-app-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.gn-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(var(--primary-color-rgb), 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.gn-feature-item:hover {
+    background: rgba(var(--primary-color-rgb), 0.1);
+    transform: translateX(5px);
+}
+
+.gn-feature-icon {
+    background: rgba(var(--primary-color-rgb), 0.15);
+    border-radius: 10px;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+.gn-feature-icon i {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.gn-feature-item:hover .gn-feature-icon {
+    background: rgba(var(--primary-color-rgb), 0.25);
+    transform: scale(1.1);
+}
+
+.gn-feature-content h4 {
+    font-size: 1.2rem;
+    color: #52eef5;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.gn-feature-content p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* App Download Section */
+.gn-app-download-section {
+    background: rgba(20, 30, 50, 0.6);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.gn-app-download-section:hover {
+    background: rgba(25, 35, 55, 0.8);
+    border-color: rgba(var(--primary-color-rgb), 0.4);
+}
+
+.gn-download-heading {
+    font-size: 1.8rem;
+    color: #52eef5;
+    margin-bottom: 1.5rem;
+    font-family: 'VT323', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.gn-download-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.gn-download-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, rgba(25, 35, 55, 0.9) 0%, rgba(35, 45, 65, 0.95) 100%);
+    border: 2px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gn-download-link:hover {
+    transform: translateY(-3px);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 10px 25px rgba(var(--primary-color-rgb), 0.3);
+    text-decoration: none;
+}
+
+.gn-download-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.gn-download-link:hover .gn-download-icon {
+    transform: scale(1.1);
+}
+
+.gn-download-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.gn-download-title {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.2;
+}
+
+.gn-download-store {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Platform-specific styling */
+.gn-android-link:hover {
+    border-color: rgba(52, 168, 83, 0.6);
+    box-shadow: 0 10px 25px rgba(52, 168, 83, 0.3);
+}
+
+.gn-android-link .gn-download-icon {
+    color: #34a853;
+}
+
+.gn-ios-link:hover {
+    border-color: rgba(0, 122, 255, 0.6);
+    box-shadow: 0 10px 25px rgba(0, 122, 255, 0.3);
+}
+
+.gn-ios-link .gn-download-icon {
+    color: #007aff;
+}
+
+/* Video Tutorial Cards */
+.gn-video-tutorial-card {
+    background: rgba(20, 30, 50, 0.6);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.gn-video-tutorial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.gn-video-tutorial-card:hover {
+    background: rgba(25, 35, 55, 0.8);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Video Container with reduced aspect ratio for more compact display */
+.gn-video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 45%; /* Reduced from 56.25% (16:9) to 45% for shorter videos */
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.gn-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Video Info */
+.gn-video-info h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+    color: #52eef5;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.gn-video-info h4 i {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.gn-video-info p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Design for Dual Column Layout */
+@media (max-width: 1024px) {
+    .gn-app-dual-column-container {
+        gap: 2rem;
+    }
+    
+    .gn-app-section-wrapper {
+        padding: 0 1.5rem;
+    }
+    
+    .gn-download-links-container {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Collapse to single column on mobile */
+    .gn-app-dual-column-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .gyannetra-app-section-redesigned {
+        padding: 3rem 0;
+        margin: 2rem auto;
+    }
+    
+    .gn-app-section-wrapper {
+        padding: 0 1rem;
+    }
+    
+    .gn-app-main-heading {
+        font-size: 2rem;
+    }
+    
+    .gn-app-features-card,
+    .gn-app-download-section,
+    .gn-video-tutorial-card {
+        padding: 1.5rem;
+    }
+    
+    .gn-download-links-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .gn-download-link {
+        min-width: 220px;
+        padding: 0.8rem 1.3rem;
+    }
+    
+    .gn-video-info h4 {
+        font-size: 1.1rem;
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .gyannetra-app-section-redesigned {
+        padding: 2rem 0;
+    }
+    
+    .gn-app-section-wrapper {
+        padding: 0 0.8rem;
+    }
+    
+    .gn-app-main-heading {
+        font-size: 1.6rem;
+    }
+    
+    .gn-app-features-card,
+    .gn-app-download-section,
+    .gn-video-tutorial-card {
+        padding: 1.2rem;
+    }
+    
+    .gn-feature-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+    
+    .gn-feature-icon {
+        align-self: center;
+    }
+    
+    .gn-download-link {
+        min-width: 180px;
+        padding: 0.7rem 1rem;
+    }
+    
+    .gn-download-icon {
+        font-size: 1.7rem;
+    }
+    
+    .gn-download-title {
+        font-size: 0.8rem;
+    }
+    
+    .gn-download-store {
+        font-size: 1rem;
+    }
+}
+
+/* Shimmer animation for video cards */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+    0% {
+        text-shadow: 0 0 20px rgba(82, 238, 245, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 30px rgba(82, 238, 245, 0.8), 0 0 40px rgba(82, 238, 245, 0.3);
+    }
+}
+
+/* Responsive Design for Webinars */
+@media (max-width: 1024px) {
+    .webinar-videos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .webinar-meta {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #webinars-hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    #webinars-hero p {
+        font-size: 1.2rem;
+    }
+    
+    .webinar-main-card {
+        padding: 1.5rem;
+        margin: 2rem 0 3rem 0;
+    }
+      .already-done-webinars-card {
+        margin-top: 2rem !important;
+    }
+    
+    .webinar-videos-section {
+        padding: 3rem 0 1.5rem 0;
+        margin-top: 2rem;
+    }
+    
+    .webinar-card-header h2 {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .upcoming-webinar-item {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .webinar-date-badge {
+        align-self: flex-start;
+        min-width: 80px;
+    }
+    
+    .webinar-meta {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .webinar-actions {
+        flex-direction: column;
+    }
+    
+    .register-btn, .add-calendar-btn {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .webinar-videos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .webinar-video-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #webinars-hero {
+        padding: 2.5rem 0;
+    }
+    
+    #webinars-hero h1 {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
+    
+    #webinars-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .webinar-main-card {
+        padding: 1rem;
+        margin: 1.5rem 0 2.5rem 0;
+    }
+      .already-done-webinars-card {
+        margin-top: 1.5rem !important;
+    }
+    
+    .webinar-videos-section {
+        padding: 2rem 0 1rem 0;
+        margin-top: 1.5rem;
+    }
+    
+    .webinar-card-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    
+    .webinar-card-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .upcoming-webinar-item {
+        padding: 1rem;
+    }
+    
+    .webinar-details h3 {
+        font-size: 1.5rem;
+    }
+    
+    .webinar-takeaways {
+        margin-bottom: 1.5rem;
+    }
+    
+    .video-info h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== RESTRUCTURED GYANNETRA MOBILE APP SECTION - DUAL COLUMN LAYOUT ===== */
+
+/* Main Section Container - Centered with max-width */
+.gyannetra-app-section-redesigned {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(15, 15, 25, 0.95) 0%, rgba(25, 25, 45, 0.9) 100%);
+    border-radius: 20px;
+    margin: 3rem auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.gyannetra-app-section-redesigned::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(var(--primary-color-rgb), 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(82, 238, 245, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Wrapper for centering and max-width control */
+.gn-app-section-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Main Heading */
+.gn-app-main-heading {
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+    color: #52eef5;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'VT323', monospace;
+}
+
+/* Dual Column Container */
+.gn-app-dual-column-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Left Column Styling */
+.gn-app-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Right Column Styling */
+.gn-app-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* App Features Card */
+.gn-app-features-card {
+    background: rgba(25, 35, 55, 0.8);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gn-app-features-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 12px 30px rgba(var(--primary-color-rgb), 0.3);
+}
+
+/* App Intro Text */
+.gn-app-intro-text {
+    margin-bottom: 2rem;
+}
+
+.gn-app-intro-text p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+}
+
+/* App Features List */
+.gn-app-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.gn-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(var(--primary-color-rgb), 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.gn-feature-item:hover {
+    background: rgba(var(--primary-color-rgb), 0.1);
+    transform: translateX(5px);
+}
+
+.gn-feature-icon {
+    background: rgba(var(--primary-color-rgb), 0.15);
+    border-radius: 10px;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+.gn-feature-icon i {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.gn-feature-item:hover .gn-feature-icon {
+    background: rgba(var(--primary-color-rgb), 0.25);
+    transform: scale(1.1);
+}
+
+.gn-feature-content h4 {
+    font-size: 1.2rem;
+    color: #52eef5;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.gn-feature-content p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* App Download Section */
+.gn-app-download-section {
+    background: rgba(20, 30, 50, 0.6);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.gn-app-download-section:hover {
+    background: rgba(25, 35, 55, 0.8);
+    border-color: rgba(var(--primary-color-rgb), 0.4);
+}
+
+.gn-download-heading {
+    font-size: 1.8rem;
+    color: #52eef5;
+    margin-bottom: 1.5rem;
+    font-family: 'VT323', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.gn-download-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.gn-download-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, rgba(25, 35, 55, 0.9) 0%, rgba(35, 45, 65, 0.95) 100%);
+    border: 2px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gn-download-link:hover {
+    transform: translateY(-3px);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 10px 25px rgba(var(--primary-color-rgb), 0.3);
+    text-decoration: none;
+}
+
+.gn-download-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.gn-download-link:hover .gn-download-icon {
+    transform: scale(1.1);
+}
+
+.gn-download-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.gn-download-title {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.2;
+}
+
+.gn-download-store {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Platform-specific styling */
+.gn-android-link:hover {
+    border-color: rgba(52, 168, 83, 0.6);
+    box-shadow: 0 10px 25px rgba(52, 168, 83, 0.3);
+}
+
+.gn-android-link .gn-download-icon {
+    color: #34a853;
+}
+
+.gn-ios-link:hover {
+    border-color: rgba(0, 122, 255, 0.6);
+    box-shadow: 0 10px 25px rgba(0, 122, 255, 0.3);
+}
+
+.gn-ios-link .gn-download-icon {
+    color: #007aff;
+}
+
+/* Video Tutorial Cards */
+.gn-video-tutorial-card {
+    background: rgba(20, 30, 50, 0.6);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.gn-video-tutorial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.gn-video-tutorial-card:hover {
+    background: rgba(25, 35, 55, 0.8);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Video Container with reduced aspect ratio for more compact display */
+.gn-video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 45%; /* Reduced from 56.25% (16:9) to 45% for shorter videos */
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.gn-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Video Info */
+.gn-video-info h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+    color: #52eef5;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.gn-video-info h4 i {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.gn-video-info p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Design for Dual Column Layout */
+@media (max-width: 1024px) {
+    .gn-app-dual-column-container {
+        gap: 2rem;
+    }
+    
+    .gn-app-section-wrapper {
+        padding: 0 1.5rem;
+    }
+    
+    .gn-download-links-container {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Collapse to single column on mobile */
+    .gn-app-dual-column-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .gyannetra-app-section-redesigned {
+        padding: 3rem 0;
+        margin: 2rem auto;
+    }
+    
+    .gn-app-section-wrapper {
+        padding: 0 1rem;
+    }
+    
+    .gn-app-main-heading {
+        font-size: 2rem;
+    }
+    
+    .gn-app-features-card,
+    .gn-app-download-section,
+    .gn-video-tutorial-card {
+        padding: 1.5rem;
+    }
+    
+    .gn-download-links-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .gn-download-link {
+        min-width: 220px;
+        padding: 0.8rem 1.3rem;
+    }
+    
+    .gn-video-info h4 {
+        font-size: 1.1rem;
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .gyannetra-app-section-redesigned {
+        padding: 2rem 0;
+    }
+    
+    .gn-app-section-wrapper {
+        padding: 0 0.8rem;
+    }
+    
+    .gn-app-main-heading {
+        font-size: 1.6rem;
+    }
+    
+    .gn-app-features-card,
+    .gn-app-download-section,
+    .gn-video-tutorial-card {
+        padding: 1.2rem;
+    }
+    
+    .gn-feature-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+    
+    .gn-feature-icon {
+        align-self: center;
+    }
+    
+    .gn-download-link {
+        min-width: 180px;
+        padding: 0.7rem 1rem;
+    }
+    
+    .gn-download-icon {
+        font-size: 1.7rem;
+    }
+    
+    .gn-download-title {
+        font-size: 0.8rem;
+    }
+    
+    .gn-download-store {
+        font-size: 1rem;
+    }
+}
+
+/* Shimmer animation for video cards */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+    0% {
+        text-shadow: 0 0 20px rgba(82, 238, 245, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 30px rgba(82, 238, 245, 0.8), 0 0 40px rgba(82, 238, 245, 0.3);
+    }
+}
+
+/* Responsive Design for Webinars */
+@media (max-width: 1024px) {
+    .webinar-videos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .webinar-meta {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #webinars-hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    #webinars-hero p {
+        font-size: 1.2rem;
+    }
+    
+    .webinar-main-card {
+        padding: 1.5rem;
+        margin: 2rem 0 3rem 0;
+    }
+      .already-done-webinars-card {
+        margin-top: 2rem !important;
+    }
+    
+    .webinar-videos-section {
+        padding: 3rem 0 1.5rem 0;
+        margin-top: 2rem;
+    }
+    
+    .webinar-card-header h2 {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .upcoming-webinar-item {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .webinar-date-badge {
+        align-self: flex-start;
+        min-width: 80px;
+    }
+    
+    .webinar-meta {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .webinar-actions {
+        flex-direction: column;
+    }
+    
+    .register-btn, .add-calendar-btn {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .webinar-videos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .webinar-video-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #webinars-hero {
+        padding: 2.5rem 0;
+    }
+    
+    #webinars-hero h1 {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
+    
+    #webinars-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .webinar-main-card {
+        padding: 1rem;
+        margin: 1.5rem 0 2.5rem 0;
+    }
+      .already-done-webinars-card {
+        margin-top: 1.5rem !important;
+    }
+    
+    .webinar-videos-section {
+        padding: 2rem 0 1rem 0;
+        margin-top: 1.5rem;
+    }
+    
+    .webinar-card-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    
+    .webinar-card-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .upcoming-webinar-item {
+        padding: 1rem;
+    }
+    
+    .webinar-details h3 {
+        font-size: 1.5rem;
+    }
+    
+    .webinar-takeaways {
+        margin-bottom: 1.5rem;
+    }
+    
+    .video-info h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== RESTRUCTURED GYANNETRA MOBILE APP SECTION - DUAL COLUMN LAYOUT ===== */
+
+/* Main Section Container - Centered with max-width */
+.gyannetra-app-section-redesigned {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(15, 15, 25, 0.95) 0%, rgba(25, 25, 45, 0.9) 100%);
+    border-radius: 20px;
+    margin: 3rem auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.gyannetra-app-section-redesigned::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(var(--primary-color-rgb), 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(82, 238, 245, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Wrapper for centering and max-width control */
+.gn-app-section-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Main Heading */
+.gn-app-main-heading {
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+    color: #52eef5;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'VT323', monospace;
+}
+
+/* Dual Column Container */
+.gn-app-dual-column-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Left Column Styling */
+.gn-app-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Right Column Styling */
+.gn-app-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* App Features Card */
+.gn-app-features-card {
+    background: rgba(25, 35, 55, 0.8);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gn-app-features-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 12px 30px rgba(var(--primary-color-rgb), 0.3);
+}
+
+/* App Intro Text */
+.gn-app-intro-text {
+    margin-bottom: 2rem;
+}
+
+.gn-app-intro-text p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+}
+
+/* App Features List */
+.gn-app-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.gn-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(var(--primary-color-rgb), 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.gn-feature-item:hover {
+    background: rgba(var(--primary-color-rgb), 0.1);
+    transform: translateX(5px);
+}
+
+.gn-feature-icon {
+    background: rgba(var(--primary-color-rgb), 0.15);
+    border-radius: 10px;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+.gn-feature-icon i {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.gn-feature-item:hover .gn-feature-icon {
+    background: rgba(var(--primary-color-rgb), 0.25);
+    transform: scale(1.1);
+}
+
+.gn-feature-content h4 {
+    font-size: 1.2rem;
+    color: #52eef5;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.gn-feature-content p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* App Download Section */
+.gn-app-download-section {
+    background: rgba(20, 30, 50, 0.6);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.gn-app-download-section:hover {
+    background: rgba(25, 35, 55, 0.8);
+    border-color: rgba(var(--primary-color-rgb), 0.4);
+}
+
+.gn-download-heading {
+    font-size: 1.8rem;
+    color: #52eef5;
+    margin-bottom: 1.5rem;
+    font-family: 'VT323', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.gn-download-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.gn-download-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, rgba(25, 35, 55, 0.9) 0%, rgba(35, 45, 65, 0.95) 100%);
+    border: 2px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gn-download-link:hover {
+    transform: translateY(-3px);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 10px 25px rgba(var(--primary-color-rgb), 0.3);
+    text-decoration: none;
+}
+
+.gn-download-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.gn-download-link:hover .gn-download-icon {
+    transform: scale(1.1);
+}
+
+.gn-download-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.gn-download-title {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.2;
+}
+
+.gn-download-store {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Platform-specific styling */
+.gn-android-link:hover {
+    border-color: rgba(52, 168, 83, 0.6);
+    box-shadow: 0 10px 25px rgba(52, 168, 83, 0.3);
+}
+
+.gn-android-link .gn-download-icon {
+    color: #34a853;
+}
+
+.gn-ios-link:hover {
+    border-color: rgba(0, 122, 255, 0.6);
+    box-shadow: 0 10px 25px rgba(0, 122, 255, 0.3);
+}
+
+.gn-ios-link .gn-download-icon {
+    color: #007aff;
+}
+
+/* Video Tutorial Cards */
+.gn-video-tutorial-card {
+    background: rgba(20, 30, 50, 0.6);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.gn-video-tutorial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.gn-video-tutorial-card:hover {
+    background: rgba(25, 35, 55, 0.8);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Video Container with reduced aspect ratio for more compact display */
+.gn-video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 45%; /* Reduced from 56.25% (16:9) to 45% for shorter videos */
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.gn-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Video Info */
+.gn-video-info h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+    color: #52eef5;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.gn-video-info h4 i {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.gn-video-info p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Design for Dual Column Layout */
+@media (max-width: 1024px) {
+    .gn-app-dual-column-container {
+        gap: 2rem;
+    }
+    
+    .gn-app-section-wrapper {
+        padding: 0 1.5rem;
+    }
+    
+    .gn-download-links-container {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Collapse to single column on mobile */
+    .gn-app-dual-column-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .gyannetra-app-section-redesigned {
+        padding: 3rem 0;
+        margin: 2rem auto;
+    }
+    
+    .gn-app-section-wrapper {
+        padding: 0 1rem;
+    }
+    
+    .gn-app-main-heading {
+        font-size: 2rem;
+    }
+    
+    .gn-app-features-card,
+    .gn-app-download-section,
+    .gn-video-tutorial-card {
+        padding: 1.5rem;
+    }
+    
+    .gn-download-links-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .gn-download-link {
+        min-width: 220px;
+        padding: 0.8rem 1.3rem;
+    }
+    
+    .gn-video-info h4 {
+        font-size: 1.1rem;
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .gyannetra-app-section-redesigned {
+        padding: 2rem 0;
+    }
+    
+    .gn-app-section-wrapper {
+        padding: 0 0.8rem;
+    }
+    
+    .gn-app-main-heading {
+        font-size: 1.6rem;
+    }
+    
+    .gn-app-features-card,
+    .gn-app-download-section,
+    .gn-video-tutorial-card {
+        padding: 1.2rem;
+    }
+    
+    .gn-feature-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+    
+    .gn-feature-icon {
+        align-self: center;
+    }
+    
+    .gn-download-link {
+        min-width: 180px;
+        padding: 0.7rem 1rem;
+    }
+    
+    .gn-download-icon {
+        font-size: 1.7rem;
+    }
+    
+    .gn-download-title {
+        font-size: 0.8rem;
+    }
+    
+    .gn-download-store {
+        font-size: 1rem;
+    }
+}
+
+/* Shimmer animation for video cards */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+    0% {
+        text-shadow: 0 0 20px rgba(82, 238,  245, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(82, 238, 245, 0.8), 0 0 40px rgba(82, 238, 245, 0.3);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(82, 238, 245, 0.5);
+    }
+}

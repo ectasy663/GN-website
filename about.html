@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>About Us - Gyannetra</title>  <link rel="stylesheet" href="css/style.css?v=202412291400" />
+  <title>About Us - Gyannetra</title>  <link rel="stylesheet" href="css/style.css?v=202412291400"
+  <link rel="stylesheet" href="css/gn-mobile-responsive.css?v=202412291400" /> />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   
@@ -79,7 +80,7 @@
     }
   </style>
 </head>
-<body>
+<body class="gn-mobile-no-overflow">
   <div class="atmospheric-bg">
     <div class="light-effect-top"></div>
     <div class="light-effect-bottom"></div>
@@ -92,7 +93,7 @@
   <header class="site-header">
     <nav class="navbar">
       <a href="index.html" class="logo">
-        <img src="assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="logo-img">
+        <img src="assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="logo-img" class="gn-responsive-image">
       </a>
         <!-- Hamburger menu button for mobile -->
       <button class="hamburger-menu" aria-label="Toggle menu" onclick="toggleMobileMenu(event)">
@@ -104,33 +105,33 @@
       <ul class="nav-links">
         <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
           <ul class="dropdown-menu services-dropdown">
-            <li><a href="Services/machine-learning.html"><div class="dropdown-item-content"><img src="assets/mlng.png" alt="Machine Learning Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Machine Learning</span><span class="item-description">We build intelligent systems that learn from data to predict outcomes and automate decisions.</span></div></div></a></li>
-            <li><a href="Services/data-analysis.html"><div class="dropdown-item-content"><img src="assets/data analytics.png" alt="Data Analysis Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Data Analytics</span><span class="item-description">We transform raw data into actionable insights, helping you understand trends and optimize performance.</span></div></div></a></li>
-            <li><a href="Services/generative-ai.html"><div class="dropdown-item-content"><img src="assets/gen ai.png" alt="" class="dropdown-icon" /><div class="text-content"><span class="item-title">Generative AI</span><span class="item-description">We create novel content, from text and images to code, unlocking new possibilities for creativity and efficiency.</span></div></div></a></li>
-            <li><a href="Services/agentic-ai.html"><div class="dropdown-item-content"><img src="assets/ai agent.png" alt="Agentic AI Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Agentic AI</span><span class="item-description">We develop autonomous AI agents capable of perceiving their environment and taking actions to achieve specific goals.</span></div></div></a></li>
-            <li><a href="Services/automation-flows.html"><div class="dropdown-item-content"><img src="assets/automation flows.png" alt="" class="dropdown-icon" /><div class="text-content"><span class="item-title">Automation Flows</span><span class="item-description">We design and implement intelligent automation solutions to streamline your workflows and boost productivity.</span></div></div></a></li>
+            <li><a href="Services/machine-learning.html"><div class="dropdown-item-content"><img src="assets/mlng.png" alt="Machine Learning Icon" class="dropdown-icon" class="gn-responsive-image"><div class="text-content"><span class="item-title">Machine Learning</span><span class="item-description">We build intelligent systems that learn from data to predict outcomes and automate decisions.</span></div></div></a></li>
+            <li><a href="Services/data-analysis.html"><div class="dropdown-item-content"><img src="assets/data analytics.png" alt="Data Analysis Icon" class="dropdown-icon" class="gn-responsive-image"><div class="text-content"><span class="item-title">Data Analytics</span><span class="item-description">We transform raw data into actionable insights, helping you understand trends and optimize performance.</span></div></div></a></li>
+            <li><a href="Services/generative-ai.html"><div class="dropdown-item-content"><img src="assets/gen ai.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Generative AI</span><span class="item-description">We create novel content, from text and images to code, unlocking new possibilities for creativity and efficiency.</span></div></div></a></li>
+            <li><a href="Services/agentic-ai.html"><div class="dropdown-item-content"><img src="assets/ai agent.png" alt="Agentic AI Icon" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Agentic AI</span><span class="item-description">We develop autonomous AI agents capable of perceiving their environment and taking actions to achieve specific goals.</span></div></div></a></li>
+            <li><a href="Services/automation-flows.html"><div class="dropdown-item-content"><img src="assets/automation flows.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Automation Flows</span><span class="item-description">We design and implement intelligent automation solutions to streamline your workflows and boost productivity.</span></div></div></a></li>
           </ul>
         </li>
         <li class="dropdown"><a href="#" class="nav-link">Industries ▾</a>
           <ul class="dropdown-menu industries-dropdown">
-            <li><a href="industries/finance.html"><div class="dropdown-item-content"><img src="assets/Finance Ind.png" alt="Finance Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Finance</span><span class="item-description">Applying AI to enhance fraud detection, risk management, and customer experience.</span></div></div></a></li>
-            <li><a href="industries/healthcare.html"><div class="dropdown-item-content"><img src="assets/healthcare ind.png" alt="Healthcare Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Healthcare</span><span class="item-description">Leveraging AI for faster diagnoses, personalized treatments, and improved patient care.</span></div></div></a></li>
-            <li><a href="industries/manufacturing.html"><div class="dropdown-item-content"><img src="assets/manufacturing ind.png" alt="Manufacturing Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Manufacturing</span><span class="item-description">Optimizing production processes, predicting maintenance needs, and enhancing quality control with AI.</span></div></div></a></li>
-            <li><a href="Industries/marketing.html"><div class="dropdown-item-content"><img src="assets/marketing ind.png" alt="Marketing Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Marketing</span><span class="item-description">Personalizing campaigns, predicting consumer behavior, and optimizing marketing spend using AI.</span></div></div></a></li>
-            <li><a href="Industries/media-entertainment.html"><div class="dropdown-item-content"><img src="assets/media and entertainment ind.png" alt="Media & Entertainment Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Media & Entertainment</span><span class="item-description">Creating engaging content, personalizing recommendations, and optimizing content delivery with AI.</span></div></div></a></li>
-            <li><a href="#"><div class="dropdown-item-content"><img src="assets/travel ind.png" alt="" class="dropdown-icon" /><div class="text-content"><span class="item-title">Travel</span><span class="item-description">Enhancing customer journeys, optimizing pricing, and improving operational efficiency through AI.
+            <li><a href="industries/finance.html"><div class="dropdown-item-content"><img src="assets/Finance Ind.png" alt="Finance Icon" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Finance</span><span class="item-description">Applying AI to enhance fraud detection, risk management, and customer experience.</span></div></div></a></li>
+            <li><a href="industries/healthcare.html"><div class="dropdown-item-content"><img src="assets/healthcare ind.png" alt="Healthcare Icon" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Healthcare</span><span class="item-description">Leveraging AI for faster diagnoses, personalized treatments, and improved patient care.</span></div></div></a></li>
+            <li><a href="industries/manufacturing.html"><div class="dropdown-item-content"><img src="assets/manufacturing ind.png" alt="Manufacturing Icon" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Manufacturing</span><span class="item-description">Optimizing production processes, predicting maintenance needs, and enhancing quality control with AI.</span></div></div></a></li>
+            <li><a href="Industries/marketing.html"><div class="dropdown-item-content"><img src="assets/marketing ind.png" alt="Marketing Icon" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Marketing</span><span class="item-description">Personalizing campaigns, predicting consumer behavior, and optimizing marketing spend using AI.</span></div></div></a></li>
+            <li><a href="Industries/media-entertainment.html"><div class="dropdown-item-content"><img src="assets/media and entertainment ind.png" alt="Media & Entertainment Icon" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Media & Entertainment</span><span class="item-description">Creating engaging content, personalizing recommendations, and optimizing content delivery with AI.</span></div></div></a></li>
+            <li><a href="#"><div class="dropdown-item-content"><img src="assets/travel ind.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Travel</span><span class="item-description">Enhancing customer journeys, optimizing pricing, and improving operational efficiency through AI.
             </span></div></div></a></li>
-            <li><a href="Industries/retail.html"><div class="dropdown-item-content"><img src="assets/retail ind.png" alt="" class="dropdown-icon" /><div class="text-content"><span class="item-title">Retail</span><span class="item-description">Personalizing shopping experiences, optimizing inventory, and predicting demand with AI.
+            <li><a href="Industries/retail.html"><div class="dropdown-item-content"><img src="assets/retail ind.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Retail</span><span class="item-description">Personalizing shopping experiences, optimizing inventory, and predicting demand with AI.
             </span></div></div></a></li>
-            <li><a href="Industries/case-studies.html"><div class="dropdown-item-content"><img src="assets/case study ind.png" alt="" class="dropdown-icon" /><div class="text-content"><span class="item-title">Case Studies</span><span class="item-description">Real-world examples showcasing how our AI solutions have delivered tangible results for our clients.</span></div></div></a></li>
+            <li><a href="Industries/case-studies.html"><div class="dropdown-item-content"><img src="assets/case study ind.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Case Studies</span><span class="item-description">Real-world examples showcasing how our AI solutions have delivered tangible results for our clients.</span></div></div></a></li>
 
           </ul>
         </li>
         <li class="dropdown"><a href="#" class="nav-link">Education ▾</a>
           <ul class="dropdown-menu education-dropdown">
-            <li><a href="#"><div class="dropdown-item-content"><img src="assets/workshops.png" alt="" class="dropdown-icon" /><div class="text-content"><span class="item-title">Webinars</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
-            <li><a href="#"><div class="dropdown-item-content"><img src="assets/indi training.png" alt="" class="dropdown-icon" /><div class="text-content"><span class="item-title">Individual Trainings</span><span class="item-description">Personalized learning programs tailored to your specific needs and learning pace.</span></div></div></a></li>
-            <li><a href="#"><div class="dropdown-item-content"><img src="assets/corpo training.png" alt="" class="dropdown-icon" /><div class="text-content"><span class="item-title">Corporate Trainings</span><span class="item-description">Customized training solutions to upskill your teams and drive AI adoption within your organization.
+            <li><a href="#"><div class="dropdown-item-content"><img src="assets/workshops.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Webinars</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
+            <li><a href="#"><div class="dropdown-item-content"><img src="assets/indi training.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Individual Trainings</span><span class="item-description">Personalized learning programs tailored to your specific needs and learning pace.</span></div></div></a></li>
+            <li><a href="#"><div class="dropdown-item-content"><img src="assets/corpo training.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Corporate Trainings</span><span class="item-description">Customized training solutions to upskill your teams and drive AI adoption within your organization.
             </span></div></div></a></li>
           </ul>
         </li>
@@ -157,9 +158,9 @@
         <h2>WHO WE ARE</h2>
         <p>Gyannetra Put Ltd, as a leading provider of bespoke AI solutions. Asa focus on innovation, integrity, and excellence, we decvo to harnessing AI power to solve complex challenges and drive progress for clients.</p>
         <div class="team-images">
-          <img src="assets/team1.jpg" alt="Team Member 1" />
-          <img src="assets/team2.jpg" alt="Team Member 2" />
-          <img src="assets/team3.jpg" alt="Team Member 3" />
+          <img src="assets/team1.jpg" alt="Team Member 1" / class="gn-responsive-image">
+          <img src="assets/team2.jpg" alt="Team Member 2" / class="gn-responsive-image">
+          <img src="assets/team3.jpg" alt="Team Member 3" / class="gn-responsive-image">
         </div>
         <button class="btn">MEET OUR TEAM</button>
       </div>
@@ -185,10 +186,10 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="container gn-responsive-container">
       <div class="footer-content">        <div class="footer-col footer-col-logo">
           <a href="index.html" class="logo">
-            <img src="assets/Company Icons/company logo square.svg" alt="Gyannetra Logo" class="footer-logo-img">
+            <img src="assets/Company Icons/company logo square.svg" alt="Gyannetra Logo" class="footer-logo-img" class="gn-responsive-image">
           </a>
           <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
         </div>
@@ -231,6 +232,7 @@
     </div>
   </footer>
   <script src="js/menu-dropdown.js" defer></script>
+  <script src="js/gn-mobile-navigation.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/data-node-interactions.js" defer></script>
 
