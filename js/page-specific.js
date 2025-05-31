@@ -164,13 +164,13 @@ function initAboutPage() {
     }
 }
 
-// Contact page specific animations
+// Contact page specific functionality (animations removed)
 function initContactPage() {
-    // Form input effects
+    // Basic form input handling without animations
     const formInputs = document.querySelectorAll('input, textarea');
     if (formInputs.length > 0) {
         formInputs.forEach(input => {
-            // Add focus effect
+            // Add simplified focus effect (keep functionality but remove animations)
             input.addEventListener('focus', function() {
                 this.parentElement.classList.add('input-focused');
             });
@@ -181,7 +181,7 @@ function initContactPage() {
                 }
             });
             
-            // Check for pre-filled inputs
+            // Check for pre-filled inputs (functionality preserved)
             if (input.value) {
                 input.parentElement.classList.add('input-focused');
             }

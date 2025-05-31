@@ -6,9 +6,81 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <title>Gyannetra — AI Services & Solutions</title>
-    <link rel="stylesheet" href="css/style.css?v=202412291400" />
+  <link rel="stylesheet" href="css/style.css?v=202412291400" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- EMERGENCY HAMBURGER MENU FIX - INLINE CSS TO OVERRIDE EVERYTHING -->
+  <style>
+    @media (max-width: 768px) {
+      .hamburger-menu {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        position: relative !important;
+        z-index: 99999 !important;
+        width: 50px !important;
+        height: 50px !important;
+        background: rgba(82, 238, 245, 0.5) !important;
+        border: 3px solid rgba(82, 238, 245, 0.9) !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+        touch-action: manipulation !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        outline: none !important;
+        -webkit-user-select: none !important;
+        user-select: none !important;
+      }
+      
+      .hamburger-line {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 70% !important;
+        height: 3px !important;
+        background: #ffffff !important;
+        margin: 2px 0 !important;
+        transition: all 0.3s ease !important;
+        border-radius: 2px !important;
+      }
+      
+      .navbar {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 1rem 2rem !important;
+        position: relative !important;
+      }
+      
+      .nav-links {
+        position: fixed !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: rgba(15, 15, 30, 0.98) !important;
+        backdrop-filter: blur(25px) !important;
+        z-index: 88888 !important;
+        transition: left 0.4s ease !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        padding-top: 100px !important;
+        overflow-y: auto !important;
+      }
+      
+      .nav-links.active,
+      .nav-links.show {
+        left: 0 !important;
+      }
+    }
+  </style>
     <!-- Hero section layout stabilization script -->
   <script>
     // Immediate layout stabilization
@@ -125,9 +197,8 @@
     <nav class="navbar">      <a href="index.html" class="logo">
         <img src="assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="logo-img">
       </a>
-      
-      <!-- Hamburger menu button for mobile -->
-      <button class="hamburger-menu" aria-label="Toggle menu">
+        <!-- Hamburger menu button for mobile -->
+      <button class="hamburger-menu" aria-label="Toggle menu" onclick="toggleMobileMenu(event)">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -156,7 +227,7 @@
           </ul>
         </li>        <li class="dropdown"><a href="#" class="nav-link">Education ▾</a>
           <ul class="dropdown-menu education-dropdown">
-            <li><a href="Education/workshops.html"><div class="dropdown-item-content"><img src="assets/workshops.png" alt="Workshops Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Workshops</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
+            <li><a href="Education/workshops.html"><div class="dropdown-item-content"><img src="assets/workshops.png" alt="Webinars Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Webinars</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
             <li><a href="Education/individual-trainings.html"><div class="dropdown-item-content"><img src="assets/indi training.png" alt="Individual Training Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Individual Trainings</span><span class="item-description">Personalized learning programs tailored to your specific needs and learning pace.</span></div></div></a></li>
             <li><a href="Education/corporate-trainings.html"><div class="dropdown-item-content"><img src="assets/corpo training.png" alt="Corporate Training Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Corporate Trainings</span><span class="item-description">Customized training solutions to upskill your teams and drive AI adoption within your organization.
             </span></div></div></a></li>
@@ -170,7 +241,7 @@
     <div class="hero-overlay"></div>
     
     <div class="hero-container">      <div class="hero-content">
-        <h1>AI SERVICES<br />AND SOLUTIONS</h1>
+        <h1>AI SERVICES<br />AND <span class="typewriter-text" id="typewriter">SOLUTIONS</span><span class="cursor"></span></h1>
         <p>Inventing the future, powered by intelligence: We unlock the infinite potential of artificial intelligence to create groundbreaking solutions that anticipate tomorrow's needs.</p>
         <a href="contact.html" class="btn-primary">Get Started</a>
       </div>
@@ -446,23 +517,75 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- EXPERTISE -->
+  </section>  <!-- OUR SPECIALIZATIONS -->
+  <section id="specializations" class="container">
+    <h2 class="section-heading">OUR SPECIALIZATIONS</h2>
+    <div class="specializations-grid">
+      <div class="specialization-card">
+        <div class="specialization-icon">
+          <img src="assets/ai agent.png" alt="Self-Directed Agents Icon" />
+        </div>
+        <h3>Self-Directed Agents</h3>
+        <p class="specialization-description">We create autonomous AI agents that operate independently, making intelligent decisions and adapting to complex environments without constant human intervention. These agents continuously learn from their interactions, evolving to become more effective at achieving your business objectives while maintaining ethical and responsible operation standards.</p>
+        <div class="specialization-highlights">
+          <span class="highlight-badge">Autonomous Decision-Making</span>
+          <span class="highlight-badge">Adaptive Learning</span>
+          <span class="highlight-badge">Goal-Oriented Actions</span>
+        </div>
+      </div>
+      
+      <div class="specialization-card">
+        <div class="specialization-icon">
+          <img src="assets/automation flows.png" alt="Workflow Automation Icon" />
+        </div>
+        <h3>Workflow Automation</h3>
+        <p class="specialization-description">We design and implement intelligent automation systems that streamline your business processes from end to end. Our solutions go beyond simple task automation, incorporating AI-driven decision-making, exception handling, and process optimization to create seamless workflows that adapt and improve over time, dramatically boosting operational efficiency.</p>
+        <div class="specialization-highlights">
+          <span class="highlight-badge">End-to-End Automation</span>
+          <span class="highlight-badge">Smart Process Optimization</span>
+          <span class="highlight-badge">Exception Handling</span>
+        </div>
+      </div>
+      
+      <div class="specialization-card">
+        <div class="specialization-icon">
+          <img src="assets/mlng.png" alt="Continuous Learning Icon" />
+        </div>
+        <h3>Continuous Learning</h3>
+        <p class="specialization-description">We develop AI systems that never stop evolving, continuously learning from new data, user interactions, and changing environments. Our continuous learning frameworks ensure your AI solutions become more accurate, efficient, and valuable over time, providing sustained competitive advantages and adapting to emerging market trends and business requirements.</p>
+        <div class="specialization-highlights">
+          <span class="highlight-badge">Real-Time Adaptation</span>
+          <span class="highlight-badge">Performance Optimization</span>
+          <span class="highlight-badge">Future-Ready Systems</span>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- EXPERTISE -->
   <section id="expertise" class="container">
     <h2 class="section-heading">OUR EXPERTISE</h2>
-    <div class="exp-grid">      <div class="exp-item">
-        <img src="assets/predictive.png" alt="Predictive Analytics Icon" />
-        <p>Predictive Analytics</p>
-        <p class="exp-description">Using statistical algorithms and machine learning techniques to forecast future outcomes.</p>
-      </div>      <div class="exp-item">
-        <img src="assets/technology.png" alt="Automation Icon" />
-        <p>Automation</p>
-        <p class="exp-description">Designing and implementing intelligent systems to streamline workflows and boost productivity.</p>
-      </div>      <div class="exp-item">
-        <img src="assets/analytics (1).png" alt="Data Analysis Icon" />
-        <p>Data Analysis</p>
-        <p class="exp-description">Transforming raw data into actionable insights to inform strategic decisions.</p>
+    <div class="exp-grid">
+      <div class="exp-item">
+        <img src="assets/predictive.png" alt="Innovation First Icon" />
+        <p>Innovation First</p>
+        <p class="exp-description">We prioritize cutting-edge innovation, staying ahead of industry trends to deliver groundbreaking AI solutions.</p>
+      </div>
+      
+      <div class="exp-item">
+        <img src="assets/technology.png" alt="Ethical AI Icon" />
+        <p>Ethical AI</p>
+        <p class="exp-description">We develop responsible AI systems with transparency, fairness, and accountability at the core of our solutions.</p>
+      </div>
+      
+      <div class="exp-item">
+        <img src="assets/analytics (1).png" alt="AI Training Icon" />
+        <p>AI Training</p>
+        <p class="exp-description">Comprehensive training programs to empower your team with essential AI skills and knowledge for successful implementation.</p>
+      </div>
+      
+      <div class="exp-item">
+        <img src="assets/gen ai.png" alt="Ongoing Support Icon" />
+        <p>Ongoing Support</p>
+        <p class="exp-description">Continuous support and maintenance to ensure your AI solutions perform optimally and evolve with your business needs.</p>
       </div>
     </div>
   </section>
@@ -510,13 +633,13 @@
       </div>      <div class="footer-bottom">
         <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms and Conditions</a></p>
       </div>
-    </div>  </footer>
-  <script src="js/menu-dropdown.js" defer></script>
+    </div>  </footer>  <script src="js/menu-dropdown.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/tech-marquee.js" defer></script>
   <script src="js/page-specific.js" defer></script>
   <script src="js/dynamic-content.js" defer></script>
   <script src="js/form-handler.js" defer></script>
+  <script src="js/mobile-fix.js" defer></script>
   
   <!-- Navbar scroll effect script -->
   <script>
@@ -546,10 +669,90 @@
       }
       
       window.addEventListener('scroll', onScroll, { passive: true });
-      
-      // Initial check
+        // Initial check
       handleScroll();
     });
+  </script>
+  
+  <!-- Typewriter Effect Script -->
+  <script>
+    class TypewriterEffect {
+        constructor(element, words, options = {}) {
+            this.element = element;
+            this.words = words;
+            this.currentWordIndex = 0;
+            this.currentCharIndex = 0;
+            this.isDeleting = false;
+            this.typeSpeed = options.typeSpeed || 120;
+            this.deleteSpeed = options.deleteSpeed || 60;
+            this.delayBetweenWords = options.delayBetweenWords || 3000;
+            this.initialDelay = options.initialDelay || 2000;
+            
+            setTimeout(() => this.type(), this.initialDelay);
+        }
+
+        type() {
+            const currentWord = this.words[this.currentWordIndex];
+            
+            if (this.isDeleting) {
+                this.element.textContent = currentWord.substring(0, this.currentCharIndex - 1);
+                this.currentCharIndex--;
+                
+                if (this.currentCharIndex === 0) {
+                    this.isDeleting = false;
+                    this.currentWordIndex = (this.currentWordIndex + 1) % this.words.length;
+                    setTimeout(() => this.type(), 500);
+                    return;
+                }
+            } else {
+                this.element.textContent = currentWord.substring(0, this.currentCharIndex + 1);
+                this.currentCharIndex++;
+                
+                if (this.currentCharIndex === currentWord.length) {
+                    setTimeout(() => {
+                        this.isDeleting = true;
+                        this.type();
+                    }, this.delayBetweenWords);
+                    return;
+                }
+            }
+            
+            const speed = this.isDeleting ? this.deleteSpeed : this.typeSpeed;
+            setTimeout(() => this.type(), speed);
+        }
+    }
+
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        const typewriterElement = document.getElementById('typewriter');
+        const words = ['SOLUTIONS', 'GENERATIVE AI', 'AUTOMATION FLOWS', 'AGENTIC AI'];
+          new TypewriterEffect(typewriterElement, words);
+    });
+    
+    // EMERGENCY: Direct hamburger menu toggle function
+    function toggleMobileMenu(event) {
+        console.log('🍔 Direct hamburger toggle called!');
+        event.preventDefault();
+        event.stopPropagation();
+        
+        const hamburger = document.querySelector('.hamburger-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger && navLinks) {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            navLinks.classList.toggle('show');
+            
+            const isOpen = navLinks.classList.contains('active') || navLinks.classList.contains('show');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+            
+            console.log('🍔 Menu toggled directly - open:', isOpen);
+            console.log('🍔 Hamburger classes:', hamburger.className);
+            console.log('🍔 Nav classes:', navLinks.className);
+        } else {
+            console.error('🍔 Hamburger or nav elements not found!');
+        }
+    }
   </script>
 </body>
 </html>

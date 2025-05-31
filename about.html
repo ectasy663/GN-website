@@ -6,6 +6,78 @@
   <title>About Us - Gyannetra</title>  <link rel="stylesheet" href="css/style.css?v=202412291400" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- EMERGENCY HAMBURGER MENU FIX - INLINE CSS TO OVERRIDE EVERYTHING -->
+  <style>
+    @media (max-width: 768px) {
+      .hamburger-menu {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        position: relative !important;
+        z-index: 99999 !important;
+        width: 50px !important;
+        height: 50px !important;
+        background: rgba(82, 238, 245, 0.5) !important;
+        border: 3px solid rgba(82, 238, 245, 0.9) !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+        touch-action: manipulation !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        outline: none !important;
+        -webkit-user-select: none !important;
+        user-select: none !important;
+      }
+      
+      .hamburger-line {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 70% !important;
+        height: 3px !important;
+        background: #ffffff !important;
+        margin: 2px 0 !important;
+        transition: all 0.3s ease !important;
+        border-radius: 2px !important;
+      }
+      
+      .navbar {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 1rem 2rem !important;
+        position: relative !important;
+      }
+      
+      .nav-links {
+        position: fixed !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: rgba(15, 15, 30, 0.98) !important;
+        backdrop-filter: blur(25px) !important;
+        z-index: 88888 !important;
+        transition: left 0.4s ease !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        padding-top: 100px !important;
+        overflow-y: auto !important;
+      }
+      
+      .nav-links.active,
+      .nav-links.show {
+        left: 0 !important;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="atmospheric-bg">
@@ -22,9 +94,8 @@
       <a href="index.html" class="logo">
         <img src="assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="logo-img">
       </a>
-      
-      <!-- Hamburger menu button for mobile -->
-      <button class="hamburger-menu" aria-label="Toggle menu">
+        <!-- Hamburger menu button for mobile -->
+      <button class="hamburger-menu" aria-label="Toggle menu" onclick="toggleMobileMenu(event)">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -57,7 +128,7 @@
         </li>
         <li class="dropdown"><a href="#" class="nav-link">Education ▾</a>
           <ul class="dropdown-menu education-dropdown">
-            <li><a href="#"><div class="dropdown-item-content"><img src="assets/workshops.png" alt="" class="dropdown-icon" /><div class="text-content"><span class="item-title">Workshops</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
+            <li><a href="#"><div class="dropdown-item-content"><img src="assets/workshops.png" alt="" class="dropdown-icon" /><div class="text-content"><span class="item-title">Webinars</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
             <li><a href="#"><div class="dropdown-item-content"><img src="assets/indi training.png" alt="" class="dropdown-icon" /><div class="text-content"><span class="item-title">Individual Trainings</span><span class="item-description">Personalized learning programs tailored to your specific needs and learning pace.</span></div></div></a></li>
             <li><a href="#"><div class="dropdown-item-content"><img src="assets/corpo training.png" alt="" class="dropdown-icon" /><div class="text-content"><span class="item-title">Corporate Trainings</span><span class="item-description">Customized training solutions to upskill your teams and drive AI adoption within your organization.
             </span></div></div></a></li>
