@@ -4090,7 +4090,7 @@ body {
 
 .webinar-videos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     margin-top: 60px;
 }
@@ -4156,14 +4156,26 @@ body {
 }
 
 /* Responsive Design for Webinar Videos */
+/* Large Desktop: 4 columns (default above 1200px) */
+
+/* Medium Desktop/Large Tablet: 3 columns */
 @media (max-width: 1200px) {
     .webinar-videos-grid {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 25px;
     }
 }
 
-@media (max-width: 768px) {
+/* Tablet/Medium Screens: 2 columns */
+@media (max-width: 900px) {
+    .webinar-videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Mobile/Small Screens: 1 column */
+@media (max-width: 600px) {
     .webinar-videos-section {
         padding: 60px 0;
     }
@@ -4187,6 +4199,7 @@ body {
     }
 }
 
+/* Extra Small Mobile: 1 column with optimizations */
 @media (max-width: 480px) {
     .webinar-videos-grid {
         grid-template-columns: 1fr;
