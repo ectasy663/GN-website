@@ -3,11 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Data Analysis - Gyannetra</title>  
-  <link rel="stylesheet" href="../css/style.css?v=202412291400"
+  <title>Data Analysis - Gyannetra</title>
+  
+  <!-- CRITICAL CSS - Prevent FOUC -->
+  <style>
+    /* Immediate FOUC prevention */
+    html { 
+      visibility: hidden;
+      overflow-x: hidden;
+    }
+    
+    body { 
+      font-family: 'Inter', 'Space Grotesk', sans-serif;
+      background: #0a0a1a;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    
+    /* Critical layout styles to prevent shifts */
+    .site-header {
+      background: rgba(15, 15, 30, 0.95);
+      backdrop-filter: blur(20px);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 0;
+      border-bottom: 1px solid rgba(82, 238, 245, 0.3);
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    main {
+      margin-top: 80px;
+      min-height: calc(100vh - 80px);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    body.loaded {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    html.loaded { 
+      visibility: visible;
+    }
+  </style>
+  
+  <!-- CRITICAL: Load main CSS synchronously to prevent FOUC -->
+  <link rel="stylesheet" href="../css/style.css?v=202412291400" />
   <link rel="stylesheet" href="css/gn-mobile-responsive.css?v=202412291400" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Preload secondary resources -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+  
+  <!-- Load fonts synchronously for immediate rendering -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Optimized Page Loading Script -->
+  <script>
+    // Immediate page stabilization
+    (function() {
+      'use strict';
+      
+      // Fast loading detection
+      function showPage() {
+        document.documentElement.classList.add('loaded');
+        document.body.classList.add('loaded');
+      }
+      
+      // Show page as soon as possible
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', showPage);
+      } else {
+        showPage();
+      }
+      
+      // Fallback timeout
+      setTimeout(showPage, 50);
+    })();
+  </script>
 </head>
 <body class="gn-mobile-no-overflow">
   <div class="atmospheric-bg">
@@ -25,7 +118,7 @@
       </a>
       
       <!-- Hamburger menu button for mobile -->
-      <button class="hamburger-menu" aria-label="Toggle menu">
+      <button class="hamburger-menu" aria-label="Toggle menu" onclick="toggleMobileMenu(event)">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -65,11 +158,10 @@
         </ul>
     </nav>
   </header>
-  <main>
-    <section class="hero-section gn-responsive-container">
+  <main>    <section class="hero-section gn-responsive-container">
         <h1>Unveiling Insights with Data Analysis</h1>
         <p>Gyannetra empowers your business by transforming raw data into actionable intelligence. We help you understand trends, optimize performance, and make data-driven decisions with confidence and clarity.</p>
-        <a href="../contact.html" class="btn btn-primary" class="btn-primary gn-mobile-button">Unlock Your Data's Potential</a>
+        <a href="../contact.html" class="btn btn-primary">Unlock Your Data's Potential</a>
     </section>
 
     <section class="overview-section section-padding container">

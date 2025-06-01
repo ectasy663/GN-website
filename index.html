@@ -1,191 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>  <meta charset="UTF-8" />
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <title>Gyannetra — AI Services & Solutions</title>
-  <link rel="stylesheet" href="css/style.css?v=202412291400" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- EMERGENCY HAMBURGER MENU FIX - INLINE CSS TO OVERRIDE EVERYTHING -->
+    <!-- CRITICAL CSS - Prevent FOUC -->
   <style>
-    @media (max-width: 768px) {
-      .hamburger-menu {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        pointer-events: auto !important;
-        position: relative !important;
-        z-index: 99999 !important;
-        width: 50px !important;
-        height: 50px !important;
-        background: rgba(82, 238, 245, 0.5) !important;
-        border: 3px solid rgba(82, 238, 245, 0.9) !important;
-        border-radius: 8px !important;
-        cursor: pointer !important;
-        touch-action: manipulation !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        outline: none !important;
-        -webkit-user-select: none !important;
-        user-select: none !important;
-      }
-      
-      .hamburger-line {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        width: 70% !important;
-        height: 3px !important;
-        background: #ffffff !important;
-        margin: 2px 0 !important;
-        transition: all 0.3s ease !important;
-        border-radius: 2px !important;
-      }
-      
-      .navbar {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 1rem 2rem !important;
-        position: relative !important;
-      }
-      
-      .nav-links {
-        position: fixed !important;
-        top: 0 !important;
-        left: -100% !important;
-        width: 100% !important;
-        height: 100vh !important;
-        background: rgba(15, 15, 30, 0.98) !important;
-        backdrop-filter: blur(25px) !important;
-        z-index: 88888 !important;
-        transition: left 0.4s ease !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
-        align-items: center !important;
-        padding-top: 100px !important;
-        overflow-y: auto !important;
-      }
-      
-      .nav-links.active,
-      .nav-links.show {
-        left: 0 !important;
-      }
+    /* Simplified FOUC prevention */
+    html { 
+      visibility: visible !important; 
+    }
+    body { 
+      font-family: 'VT323', monospace;
+      background: #0a0a1a;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      opacity: 1;
+    }
+    
+    /* Preloader styles */
+    #page-preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0a0a1a;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s ease;
+    }
+    
+    .loader-text {
+      color: #52eef5;
+      font-size: 1.5rem;
+      font-family: 'VT323', monospace;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+    
+    /* Critical layout stabilization */
+    .site-header { 
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(10, 10, 26, 0.95);
+      backdrop-filter: blur(20px);
+    }
+    
+    body.loaded #page-preloader {
+      opacity: 0;
+      pointer-events: none;
+      display: none;
     }
   </style>
-    <!-- Hero section layout stabilization script -->
+  
+  <link rel="preload" href="css/style.css?v=202412291400" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/style.css?v=202412291400"></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+    <!-- Simplified Loading Script -->
   <script>
-    // Immediate layout stabilization
-    document.documentElement.style.setProperty('--hero-visibility', 'visible');
-    document.documentElement.style.setProperty('--hero-opacity', '1');
-    
-    // Wait for all stylesheets to load before enabling data nodes
-    function enableDataNodes() {
-      // Check if all CSS files are loaded
-      const cssLoaded = Array.from(document.styleSheets).every(sheet => {
-        try {
-          return sheet.cssRules || sheet.rules;
-        } catch (e) {
-          return false;
+    // Simple page loading
+    document.addEventListener('DOMContentLoaded', function() {
+      // Remove preloader after a short delay
+      setTimeout(function() {
+        document.body.classList.add('loaded');
+        const preloader = document.getElementById('page-preloader');
+        if (preloader) {
+          preloader.style.display = 'none';
         }
-      });
-      
-      if (cssLoaded && document.readyState !== 'loading') {
-        // Remove the aggressive FOUC prevention style
-        if (window.foucPreventionStyle) {
-          window.foucPreventionStyle.remove();
-        }
-        
-        // Enable nodes with proper CSS variables (but keep hero stable)
-        document.documentElement.style.setProperty('--data-node-visibility', 'visible');
-        document.documentElement.style.setProperty('--data-node-opacity', '1');
-        document.documentElement.style.setProperty('--data-node-position', 'unset');
-        
-        // Force enable all data nodes and constellations (excluding hero content)
-        const dataNodes = document.querySelectorAll('.data-node, .data-constellation');
-        dataNodes.forEach(node => {
-          // Skip if it's inside hero section
-          if (!node.closest('#hero')) {
-            node.style.removeProperty('opacity');
-            node.style.removeProperty('visibility');
-            node.style.removeProperty('transform');
-          }        });
-        
-        // Ensure hero content remains stable
-        const heroContent = document.querySelector('.hero-content');
-        if (heroContent) {
-          heroContent.style.opacity = '1';
-          heroContent.style.visibility = 'visible';
-          heroContent.style.transform = 'none';
-          heroContent.style.textAlign = 'center';
-          heroContent.style.marginLeft = 'auto';
-          heroContent.style.marginRight = 'auto';
-          
-          // Force center alignment for all hero content children
-          const heroChildren = heroContent.querySelectorAll('h1, p, .btn-primary');
-          heroChildren.forEach(child => {
-            child.style.textAlign = 'center';
-            child.style.marginLeft = 'auto';
-            child.style.marginRight = 'auto';
-            child.style.transform = 'none';
-            child.style.animation = 'none';
-          });
-        }
-      } else {
-        // Retry after a short delay
-        setTimeout(enableDataNodes, 30);
-      }
-    }
-    
-    // Start checking when DOM is interactive
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', enableDataNodes);
-    } else {
-      enableDataNodes();
-    }
-    
-    // Fallback: ensure nodes are enabled after full page load
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        // Remove the aggressive FOUC prevention style
-        if (window.foucPreventionStyle) {
-          window.foucPreventionStyle.remove();
-        }
-        
-        document.documentElement.style.setProperty('--data-node-visibility', 'visible');
-        document.documentElement.style.setProperty('--data-node-opacity', '1');
-        document.documentElement.style.setProperty('--data-node-position', 'unset');
-          // Force enable all data nodes and constellations (excluding hero content)
-        const dataNodes = document.querySelectorAll('.data-node, .data-constellation');
-        dataNodes.forEach(node => {
-          // Skip if it's inside hero section
-          if (!node.closest('#hero')) {
-            node.style.removeProperty('opacity');
-            node.style.removeProperty('visibility');
-            node.style.removeProperty('transform');
-          }
-        });
-        
-        // Ensure hero content remains stable
-        const heroContent = document.querySelector('.hero-content');
-        if (heroContent) {
-          heroContent.style.opacity = '1';
-          heroContent.style.visibility = 'visible';
-          heroContent.style.transform = 'none';
-        }
-      }, 100);
+      }, 500);
     });
   </script>
 </head>
 <body>
+  <!-- Preloader -->
+  <div id="page-preloader">
+    <div class="loader-text">Loading Gyannetra...</div>
+  </div>
+  
   <div class="atmospheric-bg">
     <div class="light-effect-top"></div>
     <div class="light-effect-bottom"></div>
@@ -193,11 +98,16 @@
     <div class="small-light-bottom"></div>
     <div class="overlay"></div>
     <div class="noise"></div>
-  </div>  <!-- NAVBAR -->  <header class="site-header">
-    <nav class="navbar">      <a href="index.html" class="logo">
+  </div>
+  
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
         <img src="assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="logo-img">
       </a>
-        <!-- Hamburger menu button for mobile -->
+      
+      <!-- Hamburger menu button for mobile -->
       <button class="hamburger-menu" aria-label="Toggle menu" onclick="toggleMobileMenu(event)">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -205,42 +115,48 @@
       </button>
       
       <ul class="nav-links">
-        <li class="dropdown"><a href="#" class="nav-link">Services ▾</a>
+        <li class="dropdown">
+          <a href="#" class="nav-link">Services ▾</a>
           <ul class="dropdown-menu services-dropdown">
             <li><a href="Services/machine-learning.html"><div class="dropdown-item-content"><img src="assets/mlng.png" alt="Machine Learning Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Machine Learning</span><span class="item-description">We build intelligent systems that learn from data to predict outcomes and automate decisions.</span></div></div></a></li>
             <li><a href="Services/data-analysis.html"><div class="dropdown-item-content"><img src="assets/data analytics.png" alt="Data Analysis Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Data Analytics</span><span class="item-description">We transform raw data into actionable insights, helping you understand trends and optimize performance.</span></div></div></a></li>
-            <li><a href="Services/generative-ai.html"><div class="dropdown-item-content"><img src="assets/gen ai.png" alt="Generative AI Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Generative AI</span><span class="item-description">We create novel content, from text and images to code, unlocking new possibilities for creativity and efficiency.</span></div></div></a></li>
-            <li><a href="Services/agentic-ai.html"><div class="dropdown-item-content"><img src="assets/ai agent.png" alt="Agentic AI Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Agentic AI</span><span class="item-description">We develop autonomous AI agents capable of perceiving their environment and taking actions to achieve specific goals.</span></div></div></a></li>
-            <li><a href="Services/automation-flows.html"><div class="dropdown-item-content"><img src="assets/automation flows.png" alt="Automation Flows Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Automation Flows</span><span class="item-description">We design and implement intelligent automation solutions to streamline your workflows and boost productivity.</span></div></div></a></li>
+            <li><a href="Services/generative-ai.html"><div class="dropdown-item-content"><img src="assets/gen ai.png" alt="Generative AI Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Generative AI</span><span class="item-description">We create novel content, from text and images to code, unlocking new possibilities for creativity and efficiency.</span></div></div></a></li>
+            <li><a href="Services/agentic-ai.html"><div class="dropdown-item-content"><img src="assets/ai agent.png" alt="Agentic AI Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Agentic AI</span><span class="item-description">We develop autonomous AI agents capable of perceiving their environment and taking actions to achieve specific goals.</span></div></div></a></li>
+            <li><a href="Services/automation-flows.html"><div class="dropdown-item-content"><img src="assets/automation flows.png" alt="Automation Flows Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Automation Flows</span><span class="item-description">We design and implement intelligent automation solutions to streamline your workflows and boost productivity.</span></div></div></a></li>
           </ul>
         </li>
-        <li class="dropdown"><a href="#" class="nav-link">Industries ▾</a>
-          <ul class="dropdown-menu industries-dropdown">            <li><a href="Industries/finance.html"><div class="dropdown-item-content"><img src="assets/Finance Ind.png" alt="Finance Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Finance</span><span class="item-description">Applying AI to enhance fraud detection, risk management, and customer experience.</span></div></div></a></li>
-            <li><a href="Industries/healthcare.html"><div class="dropdown-item-content"><img src="assets/healthcare ind.png" alt="Healthcare Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Healthcare</span><span class="item-description">Leveraging AI for faster diagnoses, personalized treatments, and improved patient care.</span></div></div></a></li>
-            <li><a href="Industries/manufacturing.html"><div class="dropdown-item-content"><img src="assets/manufacturing ind.png" alt="Manufacturing Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Manufacturing</span><span class="item-description">Optimizing production processes, predicting maintenance needs, and enhancing quality control with AI.</span></div></div></a></li>
-            <li><a href="Industries/marketing.html"><div class="dropdown-item-content"><img src="assets/marketing ind.png" alt="Marketing Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Marketing</span><span class="item-description">Personalizing campaigns, predicting consumer behavior, and optimizing marketing spend using AI.</span></div></div></a></li>
-            <li><a href="Industries/media-entertainment.html"><div class="dropdown-item-content"><img src="assets/media and entertainment ind.png" alt="Media & Entertainment Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Media & Entertainment</span><span class="item-description">Creating engaging content, personalizing recommendations, and optimizing content delivery with AI.</span></div></div></a></li>
-            <li><a href="Industries/travel.html"><div class="dropdown-item-content"><img src="assets/travel ind.png" alt="Travel Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Travel</span><span class="item-description">Enhancing customer journeys, optimizing pricing, and improving operational efficiency through AI.</span></div></div></a></li>            <li><a href="Industries/retail.html"><div class="dropdown-item-content"><img src="assets/retail ind.png" alt="Retail Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Retail</span><span class="item-description">Personalizing shopping experiences, optimizing inventory, and predicting demand with AI.
-            </span></div></div></a></li>
-            <li><a href="Industries/case-studies.html"><div class="dropdown-item-content"><img src="assets/case study ind.png" alt="Case Studies Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Case Studies</span><span class="item-description">Real-world examples showcasing how our AI solutions have delivered tangible results for our clients.</span></div></div></a></li>
-
+        <li class="dropdown">
+          <a href="#" class="nav-link">Industries ▾</a>
+          <ul class="dropdown-menu industries-dropdown">
+            <li><a href="Industries/finance.html"><div class="dropdown-item-content"><img src="assets/Finance Ind.png" alt="Finance Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Finance</span><span class="item-description">Applying AI to enhance fraud detection, risk management, and customer experience.</span></div></div></a></li>
+            <li><a href="Industries/healthcare.html"><div class="dropdown-item-content"><img src="assets/healthcare ind.png" alt="Healthcare Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Healthcare</span><span class="item-description">Leveraging AI for faster diagnoses, personalized treatments, and improved patient care.</span></div></div></a></li>
+            <li><a href="Industries/manufacturing.html"><div class="dropdown-item-content"><img src="assets/manufacturing ind.png" alt="Manufacturing Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Manufacturing</span><span class="item-description">Optimizing production processes, predicting maintenance needs, and enhancing quality control with AI.</span></div></div></a></li>
+            <li><a href="Industries/marketing.html"><div class="dropdown-item-content"><img src="assets/marketing ind.png" alt="Marketing Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Marketing</span><span class="item-description">Personalizing campaigns, predicting consumer behavior, and optimizing marketing spend using AI.</span></div></div></a></li>
+            <li><a href="Industries/media-entertainment.html"><div class="dropdown-item-content"><img src="assets/media and entertainment ind.png" alt="Media & Entertainment Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Media & Entertainment</span><span class="item-description">Creating engaging content, personalizing recommendations, and optimizing content delivery with AI.</span></div></div></a></li>
+            <li><a href="Industries/travel.html"><div class="dropdown-item-content"><img src="assets/travel ind.png" alt="Travel Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Travel</span><span class="item-description">Enhancing customer journeys, optimizing pricing, and improving operational efficiency through AI.</span></div></div></a></li>
+            <li><a href="Industries/retail.html"><div class="dropdown-item-content"><img src="assets/retail ind.png" alt="Retail Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Retail</span><span class="item-description">Personalizing shopping experiences, optimizing inventory, and predicting demand with AI.</span></div></div></a></li>
+            <li><a href="Industries/case-studies.html"><div class="dropdown-item-content"><img src="assets/case study ind.png" alt="Case Studies Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Case Studies</span><span class="item-description">Real-world examples showcasing how our AI solutions have delivered tangible results for our clients.</span></div></div></a></li>
           </ul>
-        </li>        <li class="dropdown"><a href="#" class="nav-link">Education ▾</a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="nav-link">Education ▾</a>
           <ul class="dropdown-menu education-dropdown">
-            <li><a href="Education/workshops.html"><div class="dropdown-item-content"><img src="assets/workshops.png" alt="Webinars Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Webinars</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
-            <li><a href="Education/individual-trainings.html"><div class="dropdown-item-content"><img src="assets/indi training.png" alt="Individual Training Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Individual Trainings</span><span class="item-description">Personalized learning programs tailored to your specific needs and learning pace.</span></div></div></a></li>
-            <li><a href="Education/corporate-trainings.html"><div class="dropdown-item-content"><img src="assets/corpo training.png" alt="Corporate Training Icon" class="dropdown-icon" /><div class="text-content"><span class="item-title">Corporate Trainings</span><span class="item-description">Customized training solutions to upskill your teams and drive AI adoption within your organization.
-            </span></div></div></a></li>
+            <li><a href="Education/workshops.html"><div class="dropdown-item-content"><img src="assets/workshops.png" alt="Webinars Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Webinars</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
+            <li><a href="Education/individual-trainings.html"><div class="dropdown-item-content"><img src="assets/indi training.png" alt="Individual Training Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Individual Trainings</span><span class="item-description">Personalized learning programs tailored to your specific needs and learning pace.</span></div></div></a></li>
+            <li><a href="Education/corporate-trainings.html"><div class="dropdown-item-content"><img src="assets/corpo training.png" alt="Corporate Training Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Corporate Trainings</span><span class="item-description">Customized training solutions to upskill your teams and drive AI adoption within your organization.</span></div></div></a></li>
           </ul>
         </li>
         <li><a href="about.html" class="nav-link">About Us</a></li>
         <li><a href="contact.html" class="nav-link">Contact Us</a></li>
       </ul>
     </nav>
-  </header>  <!-- HERO -->  <section id="hero">
+  </header>
+  
+  <!-- HERO -->
+  <section id="hero">
     <div class="hero-overlay"></div>
-    
-    <div class="hero-container">      <div class="hero-content">
+    <div class="hero-container">
+      <div class="hero-content">
         <h1>We Turn Ideas Into AI-Powered Reality</h1>
         <div class="hero-typewriter-section">
           <p class="hero-subheading">We deliver:</p>
@@ -255,7 +171,9 @@
         </div>
       </div>
     </div>
-  </section><!-- TECHNOLOGIES -->
+  </section>
+
+  <!-- TECHNOLOGIES -->
   <section id="technologies">
     <div class="container">
       <h2 class="section-heading">TECHNOLOGIES WE USE</h2>
@@ -264,7 +182,7 @@
     <!-- Tech Cards Container -->
     <div class="tech-cards-container">
       <div class="tech-cards-track">
-        <!-- First row of cards -->
+        <!-- Tech cards will be animated by JavaScript -->
         <div class="tech-card" data-tech="ollama">
           <div class="tech-card-inner">
             <div class="tech-icon-wrapper">
@@ -274,7 +192,8 @@
             <p>Local LLM deployment</p>
           </div>
         </div>
-          <div class="tech-card" data-tech="langchain">
+        
+        <div class="tech-card" data-tech="langchain">
           <div class="tech-card-inner">
             <div class="tech-icon-wrapper">
               <div class="tech-icon langchain"></div>
@@ -384,6 +303,7 @@
           </div>
         </div>
         
+        <!-- Additional tech cards for seamless scrolling -->
         <div class="tech-card" data-tech="llamaindex">
           <div class="tech-card-inner">
             <div class="tech-icon-wrapper">
@@ -423,113 +343,16 @@
             <p>Containerization</p>
           </div>
         </div>
-        
-        <div class="tech-card" data-tech="groq">
-          <div class="tech-card-inner">
-            <div class="tech-icon-wrapper">
-              <div class="tech-icon groq"></div>
-            </div>
-            <h3>Groq</h3>
-            <p>Lightning-fast inference</p>
-          </div>
-        </div>
-        
-        <div class="tech-card" data-tech="vllm">
-          <div class="tech-card-inner">
-            <div class="tech-icon-wrapper">
-              <div class="tech-icon vllm"></div>
-            </div>
-            <h3>vLLM</h3>
-            <p>High-throughput serving</p>
-          </div>
-        </div>
-        
-        <div class="tech-card" data-tech="rag">
-          <div class="tech-card-inner">
-            <div class="tech-icon-wrapper">
-              <div class="tech-icon rag"></div>
-            </div>
-            <h3>RAG</h3>
-            <p>Retrieval augmented generation</p>
-          </div>
-        </div>
-        
-        <div class="tech-card" data-tech="spacy">
-          <div class="tech-card-inner">
-            <div class="tech-icon-wrapper">
-              <div class="tech-icon spacy"></div>
-            </div>
-            <h3>spaCy</h3>
-            <p>NLP library</p>
-          </div>
-        </div>
-        
-        <div class="tech-card" data-tech="haystack">
-          <div class="tech-card-inner">
-            <div class="tech-icon-wrapper">
-              <div class="tech-icon haystack"></div>
-            </div>
-            <h3>Haystack</h3>
-            <p>NLP framework</p>
-          </div>
-        </div>
-        
-        <div class="tech-card" data-tech="milvus">
-          <div class="tech-card-inner">
-            <div class="tech-icon-wrapper">
-              <div class="tech-icon milvus"></div>
-            </div>
-            <h3>Milvus</h3>
-            <p>Vector database</p>
-          </div>
-        </div>
-        
-        <!-- Duplicate cards for seamless loop -->
-        <div class="tech-card" data-tech="ollama">
-          <div class="tech-card-inner">
-            <div class="tech-icon-wrapper">
-              <div class="tech-icon ollama"></div>
-            </div>
-            <h3>Ollama</h3>
-            <p>Local LLM deployment</p>
-          </div>
-        </div>
-        
-        <div class="tech-card" data-tech="langchain">
-          <div class="tech-card-inner">
-            <div class="tech-icon-wrapper">
-              <div class="tech-icon langchain"></div>
-            </div>
-            <h3>LangChain</h3>
-            <p>LLM application framework</p>
-          </div>
-        </div>
-        
-        <div class="tech-card" data-tech="openai">
-          <div class="tech-card-inner">
-            <div class="tech-icon-wrapper">
-              <div class="tech-icon openai"></div>
-            </div>
-            <h3>OpenAI</h3>
-            <p>Advanced AI models</p>
-          </div>
-        </div>
-        
-        <div class="tech-card" data-tech="pytorch">
-          <div class="tech-card-inner">
-            <div class="tech-icon-wrapper">
-              <div class="tech-icon pytorch"></div>
-            </div>
-            <h3>PyTorch</h3>
-            <p>Deep learning framework</p>
-          </div>
-        </div>
       </div>
     </div>
-  </section>  <!-- OUR SPECIALIZATIONS -->  <section id="specializations" class="container">
+  </section>
+
+  <!-- OUR SPECIALIZATIONS -->
+  <section id="specializations" class="container">
     <h2 class="section-heading">OUR SPECIALIZATIONS</h2>
     <h3 class="section-subheading">AGENTIC AI AND AUTOMATION</h3>
     <p class="section-intro">We specialize in creating autonomous AI systems that can independently execute complex workflows, make decisions, and continuously optimize processes.</p>
+    
     <div class="specializations-cards-grid">
       <div class="specialization-card">
         <div class="specialization-card-icon">
@@ -573,43 +396,43 @@
         <a href="Services/machine-learning.html" class="btn-primary specialization-btn">Learn More</a>
       </div>
     </div>
-  </section><!-- EXPERTISE -->
+  </section>
+
+  <!-- EXPERTISE -->
   <section id="expertise" class="container">
     <h2 class="section-heading">OUR EXPERTISE</h2>
     <div class="exp-grid">
       <div class="exp-item">
         <img src="assets/predictive.png" alt="Innovation First Icon" />
-        <p>Innovation First</p>
+        <h3>Innovation First</h3>
         <p class="exp-description">We prioritize cutting-edge innovation, staying ahead of industry trends to deliver groundbreaking AI solutions.</p>
       </div>
       
       <div class="exp-item">
-        <img src="assets/technology.png" alt="Ethical AI Icon" />
-        <p>Ethical AI</p>
-        <p class="exp-description">We develop responsible AI systems with transparency, fairness, and accountability at the core of our solutions.</p>
+        <img src="assets/technology.png" alt="Technical Excellence Icon" />
+        <h3>Technical Excellence</h3>
+        <p class="exp-description">Our team combines deep technical expertise with practical experience to build robust, scalable AI systems.</p>
       </div>
       
       <div class="exp-item">
-        <img src="assets/analytics (1).png" alt="AI Training Icon" />
-        <p>AI Training</p>
-        <p class="exp-description">Comprehensive training programs to empower your team with essential AI skills and knowledge for successful implementation.</p>
-      </div>
-      
-      <div class="exp-item">
-        <img src="assets/gen ai.png" alt="Ongoing Support Icon" />
-        <p>Ongoing Support</p>
-        <p class="exp-description">Continuous support and maintenance to ensure your AI solutions perform optimally and evolve with your business needs.</p>
+        <img src="assets/analytics (1).png" alt="Results Driven Icon" />
+        <h3>Results Driven</h3>
+        <p class="exp-description">We focus on delivering measurable business impact through AI solutions that drive real value and ROI.</p>
       </div>
     </div>
   </section>
+
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container">      <div class="footer-content">        <div class="footer-col footer-col-logo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col footer-col-logo">
           <a href="index.html" class="logo">
             <img src="assets/Company Icons/company logo square.svg" alt="Gyannetra Logo" class="footer-logo-img">
           </a>
           <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
         </div>
+        
         <div class="footer-col">
           <h3>Quick Links</h3>
           <ul>
@@ -623,6 +446,7 @@
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
+        
         <div class="footer-col">
           <h3>Contact Us</h3>
           <ul>
@@ -630,28 +454,30 @@
             <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
             <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
           </ul>
-        </div>        <div class="footer-col">
+        </div>
+        
+        <div class="footer-col">
           <h3>Follow Us</h3>
-          <p>Stay updated with our latest insights and news.</p>          <div class="social-links">
+          <p>Stay updated with our latest insights and news.</p>
+          <div class="social-links">
             <a href="mailto:info@gyannetra.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             <a href="https://wa.me/918949135299" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
             <a href="https://www.linkedin.com/company/gyannetra-pvt-ltd/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://www.youtube.com/@Gyannetra-o3y" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
           </div>
-           <form action="#" method="post" class="newsletter-form" style="display: none;">
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <button type="submit" class="btn btn-secondary">Subscribe</button>
-          </form>
         </div>
-      </div>      <div class="footer-bottom">
+      </div>
+      
+      <div class="footer-bottom">
         <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms and Conditions</a></p>
       </div>
-    </div>  </footer>  <script src="js/main.js" defer></script>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
   <script src="js/tech-marquee.js" defer></script>
   <script src="js/typewriter-effect.js" defer></script>
   <script src="js/menu-dropdown.js" defer></script>
   
 </body>
 </html>
-
-

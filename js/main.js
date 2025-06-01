@@ -3,6 +3,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Immediate page stabilization
+    document.documentElement.classList.add('loaded');
+    
     // Initialize all interactive components
     initScrollAnimations();
     initParallaxEffects();
@@ -13,9 +16,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Remove page loader when everything is ready
     setTimeout(() => {
         const body = document.querySelector('body');
+        const html = document.documentElement;
         if (body) body.classList.add('loaded');
-    }, 300);
+        if (html) html.classList.add('loaded');
+    }, 100);
 });
+
+// Add immediate load detection
+if (document.readyState === 'loading') {
+    // Document is still loading
+    document.addEventListener('DOMContentLoaded', handlePageLoad);
+} else {
+    // Document has already loaded
+    handlePageLoad();
+}
+
+function handlePageLoad() {
+    const body = document.querySelector('body');
+    const html = document.documentElement;
+    if (body) body.classList.add('loaded');
+    if (html) html.classList.add('loaded');
+}
 
 // Initialize scroll effects for navbar
 function initScrollEffects() {

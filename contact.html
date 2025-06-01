@@ -3,12 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Contact Us - Gyannetra</title>  <link rel="stylesheet" href="css/style.css?v=202412291400"
-  <link rel="stylesheet" href="css/gn-mobile-responsive.css?v=202412291400" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
-  <!-- EMERGENCY HAMBURGER MENU FIX - INLINE CSS TO OVERRIDE EVERYTHING -->
+  <title>Contact Us - Gyannetra</title>
+    <!-- CRITICAL CSS - Prevent FOUC -->
   <style>
+    /* Immediate FOUC prevention */
+    html { 
+      visibility: hidden;
+      overflow-x: hidden;
+    }
+    
+    body { 
+      font-family: 'Inter', 'Space Grotesk', sans-serif;
+      background: #0a0a1a;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    
+    /* Critical layout styles to prevent shifts */
+    .site-header {
+      background: rgba(15, 15, 30, 0.95);
+      backdrop-filter: blur(20px);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 0;
+      border-bottom: 1px solid rgba(82, 238, 245, 0.3);
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    main {
+      margin-top: 80px;
+      min-height: calc(100vh - 80px);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Preloader styles */
+    #page-preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0a0a1a;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+    }
+    
+    .loader-text {
+      color: #52eef5;
+      font-size: 1.5rem;
+      font-family: 'Inter', sans-serif;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+    
+    body.loaded {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    body.loaded #page-preloader {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    html.loaded { 
+      visibility: visible;
+    }
+    
+    /* Mobile hamburger menu emergency fix */
     @media (max-width: 768px) {
       .hamburger-menu {
         display: flex !important;
@@ -75,22 +164,60 @@
       .nav-links.active,
       .nav-links.show {
         left: 0 !important;
-      }
-    }
+      }    }
   </style>
+    <!-- CRITICAL: Load main CSS synchronously to prevent FOUC -->
+  <link rel="stylesheet" href="css/style.css?v=202412291400">
+  
+  <!-- Preload secondary resources -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+  
+  <!-- Load fonts synchronously for immediate rendering -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+    <!-- Optimized Page Loading Script -->
+  <script>
+    // Immediate page stabilization
+    (function() {
+      'use strict';
+      
+      // Fast loading detection
+      function showPage() {
+        document.documentElement.classList.add('loaded');
+        document.body.classList.add('loaded');
+        
+        // Hide preloader immediately
+        const preloader = document.getElementById('page-preloader');
+        if (preloader) {
+          preloader.style.display = 'none';
+        }
+      }
+      
+      // Show page as soon as possible
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', showPage);
+      } else {
+        showPage();
+      }
+        // Fallback timeout
+      setTimeout(showPage, 100);
+    })();
+  </script>
 </head>
-<body class="contact-page" class="gn-mobile-no-overflow">
+<body class="contact-page gn-mobile-no-overflow">
+  <!-- Preloader -->
+  <div id="page-preloader">
+    <div class="loader-text">Loading Contact...</div>
+  </div>
   <div class="atmospheric-bg">
     <div class="light-effect-top"></div>
     <div class="light-effect-bottom"></div>
     <div class="small-light-top"></div>
     <div class="small-light-bottom"></div>
     <div class="overlay"></div>
-    <div class="noise"></div>  </div>
-  <!-- NAVBAR -->
+    <div class="noise"></div>  </div>  <!-- NAVBAR -->
   <header class="site-header">
     <nav class="navbar">
-      <script src="js/dropdown.js"></script>
       <a href="index.html" class="logo">
         <img src="assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="logo-img" class="gn-responsive-image">
       </a>
@@ -230,15 +357,10 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms and Conditions</a></p>
-      </div>    </div>
-  </footer>  <script src="js/menu-dropdown.js" defer></script>
-  <script </script>
+      </div>    </div>  </footer>
+  <script src="js/menu-dropdown.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/form-handler.js" defer></script>
-  <script src="js/data-node-interactions.js" defer></script>
-  <script src="js/contact-page-fix.js" defer></script>
-
-  
 
 </html>
 
