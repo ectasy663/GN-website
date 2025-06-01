@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initParallaxEffects();
     initSectionTransitions();
     initCursorEffects();
+    initScrollEffects();
     
     // Remove page loader when everything is ready
     setTimeout(() => {
@@ -15,6 +16,39 @@ document.addEventListener('DOMContentLoaded', function() {
         if (body) body.classList.add('loaded');
     }, 300);
 });
+
+// Initialize scroll effects for navbar
+function initScrollEffects() {
+    const header = document.querySelector('.site-header');
+    
+    if (!header) return;
+    
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > 30) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+    
+    // Throttle scroll events for better performance
+    let ticking = false;
+    function onScroll() {
+        if (!ticking) {
+            requestAnimationFrame(function() {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    // Initial check
+    handleScroll();
+}
 
 // Animate elements when they enter viewport
 function initScrollAnimations() {
