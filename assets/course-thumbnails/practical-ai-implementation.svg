@@ -1,0 +1,66 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2332;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a3547;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#52eef5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg)"/>
+  
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="800" height="6" fill="url(#accent)"/>
+  
+  <!-- Main content area -->
+  <g transform="translate(50, 50)">
+    
+    <!-- Code/Implementation Icon -->
+    <g transform="translate(300, 50)">
+      <rect x="50" y="50" width="120" height="80" rx="8" fill="none" stroke="#52eef5" stroke-width="3"/>
+      <rect x="60" y="65" width="100" height="4" fill="#52eef5"/>
+      <rect x="60" y="75" width="80" height="4" fill="#6366f1"/>
+      <rect x="60" y="85" width="90" height="4" fill="#52eef5"/>
+      <rect x="60" y="95" width="70" height="4" fill="#6366f1"/>
+      <rect x="60" y="105" width="85" height="4" fill="#52eef5"/>
+      <circle cx="170" cy="110" r="8" fill="#52eef5"/>
+      <path d="M 178 110 L 190 110 M 190 105 L 190 115" stroke="#52eef5" stroke-width="2"/>
+    </g>
+    
+    <!-- Title -->
+    <text x="350" y="200" text-anchor="middle" fill="#52eef5" font-family="Arial, sans-serif" font-size="32" font-weight="bold">
+      Practical AI
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="350" y="240" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24">
+      Implementation
+    </text>
+    
+    <!-- Features -->
+    <g transform="translate(220, 280)">
+      <g>
+        <circle cx="15" cy="15" r="6" fill="#6366f1"/>
+        <text x="35" y="20" fill="#ffffff" font-family="Arial, sans-serif" font-size="14">Technical Teams</text>
+      </g>
+      <g transform="translate(0, 30)">
+        <circle cx="15" cy="15" r="6" fill="#6366f1"/>
+        <text x="35" y="20" fill="#ffffff" font-family="Arial, sans-serif" font-size="14">Self-paced</text>
+      </g>
+      <g transform="translate(0, 60)">
+        <circle cx="15" cy="15" r="6" fill="#6366f1"/>
+        <text x="35" y="20" fill="#ffffff" font-family="Arial, sans-serif" font-size="14">Project-based</text>
+      </g>
+    </g>
+    
+    <!-- Gyannetra branding -->
+    <text x="350" y="380" text-anchor="middle" fill="#52eef5" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      GYANNETRA
+    </text>
+    
+  </g>
+</svg>

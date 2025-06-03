@@ -1,0 +1,19 @@
+/* Additional CSS for expertise section divider */
+.exp-item h3 {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+}
+
+.exp-item h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(82, 238, 245, 0.2), rgba(82, 238, 245, 1), rgba(82, 238, 245, 0.2));
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(82, 238, 245, 0.5);
+}

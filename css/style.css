@@ -15,27 +15,29 @@ html {
 
 /* Hero Section Typewriter Styles - Compressed for Desktop */
 .hero-typewriter-section {
-  margin: 1.2rem 0;
+  margin: 0.2rem 0;
 }
 
 .hero-subheading {
   font-size: 1.4rem;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 0.6rem;
-  font-weight: 500;
+  margin-bottom: 0.6rem;  font-weight: 100;
   text-align: center;
 }
 
 .typewriter-container {
-  font-size: 1.8rem;
+  font-size: 3rem; /* Increased size for typewriter text */
   color: #52eef5;
-  font-weight: 600;
+  font-weight: 100; /* Lowered font weight */
   text-align: center;
-  min-height: 2.5rem;
+  min-height: 3.8rem; /* Increased height for larger text */
+  min-width: 90%; /* Added min-width to make container wider */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem; /* Adjusted bottom margin */
+  padding: 0.2rem 1rem; /* Added padding for better spacing */
+  line-height: 1.0; /* Lowered and uniform line spacing */
 }
 
 .hero-supporting-text {
@@ -63,7 +65,7 @@ html {
   color: #ffffff;
   padding: 0.8rem 2rem;
   font-size: 1.1rem;
-  font-weight: 600;
+  
   border-radius: 10px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -92,7 +94,7 @@ html {
   color: #52eef5;
   padding: 0.8rem 2rem;
   font-size: 1.1rem;
-  font-weight: 600;
+  
   border-radius: 10px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -458,7 +460,7 @@ section h2 {
     font-size: 1.7rem;
     color: #52eef5;
     margin-bottom: 12px;
-    font-weight: 600;
+    
 }
 
 .solution-item h3 {
@@ -481,7 +483,7 @@ section h2 {
 .read-more-link {
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: 600;
+    
     transition: color 0.3s ease, background-color 0.3s ease;
     align-self: flex-start;
     padding: 8px 15px;
@@ -570,7 +572,7 @@ section h2 {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
+    
     letter-spacing: 1px;
     text-transform: uppercase;
     animation-delay: 0.7s;
@@ -786,12 +788,97 @@ section h2 {
     object-fit: contain;
 }
 
+/* Specific styling for buttons within benefit cards */
+.benefit-card .btn-primary {
+    margin-top: auto;
+    width: 100%;
+    max-width: 200px;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    align-self: center;
+    text-align: center;
+    white-space: nowrap;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure consistent spacing and alignment for benefit card content */
+.benefit-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    color: var(--text-color-primary);
+    line-height: 1.3;
+}
+
+.benefit-card .program-details,
+.benefit-card .program-outcomes,
+.benefit-card .program-highlights {
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.benefit-card .program-details p,
+.benefit-card .program-outcomes p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.benefit-card .program-outcomes ul {
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.benefit-card .program-outcomes li {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.benefit-card .program-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.benefit-card .highlight-item {
+    background: rgba(var(--primary-color-rgb, 109, 40, 217), 0.1);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Mobile responsiveness for benefit card buttons */
+@media (max-width: 768px) {
+    .benefit-card .btn-primary {
+        padding: 14px 20px;
+        font-size: 0.85rem;
+        max-width: 180px;
+    }
+    
+    .benefit-card {
+        padding: 20px;
+    }
+    
+    .benefit-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
 .benefit-card h3 {
     font-size: 1.4rem;
     color: #52eef5;
     margin-bottom: 12px;
-    font-weight: 600;
-    text-align: center;
+    
 }
 
 .benefit-card p {
@@ -902,7 +989,7 @@ section h2 {
     font-size: 1.8rem;
     color: #52eef5;
     margin-bottom: 15px;
-    font-weight: 600;
+    
     text-align: center;
 }
 
@@ -923,18 +1010,18 @@ section h2 {
 }
 
 .highlight-badge {
-    background: rgba(var(--primary-color-rgb, 109, 40, 217), 0.2);
-    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.9rem;
-    font-weight: 500;
-    border: 1px solid rgba(var(--primary-color-rgb, 109, 40, 217), 0.3);
+    
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .specialization-card:hover .highlight-badge {
-    background: rgba(var(--primary-color-rgb, 109, 40, 217), 0.3);
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
 
@@ -1073,7 +1160,7 @@ section h2 {
 
 .logo {
     font-size: 1.9rem;
-    font-weight: bold;
+    
     text-decoration: none;
     letter-spacing: 1.5px;
     background: linear-gradient(90deg, #5a6bff 0%, #a2b0ff 50%, #ffffff 100%);
@@ -1119,7 +1206,7 @@ section h2 {
 .nav-link {
     color: var(--fg);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Increased from 1.2rem for better readability */
     display: flex;
     align-items: center;
     padding: 0.7rem 1.2rem;
@@ -1127,7 +1214,7 @@ section h2 {
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     letter-spacing: 0.5px;
-    font-weight: 500;
+    
 }
 
 .nav-link:hover {
@@ -1335,7 +1422,7 @@ section h2 {
     margin-top: 1rem;
     color: #a2abff;
     text-decoration: none;
-    font-weight: bold;
+    
     transition: color 0.3s ease;
 }
 
@@ -1544,7 +1631,7 @@ section h2 {
         0 4px 16px rgba(147, 51, 234, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;    padding: 18px 36px !important;
     margin-top: 24px !important;
-    font-weight: 400 !important;
+    important;
     letter-spacing: 1.5px !important;
     text-transform: uppercase !important;
     font-size: 1.3rem !important;
@@ -1866,7 +1953,7 @@ html:not(.fouc-prevention) {
 }
 
 .item-title {
-    font-weight: bold;
+    
     font-size: 1.15rem;
 }
 
@@ -1877,7 +1964,7 @@ html:not(.fouc-prevention) {
 
 .section-heading {
     font-size: 3rem;
-    font-weight: 700;
+    
     text-align: center;
     margin: var(--gap) 0;
     letter-spacing: 0.7px;
@@ -1894,7 +1981,7 @@ h1,h2,h3,h4,h5,h6 {
     color: #52eef5;
     /* Removed text shadow effect */
     letter-spacing: 0.7px;
-    font-weight: 700;
+    
 }
 
 .dropdown-menu h1,
@@ -1921,6 +2008,19 @@ h1,h2,h3,h4,h5,h6 {
     width: 80px;
     height: 3px;
     background: linear-gradient(90deg, #5a6bff 0%, #a2b0ff 70%, #ffffff 100%);
+}
+
+/* Specific targeting for footer Contact Us section line spacing */
+.footer-col:has(h3:contains("Contact Us")) ul li,
+.footer-col h3 + ul li {
+    margin-bottom: 3px !important;
+}
+
+.footer-col:has(h3:contains("Contact Us")) ul li p,
+.footer-col h3 + ul li p {
+    margin-bottom: 1px !important;
+    padding: 2px 0 !important;
+    line-height: 1.25 !important;
 }
 
 /* Modern Technology Cards Animation */
@@ -1995,21 +2095,8 @@ h1,h2,h3,h4,h5,h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, 
-        transparent 30%, 
-        rgba(var(--primary-color-rgb), 0.1) 50%, 
-        transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.tech-card:hover .tech-card-inner::before {
-    opacity: 1;
-}
-
-.tech-card:hover {
-    transform: translateY(-10px);
-    z-index: 10;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+    animation: shimmer 3s ease-in-out infinite;
 }
 
 .tech-card:hover .tech-card-inner {
@@ -2063,7 +2150,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .tech-card h3 {
     font-size: 1.45rem;
-    font-weight: 600;
+    
     margin-bottom: 8px;
     color: var(--fg);
     transition: all 0.3s ease;
@@ -2619,7 +2706,7 @@ h1,h2,h3,h4,h5,h6 {
     }
       .item-title {
         font-size: 1.1rem !important; /* Better title size */
-        font-weight: 600 !important; /* Bolder title */
+        important; /* Bolder title */
         color: #ffffff !important; /* White title */
         display: block !important;
         margin-bottom: 0.25rem !important;
@@ -2687,9 +2774,8 @@ h1,h2,h3,h4,h5,h6 {
         text-align: left !important;
         margin-bottom: 0 !important;
     }
-    
-    .nav-link {
-        font-size: 1rem !important;
+      .nav-link {
+        font-size: 1.5rem !important; /* Increased from 1rem for better readability */
         padding: 0.8rem 1.2rem !important;
         width: auto !important;
         background: transparent !important;
@@ -2763,7 +2849,6 @@ h1,h2,h3,h4,h5,h6 {
     background: linear-gradient(135deg, rgba(82, 238, 245, 0.05) 0%, rgba(162, 171, 255, 0.03) 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
-    border-radius: 16px;
 }
 
 .exp-item:hover {
@@ -2801,7 +2886,7 @@ h1,h2,h3,h4,h5,h6 {
     margin-bottom: 1.2rem;
     font-size: 1.5rem;
     text-align: center;
-    font-weight: 700;
+    
     color: #ffffff;
     text-shadow: 0 3px 8px rgba(0, 0, 0, 0.9);
     letter-spacing: 0.8px;
@@ -2817,7 +2902,7 @@ h1,h2,h3,h4,h5,h6 {
     text-align: center;
     color: rgba(255, 255, 255, 0.95);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-    font-weight: 400;
+    
     position: relative;
     z-index: 2;
     max-width: 100%;
@@ -3039,7 +3124,7 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 1.8rem;
     color: #52eef5; /* Cyan heading text */
     margin-bottom: 20px;
-    font-weight: 600;
+    
      /* Removed gradient for simpler, consistent look */
     background: none;
     -webkit-background-clip: initial;
@@ -3054,6 +3139,17 @@ h1,h2,h3,h4,h5,h6 {
 
 .footer-col ul li {
     margin-bottom: 10px;
+}
+
+/* Reduce line spacing in footer contact information */
+.footer-col ul li {
+    margin-bottom: 4px;
+}
+
+.footer-col ul li p {
+    margin-bottom: 2px;
+    padding: 4px 0;
+    line-height: 1.3;
 }
 
 .footer-col ul li a {
@@ -3077,9 +3173,10 @@ h1,h2,h3,h4,h5,h6 {
 .footer-col ul li p {
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
-    padding: 8px 0;
+    margin-bottom: 2px;
+    padding: 4px 0;
     font-size: 1.3rem;
+    line-height: 1.3;
 }
 
 .footer-col ul li p i {
@@ -3149,7 +3246,7 @@ h1,h2,h3,h4,h5,h6 {
     text-decoration: none;
     padding: 14px 28px;
     border-radius: 8px;
-    font-weight: 500;
+    
     letter-spacing: 1px;
     text-transform: uppercase;
     position: relative;
@@ -3169,7 +3266,7 @@ h1,h2,h3,h4,h5,h6 {
     text-decoration: none;
     padding: 14px 28px;
     border-radius: 8px;
-    font-weight: 500;
+    
     letter-spacing: 1px;
     text-transform: uppercase;
     position: relative;
@@ -3340,7 +3437,7 @@ h1,h2,h3,h4,h5,h6 {
     display: block;
     margin-bottom: 0.6rem;
     font-size: 1.1rem;
-    font-weight: 600;
+    
     color: #52eef5;
     font-family: 'Inter', sans-serif;
     letter-spacing: 0.5px;
@@ -3436,7 +3533,7 @@ h1,h2,h3,h4,h5,h6 {
     border-radius: 12px;
     color: #ffffff;
     font-size: 1.2rem;
-    font-weight: 700;
+    
     font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -3483,7 +3580,7 @@ h1,h2,h3,h4,h5,h6 {
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
-    font-weight: 600;
+    
     text-align: center;
     display: none;
 }
@@ -3647,7 +3744,7 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 1.7rem;
     color: #52eef5;
     margin-bottom: 0.75rem;
-    font-weight: 600;
+    
 }
 
 .discuss-project-cta h2 {
@@ -3668,7 +3765,7 @@ h1,h2,h3,h4,h5,h6 {
     border: 1px solid #3A3A5A;
     border-radius: 8px;    text-decoration: none;
     font-size: 1.2rem;
-    font-weight: 500;
+    
     transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -3680,7 +3777,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .nav-links .nav-link.active {
     color: #ffffff;
-    font-weight: bold;
+    
 }
 
 .nav-links .nav-link.active::after {
@@ -3867,7 +3964,7 @@ h1,h2,h3,h4,h5,h6 {
 .industry-hero h1 {
     font-family: 'VT323', monospace;
     font-size: 4rem;
-    font-weight: 700;
+    
     /* Inherit the beautiful gradient and glow from main h1 styling */
     margin-bottom: 20px;
     line-height: 1.2;
@@ -3944,7 +4041,7 @@ h1,h2,h3,h4,h5,h6 {
 .solution-item h3 {    font-size: 1.5rem;
     color: var(--fg);
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    
 }
 
 .solution-item p {
@@ -4006,7 +4103,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .insight-item h4 {
     font-size: 1.45rem;
-    font-weight: 600;
+    
     margin-bottom: 0.75rem;
     color: var(--fg);
 }
@@ -4021,7 +4118,7 @@ h1,h2,h3,h4,h5,h6 {
 .insight-item .read-more {
     display: inline-block;
     font-size: 1.1rem;
-    font-weight: bold;
+    
     color: #a2abff;
     text-decoration: none;
     text-transform: uppercase;
@@ -4240,7 +4337,7 @@ h1,h2,h3,h4,h5,h6 {
     top: 50%;
     transform: translateY(-50%);
     color: #22c55e;
-    font-weight: bold;
+    
     font-size: 1.2rem;
     animation: checkmark-appear 0.3s ease;
 }
@@ -4346,17 +4443,17 @@ h1,h2,h3,h4,h5,h6 {
       .logo {
         min-height: 50px;
         padding: 0.3rem 0.6rem;
-    }
-
-    /* Footer mobile adjustments */
+    }    /* Footer mobile adjustments */
     .footer-content {
         flex-direction: column;
         gap: 25px;
     }
     
     .footer-col ul li p {
-        padding: 6px 0;
+        padding: 3px 0;
         font-size: 0.9rem;
+        margin-bottom: 1px;
+        line-height: 1.2;
     }
     
     .footer-col ul li p i {
@@ -4469,6 +4566,907 @@ body {
   visibility: visible !important;
 }
 
+/* Pure #52eef5 heading with glow */
+#hero .hero-content h1 {
+    color: #52eef5 !important;
+    text-shadow: none !important;
+    background: none !important;
+    -webkit-text-fill-color: #52eef5 !important;
+    -webkit-text-stroke: 0.3px rgba(82, 238, 245, 0.3);
+    filter: none !important;
+    -webkit-box-reflect: none !important;
+}
+
+/* Global override to ensure no shadows on hero h1 */
+#hero .hero-content h1,
+.hero-content h1,
+#hero h1 {
+    text-shadow: none !important;
+    filter: none !important;
+    -webkit-box-reflect: none !important;
+    box-shadow: none !important;
+}
+
+/* Typewriter Effect Styles */
+.typewriter-text {
+    display: inline-block;
+    position: relative;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color: #52eef5;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+    vertical-align: text-bottom;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Custom hero button styles - Enhanced visibility and appeal */
+/* Special styles for hero buttons across all pages - all hero section types */
+#hero .btn-primary,
+.hero-section .btn-primary,
+.industry-hero .btn-primary,
+.travel-hero .btn-primary,
+.finance-hero .btn-primary,
+.manufacturing-hero .btn-primary,
+.marketing-hero .btn-primary,
+.media-hero .btn-primary {
+    background: linear-gradient(135deg, #6d28d9 0%, #9333ea 50%, #a855f7 100%) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 
+        0 8px 32px rgba(109, 40, 217, 0.4),
+        0 4px 16px rgba(147, 51, 234, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;    padding: 18px 36px !important;
+    margin-top: 24px !important;
+    important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    font-size: 1.3rem !important;
+    border-radius: 12px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+/* Hover effects for enhanced interactivity */
+#hero .btn-primary:hover,
+.hero-section .btn-primary:hover,
+.industry-hero .btn-primary:hover,
+.travel-hero .btn-primary:hover,
+.finance-hero .btn-primary:hover,
+.manufacturing-hero .btn-primary:hover,
+.marketing-hero .btn-primary:hover,
+.media-hero .btn-primary:hover {
+    transform: translateY(-3px) scale(1.05) !important;
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 
+        0 12px 40px rgba(109, 40, 217, 0.6),
+        0 6px 20px rgba(147, 51, 234, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 0 20px rgba(168, 85, 247, 0.5);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Active/pressed state */
+#hero .btn-primary:active,
+.hero-section .btn-primary:active,
+.industry-hero .btn-primary:active,
+.travel-hero .btn-primary:active,
+.finance-hero .btn-primary:active,
+.manufacturing-hero .btn-primary:active,
+.marketing-hero .btn-primary:active,
+.media-hero .btn-primary:active {
+    transform: translateY(-1px) scale(1.02) !important;
+    transition: all 0.1s ease !important;
+}
+
+/* Subtle animation for attention */
+@keyframes heroButtonPulse {
+    0%, 100% { 
+        box-shadow: 
+            0 8px 32px rgba(109, 40, 217, 0.4),
+            0 4px 16px rgba(147, 51, 234, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+    50% { 
+        box-shadow: 
+            0 8px 32px rgba(109, 40, 217, 0.6),
+            0 4px 16px rgba(147, 51, 234, 0.5),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+}
+
+#hero .btn-primary,
+.hero-section .btn-primary,
+.industry-hero .btn-primary,
+.travel-hero .btn-primary,
+.finance-hero .btn-primary,
+.manufacturing-hero .btn-primary,
+.media-hero .btn-primary {
+    animation: heroButtonPulse 3s ease-in-out infinite !important;
+}
+
+/* Ensure hero content is not affected by scroll animations */
+#hero .hero-content.animate-on-scroll {
+    animation: none !important;
+    text-align: center !important;
+}
+
+#hero .hero-content.animate-on-scroll.animated {
+    transform: none !important;
+    opacity: 1 !important;
+    text-align: center !important;
+}
+
+/* Override any fadeInUp animations for hero content */
+#hero .hero-content p {
+    animation: none !important;
+    animation-delay: 0s !important;
+}
+
+/* Ensure hero heading maintains its glow animation */
+#hero .hero-content h1 {
+    animation: pulseGlow 3s ease-in-out infinite alternate !important;
+    animation-delay: 0s !important;
+}
+
+/* Force center alignment for hero content at all times */
+#hero .hero-content {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Prevent any FOUC in hero section */
+#hero * {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+/* FOUC prevention */
+.fouc-prevention {
+    visibility: hidden !important;
+}
+
+/* Exception for critical elements during loading */
+.fouc-prevention .site-header,
+.fouc-prevention #hero {
+    visibility: visible !important;
+}
+
+/* Smooth transition once content is loaded */
+html:not(.fouc-prevention) {
+    transition: opacity 0.3s ease-in;
+    opacity: 1;
+}
+
+/* Ensure consistent hero layout across different screen loads */
+@media (min-width: 1024px) {
+    .hero-container {
+        padding: 12rem 4% 2rem 4%;
+    }
+}
+
+@media (min-height: 600px) {
+    #hero {
+        height: 80vh;
+        min-height: 600px;
+    }
+}
+
+@media (max-height: 599px) {
+    #hero {
+        height: auto;
+        min-height: 500px;
+        padding: 2rem 0;
+    }
+    
+    .hero-container {
+        height: auto;
+        min-height: 500px;
+    }
+}
+
+/* Mobile responsive adjustments */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .hero-container {
+        padding: 10rem 4% 2rem 4%;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero {
+        height: 70vh;
+        min-height: 500px;
+        padding-top: 1rem; /* Additional top padding for mobile */
+    }
+    
+    .hero-container {
+        padding: 2rem 4% 1rem 4%; /* Increased top padding to prevent navbar overlap */
+        justify-content: center; /* Ensure content is properly centered */
+    }
+    
+    .hero-content {
+        margin-top: 1rem; /* Extra margin to push content below navbar */
+    }    .hero-content h1 {
+        font-size: 3rem;
+        line-height: 1.2; /* Tighter line height for mobile */
+        margin-bottom: 1rem;
+        text-shadow: none !important; /* Removed shadow for mobile */
+        letter-spacing: 0.5px; /* Slightly reduced letter spacing for mobile */
+    }
+      .hero-content p {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    #technologies {
+        padding-top: 1.5rem;    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    #hero {
+        height: 65vh;
+        min-height: 450px;
+        padding-top: 1.5rem;
+    }
+    
+    .hero-container {
+        padding: 2.5rem 3% 1rem 3%; /* Even more top padding for smallest screens */
+    }
+    
+    .hero-content {
+        margin-top: 1.5rem; /* Extra margin for smallest screens */
+    }    .hero-content h1 {
+        font-size: 2.4rem; /* Smaller font for very small screens */
+        line-height: 1.1;
+        margin-bottom: 0.8rem;
+        text-shadow: none !important; /* Removed shadow for smallest screens */
+        letter-spacing: 0.3px;
+        filter: brightness(1.08); /* Slightly increased brightness for better visibility */
+    }
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+      .hero-content .btn-primary {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: grid;
+    position: absolute;
+    background-color: #100732;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.industries-dropdown {
+    grid-template-columns: repeat(3, 1fr);
+    min-width: 600px;
+}
+
+.services-dropdown {
+    grid-template-columns: repeat(2, 1fr);
+    min-width: 450px;
+}
+
+.education-dropdown {
+    grid-template-columns: 1fr;
+    min-width: 320px;
+}
+
+.dropdown:hover .industries-dropdown,
+.dropdown:hover .services-dropdown,
+.dropdown:hover .education-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    margin-top: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease, visibility 0s linear 0s;
+}
+
+.dropdown-menu {
+    padding-top: 0.8rem;
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: var(--fg);
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-item-content {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.8rem;
+    flex-shrink: 0;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-title {
+    
+    font-size: 1.15rem;
+}
+
+.item-description {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.section-heading {
+    font-size: 3rem;
+    
+    text-align: center;
+    margin: var(--gap) 0;
+    letter-spacing: 0.7px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-family: 'VT323', monospace;
+    color: #52eef5;
+    /* Removed text shadow effect */
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'VT323', monospace;
+    color: #52eef5;
+    /* Removed text shadow effect */
+    letter-spacing: 0.7px;
+    
+}
+
+.dropdown-menu h1,
+.dropdown-menu h2,
+.dropdown-menu h3,
+.dropdown-menu h4,
+.dropdown-menu h5,
+.dropdown-menu h6,
+.item-title,
+.item-description {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--fg);
+    text-shadow: none;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #5a6bff 0%, #a2b0ff 70%, #ffffff 100%);
+}
+
+/* Modern Technology Cards Animation */
+.tech-cards-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(20, 20, 40, 0.2));
+    border-radius: 20px;
+    margin: 10px 0;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.tech-cards-track {
+    display: flex;
+    animation: techCardsFlow 75s linear infinite;
+    will-change: transform;
+    gap: 70px; /* Further increased gap between cards */
+}
+
+.tech-cards-track:hover {    
+    animation-play-state: paused;
+}
+
+@keyframes techCardsFlow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.tech-card {
+    flex: 0 0 auto;
+    width: 240px;
+    height: 220px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    margin: 5px 0; /* Reduced top/bottom margin */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.tech-card-inner {    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 25, 45, 0.5); /* More transparent background like navbar */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Similar to navbar border when scrolled */
+    border-radius: 16px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.tech-card-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(var(--primary-color-rgb), 0.2) 50%, 
+        transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover .tech-card-inner::before {
+    opacity: 1;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    z-index: 10;
+}
+
+.tech-card:hover .tech-card-inner {
+    background: linear-gradient(135deg, 
+        rgba(var(--primary-color-rgb), 0.2) 0%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        rgba(var(--primary-color-rgb), 0.1) 100%);
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Similar to navbar border when scrolled */
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.1), /* Same as navbar shadow when scrolled */
+        0 0 30px rgba(var(--primary-color-rgb), 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.tech-icon-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.tech-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(var(--primary-color-rgb), 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover .tech-icon-wrapper::before {
+    opacity: 0;
+}
+
+
+
+.tech-card:hover .tech-icon-wrapper {
+    transform: scale(1.1) rotateY(15deg);
+}
+
+.tech-card h3 {
+    font-size: 1.45rem;
+    
+    margin-bottom: 8px;
+    color: var(--fg);
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tech-card:hover h3 {
+    color: #FFFFFF; /* Keep text white on hover */
+    text-shadow: 0 0 10px rgba(var(--primary-color-rgb), 0.7); /* Still add glow effect with primary color */
+    transform: translateY(-2px);
+}
+
+.tech-card p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    line-height: 1.4;
+}
+
+.tech-card:hover p {
+    color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-1px);
+}
+
+.tech-icon:hover {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    flex: 1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+    aspect-ratio: 1;
+    /* Add background to improve visibility on dark theme */
+    background-color: rgba(255, 255, 255, 0.8); /* Increased opacity */
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    /* Ensure contrast for all icons */
+    position: relative;
+    background-blend-mode: normal;
+}
+
+/* Additional dark theme optimizations for tech icons */
+/* Removed redundant .tech-icon rule */
+
+/* Add a subtle glow effect on hover for better visibility */
+.tech-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-icon:hover::before {
+    opacity: 1;
+}
+
+/* Specific adjustments for logos that might be invisible on dark backgrounds */
+.tech-icon.openai,
+.tech-icon.anthropic,
+.tech-icon.mistral {
+    filter: brightness(1.1) contrast(1.2);
+}
+
+/* For GitHub avatars that might be too dark */
+.tech-icon.llamaindex,
+.tech-icon.vllm,
+.tech-icon.docker {
+    background-image: url('../assets/tech-icons/docker.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.faiss {
+    filter: brightness(1.1) saturate(1.1);
+}
+
+/* Special handling for light logos on dark theme */
+.tech-icon.weaviate {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure proper spacing and visibility for text logos */
+.tech-icon.langchain,
+.tech-icon.qdrant,
+.tech-icon.haystack {
+    background-size: 80% auto;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+
+
+/* Icons for each technology - Using direct image URLs from official sources */
+.tech-icon.ollama {
+    background-image: url('https://avatars.githubusercontent.com/u/151674099?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.langchain {
+    background-image: url('https://python.langchain.com/img/brand/wordmark.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.chroma {
+    background-image: url('../assets/tech-icons/Chroma.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.4) contrast(1.5) saturate(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.tech-icon.pinecone {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg');
+    background-color: rgba(46, 160, 67, 0.9);
+    filter: brightness(1.4) contrast(1.5) hue-rotate(60deg);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(46, 160, 67, 0.3);
+    position: relative;
+}
+
+.tech-icon.pinecone::after {
+    content: '🌲';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 29px;
+    z-index: 2;
+}
+
+.tech-icon.vectordb {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(180deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.tech-icon.openai {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.2) contrast(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.huggingface {
+    background-image: url('https://huggingface.co/front/assets/huggingface_logo-noborder.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.pytorch {
+    background-image: url('https://pytorch.org/assets/images/pytorch-logo.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.tensorflow {
+    background-image: url('https://www.tensorflow.org/images/tf_logo_social.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Remaining Technology Icons - Using direct image URLs */
+.tech-icon.weaviate {
+    background-image: url('https://avatars.githubusercontent.com/u/37794290?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.qdrant {
+    background-image: url('https://qdrant.tech/images/logo_with_text.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.haystack {
+    background-image: url('https://raw.githubusercontent.com/deepset-ai/haystack/main/docs/img/haystack_logo_colored.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.mistral {
+    background-image: url('https://docs.mistral.ai/img/logo.svg');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.anthropic {
+    background-image: url('../assets/tech-icons/anthropic claude.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.2) contrast(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.tech-icon.groq {
+    background-image: url('https://groq.com/wp-content/uploads/2024/03/PBG-mark1-color.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.gemini {
+    background-image: url('https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.llamaindex {
+    background-image: url('https://avatars.githubusercontent.com/u/130722866?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+.tech-icon.vllm {
+    background-image: url('https://avatars.githubusercontent.com/u/132581166?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+.tech-icon.rag {
+    background-image: url('https://img.icons8.com/color/96/artificial-intelligence.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.transformers {
+    background-image: url('https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.spacy {
+    background-image: url('https://raw.githubusercontent.com/explosion/spaCy/master/website/src/images/logo.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(10deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.llama {
+    background-image: url('../assets/tech-icons/meta-color.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(-10deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.milvus {
+    background-image: url('../assets/tech-icons/Milvus.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) saturate(1.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.docker {
+    background-image: url('../assets/tech-icons/docker.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.faiss {
+    background-image: url('https://raw.githubusercontent.com/facebookresearch/faiss/main/docs/img/faiss.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-shadow {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.tech-shadow-left {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.tech-shadow-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+}
+
+/* Removed pulse animation - displaying raw icons */
+
 /* Mobile adjustments for navbar spacing - ENHANCED */
 @media (max-width: 768px) {
   body {
@@ -4518,221 +5516,3208 @@ body {
   }
 }
 
+/* Extra small mobile devices */
 @media (max-width: 480px) {
+    #hero {
+        height: 65vh;
+        min-height: 450px;
+        padding-top: 1.5rem;
+    }
+    
+    .hero-container {
+        padding: 2.5rem 3% 1rem 3%; /* Even more top padding for smallest screens */
+    }
+    
+    .hero-content {
+        margin-top: 1.5rem; /* Extra margin for smallest screens */
+    }    .hero-content h1 {
+        font-size: 2.4rem; /* Smaller font for very small screens */
+        line-height: 1.1;
+        margin-bottom: 0.8rem;
+        text-shadow: none !important; /* Removed shadow for smallest screens */
+        letter-spacing: 0.3px;
+        filter: brightness(1.08); /* Slightly increased brightness for better visibility */
+    }
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+      .hero-content .btn-primary {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: grid;
+    position: absolute;
+    background-color: #100732;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.industries-dropdown {
+    grid-template-columns: repeat(3, 1fr);
+    min-width: 600px;
+}
+
+.services-dropdown {
+    grid-template-columns: repeat(2, 1fr);
+    min-width: 450px;
+}
+
+.education-dropdown {
+    grid-template-columns: 1fr;
+    min-width: 320px;
+}
+
+.dropdown:hover .industries-dropdown,
+.dropdown:hover .services-dropdown,
+.dropdown:hover .education-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    margin-top: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease, visibility 0s linear 0s;
+}
+
+.dropdown-menu {
+    padding-top: 0.8rem;
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: var(--fg);
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-item-content {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.8rem;
+    flex-shrink: 0;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-title {
+    
+    font-size: 1.15rem;
+}
+
+.item-description {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.section-heading {
+    font-size: 3rem;
+    
+    text-align: center;
+    margin: var(--gap) 0;
+    letter-spacing: 0.7px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-family: 'VT323', monospace;
+    color: #52eef5;
+    /* Removed text shadow effect */
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'VT323', monospace;
+    color: #52eef5;
+    /* Removed text shadow effect */
+    letter-spacing: 0.7px;
+    
+}
+
+.dropdown-menu h1,
+.dropdown-menu h2,
+.dropdown-menu h3,
+.dropdown-menu h4,
+.dropdown-menu h5,
+.dropdown-menu h6,
+.item-title,
+.item-description {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--fg);
+    text-shadow: none;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #5a6bff 0%, #a2b0ff 70%, #ffffff 100%);
+}
+
+/* Modern Technology Cards Animation */
+.tech-cards-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(20, 20, 40, 0.2));
+    border-radius: 20px;
+    margin: 10px 0;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.tech-cards-track {
+    display: flex;
+    animation: techCardsFlow 75s linear infinite;
+    will-change: transform;
+    gap: 70px; /* Further increased gap between cards */
+}
+
+.tech-cards-track:hover {    
+    animation-play-state: paused;
+}
+
+@keyframes techCardsFlow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.tech-card {
+    flex: 0 0 auto;
+    width: 240px;
+    height: 220px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    margin: 5px 0; /* Reduced top/bottom margin */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.tech-card-inner {    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 25, 45, 0.5); /* More transparent background like navbar */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Similar to navbar border when scrolled */
+    border-radius: 16px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.tech-card-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(var(--primary-color-rgb), 0.2) 50%, 
+        transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover .tech-card-inner::before {
+    opacity: 1;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    z-index: 10;
+}
+
+.tech-card:hover .tech-card-inner {
+    background: linear-gradient(135deg, 
+        rgba(var(--primary-color-rgb), 0.2) 0%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        rgba(var(--primary-color-rgb), 0.1) 100%);
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Similar to navbar border when scrolled */
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.1), /* Same as navbar shadow when scrolled */
+        0 0 30px rgba(var(--primary-color-rgb), 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.tech-icon-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.tech-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(var(--primary-color-rgb), 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover .tech-icon-wrapper::before {
+    opacity: 0;
+}
+
+
+
+.tech-card:hover .tech-icon-wrapper {
+    transform: scale(1.1) rotateY(15deg);
+}
+
+.tech-card h3 {
+    font-size: 1.45rem;
+    
+    margin-bottom: 8px;
+    color: var(--fg);
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tech-card:hover h3 {
+    color: #FFFFFF; /* Keep text white on hover */
+    text-shadow: 0 0 10px rgba(var(--primary-color-rgb), 0.7); /* Still add glow effect with primary color */
+    transform: translateY(-2px);
+}
+
+.tech-card p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    line-height: 1.4;
+}
+
+.tech-card:hover p {
+    color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-1px);
+}
+
+.tech-icon:hover {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    flex: 1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+    aspect-ratio: 1;
+    /* Add background to improve visibility on dark theme */
+    background-color: rgba(255, 255, 255, 0.8); /* Increased opacity */
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    /* Ensure contrast for all icons */
+    position: relative;
+    background-blend-mode: normal;
+}
+
+/* Additional dark theme optimizations for tech icons */
+/* Removed redundant .tech-icon rule */
+
+/* Add a subtle glow effect on hover for better visibility */
+.tech-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-icon:hover::before {
+    opacity: 1;
+}
+
+/* Specific adjustments for logos that might be invisible on dark backgrounds */
+.tech-icon.openai,
+.tech-icon.anthropic,
+.tech-icon.mistral {
+    filter: brightness(1.1) contrast(1.2);
+}
+
+/* For GitHub avatars that might be too dark */
+.tech-icon.llamaindex,
+.tech-icon.vllm,
+.tech-icon.docker {
+    background-image: url('../assets/tech-icons/docker.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.faiss {
+    filter: brightness(1.1) saturate(1.1);
+}
+
+/* Special handling for light logos on dark theme */
+.tech-icon.weaviate {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure proper spacing and visibility for text logos */
+.tech-icon.langchain,
+.tech-icon.qdrant,
+.tech-icon.haystack {
+    background-size: 80% auto;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+
+
+/* Icons for each technology - Using direct image URLs from official sources */
+.tech-icon.ollama {
+    background-image: url('https://avatars.githubusercontent.com/u/151674099?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.langchain {
+    background-image: url('https://python.langchain.com/img/brand/wordmark.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.chroma {
+    background-image: url('../assets/tech-icons/Chroma.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.4) contrast(1.5) saturate(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.tech-icon.pinecone {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg');
+    background-color: rgba(46, 160, 67, 0.9);
+    filter: brightness(1.4) contrast(1.5) hue-rotate(60deg);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(46, 160, 67, 0.3);
+    position: relative;
+}
+
+.tech-icon.pinecone::after {
+    content: '🌲';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 29px;
+    z-index: 2;
+}
+
+.tech-icon.vectordb {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(180deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.tech-icon.openai {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.2) contrast(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.huggingface {
+    background-image: url('https://huggingface.co/front/assets/huggingface_logo-noborder.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.pytorch {
+    background-image: url('https://pytorch.org/assets/images/pytorch-logo.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.tensorflow {
+    background-image: url('https://www.tensorflow.org/images/tf_logo_social.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Remaining Technology Icons - Using direct image URLs */
+.tech-icon.weaviate {
+    background-image: url('https://avatars.githubusercontent.com/u/37794290?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.qdrant {
+    background-image: url('https://qdrant.tech/images/logo_with_text.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.haystack {
+    background-image: url('https://raw.githubusercontent.com/deepset-ai/haystack/main/docs/img/haystack_logo_colored.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.mistral {
+    background-image: url('https://docs.mistral.ai/img/logo.svg');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.anthropic {
+    background-image: url('../assets/tech-icons/anthropic claude.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.2) contrast(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.tech-icon.groq {
+    background-image: url('https://groq.com/wp-content/uploads/2024/03/PBG-mark1-color.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.gemini {
+    background-image: url('https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.llamaindex {
+    background-image: url('https://avatars.githubusercontent.com/u/130722866?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+.tech-icon.vllm {
+    background-image: url('https://avatars.githubusercontent.com/u/132581166?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+.tech-icon.rag {
+    background-image: url('https://img.icons8.com/color/96/artificial-intelligence.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.transformers {
+    background-image: url('https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.spacy {
+    background-image: url('https://raw.githubusercontent.com/explosion/spaCy/master/website/src/images/logo.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(10deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.llama {
+    background-image: url('../assets/tech-icons/meta-color.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(-10deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.milvus {
+    background-image: url('../assets/tech-icons/Milvus.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) saturate(1.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.docker {
+    background-image: url('../assets/tech-icons/docker.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.faiss {
+    background-image: url('https://raw.githubusercontent.com/facebookresearch/faiss/main/docs/img/faiss.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-shadow {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.tech-shadow-left {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.tech-shadow-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+}
+
+/* Removed pulse animation - displaying raw icons */
+
+/* Mobile adjustments for navbar spacing - ENHANCED */
+@media (max-width: 768px) {
   body {
-    padding-top: 65px; /* Further reduced for small screens */
+    padding-top: 80px; /* Increased for better spacing */
   }
   
   #hero {
-    min-height: calc(100vh - 65px);
-    height: calc(100vh - 65px);
-    padding-top: 1.5rem;
+    min-height: calc(100vh - 80px);
+    height: calc(100vh - 80px);
+    padding-top: 2rem; /* Increased top padding for mobile */
   }
   
   .hero-container {
-    padding-top: 2.5rem; /* Extra spacing for very small screens */
+    padding: 3rem 5% 2rem 5%; /* Better horizontal padding */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+    max-width: 100%;
+    padding: 0 1rem; /* Internal padding */
+  }
+  
+  .hero-content h1 {
+    font-size: 2.8rem; /* Better size for mobile */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); /* Better text shadow */
+  }
+  
+  .hero-content p {
+    font-size: 1.4rem; /* Better paragraph size */
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 90%; /* Limit width for better readability */
+    margin-left: auto;
+    margin-right: auto;
+  }
+    .hero-content .btn-primary {
+    padding: 1rem 2rem; /* Better button padding */
+    font-size: 1.2rem;
+    border-radius: 12px; /* More rounded button */
+    min-width: 200px; /* Minimum button width */
   }
 }
 
-/* EMERGENCY: Additional hamburger menu responsiveness fixes */
-@media (max-width: 768px) {
-    .hamburger-menu {
-        background: rgba(82, 238, 245, 0.3) !important;
-        border: 1px solid rgba(82, 238, 245, 0.6) !important;
-        box-shadow: 0 0 10px rgba(82, 238, 245, 0.3) !important;
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    #hero {
+        height: 65vh;
+        min-height: 450px;
+        padding-top: 1.5rem;
     }
     
-    .hamburger-menu:active {
-        background: rgba(82, 238, 245, 0.5) !important;
-        transform: scale(0.95) !important;
+    .hero-container {
+        padding: 2.5rem 3% 1rem 3%; /* Even more top padding for smallest screens */
+    }
+    
+    .hero-content {
+        margin-top: 1.5rem; /* Extra margin for smallest screens */
+    }    .hero-content h1 {
+        font-size: 2.4rem; /* Smaller font for very small screens */
+        line-height: 1.1;
+        margin-bottom: 0.8rem;
+        text-shadow: none !important; /* Removed shadow for smallest screens */
+        letter-spacing: 0.3px;
+        filter: brightness(1.08); /* Slightly increased brightness for better visibility */
+    }
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+      .hero-content .btn-primary {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
     }
 }
 
-/* ADDITIONAL: Enhanced mobile dropdown visibility for Services and Industries */
-@media (max-width: 768px) {
-        /* Ensure dropdowns are fully visible in mobile hamburger menu */
-        .nav-links .dropdown {
-            width: 100% !important;
-            margin-bottom: 1rem !important;
-        }
-        
-        /* Make dropdown triggers more obvious in mobile */
-        .nav-links .dropdown > .nav-link {
-            position: relative !important;
-            background: rgba(82, 238, 245, 0.1) !important;
-            border: 1px solid rgba(82, 238, 245, 0.3) !important;
-            margin-bottom: 0.5rem !important;
-        }
-        
-        /* Add visual indicator for dropdowns in mobile */
-        .nav-links .dropdown > .nav-link::after {
-            content: '▼' !important;
-            position: absolute !important;
-            right: 1.5rem !important;
-            font-size: 0.8em !important;
-            transition: transform 0.3s ease !important;
-            color: rgba(82, 238, 245, 0.8) !important;
-        }
-        
-        /* Rotate arrow when dropdown is open */
-        .nav-links .dropdown.active > .nav-link::after {
-            transform: rotate(180deg) !important;
-        }
-        
-        /* Ensure dropdown menus stack vertically and are fully visible */
-        .nav-links .dropdown-menu {
-            position: static !important;
-            width: 100% !important;
-            max-width: none !important;
-            margin-top: 0 !important;
-            margin-bottom: 1rem !important;
-            border-radius: 8px !important;
-            background: rgba(25, 25, 45, 0.95) !important;
-            border: 1px solid rgba(82, 238, 245, 0.3) !important;
-            max-height: 0 !important;
-            overflow: hidden !important;
-            transition: max-height 0.5s ease, padding 0.3s ease !important;
-            padding: 0 !important;
-        }
-        
-        /* Show dropdown menu when active */
-        .nav-links .dropdown.active .dropdown-menu,
-        .nav-links .dropdown-menu.show {
-            max-height: 800px !important; /* Increased height for more items */
-            padding: 1rem 0 !important;
-            animation: fadeInDropdown 0.3s ease forwards !important;
-        }
-        
-        /* Ensure dropdown items display vertically in mobile */
-        .nav-links .dropdown-menu li {
-            width: 100% !important;
-            margin-bottom: 0.3rem !important;
-        }
-        
-        /* Style dropdown links for better mobile experience */
-        .nav-links .dropdown-menu a {
-            padding: 1rem 1.5rem !important;
-            margin: 0.2rem 0.5rem !important;
-            border-radius: 6px !important;
-            background: rgba(255, 255, 255, 0.05) !important;
-            border: none !important;
-            font-size: 1rem !important;
-        }
-        
-        /* Enhanced hover effect for dropdown items */
-        .nav-links .dropdown-menu a:hover {
-            background: rgba(82, 238, 245, 0.2) !important;
-            transform: translateX(10px) !important;
-            border-left: 3px solid rgba(82, 238, 245, 0.8) !important;
-        }
-        
-        /* Ensure dropdown content displays horizontally within each item */
-        .nav-links .dropdown-item-content {
-            display: flex !important;
-            flex-direction: row !important;
-            align-items: center !important;
-            gap: 1rem !important;
-            width: 100% !important;
-        }
-        
-        /* Ensure dropdown icons are properly sized and positioned */
-        .nav-links .dropdown-icon {
-            width: 35px !important;
-            height: 35px !important;
-            flex-shrink: 0 !important;
-            opacity: 0.9 !important;
-        }
-        
-        /* Ensure text content flows properly */
-        .nav-links .text-content {
-            flex: 1 !important;
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: flex-start !important;
-            text-align: left !important;
-        }
-        
-        /* Style dropdown titles and descriptions */
-        .nav-links .item-title {
-            font-size: 1.1rem !important;
-            font-weight: 600 !important;
-            color: #ffffff !important;
-            margin-bottom: 0.2rem !important;
-        }
-        
-        .nav-links .item-description {
-            font-size: 0.85rem !important;
-            color: rgba(255, 255, 255, 0.7) !important;
-            line-height: 1.3 !important;
-        }
-    }
-    
-    /* Add fade-in animation for dropdown appearance */    @keyframes fadeInDropdown {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    /* ADDITIONAL: Mobile dropdown visual enhancements for Services and Industries */
-    @media (max-width: 768px) {
-        .nav-links .dropdown-menu {
-            background: linear-gradient(135deg, rgba(25, 25, 45, 0.95) 0%, rgba(35, 35, 55, 0.98) 100%) !important;
-            box-shadow: 0 4px 20px rgba(82, 238, 245, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
-        }
-        
-        .nav-links .dropdown:not(:last-child) {
-            margin-bottom: 1.5rem !important;
-        }
-        
-        .nav-links .dropdown > .nav-link {
-            min-height: 48px !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: space-between !important;
-        }
-    }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
-
-/* ===== BACK TO TOP BUTTON ===== */
-.back-to-top-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-    transition: all 0.3s ease;
+.dropdown-menu {
+    display: grid;
+    position: absolute;
+    background-color: #100732;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
     opacity: 0;
     visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease, visibility 0s linear 0.3s;
 }
 
-.back-to-top-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+.industries-dropdown {
+    grid-template-columns: repeat(3, 1fr);
+    min-width: 600px;
+}
+
+.services-dropdown {
+    grid-template-columns: repeat(2, 1fr);
+    min-width: 450px;
+}
+
+.education-dropdown {
+    grid-template-columns: 1fr;
+    min-width: 320px;
+}
+
+.dropdown:hover .industries-dropdown,
+.dropdown:hover .services-dropdown,
+.dropdown:hover .education-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    margin-top: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease, visibility 0s linear 0s;
+}
+
+.dropdown-menu {
+    padding-top: 0.8rem;
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: var(--fg);
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-item-content {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.8rem;
+    flex-shrink: 0;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-title {
+    
+    font-size: 1.15rem;
+}
+
+.item-description {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.section-heading {
+    font-size: 3rem;
+    
+    text-align: center;
+    margin: var(--gap) 0;
+    letter-spacing: 0.7px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-family: 'VT323', monospace;
+    color: #52eef5;
+    /* Removed text shadow effect */
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'VT323', monospace;
+    color: #52eef5;
+    /* Removed text shadow effect */
+    letter-spacing: 0.7px;
+    
+}
+
+.dropdown-menu h1,
+.dropdown-menu h2,
+.dropdown-menu h3,
+.dropdown-menu h4,
+.dropdown-menu h5,
+.dropdown-menu h6,
+.item-title,
+.item-description {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--fg);
+    text-shadow: none;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #5a6bff 0%, #a2b0ff 70%, #ffffff 100%);
+}
+
+/* Modern Technology Cards Animation */
+.tech-cards-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(20, 20, 40, 0.2));
+    border-radius: 20px;
+    margin: 10px 0;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.tech-cards-track {
+    display: flex;
+    animation: techCardsFlow 75s linear infinite;
+    will-change: transform;
+    gap: 70px; /* Further increased gap between cards */
+}
+
+.tech-cards-track:hover {    
+    animation-play-state: paused;
+}
+
+@keyframes techCardsFlow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.tech-card {
+    flex: 0 0 auto;
+    width: 240px;
+    height: 220px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    margin: 5px 0; /* Reduced top/bottom margin */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.tech-card-inner {    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 25, 45, 0.5); /* More transparent background like navbar */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Similar to navbar border when scrolled */
+    border-radius: 16px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.tech-card-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(var(--primary-color-rgb), 0.2) 50%, 
+        transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover .tech-card-inner::before {
+    opacity: 1;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    z-index: 10;
+}
+
+.tech-card:hover .tech-card-inner {
+    background: linear-gradient(135deg, 
+        rgba(var(--primary-color-rgb), 0.2) 0%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        rgba(var(--primary-color-rgb), 0.1) 100%);
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Similar to navbar border when scrolled */
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.1), /* Same as navbar shadow when scrolled */
+        0 0 30px rgba(var(--primary-color-rgb), 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.tech-icon-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.tech-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(var(--primary-color-rgb), 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover .tech-icon-wrapper::before {
+    opacity: 0;
+}
+
+
+
+.tech-card:hover .tech-icon-wrapper {
+    transform: scale(1.1) rotateY(15deg);
+}
+
+.tech-card h3 {
+    font-size: 1.45rem;
+    
+    margin-bottom: 8px;
+    color: var(--fg);
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tech-card:hover h3 {
+    color: #FFFFFF; /* Keep text white on hover */
+    text-shadow: 0 0 10px rgba(var(--primary-color-rgb), 0.7); /* Still add glow effect with primary color */
+    transform: translateY(-2px);
+}
+
+.tech-card p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    line-height: 1.4;
+}
+
+.tech-card:hover p {
+    color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-1px);
+}
+
+.tech-icon:hover {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    flex: 1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+    aspect-ratio: 1;
+    /* Add background to improve visibility on dark theme */
+    background-color: rgba(255, 255, 255, 0.8); /* Increased opacity */
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    /* Ensure contrast for all icons */
+    position: relative;
+    background-blend-mode: normal;
+}
+
+/* Additional dark theme optimizations for tech icons */
+/* Removed redundant .tech-icon rule */
+
+/* Add a subtle glow effect on hover for better visibility */
+.tech-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-icon:hover::before {
+    opacity: 1;
+}
+
+/* Specific adjustments for logos that might be invisible on dark backgrounds */
+.tech-icon.openai,
+.tech-icon.anthropic,
+.tech-icon.mistral {
+    filter: brightness(1.1) contrast(1.2);
+}
+
+/* For GitHub avatars that might be too dark */
+.tech-icon.llamaindex,
+.tech-icon.vllm,
+.tech-icon.docker {
+    background-image: url('../assets/tech-icons/docker.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.faiss {
+    filter: brightness(1.1) saturate(1.1);
+}
+
+/* Special handling for light logos on dark theme */
+.tech-icon.weaviate {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure proper spacing and visibility for text logos */
+.tech-icon.langchain,
+.tech-icon.qdrant,
+.tech-icon.haystack {
+    background-size: 80% auto;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+
+
+/* Icons for each technology - Using direct image URLs from official sources */
+.tech-icon.ollama {
+    background-image: url('https://avatars.githubusercontent.com/u/151674099?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.langchain {
+    background-image: url('https://python.langchain.com/img/brand/wordmark.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.chroma {
+    background-image: url('../assets/tech-icons/Chroma.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.4) contrast(1.5) saturate(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.tech-icon.pinecone {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg');
+    background-color: rgba(46, 160, 67, 0.9);
+    filter: brightness(1.4) contrast(1.5) hue-rotate(60deg);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(46, 160, 67, 0.3);
+    position: relative;
+}
+
+.tech-icon.pinecone::after {
+    content: '🌲';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 29px;
+    z-index: 2;
+}
+
+.tech-icon.vectordb {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(180deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.tech-icon.openai {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.2) contrast(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.huggingface {
+    background-image: url('https://huggingface.co/front/assets/huggingface_logo-noborder.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.pytorch {
+    background-image: url('https://pytorch.org/assets/images/pytorch-logo.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.tensorflow {
+    background-image: url('https://www.tensorflow.org/images/tf_logo_social.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Remaining Technology Icons - Using direct image URLs */
+.tech-icon.weaviate {
+    background-image: url('https://avatars.githubusercontent.com/u/37794290?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.qdrant {
+    background-image: url('https://qdrant.tech/images/logo_with_text.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.haystack {
+    background-image: url('https://raw.githubusercontent.com/deepset-ai/haystack/main/docs/img/haystack_logo_colored.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.mistral {
+    background-image: url('https://docs.mistral.ai/img/logo.svg');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.anthropic {
+    background-image: url('../assets/tech-icons/anthropic claude.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.2) contrast(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.tech-icon.groq {
+    background-image: url('https://groq.com/wp-content/uploads/2024/03/PBG-mark1-color.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.gemini {
+    background-image: url('https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.llamaindex {
+    background-image: url('https://avatars.githubusercontent.com/u/130722866?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+.tech-icon.vllm {
+    background-image: url('https://avatars.githubusercontent.com/u/132581166?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+.tech-icon.rag {
+    background-image: url('https://img.icons8.com/color/96/artificial-intelligence.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.transformers {
+    background-image: url('https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.spacy {
+    background-image: url('https://raw.githubusercontent.com/explosion/spaCy/master/website/src/images/logo.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(10deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.llama {
+    background-image: url('../assets/tech-icons/meta-color.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(-10deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.milvus {
+    background-image: url('../assets/tech-icons/Milvus.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) saturate(1.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.docker {
+    background-image: url('../assets/tech-icons/docker.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.faiss {
+    background-image: url('https://raw.githubusercontent.com/facebookresearch/faiss/main/docs/img/faiss.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-shadow {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.tech-shadow-left {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.tech-shadow-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+}
+
+/* Removed pulse animation - displaying raw icons */
+
+/* Mobile adjustments for navbar spacing - ENHANCED */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px; /* Increased for better spacing */
+  }
+  
+  #hero {
+    min-height: calc(100vh - 80px);
+    height: calc(100vh - 80px);
+    padding-top: 2rem; /* Increased top padding for mobile */
+  }
+  
+  .hero-container {
+    padding: 3rem 5% 2rem 5%; /* Better horizontal padding */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+    max-width: 100%;
+    padding: 0 1rem; /* Internal padding */
+  }
+  
+  .hero-content h1 {
+    font-size: 2.8rem; /* Better size for mobile */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); /* Better text shadow */
+  }
+  
+  .hero-content p {
+    font-size: 1.4rem; /* Better paragraph size */
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 90%; /* Limit width for better readability */
+    margin-left: auto;
+    margin-right: auto;
+  }
+    .hero-content .btn-primary {
+    padding: 1rem 2rem; /* Better button padding */
+    font-size: 1.2rem;
+    border-radius: 12px; /* More rounded button */
+    min-width: 200px; /* Minimum button width */
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    #hero {
+        height: 65vh;
+        min-height: 450px;
+        padding-top: 1.5rem;
+    }
+    
+    .hero-container {
+        padding: 2.5rem 3% 1rem 3%; /* Even more top padding for smallest screens */
+    }
+    
+    .hero-content {
+        margin-top: 1.5rem; /* Extra margin for smallest screens */
+    }    .hero-content h1 {
+        font-size: 2.4rem; /* Smaller font for very small screens */
+        line-height: 1.1;
+        margin-bottom: 0.8rem;
+        text-shadow: none !important; /* Removed shadow for smallest screens */
+        letter-spacing: 0.3px;
+        filter: brightness(1.08); /* Slightly increased brightness for better visibility */
+    }
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+      .hero-content .btn-primary {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: grid;
+    position: absolute;
+    background-color: #100732;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.industries-dropdown {
+    grid-template-columns: repeat(3, 1fr);
+    min-width: 600px;
+}
+
+.services-dropdown {
+    grid-template-columns: repeat(2, 1fr);
+    min-width: 450px;
+}
+
+.education-dropdown {
+    grid-template-columns: 1fr;
+    min-width: 320px;
+}
+
+.dropdown:hover .industries-dropdown,
+.dropdown:hover .services-dropdown,
+.dropdown:hover .education-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    margin-top: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease, visibility 0s linear 0s;
+}
+
+.dropdown-menu {
+    padding-top: 0.8rem;
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: var(--fg);
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-item-content {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.8rem;
+    flex-shrink: 0;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-title {
+    
+    font-size: 1.15rem;
+}
+
+.item-description {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.section-heading {
+    font-size: 3rem;
+    
+    text-align: center;
+    margin: var(--gap) 0;
+    letter-spacing: 0.7px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-family: 'VT323', monospace;
+    color: #52eef5;
+    /* Removed text shadow effect */
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'VT323', monospace;
+    color: #52eef5;
+    /* Removed text shadow effect */
+    letter-spacing: 0.7px;
+    
+}
+
+.dropdown-menu h1,
+.dropdown-menu h2,
+.dropdown-menu h3,
+.dropdown-menu h4,
+.dropdown-menu h5,
+.dropdown-menu h6,
+.item-title,
+.item-description {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--fg);
+    text-shadow: none;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #5a6bff 0%, #a2b0ff 70%, #ffffff 100%);
+}
+
+/* Modern Technology Cards Animation */
+.tech-cards-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(20, 20, 40, 0.2));
+    border-radius: 20px;
+    margin: 10px 0;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.tech-cards-track {
+    display: flex;
+    animation: techCardsFlow 75s linear infinite;
+    will-change: transform;
+    gap: 70px; /* Further increased gap between cards */
+}
+
+.tech-cards-track:hover {    
+    animation-play-state: paused;
+}
+
+@keyframes techCardsFlow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.tech-card {
+    flex: 0 0 auto;
+    width: 240px;
+    height: 220px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    margin: 5px 0; /* Reduced top/bottom margin */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.tech-card-inner {    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 25, 45, 0.5); /* More transparent background like navbar */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Similar to navbar border when scrolled */
+    border-radius: 16px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.tech-card-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(var(--primary-color-rgb), 0.2) 50%, 
+        transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover .tech-card-inner::before {
+    opacity: 1;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    z-index: 10;
+}
+
+.tech-card:hover .tech-card-inner {
+    background: linear-gradient(135deg, 
+        rgba(var(--primary-color-rgb), 0.2) 0%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        rgba(var(--primary-color-rgb), 0.1) 100%);
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Similar to navbar border when scrolled */
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.1), /* Same as navbar shadow when scrolled */
+        0 0 30px rgba(var(--primary-color-rgb), 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.tech-icon-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.tech-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(var(--primary-color-rgb), 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover .tech-icon-wrapper::before {
+    opacity: 0;
+}
+
+
+
+.tech-card:hover .tech-icon-wrapper {
+    transform: scale(1.1) rotateY(15deg);
+}
+
+.tech-card h3 {
+    font-size: 1.45rem;
+    
+    margin-bottom: 8px;
+    color: var(--fg);
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tech-card:hover h3 {
+    color: #FFFFFF; /* Keep text white on hover */
+    text-shadow: 0 0 10px rgba(var(--primary-color-rgb), 0.7); /* Still add glow effect with primary color */
+    transform: translateY(-2px);
+}
+
+.tech-card p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    line-height: 1.4;
+}
+
+.tech-card:hover p {
+    color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-1px);
+}
+
+.tech-icon:hover {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    flex: 1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+    aspect-ratio: 1;
+    /* Add background to improve visibility on dark theme */
+    background-color: rgba(255, 255, 255, 0.8); /* Increased opacity */
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    /* Ensure contrast for all icons */
+    position: relative;
+    background-blend-mode: normal;
+}
+
+/* Additional dark theme optimizations for tech icons */
+/* Removed redundant .tech-icon rule */
+
+/* Add a subtle glow effect on hover for better visibility */
+.tech-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-icon:hover::before {
+    opacity: 1;
+}
+
+/* Specific adjustments for logos that might be invisible on dark backgrounds */
+.tech-icon.openai,
+.tech-icon.anthropic,
+.tech-icon.mistral {
+    filter: brightness(1.1) contrast(1.2);
+}
+
+/* For GitHub avatars that might be too dark */
+.tech-icon.llamaindex,
+.tech-icon.vllm,
+.tech-icon.docker {
+    background-image: url('../assets/tech-icons/docker.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.faiss {
+    filter: brightness(1.1) saturate(1.1);
+}
+
+/* Special handling for light logos on dark theme */
+.tech-icon.weaviate {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure proper spacing and visibility for text logos */
+.tech-icon.langchain,
+.tech-icon.qdrant,
+.tech-icon.haystack {
+    background-size: 80% auto;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+
+
+/* Icons for each technology - Using direct image URLs from official sources */
+.tech-icon.ollama {
+    background-image: url('https://avatars.githubusercontent.com/u/151674099?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.langchain {
+    background-image: url('https://python.langchain.com/img/brand/wordmark.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.chroma {
+    background-image: url('../assets/tech-icons/Chroma.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.4) contrast(1.5) saturate(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.tech-icon.pinecone {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg');
+    background-color: rgba(46, 160, 67, 0.9);
+    filter: brightness(1.4) contrast(1.5) hue-rotate(60deg);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(46, 160, 67, 0.3);
+    position: relative;
+}
+
+.tech-icon.pinecone::after {
+    content: '🌲';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 29px;
+    z-index: 2;
+}
+
+.tech-icon.vectordb {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(180deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.tech-icon.openai {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.2) contrast(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.huggingface {
+    background-image: url('https://huggingface.co/front/assets/huggingface_logo-noborder.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.pytorch {
+    background-image: url('https://pytorch.org/assets/images/pytorch-logo.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.tensorflow {
+    background-image: url('https://www.tensorflow.org/images/tf_logo_social.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Remaining Technology Icons - Using direct image URLs */
+.tech-icon.weaviate {
+    background-image: url('https://avatars.githubusercontent.com/u/37794290?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.qdrant {
+    background-image: url('https://qdrant.tech/images/logo_with_text.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.haystack {
+    background-image: url('https://raw.githubusercontent.com/deepset-ai/haystack/main/docs/img/haystack_logo_colored.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.mistral {
+    background-image: url('https://docs.mistral.ai/img/logo.svg');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.anthropic {
+    background-image: url('../assets/tech-icons/anthropic claude.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.2) contrast(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.tech-icon.groq {
+    background-image: url('https://groq.com/wp-content/uploads/2024/03/PBG-mark1-color.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.gemini {
+    background-image: url('https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.llamaindex {
+    background-image: url('https://avatars.githubusercontent.com/u/130722866?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+.tech-icon.vllm {
+    background-image: url('https://avatars.githubusercontent.com/u/132581166?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+.tech-icon.rag {
+    background-image: url('https://img.icons8.com/color/96/artificial-intelligence.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.transformers {
+    background-image: url('https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.spacy {
+    background-image: url('https://raw.githubusercontent.com/explosion/spaCy/master/website/src/images/logo.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(10deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.llama {
+    background-image: url('../assets/tech-icons/meta-color.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(-10deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.milvus {
+    background-image: url('../assets/tech-icons/Milvus.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) saturate(1.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.docker {
+    background-image: url('../assets/tech-icons/docker.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.faiss {
+    background-image: url('https://raw.githubusercontent.com/facebookresearch/faiss/main/docs/img/faiss.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-shadow {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.tech-shadow-left {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.tech-shadow-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+}
+
+/* Removed pulse animation - displaying raw icons */
+
+/* Mobile adjustments for navbar spacing - ENHANCED */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px; /* Increased for better spacing */
+  }
+  
+  #hero {
+    min-height: calc(100vh - 80px);
+    height: calc(100vh - 80px);
+    padding-top: 2rem; /* Increased top padding for mobile */
+  }
+  
+  .hero-container {
+    padding: 3rem 5% 2rem 5%; /* Better horizontal padding */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+    max-width: 100%;
+    padding: 0 1rem; /* Internal padding */
+  }
+  
+  .hero-content h1 {
+    font-size: 2.8rem; /* Better size for mobile */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); /* Better text shadow */
+  }
+  
+  .hero-content p {
+    font-size: 1.4rem; /* Better paragraph size */
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 90%; /* Limit width for better readability */
+    margin-left: auto;
+    margin-right: auto;
+  }
+    .hero-content .btn-primary {
+    padding: 1rem 2rem; /* Better button padding */
+    font-size: 1.2rem;
+    border-radius: 12px; /* More rounded button */
+    min-width: 200px; /* Minimum button width */
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    #hero {
+        height: 65vh;
+        min-height: 450px;
+        padding-top: 1.5rem;
+    }
+    
+    .hero-container {
+        padding: 2.5rem 3% 1rem 3%; /* Even more top padding for smallest screens */
+    }
+    
+    .hero-content {
+        margin-top: 1.5rem; /* Extra margin for smallest screens */
+    }    .hero-content h1 {
+        font-size: 2.4rem; /* Smaller font for very small screens */
+        line-height: 1.1;
+        margin-bottom: 0.8rem;
+        text-shadow: none !important; /* Removed shadow for smallest screens */
+        letter-spacing: 0.3px;
+        filter: brightness(1.08); /* Slightly increased brightness for better visibility */
+    }
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+      .hero-content .btn-primary {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: grid;
+    position: absolute;
+    background-color: #100732;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.industries-dropdown {
+    grid-template-columns: repeat(3, 1fr);
+    min-width: 600px;
+}
+
+.services-dropdown {
+    grid-template-columns: repeat(2, 1fr);
+    min-width: 450px;
+}
+
+.education-dropdown {
+    grid-template-columns: 1fr;
+    min-width: 320px;
+}
+
+.dropdown:hover .industries-dropdown,
+.dropdown:hover .services-dropdown,
+.dropdown:hover .education-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    margin-top: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease, visibility 0s linear 0s;
+}
+
+.dropdown-menu {
+    padding-top: 0.8rem;
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: var(--fg);
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-item-content {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.8rem;
+    flex-shrink: 0;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-title {
+    
+    font-size: 1.15rem;
+}
+
+.item-description {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.section-heading {
+    font-size: 3rem;
+    
+    text-align: center;
+    margin: var(--gap) 0;
+    letter-spacing: 0.7px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-family: 'VT323', monospace;
+    color: #52eef5;
+    /* Removed text shadow effect */
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'VT323', monospace;
+    color: #52eef5;
+    /* Removed text shadow effect */
+    letter-spacing: 0.7px;
+    
+}
+
+.dropdown-menu h1,
+.dropdown-menu h2,
+.dropdown-menu h3,
+.dropdown-menu h4,
+.dropdown-menu h5,
+.dropdown-menu h6,
+.item-title,
+.item-description {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--fg);
+    text-shadow: none;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #5a6bff 0%, #a2b0ff 70%, #ffffff 100%);
+}
+
+/* Modern Technology Cards Animation */
+.tech-cards-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(20, 20, 40, 0.2));
+    border-radius: 20px;
+    margin: 10px 0;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.tech-cards-track {
+    display: flex;
+    animation: techCardsFlow 75s linear infinite;
+    will-change: transform;
+    gap: 70px; /* Further increased gap between cards */
+}
+
+.tech-cards-track:hover {    
+    animation-play-state: paused;
+}
+
+@keyframes techCardsFlow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.tech-card {
+    flex: 0 0 auto;
+    width: 240px;
+    height: 220px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    margin: 5px 0; /* Reduced top/bottom margin */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.tech-card-inner {    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 25, 45, 0.5); /* More transparent background like navbar */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Similar to navbar border when scrolled */
+    border-radius: 16px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.tech-card-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(var(--primary-color-rgb), 0.2) 50%, 
+        transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover .tech-card-inner::before {
+    opacity: 1;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    z-index: 10;
+}
+
+.tech-card:hover .tech-card-inner {
+    background: linear-gradient(135deg, 
+        rgba(var(--primary-color-rgb), 0.2) 0%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        rgba(var(--primary-color-rgb), 0.1) 100%);
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Similar to navbar border when scrolled */
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.1), /* Same as navbar shadow when scrolled */
+        0 0 30px rgba(var(--primary-color-rgb), 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.tech-icon-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.tech-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(var(--primary-color-rgb), 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover .tech-icon-wrapper::before {
+    opacity: 0;
+}
+
+
+
+.tech-card:hover .tech-icon-wrapper {
+    transform: scale(1.1) rotateY(15deg);
+}
+
+.tech-card h3 {
+    font-size: 1.45rem;
+    
+    margin-bottom: 8px;
+    color: var(--fg);
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tech-card:hover h3 {
+    color: #FFFFFF; /* Keep text white on hover */
+    text-shadow: 0 0 10px rgba(var(--primary-color-rgb), 0.7); /* Still add glow effect with primary color */
+    transform: translateY(-2px);
+}
+
+.tech-card p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    line-height: 1.4;
+}
+
+.tech-card:hover p {
+    color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-1px);
+}
+
+.tech-icon:hover {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    flex: 1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+    aspect-ratio: 1;
+    /* Add background to improve visibility on dark theme */
+    background-color: rgba(255, 255, 255, 0.8); /* Increased opacity */
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    /* Ensure contrast for all icons */
+    position: relative;
+    background-blend-mode: normal;
+}
+
+/* Additional dark theme optimizations for tech icons */
+/* Removed redundant .tech-icon rule */
+
+/* Add a subtle glow effect on hover for better visibility */
+.tech-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-icon:hover::before {
+    opacity: 1;
+}
+
+/* Specific adjustments for logos that might be invisible on dark backgrounds */
+.tech-icon.openai,
+.tech-icon.anthropic,
+.tech-icon.mistral {
+    filter: brightness(1.1) contrast(1.2);
+}
+
+/* For GitHub avatars that might be too dark */
+.tech-icon.llamaindex,
+.tech-icon.vllm,
+.tech-icon.docker {
+    background-image: url('../assets/tech-icons/docker.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.faiss {
+    filter: brightness(1.1) saturate(1.1);
+}
+
+/* Special handling for light logos on dark theme */
+.tech-icon.weaviate {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure proper spacing and visibility for text logos */
+.tech-icon.langchain,
+.tech-icon.qdrant,
+.tech-icon.haystack {
+    background-size: 80% auto;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+
+
+/* Icons for each technology - Using direct image URLs from official sources */
+.tech-icon.ollama {
+    background-image: url('https://avatars.githubusercontent.com/u/151674099?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.langchain {
+    background-image: url('https://python.langchain.com/img/brand/wordmark.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.chroma {
+    background-image: url('../assets/tech-icons/Chroma.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.4) contrast(1.5) saturate(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.tech-icon.pinecone {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg');
+    background-color: rgba(46, 160, 67, 0.9);
+    filter: brightness(1.4) contrast(1.5) hue-rotate(60deg);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(46, 160, 67, 0.3);
+    position: relative;
+}
+
+.tech-icon.pinecone::after {
+    content: '🌲';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 29px;
+    z-index: 2;
+}
+
+.tech-icon.vectordb {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(180deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.tech-icon.openai {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.2) contrast(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.huggingface {
+    background-image: url('https://huggingface.co/front/assets/huggingface_logo-noborder.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.pytorch {
+    background-image: url('https://pytorch.org/assets/images/pytorch-logo.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.tensorflow {
+    background-image: url('https://www.tensorflow.org/images/tf_logo_social.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Remaining Technology Icons - Using direct image URLs */
+.tech-icon.weaviate {
+    background-image: url('https://avatars.githubusercontent.com/u/37794290?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.qdrant {
+    background-image: url('https://qdrant.tech/images/logo_with_text.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.haystack {
+    background-image: url('https://raw.githubusercontent.com/deepset-ai/haystack/main/docs/img/haystack_logo_colored.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.mistral {
+    background-image: url('https://docs.mistral.ai/img/logo.svg');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.anthropic {
+    background-image: url('../assets/tech-icons/anthropic claude.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.2) contrast(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.tech-icon.groq {
+    background-image: url('https://groq.com/wp-content/uploads/2024/03/PBG-mark1-color.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.gemini {
+    background-image: url('https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.llamaindex {
+    background-image: url('https://avatars.githubusercontent.com/u/130722866?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+.tech-icon.vllm {
+    background-image: url('https://avatars.githubusercontent.com/u/132581166?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+.tech-icon.rag {
+    background-image: url('https://img.icons8.com/color/96/artificial-intelligence.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.transformers {
+    background-image: url('https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.spacy {
+    background-image: url('https://raw.githubusercontent.com/explosion/spaCy/master/website/src/images/logo.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(10deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.llama {
+    background-image: url('../assets/tech-icons/meta-color.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(-10deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.milvus {
+    background-image: url('../assets/tech-icons/Milvus.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) saturate(1.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.docker {
+    background-image: url('../assets/tech-icons/docker.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.faiss {
+    background-image: url('https://raw.githubusercontent.com/facebookresearch/faiss/main/docs/img/faiss.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-shadow {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.tech-shadow-left {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.tech-shadow-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+}
+
+/* Removed pulse animation - displaying raw icons */
+
+/* Mobile adjustments for navbar spacing - ENHANCED */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px; /* Increased for better spacing */
+  }
+  
+  #hero {
+    min-height: calc(100vh - 80px);
+    height: calc(100vh - 80px);
+    padding-top: 2rem; /* Increased top padding for mobile */
+  }
+  
+  .hero-container {
+    padding: 3rem 5% 2rem 5%; /* Better horizontal padding */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+    max-width: 100%;
+    padding: 0 1rem; /* Internal padding */
+  }
+  
+  .hero-content h1 {
+    font-size: 2.8rem; /* Better size for mobile */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); /* Better text shadow */
+  }
+  
+  .hero-content p {
+    font-size: 1.4rem; /* Better paragraph size */
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 90%; /* Limit width for better readability */
+    margin-left: auto;
+    margin-right: auto;
+  }
+    .hero-content .btn-primary {
+    padding: 1rem 2rem; /* Better button padding */
+    font-size: 1.2rem;
+    border-radius: 12px; /* More rounded button */
+    min-width: 200px; /* Minimum button width */
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    #hero {
+        height: 65vh;
+        min-height: 450px;
+        padding-top: 1.5rem;
+    }
+    
+    .hero-container {
+        padding: 2.5rem 3% 1rem 3%; /* Even more top padding for smallest screens */
+    }
+    
+    .hero-content {
+        margin-top: 1.5rem; /* Extra margin for smallest screens */
+    }    .hero-content h1 {
+        font-size: 2.4rem; /* Smaller font for very small screens */
+        line-height: 1.1;
+        margin-bottom: 0.8rem;
+        text-shadow: none !important; /* Removed shadow for smallest screens */
+        letter-spacing: 0.3px;
+        filter: brightness(1.08); /* Slightly increased brightness for better visibility */
+    }
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+      .hero-content .btn-primary {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: grid;
+    position: absolute;
+    background-color: #100732;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.industries-dropdown {
+    grid-template-columns: repeat(3, 1fr);
+    min-width: 600px;
+}
+
+.services-dropdown {
+    grid-template-columns: repeat(2, 1fr);
+    min-width: 450px;
+}
+
+.education-dropdown {
+    grid-template-columns: 1fr;
+    min-width: 320px;
+}
+
+.dropdown:hover .industries-dropdown,
+.dropdown:hover .services-dropdown,
+.dropdown:hover .education-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    margin-top: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease, visibility 0s linear 0s;
+}
+
+.dropdown-menu {
+    padding-top: 0.8rem;
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: var(--fg);
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-item-content {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.8rem;
+    flex-shrink: 0;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-title {
+    
+    font-size: 1.15rem;
+}
+
+.item-description {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.section-heading {
+    font-size: 3rem;
+    
+    text-align: center;
+    margin: var(--gap) 0;
+    letter-spacing: 0.7px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-family: 'VT323', monospace;
+    color: #52eef5;
+    /* Removed text shadow effect */
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'VT323', monospace;
+    color: #52eef5;
+    /* Removed text shadow effect */
+    letter-spacing: 0.7px;
+    
+}
+
+.dropdown-menu h1,
+.dropdown-menu h2,
+.dropdown-menu h3,
+.dropdown-menu h4,
+.dropdown-menu h5,
+.dropdown-menu h6,
+.item-title,
+.item-description {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--fg);
+    text-shadow: none;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #5a6bff 0%, #a2b0ff 70%, #ffffff 100%);
+}
+
+/* Modern Technology Cards Animation */
+.tech-cards-container {
+    position: relative;
+    width: 100%;    overflow: hidden;
+    padding: 30px 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(20, 20, 40, 0.2));
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+/* ===== FEATURED COURSES SECTION STYLES ===== */
+
+/* Courses Grid Layout */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+/* Course Card Styling */
+.course-card {
+    background: linear-gradient(135deg, rgba(25, 35, 55, 0.9) 0%, rgba(35, 45, 65, 0.95) 100%);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 0 50px rgba(var(--primary-color-rgb), 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 80px rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Course Video Container */
+.course-video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.course-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Course Thumbnail Styles - Static Display */
+.course-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Course Information */
+.course-info h3 {
+    font-size: 1.6rem;
+    color: #52eef5;
+    margin-bottom: 1rem;
+    
+}
+
+.course-info p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* Course Highlights */
+.course-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.course-highlights .highlight-item {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.course-highlights .highlight-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.course-highlights .highlight-item i {
+    font-size: 0.8rem;
+}
+
+/* Course CTA Button */
+.course-card .btn-primary {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, rgba(var(--primary-color-rgb), 0.8) 100%);
+    border: 2px solid var(--primary-color);
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.course-card .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(var(--primary-color-rgb), 0.4);
+    background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.9) 0%, var(--primary-color) 100%);
+}
+
+.course-card .btn-primary:hover::before {
+    left: 100%;
+}
+
+/* Responsive Design for Courses */
+@media (max-width: 1024px) {
+    .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .course-card {
+        padding: 1.25rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .back-to-top-btn {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
+    .courses-grid {
+        gap: 1.5rem;
+    }
+    
+    .course-card {
+        padding: 1rem;
+    }
+    
+    .course-info h3 {
+        font-size: 1.4rem;
+    }
+    
+    .course-info p {
+        font-size: 1rem;
+    }
+      .course-highlights {
+        gap: 0.6rem;
+    }
+    
+    .course-highlights .highlight-item {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
+}
+
+@media (max-width: 480px) {
+    .course-video-container {
+        padding-bottom: 60%; /* Slightly taller aspect ratio for mobile */
+    }
+    
+    .course-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .course-highlights {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .course-highlights .highlight-item {
+        align-self: flex-start;
+    }
+    
+    /* Mobile play overlay adjustments */
+    .play-overlay {
+        width: 50px;
+        height: 50px;
         font-size: 18px;
     }
 }
+
+/* ===== END FEATURED COURSES SECTION STYLES ===== */
 
 /* ===== WEBINAR SECTIONS STYLES ===== */
 
@@ -4786,6 +8771,7 @@ body {
     border: 1px solid rgba(var(--primary-color-rgb), 0.2);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .webinar-main-card::before {
@@ -4796,7 +8782,7 @@ body {
     right: 0;
     height: 3px;
     background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-    animation: shimmer 3s ease-in-out infinite;
+    /* Removed shimmer animation from section-wide element */
 }
 
 .webinar-main-card:hover {
@@ -4839,7 +8825,6 @@ body {
 /* Upcoming Webinars Content - Reduced gap between items */
 .upcoming-webinars-content {
     display: flex;
-   
     flex-direction: column;
     gap: 1.2rem;
 }
@@ -4863,8 +8848,9 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 2px;
-    background: linear-gradient(180deg, var(--primary-color), var(--primary-color-hover));
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    animation: shimmer 3s ease-in-out infinite;
     border-radius: 0 2px 2px 0;
 }
 
@@ -4888,7 +8874,7 @@ body {
 .webinar-date-badge .date {
     display: block;
     font-size: 1.8rem;
-    font-weight: bold;
+    
     color: #fff;
     line-height: 1;
 }
@@ -4909,7 +8895,7 @@ body {
     font-size: 1.8rem;
     color: #52eef5;
     margin-bottom: 1rem;
-    font-weight: 600;
+    
 }
 
 .webinar-meta {
@@ -4947,7 +8933,7 @@ body {
     color: #52eef5;
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
-    font-weight: 600;
+    
 }
 
 .webinar-takeaways ul {
@@ -4968,7 +8954,7 @@ body {
     position: absolute;
     left: 0;
     color: var(--primary-color);
-    font-weight: bold;
+    
     font-size: 1.1rem;
 }
 
@@ -4983,7 +8969,7 @@ body {
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
+    
     font-size: 1rem;
     transition: all 0.3s ease;
     text-transform: uppercase;
@@ -5085,7 +9071,481 @@ body {
     font-size: 1.3rem;
     color: #52eef5;
     margin-bottom: 0.8rem;
-    font-weight: 600;
+    
+}
+
+.gn-video-info h4 i {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.gn-video-info p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Shimmer animation for webinar cards */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Pulse Glow Animation for webinars */
+@keyframes pulseGlow {
+    0% {
+        text-shadow: 0 0 20px rgba(82, 238, 245, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 30px rgba(82, 238, 245, 0.8), 0 0 40px rgba(82, 238, 245, 0.3);
+    }
+}
+
+/* Responsive Design for Webinars */
+@media (max-width: 1024px) {
+    .webinar-videos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .webinar-meta {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #webinars-hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    #webinars-hero p {
+        font-size: 1.2rem;
+    }
+    
+    .webinar-main-card {
+        padding: 1.5rem;
+        margin: 2rem 0 3rem 0;
+    }
+    
+    .already-done-webinars-card {
+        margin-top: 2rem !important;
+    }
+    
+    .webinar-videos-section {
+        padding: 3rem 0 1.5rem 0;
+        margin-top: 2rem;
+    }
+    
+    .webinar-card-header h2 {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .upcoming-webinar-item {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .webinar-date-badge {
+        align-self: flex-start;
+        min-width: 80px;
+    }
+    
+    .webinar-meta {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .webinar-actions {
+        flex-direction: column;
+    }
+    
+    .register-btn, .add-calendar-btn {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .webinar-videos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .webinar-video-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #webinars-hero {
+        padding: 2.5rem 0;
+    }
+    
+    #webinars-hero h1 {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
+    
+    #webinars-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .webinar-main-card {
+        padding: 1rem;
+        margin: 1.5rem 0 2.5rem 0;
+    }
+    
+    .already-done-webinars-card {
+        margin-top: 1.5rem !important;
+    }
+    
+    .webinar-videos-section {
+        padding: 2rem 0 1rem 0;
+        margin-top: 1.5rem;
+    }
+    
+    .webinar-card-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    
+    .webinar-card-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .upcoming-webinar-item {
+        padding: 1rem;
+    }
+    
+    .webinar-details h3 {
+        font-size: 1.5rem;
+    }
+    
+    .webinar-takeaways {
+        margin-bottom: 1.5rem;
+    }
+    
+    .gn-video-info h4 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== GYANNETRA MOBILE APP SECTION STYLES ===== */
+
+.gyannetra-app-section-redesigned {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(15, 15, 25, 0.95) 0%, rgba(25, 25, 45, 0.9) 100%);
+    border-radius: 20px;
+    margin: 3rem auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.gyannetra-app-section-redesigned::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(var(--primary-color-rgb), 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(82, 238, 245, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Wrapper for centering and max-width control */
+.gn-app-section-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Main Heading */
+.gn-app-main-heading {
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+    color: #52eef5;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'VT323', monospace;
+}
+
+/* Dual Column Container */
+.gn-app-dual-column-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Left Column Styling */
+.gn-app-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Right Column Styling */
+.gn-app-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* App Features Card */
+.gn-app-features-card {
+    background: rgba(25, 35, 55, 0.8);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gn-app-features-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 15px 35px rgba(var(--primary-color-rgb), 0.25), 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* App Intro Text */
+.gn-app-intro-text {
+    margin-bottom: 2rem;
+}
+
+.gn-app-intro-text p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    
+    text-align: center;
+    margin: 0;
+}
+
+/* App Features List */
+.gn-app-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.gn-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(var(--primary-color-rgb), 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.gn-feature-item:hover {
+    background: rgba(var(--primary-color-rgb), 0.1);
+    transform: translateX(5px);
+}
+
+.gn-feature-icon {
+    background: rgba(var(--primary-color-rgb), 0.15);
+    border-radius: 10px;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+.gn-feature-icon i {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.gn-feature-item:hover .gn-feature-icon {
+    background: rgba(var(--primary-color-rgb), 0.25);
+    transform: scale(1.1);
+}
+
+.gn-feature-content h4 {
+    font-size: 1.2rem;
+    color: #52eef5;
+    margin-bottom: 0.5rem;
+    
+}
+
+.gn-feature-content p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* App Download Section */
+.gn-app-download-section {
+    background: rgba(25, 35, 55, 0.8);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gn-app-download-section:hover {
+    transform: translateY(-5px);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 15px 35px rgba(var(--primary-color-rgb), 0.25), 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gn-download-heading {
+    font-size: 1.8rem;
+    color: #52eef5;
+    margin-bottom: 1.5rem;
+    font-family: 'VT323', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.gn-download-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.gn-download-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, rgba(25, 35, 55, 0.9) 0%, rgba(35, 45, 65, 0.95) 100%);
+    border: 2px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gn-download-link:hover {
+    transform: translateY(-5px);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 15px 35px rgba(var(--primary-color-rgb), 0.25), 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.gn-download-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.gn-download-link:hover .gn-download-icon {
+    transform: scale(1.1);
+}
+
+.gn-download-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.gn-download-title {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.2;
+}
+
+.gn-download-store {
+    font-size: 1.1rem;
+    color: #ffffff;
+    
+    line-height: 1.2;
+}
+
+/* Platform-specific styling */
+.gn-android-link:hover {
+    border-color: rgba(52, 168, 83, 0.6);
+    box-shadow: 0 10px 25px rgba(52, 168, 83, 0.3);
+}
+
+.gn-android-link .gn-download-icon {
+    color: #34a853;
+}
+
+.gn-ios-link:hover {
+    border-color: rgba(0, 122, 255, 0.6);
+    box-shadow: 0 10px 25px rgba(0, 122, 255, 0.3);
+}
+
+.gn-ios-link .gn-download-icon {
+    color: #007aff;
+}
+
+/* Video Tutorial Cards */
+.gn-video-tutorial-card {
+    background: rgba(25, 35, 55, 0.8);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gn-video-tutorial-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 15px 35px rgba(var(--primary-color-rgb), 0.25), 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Video Container with reduced aspect ratio for more compact display */
+.gn-video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 45%; /* Reduced from 56.25% (16:9) to 45% for shorter videos */
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.gn-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Video Info */
+.gn-video-info h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+    color: #52eef5;
+    margin-bottom: 0.8rem;
+    
 }
 
 .gn-video-info h4 i {
@@ -5207,151 +9667,261 @@ body {
     }
 }
 
-/* Shimmer animation for video cards */
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
+/* ===== CENTERED BUTTON STYLING ===== */
+.centered-btn {
+    display: block !important;
+    width: fit-content !important;
+    margin: 2.5rem auto 0 auto !important;
+    text-align: center !important;
 }
 
-/* Pulse Glow Animation */
-@keyframes pulseGlow {
-    0% {
-        text-shadow: 0 0 20px rgba(82, 238, 245, 0.5);
-    }
-    100% {
-        text-shadow: 0 0 30px rgba(82, 238, 245, 0.8), 0 0 40px rgba(82, 238, 245, 0.3);
-    }
+/* ===== BUTTON CONTAINER CENTERING ===== */
+/* Center all CTA button containers */
+.cta-buttons,
+.cta-buttons-section .cta-buttons,
+.webinar-actions,
+.hero-cta-buttons,
+.program-buttons,
+.section-buttons,
+.training-buttons,
+.course-actions,
+.workflow-actions {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+    text-align: center !important;
+    margin: 0 auto !important;
 }
 
-/* Responsive Design for Webinars */
-@media (max-width: 1024px) {
-    .webinar-videos-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-    }
-    
-    .webinar-meta {
-        gap: 1rem;
-    }
+/* CTA buttons section specific styling */
+.cta-buttons-section {
+    text-align: center !important;
+    padding: 2rem 0 !important;
 }
 
+.cta-buttons-section .container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Center all button containers with inline styles - Services pages */
+div[style*="text-align: center"] {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 2.5rem auto !important;
+}
+
+/* Center explore button sections - Industry pages */
+.explore-button-section {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 4rem auto !important;
+    padding: 1rem 0 !important;
+}
+
+/* Center hero section buttons */
+.hero-section {
+    text-align: center !important;
+}
+
+.hero-section .btn,
+.hero-section .btn-primary {
+    display: inline-block !important;
+    margin: 2rem auto 0 auto !important;
+}
+
+/* Center specialization card buttons */
+.specialization-card {
+    text-align: center !important;
+}
+
+.specialization-btn {
+    display: inline-block !important;
+    margin: 1.5rem auto 0 auto !important;
+    text-align: center !important;
+}
+
+/* Center discussion/project buttons in service sections */
+.discuss-project-cta {
+    text-align: center !important;
+}
+
+.btn-discuss-project {
+    display: inline-block !important;
+    margin: 0 auto !important;
+}
+
+/* Center form submit buttons */
+.contact-form-container,
+.form-container {
+    text-align: center !important;
+}
+
+.btn-send-message,
+.btn-submit,
+form button[type="submit"] {
+    display: block !important;
+    margin: 2rem auto 0 auto !important;
+    text-align: center !important;
+}
+
+/* Center footer subscription buttons */
+.footer-subscribe button,
+.newsletter-form {
+    display: inline-block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+/* Global button centering fallback - catch any missed buttons */
+.btn-container,
+[class*="button-container"],
+[class*="btn-container"],
+[class*="cta-container"] {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+}
+
+/* Ensure any standalone buttons in sections are centered */
+section .btn:only-child,
+section .btn-primary:only-child,
+section .btn-secondary:only-child {
+    display: block !important;
+    margin: 2rem auto !important;
+    text-align: center !important;
+}
+
+/* Ensure consistent button group spacing */
+.benefits-section .centered-btn,
+.training-programs-section .centered-btn,
+.workflow-section .centered-btn {
+    margin: 2rem auto 0 auto !important;
+}
+
+/* Ensure proper styling for the button when it has both btn-primary and centered-btn classes */
+.btn-primary.centered-btn {
+    background: linear-gradient(135deg, #6d28d9 0%, #9333ea 50%, #a855f7 100%) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 
+        0 8px 32px rgba(109, 40, 217, 0.4),
+        0 4px 16px rgba(147, 51, 234, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    padding: 18px 36px !important;
+    important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    font-size: 1.2rem !important;
+    border-radius: 12px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+.btn-primary.centered-btn:hover {
+    transform: translateY(-3px) scale(1.05) !important;
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 
+        0 12px 40px rgba(109, 40, 217, 0.6),
+        0 6px 20px rgba(147, 51, 234, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 0 20px rgba(168, 85, 247, 0.5) !important;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4) !important;
+}
+
+.btn-primary.centered-btn:active {
+    transform: translateY(-1px) scale(1.02) !important;
+    transition: all 0.1s ease !important;
+}
+
+/* Responsive adjustments for centered button */
 @media (max-width: 768px) {
-    #webinars-hero h1 {
-        font-size: 2.8rem;
+    .centered-btn {
+        margin: 2rem auto 0 auto !important;
     }
     
-    #webinars-hero p {
-        font-size: 1.2rem;
+    .btn-primary.centered-btn {
+        padding: 14px 28px !important;
+        font-size: 1.1rem !important;
     }
     
-    .webinar-main-card {
-        padding: 1.5rem;
-        margin: 2rem 0 3rem 0;
-    }
-      .already-done-webinars-card {
-        margin-top: 2rem !important;
-    }
-    
-    .webinar-videos-section {
-        padding: 3rem 0 1.5rem 0;
-        margin-top: 2rem;
+    /* Mobile button container centering */
+    .cta-buttons,
+    .webinar-actions,
+    .hero-cta-buttons,
+    div[style*="text-align: center"] {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        margin: 2rem auto !important;
     }
     
-    .webinar-card-header h2 {
-        font-size: 2rem;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .upcoming-webinar-item {
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 1.5rem;
-    }
-    
-    .webinar-date-badge {
-        align-self: flex-start;
-        min-width: 80px;
-    }
-    
-    .webinar-meta {
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-    
-    .webinar-actions {
-        flex-direction: column;
-    }
-    
-    .register-btn, .add-calendar-btn {
-        justify-content: center;
-        text-align: center;
-    }
-    
-    .webinar-videos-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .webinar-video-card {
-        padding: 1rem;
+    .hero-section .btn,
+    .hero-section .btn-primary {
+        width: auto !important;
+        max-width: 280px !important;
+        margin: 1rem auto !important;
     }
 }
 
 @media (max-width: 480px) {
-    #webinars-hero {
-        padding: 2.5rem 0;
+    .centered-btn {
+        margin: 1.5rem auto 0 auto !important;
     }
     
-    #webinars-hero h1 {
-        font-size: 2.2rem;
-        letter-spacing: 1px;
+    .btn-primary.centered-btn {
+        padding: 12px 24px !important;
+        font-size: 1rem !important;
+        letter-spacing: 1px !important;
+    }
+      /* Extra small screen button adjustments */
+    .cta-buttons,
+    .webinar-actions,
+    .hero-cta-buttons {
+        gap: 1rem !important;
+        margin: 1.5rem auto !important;
     }
     
-    #webinars-hero p {
-        font-size: 1.1rem;
+    .btn-primary,
+    .btn {
+        padding: 0.8rem 1.5rem !important;
+        font-size: 0.95rem !important;
+        min-width: 200px !important;
+        text-align: center !important;
     }
     
-    .webinar-main-card {
-        padding: 1rem;
-        margin: 1.5rem 0 2.5rem 0;
-    }
-      .already-done-webinars-card {
-        margin-top: 1.5rem !important;
-    }
-    
-    .webinar-videos-section {
-        padding: 2rem 0 1rem 0;
-        margin-top: 1.5rem;
+    /* Ensure buttons stack vertically on very small screens */
+    .hero-cta-buttons,
+    .cta-buttons,
+    .webinar-actions {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
     }
     
-    .webinar-card-header {
-        margin-bottom: 1.5rem;
-        padding-bottom: 1rem;
-    }
-    
-    .webinar-card-header h2 {
-        font-size: 1.8rem;
-    }
-    
-    .upcoming-webinar-item {
-        padding: 1rem;
-    }
-    
-    .webinar-details h3 {
-        font-size: 1.5rem;
-    }
-    
-    .webinar-takeaways {
-        margin-bottom: 1.5rem;
-    }
-    
-    .video-info h3 {
-        font-size: 1.2rem;
+    /* Adjust button widths for better mobile UX */
+    .btn-primary,
+    .btn-secondary,
+    .workflow-cta-btn,
+    .specialization-btn {
+        width: 100% !important;
+        max-width: 280px !important;
+        margin: 0.75rem auto !important;
     }
 }
 
@@ -5397,7 +9967,7 @@ body {
     font-size: 1.3rem;
     color: var(--text-light);
     line-height: 1.7;
-    font-weight: 400;
+    
 }
 
 .workflow-benefits {
@@ -5451,7 +10021,7 @@ body {
     font-size: 1.3rem;
     color: #52eef5;
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    
 }
 
 .benefit-item p {
@@ -5550,7 +10120,7 @@ body {
     font-size: 1.6rem;
     color: #52eef5;
     margin-bottom: 1rem;
-    font-weight: 600;
+    
 }
 
 .step-content p {
@@ -5578,7 +10148,7 @@ body {
     position: absolute;
     left: 0;
     color: var(--primary-color);
-    font-weight: bold;
+    
     font-size: 1.1rem;
 }
 
@@ -5636,17 +10206,19 @@ body {
 .workflow-cta-btn {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-hover) 100%);
     color: #fff;
-    padding: 1rem 2.5rem;
-    border-radius: 12px;
+    padding: 0.8rem 2rem;
+    border-radius: 10px;
     text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    
     text-transform: uppercase;
     letter-spacing: 1px;
     display: inline-block;
     transition: all 0.3s ease;
     box-shadow: 0 8px 20px rgba(var(--primary-color-rgb), 0.3);
     border: 2px solid rgba(255, 255, 255, 0.1);
+    min-width: 160px;
+    text-align: center;
 }
 
 .workflow-cta-btn:hover {
@@ -5656,15 +10228,6 @@ body {
     border-color: rgba(255, 255, 255, 0.2);
     color: #fff;
     text-decoration: none;
-}
-
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
 }
 
 /* Responsive Design for Workflow Section */
@@ -5736,11 +10299,11 @@ body {
 
     .cta-content p {
         font-size: 1.1rem;
-    }
-
-    .workflow-cta-btn {
-        padding: 0.8rem 2rem;
-        font-size: 1.1rem;
+    }    .workflow-cta-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+        max-width: 260px;
+        width: 100%;
     }
 }
 
@@ -5749,1694 +10312,32 @@ body {
         margin-bottom: 2rem;
     }
 
-    .workflow-benefits h3,
-    .workflow-process h3 {
-        font-size: 1.6rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .benefit-item {
-        padding: 1rem;
-    }
-
-    .benefit-item h4 {
-        font-size: 1.2rem;
-    }
-
-    .benefit-item p {
-        font-size: 0.95rem;
-    }
-
     .workflow-step {
-        padding: 1.2rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .step-icon {
-        width: 60px;
-        height: 60px;
-    }
-
-    .step-icon i {
-        font-size: 1.5rem;
-    }
-
-    .step-content h4 {
-        font-size: 1.3rem;
-    }
-
-    .step-details span {
-        font-size: 0.9rem;
-    }
-
-    .workflow-cta {
-        padding: 1.5rem 1rem;
-    }
-
-    .cta-content h3 {
-        font-size: 1.4rem;
-    }
-
-    .workflow-cta-btn {
-        padding: 0.7rem 1.5rem;
-        font-size: 1rem;
-    }
-}
-
-/* ===== GYANNETRA MOBILE APP SECTION STYLES ===== */
-
-.gyannetra-app-section {
-    padding: 4rem 0;
-    background: linear-gradient(135deg, rgba(15, 15, 25, 0.95) 0%, rgba(25, 25, 45, 0.9) 100%);
-    border-radius: 20px;
-    margin: 3rem 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.gyannetra-app-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 20%, rgba(var(--primary-color-rgb), 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(82, 238, 245, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-}
-
-/* Wrapper for centering and max-width control */
-.gn-app-section-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
-    z-index: 2;
-}
-
-/* Main Heading */
-.gn-app-main-heading {
-    font-size: 2.6rem;
-    margin-bottom: 3rem;
-    color: #52eef5;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'VT323', monospace;
-}
-
-/* Dual Column Container */
-.gn-app-dual-column-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-}
-
-/* Left Column Styling */
-.gn-app-left-column {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-}
-
-/* Right Column Styling */
-.gn-app-right-column {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* App Features Card */
-.gn-app-features-card {
-    background: rgba(25, 35, 55, 0.8);
-    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
-    border-radius: 15px;
-    padding: 2rem;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.gn-app-features-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(var(--primary-color-rgb), 0.6);
-    box-shadow: 0 12px 30px rgba(var(--primary-color-rgb), 0.3);
-}
-
-/* App Intro Text */
-.gn-app-intro-text {
-    margin-bottom: 2rem;
-}
-
-.gn-app-intro-text p {
-    font-size: 1.2rem;
-    color: var(--text-light);
-    line-height: 1.7;
-    font-weight: 400;
-    text-align: center;
-    margin: 0;
-}
-
-/* App Features List */
-.gn-app-features-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.gn-feature-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
-    background: rgba(var(--primary-color-rgb), 0.05);
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-.gn-feature-item:hover {
-    background: rgba(var(--primary-color-rgb), 0.1);
-    transform: translateX(5px);
-}
-
-.gn-feature-icon {
-    background: rgba(var(--primary-color-rgb), 0.15);
-    border-radius: 10px;
-    padding: 0.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 50px;
-    height: 50px;
-    transition: all 0.3s ease;
-}
-
-.gn-feature-icon i {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-}
-
-.gn-feature-item:hover .gn-feature-icon {
-    background: rgba(var(--primary-color-rgb), 0.25);
-    transform: scale(1.1);
-}
-
-.gn-feature-content h4 {
-    font-size: 1.2rem;
-    color: #52eef5;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.gn-feature-content p {
-    font-size: 1rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* App Download Section */
-.gn-app-download-section {
-    background: rgba(20, 30, 50, 0.6);
-    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
-    border-radius: 15px;
-    padding: 2rem;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-}
-
-.gn-app-download-section:hover {
-    background: rgba(25, 35, 55, 0.8);
-    border-color: rgba(var(--primary-color-rgb), 0.4);
-}
-
-.gn-download-heading {
-    font-size: 1.8rem;
-    color: #52eef5;
-    margin-bottom: 1.5rem;
-    font-family: 'VT323', monospace;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.gn-download-links-container {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-}
-
-.gn-download-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.5rem;
-    background: linear-gradient(135deg, rgba(25, 35, 55, 0.9) 0%, rgba(35, 45, 65, 0.95) 100%);
-    border: 2px solid rgba(var(--primary-color-rgb), 0.3);
-    border-radius: 12px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    min-width: 180px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.gn-download-link:hover {
-    transform: translateY(-3px);
-    border-color: rgba(var(--primary-color-rgb), 0.6);
-    box-shadow: 0 10px 25px rgba(var(--primary-color-rgb), 0.3);
-    text-decoration: none;
-}
-
-.gn-download-icon {
-    font-size: 2rem;
-    color: var(--primary-color);
-    transition: transform 0.3s ease;
-}
-
-.gn-download-link:hover .gn-download-icon {
-    transform: scale(1.1);
-}
-
-.gn-download-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-}
-
-.gn-download-title {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.2;
-}
-
-.gn-download-store {
-    font-size: 1.1rem;
-    color: #ffffff;
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-/* Platform-specific styling */
-.gn-android-link:hover {
-    border-color: rgba(52, 168, 83, 0.6);
-    box-shadow: 0 10px 25px rgba(52, 168, 83, 0.3);
-}
-
-.gn-android-link .gn-download-icon {
-    color: #34a853;
-}
-
-.gn-ios-link:hover {
-    border-color: rgba(0, 122, 255, 0.6);
-    box-shadow: 0 10px 25px rgba(0, 122, 255, 0.3);
-}
-
-.gn-ios-link .gn-download-icon {
-    color: #007aff;
-}
-
-/* Video Tutorial Cards */
-.gn-video-tutorial-card {
-    background: rgba(20, 30, 50, 0.6);
-    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
-    border-radius: 15px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-}
-
-.gn-video-tutorial-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-    animation: shimmer 3s ease-in-out infinite;
-}
-
-.gn-video-tutorial-card:hover {
-    background: rgba(25, 35, 55, 0.8);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(var(--primary-color-rgb), 0.2);
-}
-
-/* Video Container with reduced aspect ratio for more compact display */
-.gn-video-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 45%; /* Reduced from 56.25% (16:9) to 45% for shorter videos */
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-}
-
-.gn-video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 10px;
-}
-
-/* Video Info */
-.gn-video-info h4 {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.3rem;
-    color: #52eef5;
-    margin-bottom: 0.8rem;
-    font-weight: 600;
-}
-
-.gn-video-info h4 i {
-    font-size: 1.1rem;
-    color: var(--primary-color);
-}
-
-.gn-video-info p {
-    font-size: 1rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* Responsive Design for Dual Column Layout */
-@media (max-width: 1024px) {
-    .gn-app-dual-column-container {
-        gap: 2rem;
-    }
-    
-    .gn-app-section-wrapper {
-        padding: 0 1.5rem;
-    }
-    
-    .gn-download-links-container {
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Collapse to single column on mobile */
-    .gn-app-dual-column-container {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-    
-    .gyannetra-app-section-redesigned {
-        padding: 3rem 0;
-        margin: 2rem auto;
-    }
-    
-    .gn-app-section-wrapper {
-        padding: 0 1rem;
-    }
-    
-    .gn-app-main-heading {
-        font-size: 2rem;
-    }
-    
-    .gn-app-features-card,
-    .gn-app-download-section,
-    .gn-video-tutorial-card {
-        padding: 1.5rem;
-    }
-    
-    .gn-download-links-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-    
-    .gn-download-link {
-        min-width: 220px;
-        padding: 0.8rem 1.3rem;
-    }
-    
-    .gn-video-info h4 {
-        font-size: 1.1rem;
-        flex-direction: column;
-        gap: 0.3rem;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .gyannetra-app-section-redesigned {
-        padding: 2rem 0;
-    }
-    
-    .gn-app-section-wrapper {
-        padding: 0 0.8rem;
-    }
-    
-    .gn-app-main-heading {
-        font-size: 1.6rem;
-    }
-    
-    .gn-app-features-card,
-    .gn-app-download-section,
-    .gn-video-tutorial-card {
-        padding: 1.2rem;
-    }
-    
-    .gn-feature-item {
         flex-direction: column;
         text-align: center;
-        gap: 0.8rem;
-    }
-    
-    .gn-feature-icon {
-        align-self: center;
-    }
-    
-    .gn-download-link {
-        min-width: 180px;
-        padding: 0.7rem 1rem;
-    }
-    
-    .gn-download-icon {
-        font-size: 1.7rem;
-    }
-    
-    .gn-download-title {
-        font-size: 0.8rem;
-    }
-    
-    .gn-download-store {
-        font-size: 1rem;
-    }
-}
-
-/* Shimmer animation for video cards */
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-/* Pulse Glow Animation */
-@keyframes pulseGlow {
-    0% {
-        text-shadow: 0 0 20px rgba(82, 238, 245, 0.5);
-    }
-    100% {
-        text-shadow: 0 0 30px rgba(82, 238, 245, 0.8), 0 0 40px rgba(82, 238, 245, 0.3);
-    }
-}
-
-/* Responsive Design for Webinars */
-@media (max-width: 1024px) {
-    .webinar-videos-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-    }
-    
-    .webinar-meta {
         gap: 1rem;
+    }    .step-connector {
+        display: none;
     }
 }
 
-@media (max-width: 768px) {
-    #webinars-hero h1 {
-        font-size: 2.8rem;
-    }
-    
-    #webinars-hero p {
-        font-size: 1.2rem;
-    }
-    
-    .webinar-main-card {
-        padding: 1.5rem;
-        margin: 2rem 0 3rem 0;
-    }
-      .already-done-webinars-card {
-        margin-top: 2rem !important;
-    }
-    
-    .webinar-videos-section {
-        padding: 3rem 0 1.5rem 0;
-        margin-top: 2rem;
-    }
-    
-    .webinar-card-header h2 {
-        font-size: 2rem;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .upcoming-webinar-item {
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 1.5rem;
-    }
-    
-    .webinar-date-badge {
-        align-self: flex-start;
-        min-width: 80px;
-    }
-    
-    .webinar-meta {
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-    
-    .webinar-actions {
-        flex-direction: column;
-    }
-    
-    .register-btn, .add-calendar-btn {
-        justify-content: center;
-        text-align: center;
-    }
-    
-    .webinar-videos-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .webinar-video-card {
-        padding: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    #webinars-hero {
-        padding: 2.5rem 0;
-    }
-    
-    #webinars-hero h1 {
-        font-size: 2.2rem;
-        letter-spacing: 1px;
-    }
-    
-    #webinars-hero p {
-        font-size: 1.1rem;
-    }
-    
-    .webinar-main-card {
-        padding: 1rem;
-        margin: 1.5rem 0 2.5rem 0;
-    }
-      .already-done-webinars-card {
-        margin-top: 1.5rem !important;
-    }
-    
-    .webinar-videos-section {
-        padding: 2rem 0 1rem 0;
-        margin-top: 1.5rem;
-    }
-    
-    .webinar-card-header {
-        margin-bottom: 1.5rem;
-        padding-bottom: 1rem;
-    }
-    
-    .webinar-card-header h2 {
-        font-size: 1.8rem;
-    }
-    
-    .upcoming-webinar-item {
-        padding: 1rem;
-    }
-    
-    .webinar-details h3 {
-        font-size: 1.5rem;
-    }
-    
-    .webinar-takeaways {
-        margin-bottom: 1.5rem;
-    }
-    
-    .video-info h3 {
-        font-size: 1.2rem;
-    }
-}
-
-/* ===== RESTRUCTURED GYANNETRA MOBILE APP SECTION - DUAL COLUMN LAYOUT ===== */
-
-/* Main Section Container - Centered with max-width */
-.gyannetra-app-section-redesigned {
-    padding: 4rem 0;
-    background: linear-gradient(135deg, rgba(15, 15, 25, 0.95) 0%, rgba(25, 25, 45, 0.9) 100%);
-    border-radius: 20px;
-    margin: 3rem auto;
-    position: relative;
-    overflow: hidden;
-}
-
-.gyannetra-app-section-redesigned::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 20%, rgba(var(--primary-color-rgb), 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(82, 238, 245, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-}
-
-/* Wrapper for centering and max-width control */
-.gn-app-section-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
-    z-index: 2;
-}
-
-/* Main Heading */
-.gn-app-main-heading {
-    font-size: 2.6rem;
-    margin-bottom: 3rem;
-    color: #52eef5;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'VT323', monospace;
-}
-
-/* Dual Column Container */
-.gn-app-dual-column-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-}
-
-/* Left Column Styling */
-.gn-app-left-column {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-}
-
-/* Right Column Styling */
-.gn-app-right-column {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* App Features Card */
-.gn-app-features-card {
-    background: rgba(25, 35, 55, 0.8);
-    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
-    border-radius: 15px;
-    padding: 2rem;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.gn-app-features-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(var(--primary-color-rgb), 0.6);
-    box-shadow: 0 12px 30px rgba(var(--primary-color-rgb), 0.3);
-}
-
-/* App Intro Text */
-.gn-app-intro-text {
-    margin-bottom: 2rem;
-}
-
-.gn-app-intro-text p {
-    font-size: 1.2rem;
-    color: var(--text-light);
-    line-height: 1.7;
-    font-weight: 400;
-    text-align: center;
-    margin: 0;
-}
-
-/* App Features List */
-.gn-app-features-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.gn-feature-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
-    background: rgba(var(--primary-color-rgb), 0.05);
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-.gn-feature-item:hover {
-    background: rgba(var(--primary-color-rgb), 0.1);
-    transform: translateX(5px);
-}
-
-.gn-feature-icon {
-    background: rgba(var(--primary-color-rgb), 0.15);
-    border-radius: 10px;
-    padding: 0.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 50px;
-    height: 50px;
-    transition: all 0.3s ease;
-}
-
-.gn-feature-icon i {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-}
-
-.gn-feature-item:hover .gn-feature-icon {
-    background: rgba(var(--primary-color-rgb), 0.25);
-    transform: scale(1.1);
-}
-
-.gn-feature-content h4 {
-    font-size: 1.2rem;
-    color: #52eef5;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.gn-feature-content p {
-    font-size: 1rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* App Download Section */
-.gn-app-download-section {
-    background: rgba(20, 30, 50, 0.6);
-    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
-    border-radius: 15px;
-    padding: 2rem;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-}
-
-.gn-app-download-section:hover {
-    background: rgba(25, 35, 55, 0.8);
-    border-color: rgba(var(--primary-color-rgb), 0.4);
-}
-
-.gn-download-heading {
-    font-size: 1.8rem;
-    color: #52eef5;
-    margin-bottom: 1.5rem;
-    font-family: 'VT323', monospace;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.gn-download-links-container {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-}
-
-.gn-download-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.5rem;
-    background: linear-gradient(135deg, rgba(25, 35, 55, 0.9) 0%, rgba(35, 45, 65, 0.95) 100%);
-    border: 2px solid rgba(var(--primary-color-rgb), 0.3);
-    border-radius: 12px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    min-width: 180px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.gn-download-link:hover {
-    transform: translateY(-3px);
-    border-color: rgba(var(--primary-color-rgb), 0.6);
-    box-shadow: 0 10px 25px rgba(var(--primary-color-rgb), 0.3);
-    text-decoration: none;
-}
-
-.gn-download-icon {
-    font-size: 2rem;
-    color: var(--primary-color);
-    transition: transform 0.3s ease;
-}
-
-.gn-download-link:hover .gn-download-icon {
-    transform: scale(1.1);
-}
-
-.gn-download-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-}
-
-.gn-download-title {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.2;
-}
-
-.gn-download-store {
-    font-size: 1.1rem;
-    color: #ffffff;
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-/* Platform-specific styling */
-.gn-android-link:hover {
-    border-color: rgba(52, 168, 83, 0.6);
-    box-shadow: 0 10px 25px rgba(52, 168, 83, 0.3);
-}
-
-.gn-android-link .gn-download-icon {
-    color: #34a853;
-}
-
-.gn-ios-link:hover {
-    border-color: rgba(0, 122, 255, 0.6);
-    box-shadow: 0 10px 25px rgba(0, 122, 255, 0.3);
-}
-
-.gn-ios-link .gn-download-icon {
-    color: #007aff;
-}
-
-/* Video Tutorial Cards */
-.gn-video-tutorial-card {
-    background: rgba(20, 30, 50, 0.6);
-    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
-    border-radius: 15px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-}
-
-.gn-video-tutorial-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-    animation: shimmer 3s ease-in-out infinite;
-}
-
-.gn-video-tutorial-card:hover {
-    background: rgba(25, 35, 55, 0.8);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(var(--primary-color-rgb), 0.2);
-}
-
-/* Video Container with reduced aspect ratio for more compact display */
-.gn-video-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 45%; /* Reduced from 56.25% (16:9) to 45% for shorter videos */
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-}
-
-.gn-video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 10px;
-}
-
-/* Video Info */
-.gn-video-info h4 {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.3rem;
-    color: #52eef5;
-    margin-bottom: 0.8rem;
-    font-weight: 600;
-}
-
-.gn-video-info h4 i {
-    font-size: 1.1rem;
-    color: var(--primary-color);
-}
-
-.gn-video-info p {
-    font-size: 1rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* Responsive Design for Dual Column Layout */
-@media (max-width: 1024px) {
-    .gn-app-dual-column-container {
-        gap: 2rem;
-    }
-    
-    .gn-app-section-wrapper {
-        padding: 0 1.5rem;
-    }
-    
-    .gn-download-links-container {
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Collapse to single column on mobile */
-    .gn-app-dual-column-container {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-    
-    .gyannetra-app-section-redesigned {
-        padding: 3rem 0;
-        margin: 2rem auto;
-    }
-    
-    .gn-app-section-wrapper {
-        padding: 0 1rem;
-    }
-    
-    .gn-app-main-heading {
-        font-size: 2rem;
-    }
-    
-    .gn-app-features-card,
-    .gn-app-download-section,
-    .gn-video-tutorial-card {
-        padding: 1.5rem;
-    }
-    
-    .gn-download-links-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-    
-    .gn-download-link {
-        min-width: 220px;
-        padding: 0.8rem 1.3rem;
-    }
-    
-    .gn-video-info h4 {
-        font-size: 1.1rem;
-        flex-direction: column;
-        gap: 0.3rem;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .gyannetra-app-section-redesigned {
-        padding: 2rem 0;
-    }
-    
-    .gn-app-section-wrapper {
-        padding: 0 0.8rem;
-    }
-    
-    .gn-app-main-heading {
-        font-size: 1.6rem;
-    }
-    
-    .gn-app-features-card,
-    .gn-app-download-section,
-    .gn-video-tutorial-card {
-        padding: 1.2rem;
-    }
-    
-    .gn-feature-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.8rem;
-    }
-    
-    .gn-feature-icon {
-        align-self: center;
-    }
-    
-    .gn-download-link {
-        min-width: 180px;
-        padding: 0.7rem 1rem;
-    }
-    
-    .gn-download-icon {
-        font-size: 1.7rem;
-    }
-    
-    .gn-download-title {
-        font-size: 0.8rem;
-    }
-    
-    .gn-download-store {
-        font-size: 1rem;
-    }
-}
-
-/* Shimmer animation for video cards */
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-/* Pulse Glow Animation */
-@keyframes pulseGlow {
-    0% {
-        text-shadow: 0 0 20px rgba(82, 238, 245, 0.5);
-    }
-    100% {
-        text-shadow: 0 0 30px rgba(82, 238, 245, 0.8), 0 0 40px rgba(82, 238, 245, 0.3);
-    }
-}
-
-/* Responsive Design for Webinars */
-@media (max-width: 1024px) {
-    .webinar-videos-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-    }
-    
-    .webinar-meta {
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    #webinars-hero h1 {
-        font-size: 2.8rem;
-    }
-    
-    #webinars-hero p {
-        font-size: 1.2rem;
-    }
-    
-    .webinar-main-card {
-        padding: 1.5rem;
-        margin: 2rem 0 3rem 0;
-    }
-      .already-done-webinars-card {
-        margin-top: 2rem !important;
-    }
-    
-    .webinar-videos-section {
-        padding: 3rem 0 1.5rem 0;
-        margin-top: 2rem;
-    }
-    
-    .webinar-card-header h2 {
-        font-size: 2rem;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .upcoming-webinar-item {
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 1.5rem;
-    }
-    
-    .webinar-date-badge {
-        align-self: flex-start;
-        min-width: 80px;
-    }
-    
-    .webinar-meta {
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-    
-    .webinar-actions {
-        flex-direction: column;
-    }
-    
-    .register-btn, .add-calendar-btn {
-        justify-content: center;
-        text-align: center;
-    }
-    
-    .webinar-videos-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .webinar-video-card {
-        padding: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    #webinars-hero {
-        padding: 2.5rem 0;
-    }
-    
-    #webinars-hero h1 {
-        font-size: 2.2rem;
-        letter-spacing: 1px;
-    }
-    
-    #webinars-hero p {
-        font-size: 1.1rem;
-    }
-    
-    .webinar-main-card {
-        padding: 1rem;
-        margin: 1.5rem 0 2.5rem 0;
-    }
-      .already-done-webinars-card {
-        margin-top: 1.5rem !important;
-    }
-    
-    .webinar-videos-section {
-        padding: 2rem 0 1rem 0;
-        margin-top: 1.5rem;
-    }
-    
-    .webinar-card-header {
-        margin-bottom: 1.5rem;
-        padding-bottom: 1rem;
-    }
-    
-    .webinar-card-header h2 {
-        font-size: 1.8rem;
-    }
-    
-    .upcoming-webinar-item {
-        padding: 1rem;
-    }
-    
-    .webinar-details h3 {
-        font-size: 1.5rem;
-    }
-    
-    .webinar-takeaways {
-        margin-bottom: 1.5rem;
-    }
-    
-    .video-info h3 {
-        font-size: 1.2rem;
-    }
-}
-
-/* ===== RESTRUCTURED GYANNETRA MOBILE APP SECTION - DUAL COLUMN LAYOUT ===== */
-
-/* Main Section Container - Centered with max-width */
-.gyannetra-app-section-redesigned {
-    padding: 4rem 0;
-    background: linear-gradient(135deg, rgba(15, 15, 25, 0.95) 0%, rgba(25, 25, 45, 0.9) 100%);
-    border-radius: 20px;
-    margin: 3rem auto;
-    position: relative;
-    overflow: hidden;
-}
-
-.gyannetra-app-section-redesigned::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 20%, rgba(var(--primary-color-rgb), 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(82, 238, 245, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-}
-
-/* Wrapper for centering and max-width control */
-.gn-app-section-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
-    z-index: 2;
-}
-
-/* Main Heading */
-.gn-app-main-heading {
-    font-size: 2.6rem;
-    margin-bottom: 3rem;
-    color: #52eef5;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'VT323', monospace;
-}
-
-/* Dual Column Container */
-.gn-app-dual-column-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-}
-
-/* Left Column Styling */
-.gn-app-left-column {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-}
-
-/* Right Column Styling */
-.gn-app-right-column {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* App Features Card */
-.gn-app-features-card {
-    background: rgba(25, 35, 55, 0.8);
-    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
-    border-radius: 15px;
-    padding: 2rem;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.gn-app-features-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(var(--primary-color-rgb), 0.6);
-    box-shadow: 0 12px 30px rgba(var(--primary-color-rgb), 0.3);
-}
-
-/* App Intro Text */
-.gn-app-intro-text {
-    margin-bottom: 2rem;
-}
-
-.gn-app-intro-text p {
-    font-size: 1.2rem;
-    color: var(--text-light);
-    line-height: 1.7;
-    font-weight: 400;
-    text-align: center;
-    margin: 0;
-}
-
-/* App Features List */
-.gn-app-features-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.gn-feature-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
-    background: rgba(var(--primary-color-rgb), 0.05);
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-.gn-feature-item:hover {
-    background: rgba(var(--primary-color-rgb), 0.1);
-    transform: translateX(5px);
-}
-
-.gn-feature-icon {
-    background: rgba(var(--primary-color-rgb), 0.15);
-    border-radius: 10px;
-    padding: 0.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 50px;
-    height: 50px;
-    transition: all 0.3s ease;
-}
-
-.gn-feature-icon i {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-}
-
-.gn-feature-item:hover .gn-feature-icon {
-    background: rgba(var(--primary-color-rgb), 0.25);
-    transform: scale(1.1);
-}
-
-.gn-feature-content h4 {
-    font-size: 1.2rem;
-    color: #52eef5;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.gn-feature-content p {
-    font-size: 1rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* App Download Section */
-.gn-app-download-section {
-    background: rgba(20, 30, 50, 0.6);
-    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
-    border-radius: 15px;
-    padding: 2rem;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-}
-
-.gn-app-download-section:hover {
-    background: rgba(25, 35, 55, 0.8);
-    border-color: rgba(var(--primary-color-rgb), 0.4);
+/* Additional CSS for expertise section divider */
+.exp-item h3 {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
 }
 
-.gn-download-heading {
-    font-size: 1.8rem;
-    color: #52eef5;
-    margin-bottom: 1.5rem;
-    font-family: 'VT323', monospace;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.exp-item h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(82, 238, 245, 0.2), rgba(82, 238, 245, 1), rgba(82, 238, 245, 0.2));
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(82, 238, 245, 0.5);
 }
 
-.gn-download-links-container {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-}
-
-.gn-download-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.5rem;
-    background: linear-gradient(135deg, rgba(25, 35, 55, 0.9) 0%, rgba(35, 45, 65, 0.95) 100%);
-    border: 2px solid rgba(var(--primary-color-rgb), 0.3);
-    border-radius: 12px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    min-width: 180px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.gn-download-link:hover {
-    transform: translateY(-3px);
-    border-color: rgba(var(--primary-color-rgb), 0.6);
-    box-shadow: 0 10px 25px rgba(var(--primary-color-rgb), 0.3);
-    text-decoration: none;
-}
-
-.gn-download-icon {
-    font-size: 2rem;
-    color: var(--primary-color);
-    transition: transform 0.3s ease;
-}
-
-.gn-download-link:hover .gn-download-icon {
-    transform: scale(1.1);
-}
-
-.gn-download-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-}
-
-.gn-download-title {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.2;
-}
-
-.gn-download-store {
-    font-size: 1.1rem;
-    color: #ffffff;
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-/* Platform-specific styling */
-.gn-android-link:hover {
-    border-color: rgba(52, 168, 83, 0.6);
-    box-shadow: 0 10px 25px rgba(52, 168, 83, 0.3);
-}
-
-.gn-android-link .gn-download-icon {
-    color: #34a853;
-}
-
-.gn-ios-link:hover {
-    border-color: rgba(0, 122, 255, 0.6);
-    box-shadow: 0 10px 25px rgba(0, 122, 255, 0.3);
-}
-
-.gn-ios-link .gn-download-icon {
-    color: #007aff;
-}
-
-/* Video Tutorial Cards */
-.gn-video-tutorial-card {
-    background: rgba(20, 30, 50, 0.6);
-    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
-    border-radius: 15px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-}
-
-.gn-video-tutorial-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-    animation: shimmer 3s ease-in-out infinite;
-}
-
-.gn-video-tutorial-card:hover {
-    background: rgba(25, 35, 55, 0.8);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(var(--primary-color-rgb), 0.2);
-}
-
-/* Video Container with reduced aspect ratio for more compact display */
-.gn-video-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 45%; /* Reduced from 56.25% (16:9) to 45% for shorter videos */
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-}
-
-.gn-video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 10px;
-}
-
-/* Video Info */
-.gn-video-info h4 {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.3rem;
-    color: #52eef5;
-    margin-bottom: 0.8rem;
-    font-weight: 600;
-}
-
-.gn-video-info h4 i {
-    font-size: 1.1rem;
-    color: var(--primary-color);
-}
-
-.gn-video-info p {
-    font-size: 1rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* Responsive Design for Dual Column Layout */
-@media (max-width: 1024px) {
-    .gn-app-dual-column-container {
-        gap: 2rem;
-    }
-    
-    .gn-app-section-wrapper {
-        padding: 0 1.5rem;
-    }
-    
-    .gn-download-links-container {
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Collapse to single column on mobile */
-    .gn-app-dual-column-container {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-    
-    .gyannetra-app-section-redesigned {
-        padding: 3rem 0;
-        margin: 2rem auto;
-    }
-    
-    .gn-app-section-wrapper {
-        padding: 0 1rem;
-    }
-    
-    .gn-app-main-heading {
-        font-size: 2rem;
-    }
-    
-    .gn-app-features-card,
-    .gn-app-download-section,
-    .gn-video-tutorial-card {
-        padding: 1.5rem;
-    }
-    
-    .gn-download-links-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-    
-    .gn-download-link {
-        min-width: 220px;
-        padding: 0.8rem 1.3rem;
-    }
-    
-    .gn-video-info h4 {
-        font-size: 1.1rem;
-        flex-direction: column;
-        gap: 0.3rem;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .gyannetra-app-section-redesigned {
-        padding: 2rem 0;
-    }
-    
-    .gn-app-section-wrapper {
-        padding: 0 0.8rem;
-    }
-    
-    .gn-app-main-heading {
-        font-size: 1.6rem;
-    }
-    
-    .gn-app-features-card,
-    .gn-app-download-section,
-    .gn-video-tutorial-card {
-        padding: 1.2rem;
-    }
-    
-    .gn-feature-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.8rem;
-    }
-    
-    .gn-feature-icon {
-        align-self: center;
-    }
-    
-    .gn-download-link {
-        min-width: 180px;
-        padding: 0.7rem 1rem;
-    }
-    
-    .gn-download-icon {
-        font-size: 1.7rem;
-    }
-    
-    .gn-download-title {
-        font-size: 0.8rem;
-    }
-    
-    .gn-download-store {
-        font-size: 1rem;
-    }
-}
-
-/* Shimmer animation for video cards */
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-/* Pulse Glow Animation */
-@keyframes pulseGlow {
-    0% {
-        text-shadow: 0 0 20px rgba(82, 238,  245, 0.5);
-    }
-    50% {
-        text-shadow: 0 0 30px rgba(82, 238, 245, 0.8), 0 0 40px rgba(82, 238, 245, 0.3);
-    }
-    100% {
-        text-shadow: 0 0 20px rgba(82, 238, 245, 0.5);
-    }
-}

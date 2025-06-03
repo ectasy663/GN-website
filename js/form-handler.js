@@ -327,7 +327,7 @@ function injectFormStyles() {
             color: #ef4444;
             font-size: 0.875rem;
             margin-top: 0.5rem;
-            font-weight: 500;
+            font-weight: 100;
             animation: shake 0.3s ease-in-out;
         }
 
