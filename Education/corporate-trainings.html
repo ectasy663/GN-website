@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corporate Trainings - Gyannetra</title>
-    <link rel="stylesheet" href="../css/style.css?v=202412291400">
-    <link rel="stylesheet" href="../css/gn-mobile-responsive.css?v=202412291400">
+    <!-- Core Styles - Load First -->
+    <link rel="stylesheet" href="../css/01-base-variables.css">
+    <link rel="stylesheet" href="../css/02-layout-components.css">
+    <link rel="stylesheet" href="../css/03-navigation-header.css">    <!-- Content Styles -->
+    <link rel="stylesheet" href="../css/04-hero-sections.css">
+    <link rel="stylesheet" href="../css/05-technology-cards.css">
+    <link rel="stylesheet" href="../css/06-forms-buttons.css">
+    <link rel="stylesheet" href="../css/card-heading-divider.css">
+    <link rel="stylesheet" href="../css/training-courses.css">
+
+    <!-- Responsive & Effects - Load Last -->
+    <link rel="stylesheet" href="../css/07-media-responsive.css">
+    <link rel="stylesheet" href="../css/08-animations-effects.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -70,46 +80,7 @@
 
     <main>        <section class="hero-section gn-responsive-container">
             <h1>AI-Powered Corporate Training</h1>
-            <p>We offer customized AI training programs for businesses, designed to meet your specific needs and accelerate your team's AI expertise.</p>
-            <a href="mailto:education@gyannetra.com" class="btn btn-primary">Request a Training Proposal</a>        </section>        <section id="featured-courses" class="training-programs-section container">
-            <h2 class="section-heading gn-mobile-section-heading">FEATURED CORPORATE TRAINING COURSES</h2>
-            <div class="courses-grid">                <div class="course-card">
-                    <div class="course-video-container">
-                        <img 
-                            src="../assets/course-thumbnails/Applied Generative AI course.png" 
-                            alt="AI Fundamentals for Business Leaders Course Thumbnail"
-                            class="course-thumbnail"
-                            loading="lazy">
-                    </div>
-                    <div class="course-info">
-                        <h3>AI Fundamentals for Business Leaders</h3>
-                        <p>Comprehensive introduction to artificial intelligence concepts, machine learning basics, and strategic implementation approaches for business leaders and decision-makers.</p>                        <div class="course-highlights">
-                            <span class="highlight-item"><i class="fas fa-users"></i> Leadership & Management</span>
-                            <span class="highlight-item"><i class="fas fa-clock"></i> Self-paced</span>
-                            <span class="highlight-item"><i class="fas fa-certificate"></i> Certificate included</span>
-                        </div>
-                        <a href="https://learn.gyannetra.com/wlp/course-mcgrpx-1737024309470" class="btn-primary gn-mobile-button" target="_blank" rel="noopener noreferrer">Start Learning</a>
-                    </div>                </div><div class="course-card">
-                    <div class="course-video-container">
-                        <img 
-                            src="../assets/course-thumbnails/Solar data analytics course.png" 
-                            alt="Practical AI Implementation Course Thumbnail"
-                            class="course-thumbnail"
-                            loading="lazy">
-                    </div>
-                    <div class="course-info">
-                        <h3>Practical AI Implementation</h3>
-                        <p>Hands-on training focused on implementing AI solutions in corporate environments, covering tools, frameworks, and best practices for successful AI adoption.</p>
-                        <div class="course-highlights">
-                            <span class="highlight-item"><i class="fas fa-code"></i> Technical Teams</span>
-                            <span class="highlight-item"><i class="fas fa-clock"></i> Self-paced</span>
-                            <span class="highlight-item"><i class="fas fa-project-diagram"></i> Project-based</span>
-                        </div>
-                        <a href="https://learn.gyannetra.com/wlp/course-mcgrpx-1737024821581" class="btn-primary gn-mobile-button" target="_blank" rel="noopener noreferrer">Start Learning</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <p>We offer customized AI training programs for businesses, designed to meet your specific needs and accelerate your team's AI expertise.</p>            <a href="mailto:education@gyannetra.com" class="btn btn-primary">Request a Training Proposal</a>        </section>
 
         <section id="custom-training-workflow" class="container workflow-section">
             <h2 class="section-heading gn-mobile-section-heading">CUSTOM TRAINING MODULES: TAILORED TO YOUR WORKFLOW</h2>
@@ -158,11 +129,11 @@
                         <div class="step-icon">
                             <i class="fas fa-search"></i>
                         </div>                        <div class="step-content">
-                            <h4>Analyse With Us</h4>
-                            <p>We conduct comprehensive analysis of your current workflows, team capabilities, and business objectives to identify specific training requirements and learning gaps.</p>                            <div class="step-details">
-                                <span>• Workflow mapping sessions</span>
-                                <span>• Skill gap analysis</span>
-                                <span>• Stakeholder interviews</span>
+                            <h4>Innovate with us</h4>
+                            <p>We conduct comprehensive analysis of your current workflows, team capabilities, and business objectives to identify specific training requirements and learning gaps.</p><div class="step-details">
+                                <span>Workflow mapping sessions</span>
+                                <span>Skill gap analysis</span>
+                                <span>Stakeholder interviews</span>
                             </div>
                         </div>
                         <div class="step-connector"></div>
@@ -175,9 +146,9 @@
                         <div class="step-content">
                             <h4>Content Curation & Customization</h4>
                             <p>Our experts develop bespoke curriculum, real-world case studies, and practical examples directly relevant to your industry and operational context.</p>                            <div class="step-details">
-                                <span>• Industry-specific content</span>
-                                <span>• Custom case studies</span>
-                                <span>• Relevant datasets</span>
+                                <span>Industry-specific content</span>
+                                <span>Custom case studies</span>
+                                <span>Relevant datasets</span>
                             </div>
                         </div>
                         <div class="step-connector"></div>
@@ -190,9 +161,9 @@
                         <div class="step-content">
                             <h4>Module Development</h4>
                             <p>We build comprehensive training materials including interactive presentations, hands-on exercises, and practical simulations that mirror your actual work environment.</p>                            <div class="step-details">
-                                <span>• Interactive presentations</span>
-                                <span>• Practical exercises</span>
-                                <span>• Simulation environments</span>
+                                <span>Interactive presentations</span>
+                                <span>Practical exercises</span>
+                                <span>Simulation environments</span>
                             </div>
                         </div>
                         <div class="step-connector"></div>
@@ -205,9 +176,9 @@
                         <div class="step-content">
                             <h4>Delivery & Feedback</h4>
                             <p>Expert instructors deliver the training with continuous feedback collection and real-time adjustments to ensure maximum learning effectiveness and engagement.</p>                            <div class="step-details">
-                                <span>• Expert-led sessions</span>
-                                <span>• Real-time feedback</span>
-                                <span>• Continuous optimization</span>
+                                <span>Expert-led sessions</span>
+                                <span>Real-time feedback</span>
+                                <span>Continuous optimization</span>
                             </div>
                         </div>
                         <div class="step-connector"></div>
@@ -220,16 +191,14 @@
                         <div class="step-content">
                             <h4>Post-Training Support</h4>
                             <p>We provide ongoing support including implementation guidance, troubleshooting assistance, and additional resources to ensure sustained learning impact.</p>                            <div class="step-details">
-                                <span>• Implementation support</span>
-                                <span>• Follow-up sessions</span>
-                                <span>• Resource library access</span>
+                                <span>Implementation support</span>
+                                <span>Follow-up sessions</span>
+                                <span>Resource library access</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>        </section>
-
-        <section id="transform-cta-section" class="why-choose-us-section container benefits-section">
+            </div>        </section>        <section id="transform-cta-section" class="why-choose-us-section container benefits-section">
             <div class="workflow-cta">
                 <div class="cta-content">
                     <h2 class="section-heading gn-mobile-section-heading">READY TO TRANSFORM YOUR TEAM'S AI CAPABILITIES?</h2>
@@ -264,16 +233,11 @@
                             <h3>ROI-Focused Training</h3>
                             <p>Maximize your investment with training that delivers measurable business outcomes and practical implementation skills.</p>                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Separate CTA Buttons Section with increased spacing -->
-        <section class="cta-buttons-section">
-            <div class="container">
-                <div class="cta-buttons">
-                    <a href="mailto:education@gyannetra.com" class="btn-primary workflow-cta-btn gn-mobile-button">Request a Custom Training Proposal</a>
-                    <a href="../contact.html" class="btn-primary workflow-cta-btn gn-mobile-button">Get In Touch</a>
+                    
+                    <div class="transform-cta-buttons">
+                        <a href="mailto:education@gyannetra.com" class="btn-primary workflow-cta-btn gn-mobile-button">Request a Custom Training Proposal</a>
+                        <a href="../contact.html" class="btn-primary workflow-cta-btn gn-mobile-button">Get In Touch</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -300,19 +264,23 @@
             <li><a href="../contact.html">Contact Us</a></li>
           </ul>
         </div>        <div class="footer-col">
-          <h3>Contact Us</h3>
-          <ul>
-            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
-            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
-            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
-          </ul>
-        </div><div class="footer-col">
           <h3>Follow Us</h3>
           <p>Stay updated with our latest insights and news.</p>          <div class="social-links">
             <a href="mailto:info@gyannetra.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             <a href="https://wa.me/918949135299" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
             <a href="https://www.linkedin.com/company/gyannetra-pvt-ltd/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://www.youtube.com/@Gyannetra-o3y" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
+            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
+            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
+          </ul>
+        </div>
           </div>
            
         </div>

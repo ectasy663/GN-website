@@ -1,0 +1,324 @@
+/* ===== BASE VARIABLES AND IMPORTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=VT323&display=swap');
+
+/* ===== CSS CUSTOM PROPERTIES ===== */
+:root {
+    /* Typography */
+    --font-body: 'Space Grotesk', sans-serif;
+    --font-headings: 'VT323', monospace;
+    --font-mono: 'VT323', monospace;
+    
+    /* Base colors */
+    --fg: #ececec;
+    --btn-bg: rgba(20, 20, 40, 0.8);
+    --btn-hover: rgba(20, 20, 40, 1);
+    --gap: 2rem;
+    --max-w: 1200px;
+
+    /* Standardized card and text styles */
+    --card-bg: rgba(25, 35, 55, 0.7);
+    --text-light: #e0e0e0;
+    --text-muted: #b0b0b0;
+    
+    /* Default primary color scheme (purple) */
+    --primary-color: #6d28d9;
+    --primary-color-rgb: 109, 40, 217;
+    --primary-color-hover: #5b21b6;
+    --primary-color-glow: rgba(109, 40, 217, 0.5);
+    --accent: #a2abff;
+    --accent-rgb: 162, 171, 255;
+    
+    /* Industry-specific color schemes */
+    /* Finance - Professional Blue */
+    --finance-primary: #007bff;
+    --finance-primary-rgb: 0, 123, 255;
+    --finance-primary-hover: #0056b3;
+    
+    /* Healthcare - Medical Blue */
+    --healthcare-primary: #00c6ff;
+    --healthcare-primary-rgb: 0, 198, 255;
+    --healthcare-primary-hover: #0099cc;
+    
+    /* Retail - Commercial Red */
+    --retail-primary: #e74c3c;
+    --retail-primary-rgb: 231, 76, 60;
+    --retail-primary-hover: #c0392b;
+    
+    /* Manufacturing - Industrial Blue */
+    --manufacturing-primary: #3498db;
+    --manufacturing-primary-rgb: 52, 152, 219;
+    --manufacturing-primary-hover: #2980b9;
+    
+    /* Marketing - Creative Pink */
+    --marketing-primary: #ec4899;
+    --marketing-primary-rgb: 236, 72, 153;
+    --marketing-primary-hover: #db2777;
+    
+    /* Travel - Sky Blue */
+    --travel-primary: #0ea5e9;
+    --travel-primary-rgb: 14, 165, 233;
+    --travel-primary-hover: #0284c7;
+    
+    /* Media & Entertainment - Purple */
+    --media-primary: #9333ea;
+    --media-primary-rgb: 147, 51, 234;
+    --media-primary-hover: #7e22ce;
+    
+    /* Services color schemes */
+    /* Machine Learning - Deep Blue */
+    --machine-learning-primary: #2563eb;
+    --machine-learning-primary-rgb: 37, 99, 235;
+    --machine-learning-primary-hover: #1d4ed8;
+    
+    /* Generative AI - Emerald Green */
+    --generative-ai-primary: #10b981;
+    --generative-ai-primary-rgb: 16, 185, 129;
+    --generative-ai-primary-hover: #059669;
+    
+    /* Data Analysis - Amber */
+    --data-analysis-primary: #f59e0b;
+    --data-analysis-primary-rgb: 245, 158, 11;
+    --data-analysis-primary-hover: #d97706;
+    
+    /* Automation - Purple */
+    --automation-primary: #8b5cf6;
+    --automation-primary-rgb: 139, 92, 246;
+    --automation-primary-hover: #7c3aed;
+    
+    /* Agentic AI - Pink */
+    --agentic-ai-primary: #ec4899;
+    --agentic-ai-primary-rgb: 236, 72, 153;
+    --agentic-ai-primary-hover: #db2777;
+    
+    /* Spacing variables */
+    --section-margin: 2rem;
+    --section-padding: 1.5rem;
+    --card-padding: 25px;
+    --grid-gap: 30px;
+}
+
+/* ===== COLOR THEME UTILITY CLASSES ===== */
+.theme-finance {
+    --primary-color: var(--finance-primary);
+    --primary-color-rgb: var(--finance-primary-rgb);
+    --primary-color-hover: var(--finance-primary-hover);
+    --primary-color-glow: rgba(var(--finance-primary-rgb), 0.5);
+}
+
+.theme-healthcare {
+    --primary-color: var(--healthcare-primary);
+    --primary-color-rgb: var(--healthcare-primary-rgb);
+    --primary-color-hover: var(--healthcare-primary-hover);
+    --primary-color-glow: rgba(var(--healthcare-primary-rgb), 0.5);
+}
+
+.theme-retail {
+    --primary-color: var(--retail-primary);
+    --primary-color-rgb: var(--retail-primary-rgb);
+    --primary-color-hover: var(--retail-primary-hover);
+    --primary-color-glow: rgba(var(--retail-primary-rgb), 0.5);
+}
+
+.theme-manufacturing {
+    --primary-color: var(--manufacturing-primary);
+    --primary-color-rgb: var(--manufacturing-primary-rgb);
+    --primary-color-hover: var(--manufacturing-primary-hover);
+    --primary-color-glow: rgba(var(--manufacturing-primary-rgb), 0.5);
+}
+
+.theme-marketing {
+    --primary-color: var(--marketing-primary);
+    --primary-color-rgb: var(--marketing-primary-rgb);
+    --primary-color-hover: var(--marketing-primary-hover);
+    --primary-color-glow: rgba(var(--marketing-primary-rgb), 0.5);
+}
+
+.theme-travel {
+    --primary-color: var(--travel-primary);
+    --primary-color-rgb: var(--travel-primary-rgb);
+    --primary-color-hover: var(--travel-primary-hover);
+    --primary-color-glow: rgba(var(--travel-primary-rgb), 0.5);
+}
+
+.theme-media {
+    --primary-color: var(--media-primary);
+    --primary-color-rgb: var(--media-primary-rgb);
+    --primary-color-hover: var(--media-primary-hover);
+    --primary-color-glow: rgba(var(--media-primary-rgb), 0.5);
+}
+
+.theme-machine-learning {
+    --primary-color: var(--machine-learning-primary);
+    --primary-color-rgb: var(--machine-learning-primary-rgb);
+    --primary-color-hover: var(--machine-learning-primary-hover);
+    --primary-color-glow: rgba(var(--machine-learning-primary-rgb), 0.5);
+}
+
+.theme-generative-ai {
+    --primary-color: var(--generative-ai-primary);
+    --primary-color-rgb: var(--generative-ai-primary-rgb);
+    --primary-color-hover: var(--generative-ai-primary-hover);
+    --primary-color-glow: rgba(var(--generative-ai-primary-rgb), 0.5);
+}
+
+.theme-data-analysis {
+    --primary-color: var(--data-analysis-primary);
+    --primary-color-rgb: var(--data-analysis-primary-rgb);
+    --primary-color-hover: var(--data-analysis-primary-hover);
+    --primary-color-glow: rgba(var(--data-analysis-primary-rgb), 0.5);
+}
+
+.theme-automation {
+    --primary-color: var(--automation-primary);
+    --primary-color-rgb: var(--automation-primary-rgb);
+    --primary-color-hover: var(--automation-primary-hover);
+    --primary-color-glow: rgba(var(--automation-primary-rgb), 0.5);
+}
+
+.theme-agentic-ai {
+    --primary-color: var(--agentic-ai-primary);
+    --primary-color-rgb: var(--agentic-ai-primary-rgb);
+    --primary-color-hover: var(--agentic-ai-primary-hover);
+    --primary-color-glow: rgba(var(--agentic-ai-primary-rgb), 0.5);
+}
+
+/* ===== BASE RESET AND TYPOGRAPHY ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+    visibility: visible !important;
+}
+
+body {
+    background: url('../assets/3293677.png') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-top: 80px;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    color: #52eef5;
+    letter-spacing: 0.7px;
+    font-size: 4.5rem;
+    font-weight: 100;
+}
+
+/* Card heading size exceptions */
+.benefit-card h3,
+.webinar-video-card .video-info h3,
+.article-card h3,
+.related-content-item h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+/* Card heading styles are now handled in webinar-video.css */
+
+/* ===== FOUC PREVENTION ===== */
+.font-loading {
+    font-family: var(--font-mono), Consolas, 'Courier New', monospace;
+}
+
+/* Page loading transitions */
+html.no-js {
+    visibility: hidden;
+}
+
+body.loading {
+    opacity: 1;
+}
+
+body.page-ready {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fouc-prevention {
+    visibility: hidden !important;
+}
+
+.fouc-prevention .site-header,
+.fouc-prevention #hero {
+    visibility: visible !important;
+}
+
+html:not(.fouc-prevention) {
+    transition: opacity 0.3s ease-in;
+    opacity: 1;
+}
+
+/* ===== PRELOADER STYLES ===== */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0a0a1a;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+body.page-ready #preloader {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-container {
+    text-align: center;
+}
+
+.loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(139, 92, 246, 0.2);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    margin: 0 auto 15px;
+    animation: spin 1s ease-in-out infinite;
+}
+
+.loader-text {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}

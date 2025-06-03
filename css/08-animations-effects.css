@@ -1,0 +1,620 @@
+/* ===== ANIMATIONS AND EFFECTS ===== */
+
+/* ===== CORE ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0% {
+        text-shadow: none;
+        filter: brightness(1.05);
+    }
+    100% {
+        text-shadow: none;
+        filter: brightness(1.08);
+    }
+}
+
+@keyframes glowLine {
+    0%, 100% {
+        opacity: 0.5;
+        box-shadow: 0 0 5px rgba(var(--primary-color-rgb), 0.3);
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 15px rgba(var(--primary-color-rgb), 0.7);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) scaleX(1);
+    }
+    49.9% {
+        transform: translateX(0%) scaleX(1);
+    }
+    50% {
+        transform: translateX(0%) scaleX(1);
+    }
+    100% {
+        transform: translateX(100%) scaleX(1);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* ===== TECHNOLOGY CARD ANIMATIONS ===== */
+@keyframes techCardsFlow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ===== BUTTON ANIMATIONS ===== */
+@keyframes heroButtonPulse {
+    0%, 100% { 
+        box-shadow: 
+            0 8px 32px rgba(109, 40, 217, 0.4),
+            0 4px 16px rgba(147, 51, 234, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+    50% { 
+        box-shadow: 
+            0 8px 32px rgba(109, 40, 217, 0.6),
+            0 4px 16px rgba(147, 51, 234, 0.5),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+}
+
+@keyframes btn-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes checkmark-appear {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+/* ===== WEBINAR ANIMATIONS ===== */
+@keyframes slideInFromLeft {
+    from {
+        left: -100%;
+        opacity: 0;
+    }
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInMenu {
+    from {
+        opacity: 0.8;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== SPECIALIZED CARDS ANIMATIONS ===== */
+.hero-content h1,
+.hero-content p,
+.section-heading,
+.tech-item,
+.exp-item {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Disable animations for hero content to prevent layout shifts */
+#hero .hero-content p {
+    animation: none !important;
+}
+
+/* Allow hero heading to have the glow animation only */
+#hero .hero-content h1 {
+    animation: pulseGlow 3s ease-in-out infinite alternate !important;
+    animation-delay: 0s !important;
+}
+
+.hero-content p {
+    animation-delay: 0.4s;
+}
+
+/* Override hero animation delays */
+#hero .hero-content h1,
+#hero .hero-content p {
+    animation-delay: 0s !important;
+}
+
+.section-heading {
+    animation-delay: 0.6s;
+}
+
+.section-subheading {
+    animation-delay: 0.7s;
+}
+
+.section-intro {
+    animation-delay: 0.8s;
+}
+
+.tech-item {
+    animation-delay: 0.9s;
+}
+
+.exp-item {
+    animation-delay: 1s;
+}
+
+/* ===== SPECIALIZATION CARDS EFFECTS ===== */
+.specialization-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.specialization-card:hover::before {
+    opacity: 1;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+/* ===== BENEFIT CARD ANIMATIONS ===== */
+.benefit-card-icon {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.benefit-card:hover .benefit-card-icon {
+    transform: scale(1.1);
+    background: rgba(var(--primary-color-rgb, 109, 40, 217), 0.2);
+}
+
+.benefit-card-icon i {
+    transition: color 0.3s ease;
+}
+
+.highlight-badge {
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.specialization-card:hover .highlight-badge {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ===== TECH CARD ADVANCED EFFECTS ===== */
+.tech-card-inner::before {
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.tech-icon-wrapper::before {
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover .tech-icon-wrapper::before {
+    opacity: 0;
+}
+
+/* Mobile responsive animations */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        animation-duration: 2.5s;
+    }
+}
+
+/* ===== FOOTER ANIMATIONS ===== */
+.footer-col .social-links a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-col .social-links a:hover {
+    transform: translateY(-2px);
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+}
+
+/* ===== ADVANCED CARD EFFECTS ===== */
+.article-card,
+.solution-item,
+.related-content-item,
+.offering-item,
+.exp-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.article-card::before,
+.solution-item::before,
+.related-content-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.article-card:hover::before,
+.solution-item:hover::before,
+.related-content-item:hover::before {
+    left: 100%;
+}
+
+/* ===== CONTACT FORM ANIMATIONS ===== */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    position: relative;
+}
+
+.form-group::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #52eef5, #667eea);
+    transition: width 0.3s ease;
+}
+
+.form-group input:focus + label::after,
+.form-group textarea:focus + label::after,
+.form-group select:focus + label::after {
+    width: 100%;
+}
+
+/* ===== WORKFLOW SECTION ANIMATIONS ===== */
+.workflow-step {
+    position: relative;
+}
+
+.step-icon::before {
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.benefit-item {
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 12px 25px rgba(var(--primary-color-rgb), 0.4);
+}
+
+/* ===== WEBINAR SECTION ANIMATIONS ===== */
+.webinar-main-card::before,
+.webinar-video-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    max-width: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+    border-radius: 0 2px 2px 0;
+}
+
+.upcoming-webinar-item::before {
+    animation: shimmer 3s ease-in-out infinite;
+    border-radius: 0 2px 2px 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* ===== GYANNETRA APP SECTION ANIMATIONS ===== */
+.gn-feature-item:hover {
+    background: rgba(var(--primary-color-rgb), 0.1);
+    transform: translateX(5px);
+}
+
+.gn-feature-icon {
+    transition: all 0.3s ease;
+}
+
+.gn-feature-item:hover .gn-feature-icon {
+    background: rgba(var(--primary-color-rgb), 0.25);
+    transform: scale(1.1);
+}
+
+.gn-download-link {
+    transition: all 0.3s ease;
+}
+
+.gn-download-link:hover .gn-download-icon {
+    transform: scale(1.1);
+}
+
+/* ===== NAVIGATION ANIMATIONS ===== */
+.nav-link {
+    position: relative;
+}
+
+.nav-link:after {
+    transition: width 0.3s ease-out, left 0.3s ease-out;
+}
+
+.dropdown-menu {
+    transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease, visibility 0s linear 0.3s;
+}
+
+/* ===== HOVER EFFECTS COLLECTION ===== */
+.tech-card,
+.benefit-card,
+.specialization-card,
+.course-card,
+.webinar-video-card,
+.gn-video-tutorial-card {
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover,
+.course-card:hover,
+.webinar-video-card:hover,
+.gn-video-tutorial-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-card:hover,
+.specialization-card:hover {
+    transform: translateY(-8px);
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger animation delays */
+.animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
+.animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
+.animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
+.animate-on-scroll:nth-child(4) { transition-delay: 0.4s; }
+.animate-on-scroll:nth-child(5) { transition-delay: 0.5s; }
+
+/* ===== LOADING ANIMATIONS ===== */
+.loading-spinner {
+    animation: spin 1s linear infinite;
+}
+
+.pulse-effect {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.float-effect {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* ===== SPECIALIZED ANIMATION OVERRIDES ===== */
+/* Ensure hero content is not affected by scroll animations */
+#hero .hero-content.animate-on-scroll {
+    animation: none !important;
+    text-align: center !important;
+}
+
+#hero .hero-content.animate-on-scroll.animated {
+    transform: none !important;
+    opacity: 1 !important;
+    text-align: center !important;
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+.tech-cards-track {
+    will-change: transform;
+}
+
+.tech-card {
+    transform-style: preserve-3d;
+}
+
+/* ===== TRANSITION COLLECTIONS ===== */
+.smooth-transition {
+    transition: all 0.3s ease;
+}
+
+.fast-transition {
+    transition: all 0.15s ease;
+}
+
+.slow-transition {
+    transition: all 0.6s ease;
+}
+
+/* ===== MOBILE ANIMATION ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+    /* Reduce animation intensity on mobile */
+    .tech-card:hover,
+    .benefit-card:hover,
+    .specialization-card:hover {
+        transform: translateY(-3px);
+    }
+    
+    /* Simplify hover effects on mobile */
+    .workflow-step:hover {
+        transform: translateY(-5px);
+    }
+    
+    /* Disable complex animations on mobile for performance */
+    .tech-card-inner::before {
+        animation: none;
+    }
+    
+    .step-icon::before {
+        animation: none;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further reduce animations on very small screens */
+    .animate-on-scroll {
+        transition: all 0.3s ease;
+    }
+    
+    /* Disable resource-intensive animations */
+    .shimmer-effect {
+        animation: none;
+    }
+    
+    .webinar-main-card::before,
+    .webinar-video-card::before,
+    .upcoming-webinar-item::before {
+        animation: none;
+    }
+}
+
+/* ===== ACCESSIBILITY CONSIDERATIONS ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== EXPERTISE SECTION DIVIDER ANIMATION ===== */
+.exp-item h3 {
+    position: relative;
+    padding-bottom: 14px;
+    margin-bottom: 15px;
+}
+
+.exp-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(82, 238, 245, 0.2), rgba(82, 238, 245, 1), rgba(82, 238, 245, 0.2));
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(82, 238, 245, 0.5);
+}
+
+/* ===== CUSTOM SCROLL EFFECTS ===== */
+.scroll-fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ===== FINAL PERFORMANCE OPTIMIZATIONS ===== */
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-opacity {
+    will-change: opacity;
+}
+
+.gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Video container hover effects */
+.webinar-video-card .video-container {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.webinar-video-card:hover .video-container {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(82, 238, 245, 0.15);
+}

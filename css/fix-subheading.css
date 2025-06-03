@@ -1,0 +1,16 @@
+/* Fix for section-subheading readability in specializations section */
+#specializations .section-subheading {
+    /* Remove any gradient or transparent text */
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: #52eef5 !important; /* Use solid color instead of transparent */
+    color: #52eef5 !important; /* Fallback */
+    text-shadow: 0 0 10px rgba(82, 238, 245, 0.3) !important; /* Add subtle glow but keep text readable */
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-weight: 400 !important; /* Reduced font weight for better readability */
+    letter-spacing: 1.5px !important; /* Maintain increased letter spacing */
+    margin: 1rem auto 2rem !important; /* Keep same spacing */
+    font-size: 2.1rem !important; /* Increased font size for better readability */
+}

@@ -7,31 +7,28 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <title>Gyannetra — AI Services & Solutions</title>
-    <!-- CRITICAL CSS - Prevent FOUC -->
-  <style>
+    <!-- CRITICAL CSS - Prevent FOUC -->  <style>
     /* Simplified FOUC prevention */
     html { 
       visibility: visible !important; 
     }
     body { 
-      font-family: 'VT323', monospace;
+      font-family: 'Space Grotesk', sans-serif;
       background: #0a0a1a;
       color: #ffffff;
       margin: 0;
       padding: 0;
       opacity: 1;
     }
-    
-    /* Custom styles for hero section font sizes */
+      /* Custom styles for hero section font sizes */
     #hero .hero-content h1 {
-      font-size: 2.6rem; /* Decreased size for main heading */
+      font-size: 4.5rem; /* Main heading with required 4.5rem size */
       margin-bottom: 0.4rem; /* Adjusted bottom margin */
       line-height: 1.0; /* Lowered and uniform line spacing */
-      font-weight: 100; /* Lowered font weight to match others */
-    }
-      #hero .hero-subheading {
+      font-weight: 100; /* Required font weight 100 */
+    }      #hero .hero-subheading {
       font-size: 1.8rem; /* Increased size for "We deliver" text */
-      font-weight: 100; /* Lowered font weight */
+      font-weight: 100; /* Required font weight 100 */
       margin-bottom: 0.4rem; /* Adjusted bottom margin */
       line-height: 1.0; /* Lowered and uniform line spacing */
       color: #52eef5; /* Changed text color to match typewriter text */
@@ -56,11 +53,10 @@
       justify-content: center;
       transition: opacity 0.5s ease;
     }
-    
-    .loader-text {
+      .loader-text {
       color: #52eef5;
       font-size: 1.5rem;
-      font-family: 'VT323', monospace;
+      font-family: var(--font-mono);
       animation: pulse 1.5s ease-in-out infinite;
     }
     
@@ -82,13 +78,27 @@
     body.loaded #page-preloader {
       opacity: 0;
       pointer-events: none;
-      display: none;
-    }
+      display: none;    }
   </style>
   
-  <link rel="preload" href="css/style.css?v=202412291400" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="css/style.css?v=202412291400"></noscript>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+    <!-- Core styles - load first -->
+    <link rel="stylesheet" href="css/01-base-variables.css">
+    <link rel="stylesheet" href="css/02-layout-components.css">
+    <link rel="stylesheet" href="css/03-navigation-header.css">
+    
+    <!-- Content styles -->
+  <link rel="stylesheet" href="css/04-hero-sections.css">
+    <link rel="stylesheet" href="css/05-technology-cards.css">
+    <link rel="stylesheet" href="css/06-forms-buttons.css">
+    <link rel="stylesheet" href="css/expertise-fix.css">
+  <link rel="stylesheet" href="css/card-heading-divider.css">
+  <link rel="stylesheet" href="css/fix-subheading.css">
+    
+    <!-- Responsive and effects - load last -->
+    <link rel="stylesheet" href="css/07-media-responsive.css">
+    <link rel="stylesheet" href="css/08-animations-effects.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Simplified Loading Script -->
   <script>
     // Simple page loading
@@ -416,30 +426,28 @@
       </div>
     </div>
   </section>
-
   <!-- EXPERTISE -->
   <section id="expertise" class="container">
     <h2 class="section-heading">OUR EXPERTISE</h2>
     <div class="exp-grid">
       <div class="exp-item">
         <img src="assets/predictive.png" alt="Innovation First Icon" />
-        <h3>Innovation First</h3>
+        <h3 style="font-size: 1.8rem; line-height: 1.2; margin-top: 0.5rem; margin-bottom: 1.2rem; color: #52eef5; font-weight: 600; letter-spacing: 0.5px;">Innovation First</h3>
         <p class="exp-description">We prioritize cutting-edge innovation, staying ahead of industry trends to deliver groundbreaking AI solutions.</p>
       </div>      <div class="exp-item">
         <img src="assets/technology.png" alt="Technical Excellence Icon" />
-        <h3>Tech Mastery</h3>
+        <h3 style="font-size: 1.8rem; line-height: 1.2; margin-top: 0.5rem; margin-bottom: 1.2rem; color: #52eef5; font-weight: 600; letter-spacing: 0.5px;">Tech Mastery</h3>
         <p class="exp-description">Our team combines deep technical expertise with practical experience to build robust, scalable AI systems.</p>
       </div>
-      
-      <div class="exp-item">
+        <div class="exp-item">
         <img src="assets/analytics (1).png" alt="Results Driven Icon" />
-        <h3>Results Driven</h3>
+        <h3 style="font-size: 1.8rem; line-height: 1.2; margin-top: 0.5rem; margin-bottom: 1.2rem; color: #52eef5; font-weight: 600; letter-spacing: 0.5px;">Results Driven</h3>
         <p class="exp-description">We focus on delivering measurable business impact through AI solutions that drive real value and ROI.</p>
       </div>
       
       <div class="exp-item">
         <img src="assets/ai-customer-support.svg" alt="Ongoing Support Icon" />
-        <h3>Ongoing Support</h3>
+        <h3 style="font-size: 1.8rem; line-height: 1.2; margin-top: 0.5rem; margin-bottom: 1.2rem; color: #52eef5; font-weight: 600; letter-spacing: 0.5px;">Ongoing Support</h3>
         <p class="exp-description">We provide continuous monitoring, updates, and optimization to ensure your AI systems perform at their best long after deployment.</p>
       </div>
     </div>
@@ -455,8 +463,7 @@
           </a>
           <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
         </div>
-        
-        <div class="footer-col">
+          <div class="footer-col">
           <h3>Quick Links</h3>
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -471,15 +478,6 @@
         </div>
         
         <div class="footer-col">
-          <h3>Contact Us</h3>
-          <ul>
-            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
-            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
-            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
           <h3>Follow Us</h3>
           <p>Stay updated with our latest insights and news.</p>
           <div class="social-links">
@@ -488,6 +486,15 @@
             <a href="https://www.linkedin.com/company/gyannetra-pvt-ltd/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://www.youtube.com/@Gyannetra-o3y" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
           </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
+            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
+            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
+          </ul>
         </div>
       </div>
       

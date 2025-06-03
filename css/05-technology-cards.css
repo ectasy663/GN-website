@@ -1,0 +1,509 @@
+/* ===== TECHNOLOGY CARDS AND ANIMATIONS ===== */
+
+/* ===== TECHNOLOGY SECTION ===== */
+#technologies {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#technologies .section-heading {
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#technologies .section-heading::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    bottom: -10px;
+    left: 0;
+    animation: glowLine 3s ease-in-out infinite;
+}
+
+@keyframes glowLine {
+    0%, 100% {
+        opacity: 0.5;
+        box-shadow: 0 0 5px rgba(var(--primary-color-rgb), 0.3);
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 15px rgba(var(--primary-color-rgb), 0.7);
+    }
+}
+
+/* ===== TECHNOLOGY CARDS CONTAINER ===== */
+.tech-cards-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(20, 20, 40, 0.2));
+    border-radius: 20px;
+    margin: 10px 0;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.tech-cards-track {
+    display: flex;
+    animation: techCardsFlow 75s linear infinite;
+    will-change: transform;
+    gap: 70px;
+}
+
+.tech-cards-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes techCardsFlow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ===== INDIVIDUAL TECH CARDS ===== */
+.tech-card {
+    flex: 0 0 auto;
+    width: 240px;
+    height: 220px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    margin: 5px 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.tech-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 25, 45, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.tech-card-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(var(--primary-color-rgb), 0.2) 50%, 
+        transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    z-index: 10;
+}
+
+.tech-card:hover .tech-card-inner {
+    background: linear-gradient(135deg, 
+        rgba(var(--primary-color-rgb), 0.2) 0%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        rgba(var(--primary-color-rgb), 0.1) 100%);
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.1),
+        0 0 30px rgba(var(--primary-color-rgb), 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.tech-card:hover .tech-card-inner::before {
+    opacity: 1;
+}
+
+/* ===== TECH ICON WRAPPER ===== */
+.tech-icon-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.tech-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(var(--primary-color-rgb), 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover .tech-icon-wrapper {
+    transform: scale(1.1) rotateY(15deg);
+}
+
+/* ===== TECH ICONS ===== */
+.tech-icon {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    flex: 1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+    aspect-ratio: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    background-blend-mode: normal;
+}
+
+.tech-icon:hover {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-icon:hover::before {
+    opacity: 1;
+}
+
+/* ===== TECH CARD TEXT ===== */
+.tech-card h3 {
+    font-size: 1.45rem;
+    margin-bottom: 8px;
+    color: var(--fg);
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tech-card:hover h3 {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px rgba(var(--primary-color-rgb), 0.7);
+    transform: translateY(-2px);
+}
+
+.tech-card p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    line-height: 1.4;
+}
+
+.tech-card:hover p {
+    color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-1px);
+}
+
+/* ===== TECHNOLOGY ICON BACKGROUNDS ===== */
+/* Using direct image URLs from official sources */
+.tech-icon.ollama {
+    background-image: url('https://avatars.githubusercontent.com/u/151674099?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.langchain {
+    background-image: url('https://python.langchain.com/img/brand/wordmark.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.chroma {
+    background-image: url('../assets/tech-icons/Chroma.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.4) contrast(1.5) saturate(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.tech-icon.pinecone {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg');
+    background-color: rgba(46, 160, 67, 0.9);
+    filter: brightness(1.4) contrast(1.5) hue-rotate(60deg);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(46, 160, 67, 0.3);
+    position: relative;
+}
+
+.tech-icon.pinecone::after {
+    content: '🌲';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 29px;
+    z-index: 2;
+}
+
+.tech-icon.vectordb {
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(180deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.tech-icon.openai {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.2) contrast(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.huggingface {
+    background-image: url('https://huggingface.co/front/assets/huggingface_logo-noborder.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.pytorch {
+    background-image: url('https://pytorch.org/assets/images/pytorch-logo.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.tensorflow {
+    background-image: url('https://www.tensorflow.org/images/tf_logo_social.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.weaviate {
+    background-image: url('https://avatars.githubusercontent.com/u/37794290?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.qdrant {
+    background-image: url('https://qdrant.tech/images/logo_with_text.png');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.haystack {
+    background-image: url('https://raw.githubusercontent.com/deepset-ai/haystack/main/docs/img/haystack_logo_colored.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.mistral {
+    background-image: url('https://docs.mistral.ai/img/logo.svg');
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-icon.anthropic {
+    background-image: url('../assets/tech-icons/anthropic claude.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.2) contrast(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.tech-icon.groq {
+    background-image: url('https://groq.com/wp-content/uploads/2024/03/PBG-mark1-color.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.gemini {
+    background-image: url('https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.llamaindex {
+    background-image: url('https://avatars.githubusercontent.com/u/130722866?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+.tech-icon.vllm {
+    background-image: url('https://avatars.githubusercontent.com/u/132581166?s=200&v=4');
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+.tech-icon.rag {
+    background-image: url('https://img.icons8.com/color/96/artificial-intelligence.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.transformers {
+    background-image: url('https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png');
+    background-color: rgba(255, 255, 255, 0.95);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.tech-icon.spacy {
+    background-image: url('https://raw.githubusercontent.com/explosion/spaCy/master/website/src/images/logo.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(10deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.llama {
+    background-image: url('../assets/tech-icons/meta-color.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) hue-rotate(-10deg);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.milvus {
+    background-image: url('../assets/tech-icons/Milvus.svg');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4) saturate(1.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.docker {
+    background-image: url('../assets/tech-icons/docker.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.faiss {
+    background-image: url('https://raw.githubusercontent.com/facebookresearch/faiss/main/docs/img/faiss.png');
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* ===== SPECIAL ICON ADJUSTMENTS ===== */
+.tech-icon.openai,
+.tech-icon.anthropic,
+.tech-icon.mistral {
+    filter: brightness(1.1) contrast(1.2);
+}
+
+.tech-icon.llamaindex,
+.tech-icon.vllm,
+.tech-icon.docker {
+    background-color: rgba(255, 255, 255, 0.98);
+    filter: brightness(1.3) contrast(1.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.faiss {
+    filter: brightness(1.1) saturate(1.1);
+}
+
+.tech-icon.weaviate {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tech-icon.langchain,
+.tech-icon.qdrant,
+.tech-icon.haystack {
+    background-size: 80% auto;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* ===== TECH SHADOWS ===== */
+.tech-shadow {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.tech-shadow-left {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.tech-shadow-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) scaleX(1);
+    }
+    49.9% {
+        transform: translateX(0%) scaleX(1);
+    }
+    50% {
+        transform: translateX(0%) scaleX(1);
+    }
+    100% {
+        transform: translateX(100%) scaleX(1);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

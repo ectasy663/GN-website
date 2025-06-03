@@ -1,0 +1,71 @@
+/* Universal card heading divider for all major card types */
+.exp-item h3,
+.specialization-card h3,
+.benefit-card h3,
+.course-card h3,
+.feature-card h3,
+.offering-card h3,
+.blog-card h3,
+.solution-item h3,
+.article-card h3,
+.webinar-video-card h3,
+.tech-card h3,
+.video-info h3,
+.case-study-card h3,
+.webinar-main-card h3,
+.service-card h3,
+.industry-card h3 {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+}
+
+.exp-item h3::after,
+.specialization-card h3::after,
+.benefit-card h3::after,
+.course-card h3::after,
+.feature-card h3::after,
+.offering-card h3::after,
+.blog-card h3::after,
+.solution-item h3::after,
+.article-card h3::after,
+.webinar-video-card h3::after,
+.tech-card h3::after,
+.video-info h3::after,
+.case-study-card h3::after,
+.webinar-main-card h3::after,
+.service-card h3::after,
+.industry-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(82, 238, 245, 0.2), rgba(82, 238, 245, 1), rgba(82, 238, 245, 0.2));
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(82, 238, 245, 0.5);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .exp-item h3::after,
+  .specialization-card h3::after,
+  .benefit-card h3::after,
+  .course-card h3::after,
+  .feature-card h3::after,
+  .offering-card h3::after,
+  .blog-card h3::after,
+  .solution-item h3::after,
+  .article-card h3::after,
+  .webinar-video-card h3::after,
+  .tech-card h3::after,
+  .video-info h3::after,
+  .case-study-card h3::after,
+  .webinar-main-card h3::after,
+  .service-card h3::after,
+  .industry-card h3::after {
+    width: 40px;
+  }
+}

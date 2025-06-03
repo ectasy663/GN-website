@@ -4,11 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover" />
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Individual Training - Gyannetra</title>
-  <link rel="stylesheet" href="../css/style.css?v=202412291400"
-  <link rel="stylesheet" href="css/gn-mobile-responsive.css?v=202412291400" />
+  <!-- Core Styles - Load First -->
+  <link rel="stylesheet" href="../css/01-base-variables.css">
+  <link rel="stylesheet" href="../css/02-layout-components.css">
+  <link rel="stylesheet" href="../css/03-navigation-header.css">
+  <!-- Content Styles -->
+  <link rel="stylesheet" href="../css/04-hero-sections.css">
+  <link rel="stylesheet" href="../css/05-technology-cards.css">
+  <link rel="stylesheet" href="../css/06-forms-buttons.css">  <link rel="stylesheet" href="../css/card-heading-divider.css">
+  <link rel="stylesheet" href="../css/training-courses.css">
+  <link rel="stylesheet" href="../css/testimonials.css">
+
+  <!-- Responsive & Effects - Load Last -->
+  <link rel="stylesheet" href="../css/07-media-responsive.css">
+  <link rel="stylesheet" href="../css/08-animations-effects.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -68,93 +79,47 @@
     <p>Gyannetra's training programs are designed for career advancement, skill development, and personal enrichment. Achieve your learning goals with our comprehensive AI education programs.</p>
     <a href="../contact.html" class="btn btn-primary">Enroll in a Program Today</a>
   </section>
-
-  <!-- TRAINING PROGRAMS -->
-  <section class="training-programs-section container">
-    <h2 class="section-heading gn-mobile-section-heading">TRAINING PROGRAMS</h2>
-    <div class="benefits-cards-grid">
-      <div class="benefit-card">
-        <div class="benefit-card-icon">
-            <img src="../assets/mlng.png" alt="Machine Learning Icon" class="gn-responsive-image">
+  <!-- FEATURED TRAINING COURSES -->
+  <section id="featured-courses" class="training-programs-section container">
+    <h2 class="section-heading gn-mobile-section-heading">FEATURED INDIVIDUAL TRAINING COURSES</h2>
+    <div class="courses-grid">
+      <div class="course-card">
+        <div class="course-video-container">
+          <img 
+            src="../assets/course-thumbnails/Applied Generative AI course.png" 
+            alt="AI Fundamentals for Business Leaders Course Thumbnail"
+            class="course-thumbnail"
+            loading="lazy">
         </div>
-        <h3>Introduction to Machine Learning</h3>
-        <div class="program-details">
-          <p><strong>Skill Level:</strong> Beginner</p>
-          <p><strong>Format:</strong> Online, Self-paced</p>
-          <p><strong>Duration:</strong> 8 weeks</p>
+        <div class="course-info">
+          <h3>AI Fundamentals for Business Leaders</h3>
+          <p>Comprehensive introduction to artificial intelligence concepts, machine learning basics, and strategic implementation approaches for business leaders and decision-makers.</p>
+          <div class="course-highlights">
+            <span class="highlight-item"><i class="fas fa-users"></i> Leadership & Management</span>
+            <span class="highlight-item"><i class="fas fa-clock"></i> Self-paced</span>
+            <span class="highlight-item"><i class="fas fa-certificate"></i> Certificate included</span>
+          </div>
+          <a href="https://learn.gyannetra.com/wlp/course-mcgrpx-1737024309470" class="btn-primary gn-mobile-button" target="_blank" rel="noopener noreferrer">Start Learning</a>
         </div>
-        <div class="program-outcomes">
-          <p><strong>Key Learning Outcomes:</strong></p>          <ul>
-            <li>Understand basic ML algorithms</li>
-            <li>Master data preprocessing techniques</li>
-            <li>Build and evaluate simple models</li>
-            <li>Apply ML to real-world problems</li>
-          </ul>
-        </div>
-        <a href="../contact.html" class="btn-primary gn-mobile-button">Enroll Now</a>
       </div>
-      
-      <div class="benefit-card">
-        <div class="benefit-card-icon">
-            <img src="../assets/gen ai.png" alt="Deep Learning Icon" class="gn-responsive-image">
+      <div class="course-card">
+        <div class="course-video-container">
+          <img 
+            src="../assets/course-thumbnails/Solar data analytics course.png" 
+            alt="Practical AI Implementation Course Thumbnail"
+            class="course-thumbnail"
+            loading="lazy">
         </div>
-        <h3>Deep Learning Fundamentals</h3>
-        <div class="program-details">
-          <p><strong>Skill Level:</strong> Intermediate</p>
-          <p><strong>Format:</strong> Instructor-led</p>
-          <p><strong>Duration:</strong> 10 weeks</p>
+        <div class="course-info">
+          <h3>Practical AI Implementation</h3>
+          <p>Hands-on training focused on implementing AI solutions in corporate environments, covering tools, frameworks, and best practices for successful AI adoption.</p>
+          <div class="course-highlights">
+            <span class="highlight-item"><i class="fas fa-code"></i> Technical Teams</span>
+            <span class="highlight-item"><i class="fas fa-clock"></i> Self-paced</span>
+            <span class="highlight-item"><i class="fas fa-project-diagram"></i> Project-based</span>
+          </div>
+          <a href="https://learn.gyannetra.com/wlp/course-mcgrpx-1737024821581" class="btn-primary gn-mobile-button" target="_blank" rel="noopener noreferrer">Start Learning</a>
         </div>
-        <div class="program-outcomes">
-          <p><strong>Key Learning Outcomes:</strong></p>          <ul>
-            <li>Build neural networks from scratch</li>
-            <li>Implement CNNs for image processing</li>
-            <li>Create RNNs for sequence data</li>
-            <li>Deploy models to production</li>
-          </ul>
-        </div>
-        <a href="../contact.html" class="btn-primary gn-mobile-button">Enroll Now</a>
-      </div>
-      
-      <div class="benefit-card">
-        <div class="benefit-card-icon">
-            <img src="../assets/education-cap-icon.svg" alt="AI Ethics Icon" class="gn-responsive-image">
-        </div>
-        <h3>AI Ethics for Individuals</h3>
-        <div class="program-details">
-          <p><strong>Skill Level:</strong> Advanced</p>
-          <p><strong>Format:</strong> Hybrid</p>
-          <p><strong>Duration:</strong> 4 weeks</p>
-        </div>
-        <div class="program-outcomes">
-          <p><strong>Key Learning Outcomes:</strong></p>          <ul>
-            <li>Understand ethical implications of AI</li>
-            <li>Identify and mitigate AI biases</li>
-            <li>Implement responsible AI practices</li>
-            <li>Develop ethical AI governance frameworks</li>
-          </ul>
-        </div>
-        <a href="../contact.html" class="btn-primary gn-mobile-button">Enroll Now</a>
-      </div>
-      
-      <div class="benefit-card">
-        <div class="benefit-card-icon">
-            <img src="../assets/ai agent.png" alt="AI Applications Icon" class="gn-responsive-image">
-        </div>
-        <h3>Applied AI Projects</h3>
-        <div class="program-details">
-          <p><strong>Skill Level:</strong> Intermediate to Advanced</p>
-          <p><strong>Format:</strong> Project-based</p>
-          <p><strong>Duration:</strong> 6 weeks</p>
-        </div>
-        <div class="program-outcomes">
-          <p><strong>Key Learning Outcomes:</strong></p>          <ul>
-            <li>Design end-to-end AI solutions</li>
-            <li>Work on real industry problems</li>
-            <li>Build a portfolio of AI projects</li>
-            <li>Collaborate with AI professionals</li>
-          </ul>
-        </div>
-        <a href="../contact.html" class="btn-primary gn-mobile-button">Enroll Now</a>
       </div>
     </div>
   </section>
@@ -190,9 +155,307 @@
         <h3>Hands-on Projects</h3>
         <p>Apply your learning to real-world AI projects with personalized guidance, building a portfolio that demonstrates your practical skills to potential employers.</p>
       </div>
-    </div>
-    <a href="../contact.html" class="btn-primary centered-btn gn-mobile-button">Enroll in a Program Today</a>
+    </div>    <a href="../contact.html" class="btn-primary centered-btn gn-mobile-button">Enroll in a Program Today</a>
   </section>
+
+  <!-- CUSTOMER TESTIMONIALS SECTION -->
+  <section class="testimonials-section">
+    <div class="atmospheric-particles"></div>
+    <div class="testimonials-container">
+      <div class="testimonials-heading">
+        <h2>What Our Students Say</h2>
+        <p>Discover how our AI training programs have transformed careers and empowered professionals across industries</p>
+      </div>
+      
+      <div class="testimonials-track-container">
+        <div class="testimonials-track">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <i class="fas fa-quote-right quote-icon"></i>
+            <div class="customer-info">
+              <div class="customer-avatar">RS</div>
+              <div class="customer-details">
+                <h4>Rajesh Sharma</h4>
+                <p class="customer-designation">Senior Data Analyst</p>
+                <p class="customer-company">TechCorp Solutions</p>
+              </div>
+            </div>
+            <div class="review-content">
+              <div class="rating">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p class="review-text">Gyannetra's AI Fundamentals course completely transformed my understanding of machine learning. The hands-on projects and expert mentorship helped me transition from traditional data analysis to advanced AI implementation. I got promoted within 3 months!</p>
+              <span class="course-badge">AI Fundamentals for Business Leaders</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <i class="fas fa-quote-right quote-icon"></i>
+            <div class="customer-info">
+              <div class="customer-avatar">AP</div>
+              <div class="customer-details">
+                <h4>Anita Patel</h4>
+                <p class="customer-designation">ML Engineer</p>
+                <p class="customer-company">InnovateAI Labs</p>
+              </div>
+            </div>
+            <div class="review-content">
+              <div class="rating">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p class="review-text">The Practical AI Implementation course was exactly what I needed. The curriculum is cutting-edge, and the instructors bring real-world experience. I'm now leading AI projects at my company and feel confident in my abilities.</p>
+              <span class="course-badge">Practical AI Implementation</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <i class="fas fa-quote-right quote-icon"></i>
+            <div class="customer-info">
+              <div class="customer-avatar">MK</div>
+              <div class="customer-details">
+                <h4>Michael Kumar</h4>
+                <p class="customer-designation">Product Manager</p>
+                <p class="customer-company">FinTech Innovations</p>
+              </div>
+            </div>
+            <div class="review-content">
+              <div class="rating">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p class="review-text">As a non-technical professional, I was hesitant about AI training. Gyannetra's approach made complex concepts accessible. I now effectively collaborate with technical teams and make informed decisions about AI implementations.</p>
+              <span class="course-badge">AI Strategy & Leadership</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 4 -->
+          <div class="testimonial-card">
+            <i class="fas fa-quote-right quote-icon"></i>
+            <div class="customer-info">
+              <div class="customer-avatar">SK</div>
+              <div class="customer-details">
+                <h4>Sakshi Khanna</h4>
+                <p class="customer-designation">Data Scientist</p>
+                <p class="customer-company">Healthcare Analytics Inc.</p>
+              </div>
+            </div>
+            <div class="review-content">
+              <div class="rating">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p class="review-text">The personalized learning approach and one-on-one mentorship set Gyannetra apart. I gained practical skills in deep learning and neural networks that directly applied to my healthcare AI projects. Exceptional quality!</p>
+              <span class="course-badge">Advanced Deep Learning</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 5 -->
+          <div class="testimonial-card">
+            <i class="fas fa-quote-right quote-icon"></i>
+            <div class="customer-info">
+              <div class="customer-avatar">VG</div>
+              <div class="customer-details">
+                <h4>Vikram Gupta</h4>
+                <p class="customer-designation">AI Consultant</p>
+                <p class="customer-company">Strategic AI Solutions</p>
+              </div>
+            </div>
+            <div class="review-content">
+              <div class="rating">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p class="review-text">Gyannetra's comprehensive curriculum and industry connections helped me transition from software development to AI consulting. The practical projects built my portfolio, and I'm now running my own AI consultancy firm.</p>
+              <span class="course-badge">AI Business Applications</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 6 -->
+          <div class="testimonial-card">
+            <i class="fas fa-quote-right quote-icon"></i>
+            <div class="customer-info">
+              <div class="customer-avatar">PM</div>
+              <div class="customer-details">
+                <h4>Priya Mehta</h4>
+                <p class="customer-designation">Research Scientist</p>
+                <p class="customer-company">National AI Research Lab</p>
+              </div>
+            </div>
+            <div class="review-content">
+              <div class="rating">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p class="review-text">The depth of knowledge and research-oriented approach impressed me. The instructors are at the forefront of AI research, and the course content reflects the latest developments in the field. Highly recommend for serious AI practitioners.</p>
+              <span class="course-badge">AI Research Fundamentals</span>
+            </div>
+          </div>
+
+          <!-- Duplicate set for seamless loop -->
+          <div class="testimonial-card">
+            <i class="fas fa-quote-right quote-icon"></i>
+            <div class="customer-info">
+              <div class="customer-avatar">RS</div>
+              <div class="customer-details">
+                <h4>Rajesh Sharma</h4>
+                <p class="customer-designation">Senior Data Analyst</p>
+                <p class="customer-company">TechCorp Solutions</p>
+              </div>
+            </div>
+            <div class="review-content">
+              <div class="rating">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p class="review-text">Gyannetra's AI Fundamentals course completely transformed my understanding of machine learning. The hands-on projects and expert mentorship helped me transition from traditional data analysis to advanced AI implementation. I got promoted within 3 months!</p>
+              <span class="course-badge">AI Fundamentals for Business Leaders</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <i class="fas fa-quote-right quote-icon"></i>
+            <div class="customer-info">
+              <div class="customer-avatar">AP</div>
+              <div class="customer-details">
+                <h4>Anita Patel</h4>
+                <p class="customer-designation">ML Engineer</p>
+                <p class="customer-company">InnovateAI Labs</p>
+              </div>
+            </div>
+            <div class="review-content">
+              <div class="rating">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p class="review-text">The Practical AI Implementation course was exactly what I needed. The curriculum is cutting-edge, and the instructors bring real-world experience. I'm now leading AI projects at my company and feel confident in my abilities.</p>
+              <span class="course-badge">Practical AI Implementation</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <i class="fas fa-quote-right quote-icon"></i>
+            <div class="customer-info">
+              <div class="customer-avatar">MK</div>
+              <div class="customer-details">
+                <h4>Michael Kumar</h4>
+                <p class="customer-designation">Product Manager</p>
+                <p class="customer-company">FinTech Innovations</p>
+              </div>
+            </div>
+            <div class="review-content">
+              <div class="rating">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p class="review-text">As a non-technical professional, I was hesitant about AI training. Gyannetra's approach made complex concepts accessible. I now effectively collaborate with technical teams and make informed decisions about AI implementations.</p>
+              <span class="course-badge">AI Strategy & Leadership</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <i class="fas fa-quote-right quote-icon"></i>
+            <div class="customer-info">
+              <div class="customer-avatar">SK</div>
+              <div class="customer-details">
+                <h4>Sakshi Khanna</h4>
+                <p class="customer-designation">Data Scientist</p>
+                <p class="customer-company">Healthcare Analytics Inc.</p>
+              </div>
+            </div>
+            <div class="review-content">
+              <div class="rating">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p class="review-text">The personalized learning approach and one-on-one mentorship set Gyannetra apart. I gained practical skills in deep learning and neural networks that directly applied to my healthcare AI projects. Exceptional quality!</p>
+              <span class="course-badge">Advanced Deep Learning</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <i class="fas fa-quote-right quote-icon"></i>
+            <div class="customer-info">
+              <div class="customer-avatar">VG</div>
+              <div class="customer-details">
+                <h4>Vikram Gupta</h4>
+                <p class="customer-designation">AI Consultant</p>
+                <p class="customer-company">Strategic AI Solutions</p>
+              </div>
+            </div>
+            <div class="review-content">
+              <div class="rating">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p class="review-text">Gyannetra's comprehensive curriculum and industry connections helped me transition from software development to AI consulting. The practical projects built my portfolio, and I'm now running my own AI consultancy firm.</p>
+              <span class="course-badge">AI Business Applications</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <i class="fas fa-quote-right quote-icon"></i>
+            <div class="customer-info">
+              <div class="customer-avatar">PM</div>
+              <div class="customer-details">
+                <h4>Priya Mehta</h4>
+                <p class="customer-designation">Research Scientist</p>
+                <p class="customer-company">National AI Research Lab</p>
+              </div>
+            </div>
+            <div class="review-content">
+              <div class="rating">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p class="review-text">The depth of knowledge and research-oriented approach impressed me. The instructors are at the forefront of AI research, and the course content reflects the latest developments in the field. Highly recommend for serious AI practitioners.</p>
+              <span class="course-badge">AI Research Fundamentals</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- GYANNETRA MOBILE APP SECTION - RESTRUCTURED DUAL-COLUMN LAYOUT -->
   <section class="gyannetra-app-section-redesigned">
     <div class="gn-app-section-wrapper">
@@ -260,8 +523,7 @@
                   <p>Receive personalized notifications for new content, assignment deadlines, and important course updates.</p>
                 </div>
               </div>
-              
-              <div class="gn-feature-item">
+                <div class="gn-feature-item">
                 <div class="gn-feature-icon">
                   <i class="fas fa-download"></i>
                 </div>
@@ -270,6 +532,31 @@
                   <p>Download course materials for offline access, ensuring you can learn even without an internet connection.</p>
                 </div>
               </div>            </div>
+            
+            <!-- App Download Links (Moved to left column) -->
+            <div class="gn-app-download-section">
+              <h3 class="gn-download-heading">Download the GyanNetra App</h3>
+              <div class="gn-download-links-container">
+                <a href="https://play.google.com/store/apps/details?id=co.sansa.pakif" target="_blank" class="gn-download-link gn-android-link">
+                  <div class="gn-download-icon">
+                    <i class="fab fa-google-play"></i>
+                  </div>
+                  <div class="gn-download-text">
+                    <span class="gn-download-title">Get it on</span>
+                    <span class="gn-download-store">Google Play</span>
+                  </div>              
+                </a>
+                <a href="https://apps.apple.com/in/app/myinstitute/id1472483563" target="_blank" class="gn-download-link gn-ios-link">
+                  <div class="gn-download-icon">
+                    <i class="fab fa-app-store-ios"></i>
+                  </div>
+                  <div class="gn-download-text">
+                    <span class="gn-download-title">Download on the</span>
+                    <span class="gn-download-store">App Store</span>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
           
         </div>
@@ -302,33 +589,10 @@
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                       allowfullscreen>
               </iframe>
-            </div>            <div class="gn-video-info">
+            </div>            
+            <div class="gn-video-info">
               <h4><i class="fab fa-apple"></i> GyanNetra App for iOS Apple Users</h4>
               <p>Learn how to maximize your learning experience with the GyanNetra app on your iOS device. This tutorial covers all essential features and tips for iPhone and iPad users.</p>
-            </div>
-          </div>
-          
-          <!-- App Download Links -->
-          <div class="gn-app-download-section">
-            <h3 class="gn-download-heading">Download the GyanNetra App</h3>
-            <div class="gn-download-links-container">
-              <a href="https://play.google.com/store/apps/details?id=co.sansa.pakif" target="_blank" class="gn-download-link gn-android-link">
-                <div class="gn-download-icon">
-                  <i class="fab fa-google-play"></i>
-                </div>
-                <div class="gn-download-text">
-                  <span class="gn-download-title">Get it on</span>
-                  <span class="gn-download-store">Google Play</span>
-                </div>              </a>
-              <a href="https://apps.apple.com/in/app/myinstitute/id1472483563" target="_blank" class="gn-download-link gn-ios-link">
-                <div class="gn-download-icon">
-                  <i class="fab fa-app-store-ios"></i>
-                </div>
-                <div class="gn-download-text">
-                  <span class="gn-download-title">Download on the</span>
-                  <span class="gn-download-store">App Store</span>
-                </div>
-              </a>
             </div>
           </div>
           
@@ -360,19 +624,23 @@
             <li><a href="../contact.html">Contact Us</a></li>
           </ul>
         </div>        <div class="footer-col">
-          <h3>Contact Us</h3>
-          <ul>
-            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
-            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
-            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
-          </ul>
-        </div><div class="footer-col">
           <h3>Follow Us</h3>
           <p>Stay updated with our latest insights and news.</p>          <div class="social-links">
             <a href="mailto:info@gyannetra.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             <a href="https://wa.me/918949135299" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
             <a href="https://www.linkedin.com/company/gyannetra-pvt-ltd/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://www.youtube.com/@Gyannetra-o3y" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
+            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
+            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
+          </ul>
+        </div>
           </div>
            
         </div>

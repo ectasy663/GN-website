@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webinars - Gyannetra</title>    
-    <link rel="stylesheet" href="../css/style.css?v=202412291400">
-    <link rel="stylesheet" href="../css/gn-mobile-responsive.css?v=202412291400">
+    <!-- Core Styles - Load First -->
+    <link rel="stylesheet" href="../css/01-base-variables.css">
+    <link rel="stylesheet" href="../css/02-layout-components.css">
+    <link rel="stylesheet" href="../css/03-navigation-header.css">    <!-- Content Styles -->
+    <link rel="stylesheet" href="../css/04-hero-sections.css">
+    <link rel="stylesheet" href="../css/05-technology-cards.css">
+    <link rel="stylesheet" href="../css/06-forms-buttons.css">
+    <link rel="stylesheet" href="../css/webinar-video.css">
+    <link rel="stylesheet" href="../css/card-heading-divider.css">
+
+    <!-- Responsive & Effects - Load Last -->
+    <link rel="stylesheet" href="../css/07-media-responsive.css">
+    <link rel="stylesheet" href="../css/08-animations-effects.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -216,8 +226,7 @@
                         <h2><i class="fas fa-play-circle"></i> Missed Our Live Sessions? Watch Now!</h2>
                         <p>Don't miss out on the AI insights that could transform your business — catch up with our knowledge-packed webinar recordings</p>
                     </div>                    <div class="webinar-videos-grid">
-                        <!-- Video 1 -->
-                        <div class="webinar-video-card">
+                        <!-- Video 1 -->                        <div class="webinar-video-card">
                             <div class="video-container">
                                 <iframe src="https://www.youtube.com/embed/BSk_YQ4NE_g" 
                                         title="AI Webinar 1" 
@@ -227,14 +236,11 @@
                                 </iframe>
                             </div>
                             <div class="video-info">
-                                <h3>AI Solutions in Practice</h3>
-                                <p>Comprehensive overview of AI implementation strategies and real-world applications</p>
-                                <span class="video-duration">Live Session</span>
+                                <h3>Webinar 1</h3>
                             </div>
                         </div>
 
-                        <!-- Video 2 -->
-                        <div class="webinar-video-card">
+                        <!-- Video 2 -->                        <div class="webinar-video-card">
                             <div class="video-container">
                                 <iframe src="https://www.youtube.com/embed/F9Qy_217nqY" 
                                         title="AI Webinar 2" 
@@ -244,14 +250,11 @@
                                 </iframe>
                             </div>
                             <div class="video-info">
-                                <h3>Advanced AI Technologies</h3>
-                                <p>Deep dive into cutting-edge AI technologies and their business applications</p>
-                                <span class="video-duration">Live Session</span>
+                                <h3>Webinar 2</h3>
                             </div>
                         </div>
 
-                        <!-- Video 3 -->
-                        <div class="webinar-video-card">
+                        <!-- Video 3 -->                        <div class="webinar-video-card">
                             <div class="video-container">
                                 <iframe src="https://www.youtube.com/embed/ctP9QgLDeHE" 
                                         title="AI Webinar 3" 
@@ -261,14 +264,11 @@
                                 </iframe>
                             </div>
                             <div class="video-info">
-                                <h3>AI Strategy & Implementation</h3>
-                                <p>Strategic approaches to AI adoption and successful implementation methodologies</p>
-                                <span class="video-duration">Live Session</span>
+                                <h3>Webinar 3</h3>
                             </div>
                         </div>
 
-                        <!-- Video 4 -->
-                        <div class="webinar-video-card">
+                        <!-- Video 4 -->                        <div class="webinar-video-card">
                             <div class="video-container">
                                 <iframe src="https://www.youtube.com/embed/1dEoPuE8GXI" 
                                         title="AI Webinar 4" 
@@ -278,9 +278,7 @@
                                 </iframe>
                             </div>
                             <div class="video-info">
-                                <h3>Future of AI & Innovation</h3>
-                                <p>Exploring emerging AI trends and their impact on business transformation</p>
-                                <span class="video-duration">Live Session</span>
+                                <h3>Webinar 4</h3>
                             </div>
                         </div>
 
@@ -317,13 +315,6 @@
             <li><a href="../contact.html">Contact Us</a></li>
           </ul>
         </div>        <div class="footer-col">
-          <h3>Contact Us</h3>
-          <ul>
-            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
-            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
-            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
-          </ul>
-        </div><div class="footer-col">
           <h3>Follow Us</h3>
           <p>Stay updated with our latest insights and news.</p>          <div class="social-links">
             <a href="mailto:info@gyannetra.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
@@ -331,6 +322,15 @@
             <a href="https://www.linkedin.com/company/gyannetra-pvt-ltd/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://www.youtube.com/@Gyannetra-o3y" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
           </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
+            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
+            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
+          </ul>
         </div>
       </div>      <div class="footer-bottom">
         <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="../privacy-policy.html">Privacy Policy</a> | <a href="../terms-of-service.html">Terms and Conditions</a></p>

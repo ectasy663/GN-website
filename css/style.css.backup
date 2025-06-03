@@ -21,15 +21,14 @@ html {
 .hero-subheading {
   font-size: 1.4rem;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 0.6rem;
-  font-weight: 500;
+  margin-bottom: 0.6rem;  font-weight: 100;
   text-align: center;
 }
 
 .typewriter-container {
   font-size: 3rem; /* Increased size for typewriter text */
   color: #52eef5;
-  font-weight: 400; /* Lowered font weight */
+  font-weight: 100; /* Lowered font weight */
   text-align: center;
   min-height: 3.8rem; /* Increased height for larger text */
   min-width: 90%; /* Added min-width to make container wider */
@@ -66,7 +65,7 @@ html {
   color: #ffffff;
   padding: 0.8rem 2rem;
   font-size: 1.1rem;
-  font-weight: 600;
+  
   border-radius: 10px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -95,7 +94,7 @@ html {
   color: #52eef5;
   padding: 0.8rem 2rem;
   font-size: 1.1rem;
-  font-weight: 600;
+  
   border-radius: 10px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -461,7 +460,7 @@ section h2 {
     font-size: 1.7rem;
     color: #52eef5;
     margin-bottom: 12px;
-    font-weight: 600;
+    
 }
 
 .solution-item h3 {
@@ -484,7 +483,7 @@ section h2 {
 .read-more-link {
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: 600;
+    
     transition: color 0.3s ease, background-color 0.3s ease;
     align-self: flex-start;
     padding: 8px 15px;
@@ -573,7 +572,7 @@ section h2 {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
+    
     letter-spacing: 1px;
     text-transform: uppercase;
     animation-delay: 0.7s;
@@ -789,11 +788,97 @@ section h2 {
     object-fit: contain;
 }
 
+/* Specific styling for buttons within benefit cards */
+.benefit-card .btn-primary {
+    margin-top: auto;
+    width: 100%;
+    max-width: 200px;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    align-self: center;
+    text-align: center;
+    white-space: nowrap;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure consistent spacing and alignment for benefit card content */
+.benefit-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    color: var(--text-color-primary);
+    line-height: 1.3;
+}
+
+.benefit-card .program-details,
+.benefit-card .program-outcomes,
+.benefit-card .program-highlights {
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.benefit-card .program-details p,
+.benefit-card .program-outcomes p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.benefit-card .program-outcomes ul {
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.benefit-card .program-outcomes li {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.benefit-card .program-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.benefit-card .highlight-item {
+    background: rgba(var(--primary-color-rgb, 109, 40, 217), 0.1);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Mobile responsiveness for benefit card buttons */
+@media (max-width: 768px) {
+    .benefit-card .btn-primary {
+        padding: 14px 20px;
+        font-size: 0.85rem;
+        max-width: 180px;
+    }
+    
+    .benefit-card {
+        padding: 20px;
+    }
+    
+    .benefit-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
 .benefit-card h3 {
     font-size: 1.4rem;
     color: #52eef5;
     margin-bottom: 12px;
-    font-weight: 600;
+    
 }
 
 .benefit-card p {
@@ -904,7 +989,7 @@ section h2 {
     font-size: 1.8rem;
     color: #52eef5;
     margin-bottom: 15px;
-    font-weight: 600;
+    
     text-align: center;
 }
 
@@ -925,18 +1010,18 @@ section h2 {
 }
 
 .highlight-badge {
-    background: rgba(var(--primary-color-rgb, 109, 40, 217), 0.2);
-    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.9rem;
-    font-weight: 500;
-    border: 1px solid rgba(var(--primary-color-rgb, 109, 40, 217), 0.3);
+    
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .specialization-card:hover .highlight-badge {
-    background: rgba(var(--primary-color-rgb, 109, 40, 217), 0.3);
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
 
@@ -1075,7 +1160,7 @@ section h2 {
 
 .logo {
     font-size: 1.9rem;
-    font-weight: bold;
+    
     text-decoration: none;
     letter-spacing: 1.5px;
     background: linear-gradient(90deg, #5a6bff 0%, #a2b0ff 50%, #ffffff 100%);
@@ -1129,7 +1214,7 @@ section h2 {
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     letter-spacing: 0.5px;
-    font-weight: 500;
+    
 }
 
 .nav-link:hover {
@@ -1337,7 +1422,7 @@ section h2 {
     margin-top: 1rem;
     color: #a2abff;
     text-decoration: none;
-    font-weight: bold;
+    
     transition: color 0.3s ease;
 }
 
@@ -1546,7 +1631,7 @@ section h2 {
         0 4px 16px rgba(147, 51, 234, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;    padding: 18px 36px !important;
     margin-top: 24px !important;
-    font-weight: 400 !important;
+    important;
     letter-spacing: 1.5px !important;
     text-transform: uppercase !important;
     font-size: 1.3rem !important;
@@ -1868,7 +1953,7 @@ html:not(.fouc-prevention) {
 }
 
 .item-title {
-    font-weight: bold;
+    
     font-size: 1.15rem;
 }
 
@@ -1879,7 +1964,7 @@ html:not(.fouc-prevention) {
 
 .section-heading {
     font-size: 3rem;
-    font-weight: 700;
+    
     text-align: center;
     margin: var(--gap) 0;
     letter-spacing: 0.7px;
@@ -1896,7 +1981,7 @@ h1,h2,h3,h4,h5,h6 {
     color: #52eef5;
     /* Removed text shadow effect */
     letter-spacing: 0.7px;
-    font-weight: 700;
+    
 }
 
 .dropdown-menu h1,
@@ -2065,7 +2150,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .tech-card h3 {
     font-size: 1.45rem;
-    font-weight: 600;
+    
     margin-bottom: 8px;
     color: var(--fg);
     transition: all 0.3s ease;
@@ -2621,7 +2706,7 @@ h1,h2,h3,h4,h5,h6 {
     }
       .item-title {
         font-size: 1.1rem !important; /* Better title size */
-        font-weight: 600 !important; /* Bolder title */
+        important; /* Bolder title */
         color: #ffffff !important; /* White title */
         display: block !important;
         margin-bottom: 0.25rem !important;
@@ -2801,7 +2886,7 @@ h1,h2,h3,h4,h5,h6 {
     margin-bottom: 1.2rem;
     font-size: 1.5rem;
     text-align: center;
-    font-weight: 700;
+    
     color: #ffffff;
     text-shadow: 0 3px 8px rgba(0, 0, 0, 0.9);
     letter-spacing: 0.8px;
@@ -2817,7 +2902,7 @@ h1,h2,h3,h4,h5,h6 {
     text-align: center;
     color: rgba(255, 255, 255, 0.95);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-    font-weight: 400;
+    
     position: relative;
     z-index: 2;
     max-width: 100%;
@@ -3039,7 +3124,7 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 1.8rem;
     color: #52eef5; /* Cyan heading text */
     margin-bottom: 20px;
-    font-weight: 600;
+    
      /* Removed gradient for simpler, consistent look */
     background: none;
     -webkit-background-clip: initial;
@@ -3161,7 +3246,7 @@ h1,h2,h3,h4,h5,h6 {
     text-decoration: none;
     padding: 14px 28px;
     border-radius: 8px;
-    font-weight: 500;
+    
     letter-spacing: 1px;
     text-transform: uppercase;
     position: relative;
@@ -3181,7 +3266,7 @@ h1,h2,h3,h4,h5,h6 {
     text-decoration: none;
     padding: 14px 28px;
     border-radius: 8px;
-    font-weight: 500;
+    
     letter-spacing: 1px;
     text-transform: uppercase;
     position: relative;
@@ -3352,7 +3437,7 @@ h1,h2,h3,h4,h5,h6 {
     display: block;
     margin-bottom: 0.6rem;
     font-size: 1.1rem;
-    font-weight: 600;
+    
     color: #52eef5;
     font-family: 'Inter', sans-serif;
     letter-spacing: 0.5px;
@@ -3448,7 +3533,7 @@ h1,h2,h3,h4,h5,h6 {
     border-radius: 12px;
     color: #ffffff;
     font-size: 1.2rem;
-    font-weight: 700;
+    
     font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -3495,7 +3580,7 @@ h1,h2,h3,h4,h5,h6 {
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
-    font-weight: 600;
+    
     text-align: center;
     display: none;
 }
@@ -3659,7 +3744,7 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 1.7rem;
     color: #52eef5;
     margin-bottom: 0.75rem;
-    font-weight: 600;
+    
 }
 
 .discuss-project-cta h2 {
@@ -3680,7 +3765,7 @@ h1,h2,h3,h4,h5,h6 {
     border: 1px solid #3A3A5A;
     border-radius: 8px;    text-decoration: none;
     font-size: 1.2rem;
-    font-weight: 500;
+    
     transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -3692,7 +3777,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .nav-links .nav-link.active {
     color: #ffffff;
-    font-weight: bold;
+    
 }
 
 .nav-links .nav-link.active::after {
@@ -3879,7 +3964,7 @@ h1,h2,h3,h4,h5,h6 {
 .industry-hero h1 {
     font-family: 'VT323', monospace;
     font-size: 4rem;
-    font-weight: 700;
+    
     /* Inherit the beautiful gradient and glow from main h1 styling */
     margin-bottom: 20px;
     line-height: 1.2;
@@ -3956,7 +4041,7 @@ h1,h2,h3,h4,h5,h6 {
 .solution-item h3 {    font-size: 1.5rem;
     color: var(--fg);
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    
 }
 
 .solution-item p {
@@ -4018,7 +4103,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .insight-item h4 {
     font-size: 1.45rem;
-    font-weight: 600;
+    
     margin-bottom: 0.75rem;
     color: var(--fg);
 }
@@ -4033,7 +4118,7 @@ h1,h2,h3,h4,h5,h6 {
 .insight-item .read-more {
     display: inline-block;
     font-size: 1.1rem;
-    font-weight: bold;
+    
     color: #a2abff;
     text-decoration: none;
     text-transform: uppercase;
@@ -4252,7 +4337,7 @@ h1,h2,h3,h4,h5,h6 {
     top: 50%;
     transform: translateY(-50%);
     color: #22c55e;
-    font-weight: bold;
+    
     font-size: 1.2rem;
     animation: checkmark-appear 0.3s ease;
 }
@@ -4540,7 +4625,7 @@ body {
         0 4px 16px rgba(147, 51, 234, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;    padding: 18px 36px !important;
     margin-top: 24px !important;
-    font-weight: 400 !important;
+    important;
     letter-spacing: 1.5px !important;
     text-transform: uppercase !important;
     font-size: 1.3rem !important;
@@ -4862,7 +4947,7 @@ html:not(.fouc-prevention) {
 }
 
 .item-title {
-    font-weight: bold;
+    
     font-size: 1.15rem;
 }
 
@@ -4873,7 +4958,7 @@ html:not(.fouc-prevention) {
 
 .section-heading {
     font-size: 3rem;
-    font-weight: 700;
+    
     text-align: center;
     margin: var(--gap) 0;
     letter-spacing: 0.7px;
@@ -4890,7 +4975,7 @@ h1,h2,h3,h4,h5,h6 {
     color: #52eef5;
     /* Removed text shadow effect */
     letter-spacing: 0.7px;
-    font-weight: 700;
+    
 }
 
 .dropdown-menu h1,
@@ -5059,7 +5144,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .tech-card h3 {
     font-size: 1.45rem;
-    font-weight: 600;
+    
     margin-bottom: 8px;
     color: var(--fg);
     transition: all 0.3s ease;
@@ -5558,7 +5643,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .item-title {
-    font-weight: bold;
+    
     font-size: 1.15rem;
 }
 
@@ -5569,7 +5654,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .section-heading {
     font-size: 3rem;
-    font-weight: 700;
+    
     text-align: center;
     margin: var(--gap) 0;
     letter-spacing: 0.7px;
@@ -5586,7 +5671,7 @@ h1,h2,h3,h4,h5,h6 {
     color: #52eef5;
     /* Removed text shadow effect */
     letter-spacing: 0.7px;
-    font-weight: 700;
+    
 }
 
 .dropdown-menu h1,
@@ -5755,7 +5840,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .tech-card h3 {
     font-size: 1.45rem;
-    font-weight: 600;
+    
     margin-bottom: 8px;
     color: var(--fg);
     transition: all 0.3s ease;
@@ -6254,7 +6339,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .item-title {
-    font-weight: bold;
+    
     font-size: 1.15rem;
 }
 
@@ -6265,7 +6350,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .section-heading {
     font-size: 3rem;
-    font-weight: 700;
+    
     text-align: center;
     margin: var(--gap) 0;
     letter-spacing: 0.7px;
@@ -6282,7 +6367,7 @@ h1,h2,h3,h4,h5,h6 {
     color: #52eef5;
     /* Removed text shadow effect */
     letter-spacing: 0.7px;
-    font-weight: 700;
+    
 }
 
 .dropdown-menu h1,
@@ -6451,7 +6536,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .tech-card h3 {
     font-size: 1.45rem;
-    font-weight: 600;
+    
     margin-bottom: 8px;
     color: var(--fg);
     transition: all 0.3s ease;
@@ -6950,7 +7035,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .item-title {
-    font-weight: bold;
+    
     font-size: 1.15rem;
 }
 
@@ -6961,7 +7046,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .section-heading {
     font-size: 3rem;
-    font-weight: 700;
+    
     text-align: center;
     margin: var(--gap) 0;
     letter-spacing: 0.7px;
@@ -6978,7 +7063,7 @@ h1,h2,h3,h4,h5,h6 {
     color: #52eef5;
     /* Removed text shadow effect */
     letter-spacing: 0.7px;
-    font-weight: 700;
+    
 }
 
 .dropdown-menu h1,
@@ -7147,7 +7232,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .tech-card h3 {
     font-size: 1.45rem;
-    font-weight: 600;
+    
     margin-bottom: 8px;
     color: var(--fg);
     transition: all 0.3s ease;
@@ -7646,7 +7731,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .item-title {
-    font-weight: bold;
+    
     font-size: 1.15rem;
 }
 
@@ -7657,7 +7742,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .section-heading {
     font-size: 3rem;
-    font-weight: 700;
+    
     text-align: center;
     margin: var(--gap) 0;
     letter-spacing: 0.7px;
@@ -7674,7 +7759,7 @@ h1,h2,h3,h4,h5,h6 {
     color: #52eef5;
     /* Removed text shadow effect */
     letter-spacing: 0.7px;
-    font-weight: 700;
+    
 }
 
 .dropdown-menu h1,
@@ -7843,7 +7928,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .tech-card h3 {
     font-size: 1.45rem;
-    font-weight: 600;
+    
     margin-bottom: 8px;
     color: var(--fg);
     transition: all 0.3s ease;
@@ -8342,7 +8427,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .item-title {
-    font-weight: bold;
+    
     font-size: 1.15rem;
 }
 
@@ -8353,7 +8438,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .section-heading {
     font-size: 3rem;
-    font-weight: 700;
+    
     text-align: center;
     margin: var(--gap) 0;
     letter-spacing: 0.7px;
@@ -8370,7 +8455,7 @@ h1,h2,h3,h4,h5,h6 {
     color: #52eef5;
     /* Removed text shadow effect */
     letter-spacing: 0.7px;
-    font-weight: 700;
+    
 }
 
 .dropdown-menu h1,
@@ -8408,6 +8493,231 @@ h1,h2,h3,h4,h5,h6 {
     border-radius: 20px;
     margin: 10px 0;
 }
+
+/* ===== FEATURED COURSES SECTION STYLES ===== */
+
+/* Courses Grid Layout */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+/* Course Card Styling */
+.course-card {
+    background: linear-gradient(135deg, rgba(25, 35, 55, 0.9) 0%, rgba(35, 45, 65, 0.95) 100%);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 0 50px rgba(var(--primary-color-rgb), 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 80px rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Course Video Container */
+.course-video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.course-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Course Thumbnail Styles - Static Display */
+.course-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Course Information */
+.course-info h3 {
+    font-size: 1.6rem;
+    color: #52eef5;
+    margin-bottom: 1rem;
+    
+}
+
+.course-info p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* Course Highlights */
+.course-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.course-highlights .highlight-item {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.course-highlights .highlight-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.course-highlights .highlight-item i {
+    font-size: 0.8rem;
+}
+
+/* Course CTA Button */
+.course-card .btn-primary {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, rgba(var(--primary-color-rgb), 0.8) 100%);
+    border: 2px solid var(--primary-color);
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.course-card .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(var(--primary-color-rgb), 0.4);
+    background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.9) 0%, var(--primary-color) 100%);
+}
+
+.course-card .btn-primary:hover::before {
+    left: 100%;
+}
+
+/* Responsive Design for Courses */
+@media (max-width: 1024px) {
+    .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .course-card {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .courses-grid {
+        gap: 1.5rem;
+    }
+    
+    .course-card {
+        padding: 1rem;
+    }
+    
+    .course-info h3 {
+        font-size: 1.4rem;
+    }
+    
+    .course-info p {
+        font-size: 1rem;
+    }
+      .course-highlights {
+        gap: 0.6rem;
+    }
+    
+    .course-highlights .highlight-item {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
+}
+
+@media (max-width: 480px) {
+    .course-video-container {
+        padding-bottom: 60%; /* Slightly taller aspect ratio for mobile */
+    }
+    
+    .course-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .course-highlights {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .course-highlights .highlight-item {
+        align-self: flex-start;
+    }
+    
+    /* Mobile play overlay adjustments */
+    .play-overlay {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
+
+/* ===== END FEATURED COURSES SECTION STYLES ===== */
 
 /* ===== WEBINAR SECTIONS STYLES ===== */
 
@@ -8472,7 +8782,7 @@ h1,h2,h3,h4,h5,h6 {
     right: 0;
     height: 3px;
     background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-    animation: shimmer 3s ease-in-out infinite;
+    /* Removed shimmer animation from section-wide element */
 }
 
 .webinar-main-card:hover {
@@ -8538,8 +8848,9 @@ h1,h2,h3,h4,h5,h6 {
     top: 0;
     left: 0;
     right: 0;
-    height: 2px;
-    background: linear-gradient(180deg, var(--primary-color), var(--primary-color-hover));
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    animation: shimmer 3s ease-in-out infinite;
     border-radius: 0 2px 2px 0;
 }
 
@@ -8563,7 +8874,7 @@ h1,h2,h3,h4,h5,h6 {
 .webinar-date-badge .date {
     display: block;
     font-size: 1.8rem;
-    font-weight: bold;
+    
     color: #fff;
     line-height: 1;
 }
@@ -8584,7 +8895,7 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 1.8rem;
     color: #52eef5;
     margin-bottom: 1rem;
-    font-weight: 600;
+    
 }
 
 .webinar-meta {
@@ -8622,7 +8933,7 @@ h1,h2,h3,h4,h5,h6 {
     color: #52eef5;
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
-    font-weight: 600;
+    
 }
 
 .webinar-takeaways ul {
@@ -8643,7 +8954,7 @@ h1,h2,h3,h4,h5,h6 {
     position: absolute;
     left: 0;
     color: var(--primary-color);
-    font-weight: bold;
+    
     font-size: 1.1rem;
 }
 
@@ -8658,7 +8969,7 @@ h1,h2,h3,h4,h5,h6 {
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
+    
     font-size: 1rem;
     transition: all 0.3s ease;
     text-transform: uppercase;
@@ -8760,7 +9071,7 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 1.3rem;
     color: #52eef5;
     margin-bottom: 0.8rem;
-    font-weight: 600;
+    
 }
 
 .gn-video-info h4 i {
@@ -9017,7 +9328,7 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 1.2rem;
     color: var(--text-light);
     line-height: 1.7;
-    font-weight: 400;
+    
     text-align: center;
     margin: 0;
 }
@@ -9070,7 +9381,7 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 1.2rem;
     color: #52eef5;
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    
 }
 
 .gn-feature-content p {
@@ -9163,7 +9474,7 @@ h1,h2,h3,h4,h5,h6 {
 .gn-download-store {
     font-size: 1.1rem;
     color: #ffffff;
-    font-weight: 600;
+    
     line-height: 1.2;
 }
 
@@ -9234,7 +9545,7 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 1.3rem;
     color: #52eef5;
     margin-bottom: 0.8rem;
-    font-weight: 600;
+    
 }
 
 .gn-video-info h4 i {
@@ -9364,6 +9675,140 @@ h1,h2,h3,h4,h5,h6 {
     text-align: center !important;
 }
 
+/* ===== BUTTON CONTAINER CENTERING ===== */
+/* Center all CTA button containers */
+.cta-buttons,
+.cta-buttons-section .cta-buttons,
+.webinar-actions,
+.hero-cta-buttons,
+.program-buttons,
+.section-buttons,
+.training-buttons,
+.course-actions,
+.workflow-actions {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+
+/* CTA buttons section specific styling */
+.cta-buttons-section {
+    text-align: center !important;
+    padding: 2rem 0 !important;
+}
+
+.cta-buttons-section .container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Center all button containers with inline styles - Services pages */
+div[style*="text-align: center"] {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 2.5rem auto !important;
+}
+
+/* Center explore button sections - Industry pages */
+.explore-button-section {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 4rem auto !important;
+    padding: 1rem 0 !important;
+}
+
+/* Center hero section buttons */
+.hero-section {
+    text-align: center !important;
+}
+
+.hero-section .btn,
+.hero-section .btn-primary {
+    display: inline-block !important;
+    margin: 2rem auto 0 auto !important;
+}
+
+/* Center specialization card buttons */
+.specialization-card {
+    text-align: center !important;
+}
+
+.specialization-btn {
+    display: inline-block !important;
+    margin: 1.5rem auto 0 auto !important;
+    text-align: center !important;
+}
+
+/* Center discussion/project buttons in service sections */
+.discuss-project-cta {
+    text-align: center !important;
+}
+
+.btn-discuss-project {
+    display: inline-block !important;
+    margin: 0 auto !important;
+}
+
+/* Center form submit buttons */
+.contact-form-container,
+.form-container {
+    text-align: center !important;
+}
+
+.btn-send-message,
+.btn-submit,
+form button[type="submit"] {
+    display: block !important;
+    margin: 2rem auto 0 auto !important;
+    text-align: center !important;
+}
+
+/* Center footer subscription buttons */
+.footer-subscribe button,
+.newsletter-form {
+    display: inline-block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+/* Global button centering fallback - catch any missed buttons */
+.btn-container,
+[class*="button-container"],
+[class*="btn-container"],
+[class*="cta-container"] {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+}
+
+/* Ensure any standalone buttons in sections are centered */
+section .btn:only-child,
+section .btn-primary:only-child,
+section .btn-secondary:only-child {
+    display: block !important;
+    margin: 2rem auto !important;
+    text-align: center !important;
+}
+
+/* Ensure consistent button group spacing */
+.benefits-section .centered-btn,
+.training-programs-section .centered-btn,
+.workflow-section .centered-btn {
+    margin: 2rem auto 0 auto !important;
+}
+
 /* Ensure proper styling for the button when it has both btn-primary and centered-btn classes */
 .btn-primary.centered-btn {
     background: linear-gradient(135deg, #6d28d9 0%, #9333ea 50%, #a855f7 100%) !important;
@@ -9373,7 +9818,7 @@ h1,h2,h3,h4,h5,h6 {
         0 4px 16px rgba(147, 51, 234, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
     padding: 18px 36px !important;
-    font-weight: 500 !important;
+    important;
     letter-spacing: 1.5px !important;
     text-transform: uppercase !important;
     font-size: 1.2rem !important;
@@ -9415,6 +9860,23 @@ h1,h2,h3,h4,h5,h6 {
         padding: 14px 28px !important;
         font-size: 1.1rem !important;
     }
+    
+    /* Mobile button container centering */
+    .cta-buttons,
+    .webinar-actions,
+    .hero-cta-buttons,
+    div[style*="text-align: center"] {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        margin: 2rem auto !important;
+    }
+    
+    .hero-section .btn,
+    .hero-section .btn-primary {
+        width: auto !important;
+        max-width: 280px !important;
+        margin: 1rem auto !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -9427,4 +9889,455 @@ h1,h2,h3,h4,h5,h6 {
         font-size: 1rem !important;
         letter-spacing: 1px !important;
     }
+      /* Extra small screen button adjustments */
+    .cta-buttons,
+    .webinar-actions,
+    .hero-cta-buttons {
+        gap: 1rem !important;
+        margin: 1.5rem auto !important;
+    }
+    
+    .btn-primary,
+    .btn {
+        padding: 0.8rem 1.5rem !important;
+        font-size: 0.95rem !important;
+        min-width: 200px !important;
+        text-align: center !important;
+    }
+    
+    /* Ensure buttons stack vertically on very small screens */
+    .hero-cta-buttons,
+    .cta-buttons,
+    .webinar-actions {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    
+    /* Adjust button widths for better mobile UX */
+    .btn-primary,
+    .btn-secondary,
+    .workflow-cta-btn,
+    .specialization-btn {
+        width: 100% !important;
+        max-width: 280px !important;
+        margin: 0.75rem auto !important;
+    }
 }
+
+/* ===== CUSTOM TRAINING WORKFLOW SECTION STYLES ===== */
+
+.workflow-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(15, 15, 25, 0.95) 0%, rgba(25, 25, 45, 0.9) 100%);
+    border-radius: 20px;
+    margin: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shift workflow section container slightly to the right for better centering */
+#custom-training-workflow.container {
+    margin-left: auto;
+    margin-right: calc(50% - 580px - 2rem);
+}
+
+.workflow-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(var(--primary-color-rgb), 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(82, 238, 245, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.workflow-intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    position: relative;
+    z-index: 2;
+}
+
+.workflow-intro p {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    
+}
+
+.workflow-benefits {
+    margin: 3rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.workflow-benefits h3 {
+    font-size: 2.2rem;
+    color: #52eef5;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'VT323', monospace;
+    letter-spacing: 1px;
+}
+
+.benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.benefit-item {
+    background: rgba(25, 35, 55, 0.8);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 12px 25px rgba(var(--primary-color-rgb), 0.4);
+}
+
+.benefit-item i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.benefit-item h4 {
+    font-size: 1.3rem;
+    color: #52eef5;
+    margin-bottom: 0.5rem;
+    
+}
+
+.benefit-item p {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.workflow-process {
+    margin: 4rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.workflow-process h3 {
+    font-size: 2.2rem;
+    color: #52eef5;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: 'VT323', monospace;
+    letter-spacing: 1px;
+}
+
+.workflow-visualization {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.workflow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(20, 30, 50, 0.7);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(15px);
+}
+
+.workflow-step:hover {
+    background: rgba(25, 35, 55, 0.9);
+    border-color: rgba(var(--primary-color-rgb), 0.4);
+    transform: translateX(10px);
+}
+
+.workflow-step:last-child {
+    margin-bottom: 0;
+}
+
+.workflow-step:last-child .step-connector {
+    display: none;
+}
+
+.step-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-color-hover));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(var(--primary-color-rgb), 0.3);
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.step-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.step-icon i {
+    font-size: 2rem;
+    color: #fff;
+    z-index: 2;
+    position: relative;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h4 {
+    font-size: 1.6rem;
+    color: #52eef5;
+    margin-bottom: 1rem;
+    
+}
+
+.step-content p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.step-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.step-details span {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.step-details span::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    
+    font-size: 1.1rem;
+}
+
+.step-connector {
+    position: absolute;
+    right: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), transparent);
+    z-index: 3;
+}
+
+.step-connector::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid var(--primary-color);
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+
+.workflow-cta {
+    background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.15) 0%, rgba(82, 238, 245, 0.1) 100%);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    position: relative;
+    z-index: 2;
+    margin-top: 3rem;
+}
+
+.cta-content h3 {
+    font-size: 2rem;
+    color: #52eef5;
+    margin-bottom: 1rem;
+    font-family: 'VT323', monospace;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.workflow-cta-btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-hover) 100%);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(var(--primary-color-rgb), 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    min-width: 160px;
+    text-align: center;
+}
+
+.workflow-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(var(--primary-color-rgb), 0.4);
+    background: linear-gradient(135deg, var(--primary-color-hover) 0%, var(--primary-color) 100%);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Responsive Design for Workflow Section */
+@media (max-width: 768px) {
+    .workflow-section {
+        padding: 2.5rem 0;
+        margin: 2rem 0;
+    }
+
+    .workflow-intro p {
+        font-size: 1.1rem;
+    }
+
+    .workflow-benefits h3,
+    .workflow-process h3 {
+        font-size: 1.8rem;
+    }
+
+    .benefits-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .benefit-item {
+        padding: 1.2rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+
+    .workflow-step {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .workflow-step:hover {
+        transform: translateY(-5px);
+    }
+
+    .step-icon {
+        width: 70px;
+        height: 70px;
+        align-self: center;
+    }
+
+    .step-icon i {
+        font-size: 1.8rem;
+    }
+
+    .step-content {
+        text-align: center;
+    }
+
+    .step-content h4 {
+        font-size: 1.4rem;
+    }
+
+    .step-details span {
+        font-size: 0.9rem;
+    }
+
+    .workflow-cta {
+        padding: 2rem 1.5rem;
+    }
+
+    .cta-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .cta-content p {
+        font-size: 1.1rem;
+    }    .workflow-cta-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+        max-width: 260px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .workflow-intro {
+        margin-bottom: 2rem;
+    }
+
+    .workflow-step {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }    .step-connector {
+        display: none;
+    }
+}
+
+/* Additional CSS for expertise section divider */
+.exp-item h3 {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+}
+
+.exp-item h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(82, 238, 245, 0.2), rgba(82, 238, 245, 1), rgba(82, 238, 245, 0.2));
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(82, 238, 245, 0.5);
+}
+

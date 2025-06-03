@@ -162,12 +162,24 @@
       }
       
       .nav-links.active,
-      .nav-links.show {
-        left: 0 !important;
+      .nav-links.show {      left: 0 !important;
       }    }
   </style>
-    <!-- CRITICAL: Load main CSS synchronously to prevent FOUC -->
-  <link rel="stylesheet" href="css/style.css?v=202412291400">
+    <!-- Core styles - load first -->
+    <link rel="stylesheet" href="css/01-base-variables.css">
+    <link rel="stylesheet" href="css/02-layout-components.css">
+    <link rel="stylesheet" href="css/03-navigation-header.css">
+    
+    <!-- Content styles -->
+    <link rel="stylesheet" href="css/04-hero-sections.css">
+    <link rel="stylesheet" href="css/05-technology-cards.css">
+    <link rel="stylesheet" href="css/06-forms-buttons.css">
+      <!-- Responsive and effects - load last -->
+    <link rel="stylesheet" href="css/07-media-responsive.css">
+    <link rel="stylesheet" href="css/08-animations-effects.css">
+    
+    <!-- Enhanced widened contact styles -->
+    <link rel="stylesheet" href="css/style.css">
   
   <!-- Preload secondary resources -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -263,9 +275,8 @@
     <section id="contact-us-section">
       <div class="contact-header">
         <h1>CONTACT US</h1>
-        <p>Reach out to our team for inquiries, consultations, or partnership opportunities.</p>      </div>
-      <div class="contact-content">
-        <div class="contact-form-container">
+        <p>Reach out to our team for inquiries, consultations, or partnership opportunities.</p>      </div>      <div class="contact-content">
+        <!-- <div class="contact-form-container">
           <h2>Get In Touch</h2>
           <div id="form-message" class="form-message"></div>
           <form id="contact-form">            <div class="form-group">
@@ -285,8 +296,8 @@
             </div>
             <button type="submit" class="btn-primary btn-send-message">Send Message</button>
           </form>
-        </div>
-        <div class="contact-info-container">
+        </div> -->
+        <div class="contact-info-container widened-contact-info">
           <h2>CONTACT INFORMATION</h2>
           <ul class="contact-details">
             <li><i class="fas fa-envelope"></i>info@gyannetra.com</li>
@@ -311,8 +322,7 @@
         <img src="assets/Company Icons/company logo square.svg" alt="Gyannetra Logo" class="footer-logo-img" class="gn-responsive-image">
       </a>
           <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
-        </div>
-        <div class="footer-col">
+        </div>        <div class="footer-col">
           <h3>Quick Links</h3>
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -326,13 +336,6 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h3>Contact Us</h3>
-          <ul>
-            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
-            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
-            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
-          </ul>        </div>
-        <div class="footer-col">
           <h3>Follow Us</h3>
           <p>Stay updated with our latest insights and news.</p>          <div class="social-links">
             <a href="mailto:info@gyannetra.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
@@ -341,6 +344,13 @@
             <a href="https://www.youtube.com/@Gyannetra-o3y" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
+            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
+            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
+          </ul>        </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms and Conditions</a></p>

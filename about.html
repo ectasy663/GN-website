@@ -92,13 +92,23 @@
       opacity: 0;
       pointer-events: none;
     }
-    
-    html.loaded { 
+      html.loaded { 
       visibility: visible;
     }
   </style>
-    <!-- CRITICAL: Load main CSS synchronously to prevent FOUC -->
-  <link rel="stylesheet" href="css/style.css?v=202412291400">
+    <!-- Core styles - load first -->
+    <link rel="stylesheet" href="css/01-base-variables.css">
+    <link rel="stylesheet" href="css/02-layout-components.css">
+    <link rel="stylesheet" href="css/03-navigation-header.css">
+    
+    <!-- Content styles -->
+    <link rel="stylesheet" href="css/04-hero-sections.css">
+    <link rel="stylesheet" href="css/05-technology-cards.css">
+    <link rel="stylesheet" href="css/06-forms-buttons.css">
+      <!-- Responsive and effects - load last -->
+    <link rel="stylesheet" href="css/07-media-responsive.css">
+    <link rel="stylesheet" href="css/08-animations-effects.css">
+    <link rel="stylesheet" href="css/09-about-page.css">
   
   <!-- Preload secondary resources -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -281,35 +291,26 @@
 
   <main class="container">
     <section id="about-us">
-      <h1>ABOUT US</h1>
-
-      <div class="about-section">
-        <h2>WHO WE ARE</h2>
-        <p>Gyannetra Put Ltd, as a leading provider of bespoke AI solutions. Asa focus on innovation, integrity, and excellence, we decvo to harnessing AI power to solve complex challenges and drive progress for clients.</p>
-        <div class="team-images">
-          <img src="assets/team1.jpg" alt="Team Member 1" / class="gn-responsive-image">
-          <img src="assets/team2.jpg" alt="Team Member 2" / class="gn-responsive-image">
-          <img src="assets/team3.jpg" alt="Team Member 3" / class="gn-responsive-image">
-        </div>
-        <button class="btn">MEET OUR TEAM</button>
-      </div>
-
-      <div class="about-section mission-vision">
-        <div class="mission">
-          <h2>OUR MISSION</h2>
-          <p>Empowering businesses and transforming industries through cutting-edge AI technologies.</p>
-          <button class="btn">EXPLORE OUR SOLUTIONS</button>
-        </div>
+      <h1>ABOUT US</h1>      <div class="about-section">
+        <h2>WHAT WE DO</h2>
+        <p>At Gyannetra Pvt Ltd, we specialize in crafting intelligent, AI-powered solutions tailored to drive data-centric transformation across industries. Our core expertise lies in developing custom tools and models in Artificial Intelligence, Data Science, and Software Engineering — empowering businesses to unlock insights, automate processes, and accelerate innovation. Whether it's building large language model (LLM)-based applications, intelligent OCR systems, analytics dashboards, or workflow automations, we help organizations harness the full potential of modern AI and data technologies.</p>
+      </div><div class="about-section mission-vision">        
         <div class="vision">
           <h2>OUR VISION</h2>
-          <p>A future where AI amplifies human potential and fosters a smarter, more connected world. We focus on our role in shaping this future thio innovative and ethical AI solutions.</p>
+          <p>To be a trusted global partner in AI-driven innovation — enabling businesses, governments, and educational institutions to evolve intelligently and sustainably. We envision a world where intelligent systems and human values work in harmony to solve real-world challenges, elevate decision-making, and create a better future for all.</p>
         </div>
-      </div>
-
-      <div class="about-section">
+        <div class="mission">
+          <h2>OUR MISSION</h2>
+          <p>Our mission is to deliver cutting-edge, purpose-built AI solutions that are not only technically robust but also aligned with each client's unique business context. We strive to:</p>
+          <ul>
+            <li><strong>Democratize access to AI</strong> through education, consultancy, and tools.</li>
+            <li><strong>Transform businesses</strong> with tailored AI models, data science solutions, and smart automation.</li>
+            <li><strong>Innovate with integrity</strong>, ensuring transparency, ethics, and long-term value creation.</li>
+          </ul>
+        </div>
+      </div><div class="about-section">
         <h2>OUR JOURNEY</h2>
-        <p>Gyannetra was founded in fim 2026. Enrvicing our expertise expansion. it expands strong telationships across partners and built with our parthers.</p>
-        <button class="btn">EXPLORE OUR CASE STUDIES</button>
+        <p>Gyannetra was founded in early 2024. Since our inception, we have focused on expanding our expertise and building strong relationships with partners across various industries.</p>
       </div>
     </section>
   </main>
@@ -321,8 +322,7 @@
             <img src="assets/Company Icons/company logo square.svg" alt="Gyannetra Logo" class="footer-logo-img" class="gn-responsive-image">
           </a>
           <p>Empowering businesses with intelligent AI solutions to drive innovation, efficiency, and growth in a data-centric world.</p>
-        </div>
-        <div class="footer-col">
+        </div>        <div class="footer-col">
           <h3>Quick Links</h3>
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -335,13 +335,6 @@
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>        <div class="footer-col">
-          <h3>Contact Us</h3>
-          <ul>
-            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
-            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
-            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
-          </ul>
-        </div>        <div class="footer-col">
           <h3>Follow Us</h3>
           <p>Stay updated with our latest insights and news.</p>          <div class="social-links">
             <a href="mailto:info@gyannetra.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
@@ -349,6 +342,13 @@
             <a href="https://www.linkedin.com/company/gyannetra-pvt-ltd/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://www.youtube.com/@Gyannetra-o3y" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
           </div>
+        </div>        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p></li>
+            <li><p><i class="fas fa-phone"></i>+91 89491-35299</p></li>
+            <li><p><i class="fas fa-envelope"></i> <a href="mailto:info@gyannetra.com">info@gyannetra.com</a></p></li>
+          </ul>
         </div>
       </div>
       <div class="footer-bottom">

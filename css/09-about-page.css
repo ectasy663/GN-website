@@ -1,0 +1,297 @@
+/* ===== ABOUT US PAGE ENHANCED STYLING ===== */
+
+/* Main about section styling */
+#about-us {
+    padding: 4rem 0;
+    margin: 0 auto;
+    max-width: var(--max-w);
+}
+
+#about-us h1 {
+    font-family: var(--font-headings);
+    font-size: 4rem;
+    color: #52eef5;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 4rem;
+    text-shadow: 0 0 20px rgba(82, 238, 245, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 20px rgba(82, 238, 245, 0.5); }
+    to { text-shadow: 0 0 30px rgba(82, 238, 245, 0.8), 0 0 40px rgba(82, 238, 245, 0.3); }
+}
+
+/* About section styling */
+.about-section {
+    background: rgba(20, 20, 40, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    border: 1px solid rgba(82, 238, 245, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(82, 238, 245, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.about-section:hover::before {
+    left: 100%;
+}
+
+.about-section:hover {
+    transform: translateY(-5px);
+    border-color: rgba(82, 238, 245, 0.4);
+    box-shadow: 0 15px 50px rgba(82, 238, 245, 0.2);
+}
+
+.about-section h2 {
+    font-family: var(--font-headings);
+    font-size: 2.5rem;
+    color: #52eef5;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.about-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #52eef5, transparent);
+    border-radius: 2px;
+}
+
+.about-section p {
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+/* Team images styling */
+.team-images {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.team-images img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(82, 238, 245, 0.3);
+    transition: all 0.3s ease;
+    filter: grayscale(30%);
+}
+
+.team-images img:hover {
+    transform: scale(1.1) rotate(5deg);
+    border-color: #52eef5;
+    filter: grayscale(0%);
+    box-shadow: 0 15px 40px rgba(82, 238, 245, 0.3);
+}
+
+/* Mission and Vision section styling */
+.mission-vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: stretch;
+}
+
+.mission, .vision {
+    background: rgba(15, 15, 30, 0.8);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(82, 238, 245, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.mission::before, .vision::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #52eef5, #a2abff);
+    border-radius: 15px 15px 0 0;
+}
+
+.mission:hover, .vision:hover {
+    transform: translateY(-3px);
+    border-color: rgba(82, 238, 245, 0.3);
+    box-shadow: 0 10px 30px rgba(82, 238, 245, 0.15);
+}
+
+.mission h2, .vision h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.mission p, .vision p {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.vision p {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styling for mission bullet points */
+.mission ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    text-align: left;
+}
+
+.mission li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.mission li::before {
+    content: '●';
+    color: #52eef5;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.mission li strong {
+    color: #52eef5;
+    font-weight: 600;
+}
+
+/* Enhanced visual effects */
+.about-section {
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(82, 238, 245, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(162, 171, 255, 0.05) 0%, transparent 50%),
+        rgba(20, 20, 40, 0.6);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #about-us {
+        padding: 2rem 0;
+    }
+    
+    #about-us h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    
+    .about-section {
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .about-section h2 {
+        font-size: 2rem;
+    }
+    
+    .team-images {
+        gap: 1rem;
+    }
+    
+    .team-images img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .mission-vision {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .mission, .vision {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #about-us h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-section {
+        padding: 1.5rem;
+    }
+    
+    .about-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .team-images img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .mission, .vision {
+        padding: 1.5rem;
+    }
+}
+
+/* Additional enhancements for better visual hierarchy */
+.about-section:first-of-type {
+    background: 
+        radial-gradient(circle at 30% 40%, rgba(82, 238, 245, 0.08) 0%, transparent 60%),
+        rgba(20, 20, 40, 0.6);
+}
+
+.about-section:last-of-type {
+    background: 
+        radial-gradient(circle at 70% 60%, rgba(162, 171, 255, 0.08) 0%, transparent 60%),
+        rgba(20, 20, 40, 0.6);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+.about-section:focus-within {
+    outline: 2px solid rgba(82, 238, 245, 0.5);
+    outline-offset: 4px;
+}
