@@ -50,7 +50,7 @@
 
 .tech-cards-track {
     display: flex;
-    animation: techCardsFlow 75s linear infinite;
+    animation: techCardsFlow 50s linear infinite; /* Changed from 75s to 50s to make it 1.5x faster */
     will-change: transform;
     gap: 70px;
 }
@@ -458,6 +458,14 @@
 .tech-icon.haystack {
     background-size: 80% auto;
     background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Fix icon alignment for specific technologies */
+.tech-icon.pytorch,
+.tech-icon.langchain {
+    margin-top: 15px;
+    background-position: center center;
+    transform: translateY(5px);
 }
 
 /* ===== TECH SHADOWS ===== */

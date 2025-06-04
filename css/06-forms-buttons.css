@@ -159,20 +159,43 @@ div[style*="text-align: center"] {
 /* ===== SPECIALIZED BUTTONS ===== */
 .btn-book-consultation {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background: linear-gradient(90deg, #5a6bff 0%, #a2b0ff 100%);
-    border: none;
-    border-radius: 8px;
-    color: white;
     text-decoration: none;
-    font-size: 1.2rem;
+    padding: 14px 28px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
     transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 20px rgba(var(--primary-color-rgb), 0.3);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-color-hover));
+}
+
+.btn-book-consultation:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: all 0.8s ease;
+    z-index: -1;
 }
 
 .btn-book-consultation:hover {
-    background: linear-gradient(90deg, #6d7dff 0%, #b5c0ff 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(90, 107, 255, 0.4);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 25px -10px rgba(var(--primary-color-rgb), 0.6);
+    background: linear-gradient(135deg, var(--primary-color-hover), var(--primary-color));
+}
+
+.btn-book-consultation:hover:before {
+    left: 100%;
 }
 
 .btn-discuss-project {

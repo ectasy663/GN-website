@@ -666,7 +666,7 @@ footer {
 }
 
 .footer-col .social-links a {
-    color: var(--text-muted);
+    color: var(--primary-color); /* Changed to primary color to match Contact Us icons */
     font-size: 1.6rem;
     text-decoration: none; /* Remove underlines from social media icons */
     transition: color 0.3s ease, transform 0.3s ease;
@@ -680,7 +680,7 @@ footer {
 }
 
 .footer-col .social-links a:hover {
-    color: var(--primary-color); /* Use primary color for hover */
+    color: #52eef5; /* Using cyan for hover to create a nice contrast effect */
     transform: translateY(-2px);
     background-color: rgba(var(--primary-color-rgb), 0.1);
 }
@@ -688,7 +688,7 @@ footer {
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Light border */
+    /* Removed the border-top that was creating the horizontal dividing grey line */
     font-size: 1.25rem;
 }
 

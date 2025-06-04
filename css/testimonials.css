@@ -283,9 +283,9 @@
 /* Course Badge */
 .course-badge {
     display: inline-block;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    color: #a2b0ff;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     font-size: 0.85rem;

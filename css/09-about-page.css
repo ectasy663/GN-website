@@ -50,6 +50,29 @@
     transition: left 0.5s ease;
 }
 
+/* Journey image styling */
+.journey-image-container {
+    margin-top: 3rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.journey-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(82, 238, 245, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journey-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(82, 238, 245, 0.2);
+}
+
 .about-section:hover::before {
     left: 100%;
 }
@@ -155,7 +178,7 @@
 }
 
 .mission h2, .vision h2 {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Updated to match the heading size of What We Do section */
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -163,7 +186,7 @@
 .mission p, .vision p {
     text-align: center;
     margin-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: 1.3rem; /* Updated to match the body font size of What We Do section */
 }
 
 .vision p {
@@ -185,7 +208,7 @@
     margin-bottom: 1rem;
     padding-left: 1.5rem;
     position: relative;
-    font-size: 1.1rem;
+    font-size: 1.3rem; /* Updated to match the body font size of What We Do section */
     line-height: 1.6;
 }
 
