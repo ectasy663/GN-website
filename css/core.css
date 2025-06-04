@@ -413,12 +413,12 @@ section h2 {
 }
 
 .section-intro {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--text-light);
     text-align: center;
     max-width: 900px;
     margin: 0 auto 2.5rem;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 /* ===== GRID LAYOUTS ===== */
@@ -493,7 +493,7 @@ section h2 {
 }
 
 .solution-item p {
-    font-size: 1.15rem;
+    font-size: 1.3rem;
 }
 
 .article-card img {
@@ -728,8 +728,8 @@ section h2 {
 
 .specialization-description {
     color: var(--text-light);
-    line-height: 1.6;
-    font-size: 1.1rem;
+    line-height: 1.8;
+    font-size: 1.3rem;
     margin-bottom: 20px;
     flex-grow: 1;
 }
@@ -1029,8 +1029,9 @@ footer {
 
 .footer-bottom {
     text-align: center;
-    padding-top: 20px;
-    /* Removed the border-top that was creating the horizontal dividing grey line */
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Add horizontal line above footer bottom */
     font-size: 1.25rem;
 }
 
@@ -1122,19 +1123,68 @@ footer {
     opacity: 1;
 }
 
-.exp-item img {
+/* ===== EXPERTISE ICON WRAPPER ===== */
+.exp-icon-wrapper {
+    position: relative;
     width: 110px;
-    height: auto;
+    height: 110px;
     margin-bottom: 1.5rem;
-    opacity: 0.95;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.4s ease;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid rgba(82, 238, 245, 0.2);
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+}
+
+.exp-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(82, 238, 245, 0.1) 0%, rgba(162, 171, 255, 0.05) 100%);
+    border-radius: 12px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.exp-item img {
+    width: 86px;
+    height: auto;
+    opacity: 0.9;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+    position: relative;
+    z-index: 1;
+}
+
+.exp-item:hover .exp-icon-wrapper {
+    background: rgba(0, 0, 0, 0.6);
+    border-color: rgba(82, 238, 245, 0.5);
+    box-shadow: 
+        0 8px 25px rgba(82, 238, 245, 0.3),
+        0 4px 15px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        0 0 0 1px rgba(82, 238, 245, 0.3);
+    transform: scale(1.05);
+}
+
+.exp-item:hover .exp-icon-wrapper::before {
+    opacity: 1;
 }
 
 .exp-item:hover img {
     opacity: 1;
-    transform: scale(1.05);
-    filter: drop-shadow(0 6px 12px rgba(82, 238, 245, 0.3));
+    filter: drop-shadow(0 6px 12px rgba(82, 238, 245, 0.4)) brightness(1.15) contrast(1.1);
 }
 
 .exp-item p:first-of-type {
@@ -1152,8 +1202,8 @@ footer {
 
 .exp-item .exp-description {
     margin-top: 0;
-    font-size: 1.1rem;
-    line-height: 1.5;
+    font-size: 1.3rem;
+    line-height: 1.8;
     text-align: center;
     color: rgba(255, 255, 255, 0.95);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
@@ -1353,9 +1403,10 @@ footer {
 }
 
 .webinar-card-header p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--text-muted);
     margin: 0;
+    line-height: 1.8;
 }
 
 /* Upcoming Webinars Content */
@@ -1457,9 +1508,9 @@ footer {
 
 .webinar-description {
     color: var(--text-light);
-    line-height: 1.6;
+    line-height: 1.8;
     margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
 
 .webinar-takeaways {
@@ -1792,9 +1843,9 @@ footer {
 }
 
 .gn-app-intro-text p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: var(--text-light);
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 .gn-app-features-list {
@@ -1928,9 +1979,9 @@ footer {
 }
 
 .gn-video-info p {
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.8;
     margin: 0;
 }
 

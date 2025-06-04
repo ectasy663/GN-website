@@ -50,7 +50,7 @@
 }
 
 .hero-content h1 {
-    font-size: 4.5rem;
+    font-size: 4rem;
     line-height: 1.1;
     margin-bottom: 1rem;
     letter-spacing: 1.5px;
@@ -114,9 +114,9 @@
 }
 
 .hero-supporting-text {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: rgba(255, 255, 255, 0.8);
-    line-height: 1.5;
+    line-height: 1.8;
     margin: 1.5rem auto;
     max-width: 600px;
     text-align: center;
@@ -298,8 +298,9 @@
 
 .hero-section p,
 #automation-flows-hero p {
-    font-size: 1.45rem;
+    font-size: 1.3rem;
     color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
 }
 
 .hero-section.gn-responsive-container {
@@ -341,9 +342,9 @@
 
 .industry-hero p {
     font-family: 'VT323', monospace;
-    font-size: 1.45rem;
+    font-size: 1.3rem;
     color: #e0e0e0;
-    line-height: 1.6;
+    line-height: 1.8;
     margin-bottom: 30px;
 }
 
@@ -480,6 +481,23 @@
     transform: none !important;
     transition: none !important;
 }
+
+/* ===== PREVENT SCROLL ANIMATIONS ON PURPLE BUTTONS GLOBALLY ===== */
+/* Disable scroll animations for all purple buttons across all pages */
+.btn-primary.animate-on-scroll,
+.btn.animate-on-scroll,
+button.animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: all 0.3s ease !important; /* Keep only hover transitions */
+}
+
+.btn-primary.animate-on-scroll.animated,
+.btn.animate-on-scroll.animated,
+button.animate-on-scroll.animated {
+    opacity: 1 !important;
+    transform: none !important;
+}
 /* ===== TECHNOLOGY CARDS AND ANIMATIONS ===== */
 
 /* ===== TECHNOLOGY SECTION ===== */
@@ -532,16 +550,26 @@
 
 .tech-cards-track {
     display: flex;
-    animation: techCardsFlow 50s linear infinite; /* Changed from 75s to 50s to make it 1.5x faster */
+    animation: techCardsFlowFast 8s linear infinite; /* Reduced speed from 5s to 8s */
     will-change: transform;
     gap: 70px;
 }
 
-.tech-cards-track:hover {
+/* Paused state for hover functionality */
+.tech-cards-track.paused {
     animation-play-state: paused;
 }
 
 @keyframes techCardsFlow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes techCardsFlowFast {
     0% {
         transform: translateX(0);
     }
@@ -718,10 +746,10 @@
 }
 
 .tech-card p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: rgba(255, 255, 255, 0.8);
     transition: all 0.3s ease;
-    line-height: 1.4;
+    line-height: 1.8;
 }
 
 .tech-card:hover p {
@@ -1504,9 +1532,10 @@ body.contact-page {
 }
 
 .expert-advice-card p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 1.5rem;
     color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
 }
 
 /* ===== ENHANCED CONTACT INFO STYLING ===== */
@@ -1767,8 +1796,8 @@ body.contact-page {
 
 .overview-card p {
     color: rgba(255, 255, 255, 0.9);
-    line-height: 1.7;
-    font-size: 1.2rem;
+    line-height: 1.8;
+    font-size: 1.3rem;
 }
 
 /* Responsive adjustments */
@@ -1874,7 +1903,7 @@ body.contact-page {
 /* ===== CUSTOMER TESTIMONIALS SECTION ===== */
 
 .testimonials-section {
-    padding: 6rem 0;
+    padding: 6rem 0 2rem 0; /* Reduced bottom padding from 6rem to 2rem */
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(20, 20, 40, 0.3));
     position: relative;
     overflow: hidden;
@@ -1903,7 +1932,7 @@ body.contact-page {
 
 .testimonials-heading {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem; /* Reduced from 4rem to 2.5rem */
     padding: 0 2rem;
 }
 
@@ -1930,11 +1959,11 @@ body.contact-page {
 }
 
 .testimonials-heading p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: rgba(255, 255, 255, 0.8);
     max-width: 600px;
     margin: 0 auto;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 /* Floating Testimonials Track */
@@ -1942,8 +1971,8 @@ body.contact-page {
     position: relative;
     width: 100%;
     overflow: hidden;
-    height: 600px;
-    margin: 2rem 0;
+    height: 480px; /* Reduced from 600px to 480px */
+    margin: 1rem 0; /* Reduced from 2rem to 1rem */
 }
 
 .testimonials-track {
@@ -1956,7 +1985,8 @@ body.contact-page {
     left: 0;
 }
 
-.testimonials-track:hover {
+/* Paused state for hover functionality */
+.testimonials-track.paused {
     animation-play-state: paused;
 }
 
@@ -1971,11 +2001,12 @@ body.contact-page {
 
 /* Individual Testimonial Card */
 .testimonial-card {
-    flex: 0 0 380px;
+    flex: 0 0 600px; /* Increased width for landscape layout */
+    height: 350px; /* Increased height for bigger cards */
     background: linear-gradient(135deg, rgba(25, 35, 55, 0.95) 0%, rgba(35, 45, 65, 0.98) 100%);
     border: 1px solid rgba(82, 238, 245, 0.2);
     border-radius: 20px;
-    padding: 2.5rem;
+    padding: 2rem;
     margin: 1rem 0;
     backdrop-filter: blur(15px);
     box-shadow: 
@@ -1984,8 +2015,10 @@ body.contact-page {
     position: relative;
     overflow: hidden;
     transition: all 0.4s ease;
-    animation: cardFloat 8s ease-in-out infinite;
     animation-delay: var(--delay, 0s);
+    display: flex; /* Use flexbox for horizontal layout */
+    align-items: center;
+    gap: 2rem;
 }
 
 .testimonial-card:nth-child(1) { --delay: 0s; }
@@ -1994,21 +2027,6 @@ body.contact-page {
 .testimonial-card:nth-child(4) { --delay: 4.5s; }
 .testimonial-card:nth-child(5) { --delay: 6s; }
 .testimonial-card:nth-child(6) { --delay: 7.5s; }
-
-@keyframes cardFloat {
-    0%, 100% {
-        transform: translateY(0px) rotateX(0deg);
-    }
-    25% {
-        transform: translateY(-15px) rotateX(2deg);
-    }
-    50% {
-        transform: translateY(-8px) rotateX(0deg);
-    }
-    75% {
-        transform: translateY(-20px) rotateX(-2deg);
-    }
-}
 
 .testimonial-card::before {
     content: '';
@@ -2050,24 +2068,28 @@ body.contact-page {
 /* Customer Info */
 .customer-info {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 1.5rem;
+    text-align: center;
+    margin-bottom: 0; /* Remove bottom margin for landscape layout */
     position: relative;
     z-index: 2;
+    flex-shrink: 0; /* Prevent shrinking */
+    min-width: 180px; /* Minimum width for customer info section */
 }
 
 .customer-avatar {
-    width: 60px;
-    height: 60px;
+    width: 80px; /* Slightly larger for landscape layout */
+    height: 80px;
     border-radius: 50%;
     background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    margin-right: 1rem;
+    margin: 0 0 1rem 0; /* Center and add bottom margin */
     box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
     transition: all 0.3s ease;
 }
@@ -2103,13 +2125,17 @@ body.contact-page {
 .review-content {
     position: relative;
     z-index: 2;
+    flex: 1; /* Take remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .review-text {
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Slightly smaller for landscape layout */
     color: rgba(255, 255, 255, 0.9);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
+    line-height: 1.6; /* Reduced line height for better fit */
+    margin-bottom: 1rem; /* Reduced margin */
     font-style: italic;
     position: relative;
 }
@@ -2176,7 +2202,7 @@ body.contact-page {
 
 @media (max-width: 992px) {
     .testimonials-track-container {
-        height: 500px;
+        height: 400px; /* Reduced from 500px to 400px */
     }
     
     .testimonial-card {
@@ -2191,11 +2217,11 @@ body.contact-page {
 
 @media (max-width: 768px) {
     .testimonials-section {
-        padding: 4rem 0;
+        padding: 4rem 0 1.5rem 0; /* Reduced bottom padding for mobile */
     }
     
     .testimonials-track-container {
-        height: 450px;
+        height: 350px; /* Reduced from 450px to 350px */
     }
     
     .testimonial-card {
@@ -2207,9 +2233,9 @@ body.contact-page {
     .testimonials-heading h2 {
         font-size: 2.4rem;
     }
-    
-    .testimonials-heading p {
-        font-size: 1.2rem;
+      .testimonials-heading p {
+        font-size: 1.3rem;
+        line-height: 1.8;
     }
     
     .customer-info {

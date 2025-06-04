@@ -189,11 +189,10 @@
     /* Case studies mobile */
     .case-studies-hero h1 {
         font-size: 2.2rem;
-    }
-
-    .case-studies-hero p,
+    }    .case-studies-hero p,
     #contact-us-section .contact-header p {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        line-height: 1.8;
     }
 
     .filter-controls {
@@ -364,10 +363,10 @@
         letter-spacing: 0.3px;
         filter: brightness(1.08);
     }
-    
-    .hero-content p {
-        font-size: 1.2rem;
+      .hero-content p {
+        font-size: 1.3rem;
         margin-bottom: 1.2rem;
+        line-height: 1.8;
     }
     
     .hero-content .btn-primary {
@@ -460,9 +459,9 @@
     #contact-us-section .contact-header h1 {
         font-size: 2.5rem;
     }
-    
-    #contact-us-section .contact-header p {
-        font-size: 1.1rem;
+      #contact-us-section .contact-header p {
+        font-size: 1.3rem;
+        line-height: 1.8;
     }
     
     /* Button adjustments extra small */
@@ -604,10 +603,9 @@
     .workflow-section {
         padding: 2.5rem 0;
         margin: 2rem 0;
-    }
-
-    .workflow-intro p {
-        font-size: 1.1rem;
+    }    .workflow-intro p {
+        font-size: 1.3rem;
+        line-height: 1.8;
     }
 
     .workflow-benefits h3,
@@ -664,10 +662,9 @@
 
     .cta-content h3 {
         font-size: 1.6rem;
-    }
-
-    .cta-content p {
-        font-size: 1.1rem;
+    }    .cta-content p {
+        font-size: 1.3rem;
+        line-height: 1.8;
     }
 
     .workflow-cta-btn {
@@ -1255,6 +1252,22 @@
 .animate-on-scroll.animated {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Disable scroll animations for all purple buttons globally */
+.btn-primary.animate-on-scroll,
+.btn.animate-on-scroll,
+button.animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: all 0.3s ease !important; /* Keep only hover transitions */
+}
+
+.btn-primary.animate-on-scroll.animated,
+.btn.animate-on-scroll.animated,
+button.animate-on-scroll.animated {
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 /* Stagger animation delays */

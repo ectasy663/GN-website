@@ -1,23 +1,45 @@
 // Tech Cards Animation Enhancement
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Tech marquee script loaded');
+    
     const techCardsContainer = document.querySelector('.tech-cards-container');
+    const techCardsTrack = document.querySelector('.tech-cards-track');
     const techCards = document.querySelectorAll('.tech-card');
     
-    // No animation delay or dancing effects
-    techCards.forEach((card) => {
-        // Just add basic hover interaction
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = '';
-        });
-    });    
-    // Add 3D tilt effect on mouse move for each tech card
-    techCards.forEach(card => {
+    console.log('Tech cards found:', techCards.length);
+    console.log('Tech track found:', techCardsTrack);
+    
+    // Add comprehensive hover functionality for individual tech cards
+    techCards.forEach((card, index) => {
+        console.log(`Setting up card ${index}`);
         const iconWrapper = card.querySelector('.tech-icon-wrapper');
+          // Mouse enter - pause animation and lift card
+        card.addEventListener('mouseenter', function(e) {
+            console.log('Tech card hover detected');
+            e.stopPropagation(); // Prevent event bubbling
+            this.style.transform = 'translateY(-10px)';
+            if (techCardsTrack) {
+                techCardsTrack.classList.add('paused');
+                console.log('Tech animation paused via CSS class');
+            }
+        });
         
+        // Mouse leave - resume animation and reset card
+        card.addEventListener('mouseleave', function(e) {
+            console.log('Tech card hover ended');
+            e.stopPropagation(); // Prevent event bubbling
+            this.style.transform = '';
+            if (techCardsTrack) {
+                techCardsTrack.classList.remove('paused');
+                console.log('Tech animation resumed via CSS class');
+            }
+            // Reset icon wrapper transform when leaving
+            if (iconWrapper) {
+                iconWrapper.style.transform = '';
+            }
+        });
+        
+        // Mouse move - 3D tilt effect (only if icon wrapper exists)
         if (iconWrapper) {
             card.addEventListener('mousemove', function(e) {
                 const rect = iconWrapper.getBoundingClientRect();
@@ -32,38 +54,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 iconWrapper.style.transform = `perspective(500px) rotateX(${tiltY}deg) rotateY(${-tiltX}deg) scale3d(1.1, 1.1, 1.1)`;
             });
-            
-            card.addEventListener('mouseleave', function() {
-                iconWrapper.style.transform = '';
-            });
         }
     });
-    
-    // Add a parallax effect to create depth in the tech cards container
-    window.addEventListener('mousemove', function(e) {
-        if (techCardsContainer) {
-            const depth = 20;
-            const moveX = (e.clientX - window.innerWidth / 2) / depth;
-            const moveY = (e.clientY - window.innerHeight / 2) / depth;
-            
-            // Limit the movement for a subtler effect
-            const maxMove = 5;
-            const limitedMoveX = Math.max(-maxMove, Math.min(maxMove, moveX));
-            const limitedMoveY = Math.max(-maxMove, Math.min(maxMove, moveY));
-            
-            techCardsContainer.style.transform = `translate(${limitedMoveX}px, ${limitedMoveY}px)`;
-        }
-    });
-    
-        // Add entrance animation for the tech cards container
+      // Add entrance animation for the tech cards container (opacity only)
     if (techCardsContainer) {
         techCardsContainer.style.opacity = '0';
-        techCardsContainer.style.transform = 'translateY(20px)';
         
         setTimeout(() => {
-            techCardsContainer.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            techCardsContainer.style.transition = 'opacity 0.8s ease-out';
             techCardsContainer.style.opacity = '1';
-            techCardsContainer.style.transform = 'translateY(0)';
         }, 200);
     }
 });

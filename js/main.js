@@ -73,8 +73,8 @@ function initScrollEffects() {
 
 // Animate elements when they enter viewport
 function initScrollAnimations() {
-    // Exclude hero content from scroll animations to prevent layout shifts
-    const animatedElements = document.querySelectorAll('.exp-item, .section-heading, .btn-primary:not(#hero .btn-primary)');
+    // Exclude hero content and all purple buttons from scroll animations to prevent layout shifts
+    const animatedElements = document.querySelectorAll('.exp-item, .section-heading');
     
     // Ensure hero content is always visible and stable
     const heroContent = document.querySelector('#hero .hero-content');

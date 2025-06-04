@@ -380,11 +380,11 @@ html {
 
 .case-studies-hero p {
     font-family: var(--font-body);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--text-light);
     max-width: 800px;
     margin: 0 auto 2rem auto;
-    line-height: 1.7;
+    line-height: 1.8;
     opacity: 0.9;
     text-align: center;
 }
@@ -568,9 +568,9 @@ html {
 
 .article-card p {
     font-family: var(--font-body);
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: var(--text-light);
-    line-height: 1.6;
+    line-height: 1.8;
     margin-bottom: 2rem;
     flex-grow: 1;
 }
@@ -977,9 +977,9 @@ section#transform-cta-section.container {
 
 .course-info p {
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.8;
     margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     flex: 1;
 }
 
@@ -1197,7 +1197,7 @@ section#transform-cta-section.container {
 .workflow-intro p {
     font-size: 1.3rem;
     color: var(--text-light);
-    line-height: 1.7;
+    line-height: 1.8;
     font-weight: 400;
 }
 
@@ -1259,8 +1259,8 @@ section#transform-cta-section.container {
 
 .benefit-item p {
     color: var(--text-light);
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 1.3rem;
+    line-height: 1.8;
     margin: 0;
 }
 
@@ -1359,8 +1359,8 @@ section#transform-cta-section.container {
 
 .step-content p {
     color: var(--text-light);
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1.3rem;
+    line-height: 1.8;
     margin-bottom: 1rem;
 }
 
@@ -1488,10 +1488,9 @@ section#transform-cta-section.container {
         width: 92%;
         max-width: 1200px;
         margin: 0 auto;
-    }
-
-    .workflow-intro p {
-        font-size: 1.1rem;
+    }    .workflow-intro p {
+        font-size: 1.3rem;
+        line-height: 1.8;
     }
 
     .workflow-benefits h3,
@@ -1560,10 +1559,9 @@ section#transform-cta-section.container {
 
     .cta-content h3 {
         font-size: 1.6rem;
-    }
-
-    .cta-content p {
-        font-size: 1.1rem;
+    }    .cta-content p {
+        font-size: 1.3rem;
+        line-height: 1.8;
     }
       .workflow-cta-btn {
         padding: 0.7rem 1.5rem;
