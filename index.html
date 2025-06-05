@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,11 +6,13 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>Gyannetra — AI Services & Solutions</title>
-    <!-- CRITICAL CSS - Prevent FOUC -->  <style>
-    /* Simplified FOUC prevention */
+  <title>Gyannetra â€” AI Services & Solutions</title>
+    <!-- CRITICAL CSS - Prevent FOUC -->
+  <style>
+    /* Immediate FOUC prevention */
     html { 
-      visibility: visible !important; 
+      visibility: hidden;
+      overflow-x: hidden;
     }
     body { 
       font-family: 'Space Grotesk', sans-serif;
@@ -18,24 +20,31 @@
       color: #ffffff;
       margin: 0;
       padding: 0;
-      opacity: 1;
-    }    /* Custom styles for hero section font sizes */
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    
+    /* Custom styles for hero section font sizes */
     #hero .hero-content h1 {
-      font-size: 4rem; /* Main heading changed to 4rem as requested */
-      margin-bottom: 0.4rem; /* Adjusted bottom margin */
-      line-height: 1.0; /* Lowered and uniform line spacing */
-      font-weight: 100; /* Required font weight 100 */
-    }      #hero .hero-subheading {
-      font-size: 1.8rem; /* Increased size for "We deliver" text */
-      font-weight: 100; /* Required font weight 100 */
-      margin-bottom: 0.4rem; /* Adjusted bottom margin */
-      line-height: 1.0; /* Lowered and uniform line spacing */
-      color: #52eef5; /* Changed text color to match typewriter text */
+      font-size: 4rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.0;
+      font-weight: 100;
+    }
+    
+    #hero .hero-subheading {
+      font-size: 1.8rem;
+      font-weight: 100;
+      margin-bottom: 0.4rem;
+      line-height: 1.0;
+      color: #52eef5;
     }
     
     #hero .hero-supporting-text {
-      margin-top: 0rem; /* Adjusted top margin */
-      line-height: 1.0; /* Lowered and uniform line spacing */
+      margin-top: 0rem;
+      line-height: 1.0;
     }
     
     /* Preloader styles */
@@ -52,7 +61,8 @@
       justify-content: center;
       transition: opacity 0.5s ease;
     }
-      .loader-text {
+    
+    .loader-text {
       color: #52eef5;
       font-size: 1.5rem;
       font-family: var(--font-mono);
@@ -73,31 +83,58 @@
       background: rgba(10, 10, 26, 0.95);
       backdrop-filter: blur(20px);
     }
-    
-    body.loaded #page-preloader {
+      body.loaded #page-preloader {
       opacity: 0;
       pointer-events: none;
-      display: none;    }
+      display: none;
+    }
+    
+    body.loaded {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    html.loaded { 
+      visibility: visible;
+    }
   </style>
-    <!-- CONSOLIDATED CSS - Optimized for Performance -->
-    <link rel="stylesheet" href="css/core.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/responsive.css">
+  
+  <!-- CONSOLIDATED CSS - Optimized for Performance -->
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- GN Mobile Navigation Styles -->
+  <link rel="stylesheet" href="css/gn-mobile-nav.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Simplified Loading Script -->
+  <!-- Optimized Page Loading Script -->
   <script>
-    // Simple page loading
-    document.addEventListener('DOMContentLoaded', function() {
-      // Remove preloader after a short delay
-      setTimeout(function() {
+    // Immediate page stabilization
+    (function() {
+      'use strict';
+      
+      // Fast loading detection
+      function showPage() {
+        document.documentElement.classList.add('loaded');
         document.body.classList.add('loaded');
+        
+        // Hide preloader immediately
         const preloader = document.getElementById('page-preloader');
         if (preloader) {
           preloader.style.display = 'none';
         }
-      }, 500);
-    });
+      }
+      
+      // Show page as soon as possible
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', showPage);
+      } else {
+        showPage();
+      }
+      
+      // Fallback timeout
+      setTimeout(showPage, 100);
+    })();
   </script>
 </head>
 <body>
@@ -122,11 +159,11 @@
         <img src="assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="logo-img">
       </a>
       
-      <!-- Hamburger menu button for mobile -->
-      <button class="hamburger-menu" aria-label="Toggle menu" onclick="toggleMobileMenu(event)">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
+      <!-- GN Mobile Hamburger Menu Button -->
+      <button class="gn-mobile-hamburger__button" aria-label="Toggle mobile menu" type="button">
+        <span class="gn-mobile-hamburger__line"></span>
+        <span class="gn-mobile-hamburger__line"></span>
+        <span class="gn-mobile-hamburger__line"></span>
       </button>
       
       <ul class="nav-links">
@@ -156,7 +193,7 @@
         <li class="dropdown">
           <a href="#" class="nav-link">Education ▾</a>
           <ul class="dropdown-menu education-dropdown">
-            <li><a href="Education/workshops.html"><div class="dropdown-item-content"><img src="assets/workshops.png" alt="Webinars Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Webinars</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
+            <li><a href="Education/workshops.html"><div class="dropdown-item-content"><img src="assets/workshops.png" alt="Webinars Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Workshops</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
             <li><a href="Education/individual-trainings.html"><div class="dropdown-item-content"><img src="assets/indi training.png" alt="Individual Training Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Individual Trainings</span><span class="item-description">Personalized learning programs tailored to your specific needs and learning pace.</span></div></div></a></li>
             <li><a href="Education/corporate-trainings.html"><div class="dropdown-item-content"><img src="assets/corpo training.png" alt="Corporate Training Icon" class="dropdown-icon"><div class="text-content"><span class="item-title">Corporate Trainings</span><span class="item-description">Customized training solutions to upskill your teams and drive AI adoption within your organization.</span></div></div></a></li>
           </ul>
@@ -495,10 +532,76 @@
     </div>
   </footer>
 
+  <!-- GN Mobile Navigation Overlay -->
+  <div class="gn-mobile-nav__overlay">
+    <div class="gn-mobile-nav__container">
+      <div class="gn-mobile-nav__header">
+        <img src="assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="gn-mobile-nav__logo">
+        <button class="gn-mobile-nav__close" aria-label="Close mobile menu" type="button">
+          <span class="gn-mobile-nav__close-line"></span>
+          <span class="gn-mobile-nav__close-line"></span>
+        </button>
+      </div>
+      <nav class="gn-mobile-nav__menu">
+        <ul class="gn-mobile-nav__list">
+          <li class="gn-mobile-nav__item gn-mobile-nav__item--dropdown">            <button class="gn-mobile-nav__link gn-mobile-nav__dropdown-toggle" type="button">
+              Services
+              <span class="gn-mobile-nav__arrow">▾</span>
+            </button>
+            <ul class="gn-mobile-nav__submenu">
+              <li><a href="Services/machine-learning.html" class="gn-mobile-nav__sublink">Machine Learning</a></li>
+              <li><a href="Services/data-analysis.html" class="gn-mobile-nav__sublink">Data Analytics</a></li>
+              <li><a href="Services/generative-ai.html" class="gn-mobile-nav__sublink">Generative AI</a></li>
+              <li><a href="Services/agentic-ai.html" class="gn-mobile-nav__sublink">Agentic AI</a></li>
+              <li><a href="Services/automation-flows.html" class="gn-mobile-nav__sublink">Automation Flows</a></li>
+            </ul>
+          </li>          <li class="gn-mobile-nav__item gn-mobile-nav__item--dropdown">
+            <button class="gn-mobile-nav__link gn-mobile-nav__dropdown-toggle" type="button">
+              Industries
+              <span class="gn-mobile-nav__arrow">▾</span>
+            </button>
+            <ul class="gn-mobile-nav__submenu">
+              <li><a href="Industries/finance.html" class="gn-mobile-nav__sublink">Finance</a></li>
+              <li><a href="Industries/healthcare.html" class="gn-mobile-nav__sublink">Healthcare</a></li>
+              <li><a href="Industries/manufacturing.html" class="gn-mobile-nav__sublink">Manufacturing</a></li>
+              <li><a href="Industries/marketing.html" class="gn-mobile-nav__sublink">Marketing</a></li>
+              <li><a href="Industries/media-entertainment.html" class="gn-mobile-nav__sublink">Media & Entertainment</a></li>
+              <li><a href="Industries/travel.html" class="gn-mobile-nav__sublink">Travel</a></li>
+              <li><a href="Industries/retail.html" class="gn-mobile-nav__sublink">Retail</a></li>
+              <li><a href="Industries/case-studies.html" class="gn-mobile-nav__sublink">Case Studies</a></li>
+            </ul>
+          </li>          <li class="gn-mobile-nav__item gn-mobile-nav__item--dropdown">
+            <button class="gn-mobile-nav__link gn-mobile-nav__dropdown-toggle" type="button">
+              Education
+              <span class="gn-mobile-nav__arrow">▾</span>
+            </button>
+            <ul class="gn-mobile-nav__submenu">
+              <li><a href="Education/workshops.html" class="gn-mobile-nav__sublink">Workshops</a></li>
+              <li><a href="Education/individual-trainings.html" class="gn-mobile-nav__sublink">Individual Trainings</a></li>
+              <li><a href="Education/corporate-trainings.html" class="gn-mobile-nav__sublink">Corporate Trainings</a></li>
+            </ul>
+          </li>
+          <li class="gn-mobile-nav__item">
+            <a href="about.html" class="gn-mobile-nav__link">About Us</a>
+          </li>
+          <li class="gn-mobile-nav__item">
+            <a href="contact.html" class="gn-mobile-nav__link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
   <script src="js/main.js" defer></script>
   <script src="js/tech-marquee.js" defer></script>
   <script src="js/typewriter-effect.js" defer></script>
   <script src="js/menu-dropdown.js" defer></script>
+  <!-- GN Mobile Navigation Script -->
+  <script src="js/gn-mobile-nav.js" defer></script>
   
 </body>
 </html>
+
+
+
+

@@ -1,17 +1,145 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Marketing - Gyannetra</title>    
-  <!-- Consolidated CSS files for optimal performance -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in Marketing - Gyannetra</title>
+  <!-- CRITICAL CSS - Prevent FOUC -->
+  <style>
+    /* Immediate FOUC prevention */
+    html { 
+      visibility: hidden;
+      overflow-x: hidden;
+    }
+    
+    body { 
+      font-family: 'Inter', 'Space Grotesk', sans-serif;
+      background: #0a0a1a;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    
+    /* Critical layout styles to prevent shifts */
+    .site-header {
+      background: rgba(15, 15, 30, 0.95);
+      backdrop-filter: blur(20px);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 0;
+      border-bottom: 1px solid rgba(82, 238, 245, 0.3);
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    main {
+      margin-top: 80px;
+      min-height: calc(100vh - 80px);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Preloader styles */
+    #page-preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0a0a1a;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+    }
+    
+    .loader-text {
+      color: #52eef5;
+      font-size: 1.5rem;
+      font-family: 'Inter', sans-serif;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+    
+    body.loaded {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    body.loaded #page-preloader {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    html.loaded { 
+      visibility: visible;
+    }
+  </style>      <!-- Consolidated CSS files for optimal performance -->
   <link rel="stylesheet" href="../css/core.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/pages.css">
   <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/gn-mobile-nav.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Optimized Page Loading Script -->
+  <script>
+    // Immediate page stabilization
+    (function() {
+      'use strict';
+      
+      // Fast loading detection
+      function showPage() {
+        document.documentElement.classList.add('loaded');
+        document.body.classList.add('loaded');
+        
+        // Hide preloader immediately
+        const preloader = document.getElementById('page-preloader');
+        if (preloader) {
+          preloader.style.display = 'none';
+        }
+      }
+      
+      // Show page as soon as possible
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', showPage);
+      } else {
+        showPage();
+      }
+      
+      // Fallback timeout
+      setTimeout(showPage, 100);
+    })();
+  </script>
 </head>
 <body class="gn-mobile-no-overflow">
+  <!-- Preloader -->
+  <div id="page-preloader">
+    <div class="loader-text">Loading Industry...</div>
+  </div>
     <div class="atmospheric-bg">
         <div class="light-effect-top"></div>
         <div class="light-effect-bottom"></div>
@@ -25,12 +153,11 @@
         <nav class="navbar">
       <a href="../index.html" class="logo">
         <img src="../assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="logo-img" class="gn-responsive-image">
-      </a>
-        <!-- Hamburger menu button for mobile -->
-      <button class="hamburger-menu" aria-label="Toggle menu" onclick="toggleMobileMenu(event)">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
+      </a>        <!-- Hamburger menu button for mobile -->
+      <button class="gn-mobile-hamburger__button" type="button" aria-label="Toggle menu">
+        <span class="gn-mobile-hamburger__line"></span>
+        <span class="gn-mobile-hamburger__line"></span>
+        <span class="gn-mobile-hamburger__line"></span>
       </button>
       
       <ul class="nav-links">
@@ -215,7 +342,74 @@
   <script src="../js/tech-marquee.js" defer></script>
   <script src="../js/mobile-enhancements.js"></script>
 
+  <!-- GN Mobile Navigation Overlay -->
+  <div class="gn-mobile-nav__overlay">
+    <div class="gn-mobile-nav__container">
+      <div class="gn-mobile-nav__header">
+        <img src="../assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="gn-mobile-nav__logo">
+        <button class="gn-mobile-nav__close" aria-label="Close mobile menu" type="button">
+          <span class="gn-mobile-nav__close-line"></span>
+          <span class="gn-mobile-nav__close-line"></span>
+        </button>
+      </div>
+      <nav class="gn-mobile-nav__menu">
+        <ul class="gn-mobile-nav__list">
+          <li class="gn-mobile-nav__item gn-mobile-nav__item--dropdown">
+            <button class="gn-mobile-nav__link gn-mobile-nav__dropdown-toggle" type="button">
+              Services
+              <span class="gn-mobile-nav__arrow">▾</span>
+            </button>
+            <ul class="gn-mobile-nav__submenu">
+              <li><a href="../Services/machine-learning.html" class="gn-mobile-nav__sublink">Machine Learning</a></li>
+              <li><a href="../Services/data-analysis.html" class="gn-mobile-nav__sublink">Data Analytics</a></li>
+              <li><a href="../Services/generative-ai.html" class="gn-mobile-nav__sublink">Generative AI</a></li>
+              <li><a href="../Services/agentic-ai.html" class="gn-mobile-nav__sublink">Agentic AI</a></li>
+              <li><a href="../Services/automation-flows.html" class="gn-mobile-nav__sublink">Automation Flows</a></li>
+            </ul>
+          </li>
+          <li class="gn-mobile-nav__item gn-mobile-nav__item--dropdown">
+            <button class="gn-mobile-nav__link gn-mobile-nav__dropdown-toggle" type="button">
+              Industries
+              <span class="gn-mobile-nav__arrow">▾</span>
+            </button>
+            <ul class="gn-mobile-nav__submenu">
+              <li><a href="./finance.html" class="gn-mobile-nav__sublink">Finance</a></li>
+              <li><a href="./healthcare.html" class="gn-mobile-nav__sublink">Healthcare</a></li>
+              <li><a href="./manufacturing.html" class="gn-mobile-nav__sublink">Manufacturing</a></li>
+              <li><a href="./marketing.html" class="gn-mobile-nav__sublink">Marketing</a></li>
+              <li><a href="./media-entertainment.html" class="gn-mobile-nav__sublink">Media & Entertainment</a></li>
+              <li><a href="./travel.html" class="gn-mobile-nav__sublink">Travel</a></li>
+              <li><a href="./retail.html" class="gn-mobile-nav__sublink">Retail</a></li>
+              <li><a href="./case-studies.html" class="gn-mobile-nav__sublink">Case Studies</a></li>
+            </ul>
+          </li>
+          <li class="gn-mobile-nav__item gn-mobile-nav__item--dropdown">
+            <button class="gn-mobile-nav__link gn-mobile-nav__dropdown-toggle" type="button">
+              Education
+              <span class="gn-mobile-nav__arrow">▾</span>
+            </button>
+            <ul class="gn-mobile-nav__submenu">
+              <li><a href="../Education/workshops.html" class="gn-mobile-nav__sublink">Workshops</a></li>
+              <li><a href="../Education/individual-trainings.html" class="gn-mobile-nav__sublink">Individual Trainings</a></li>
+              <li><a href="../Education/corporate-trainings.html" class="gn-mobile-nav__sublink">Corporate Trainings</a></li>
+            </ul>
+          </li>
+          <li class="gn-mobile-nav__item">
+            <a href="../about.html" class="gn-mobile-nav__link">About Us</a>
+          </li>
+          <li class="gn-mobile-nav__item">
+            <a href="../contact.html" class="gn-mobile-nav__link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- GN Mobile Navigation Script -->
+  <script src="../js/gn-mobile-nav.js" defer></script>
+
 </html>
+
 
 
 

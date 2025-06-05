@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -169,6 +169,8 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <!-- GN Mobile Navigation Styles -->
+    <link rel="stylesheet" href="css/gn-mobile-nav.css">
   
   <!-- Preload secondary resources -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -220,13 +222,13 @@
   <header class="site-header">
     <nav class="navbar">
       <a href="index.html" class="logo">
-        <img src="assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="logo-img" class="gn-responsive-image">
-      </a>
-        <!-- Hamburger menu button for mobile -->
-      <button class="hamburger-menu" aria-label="Toggle menu" onclick="toggleMobileMenu(event)">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
+        <img src="assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="logo-img" class="gn-responsive-image">      </a>
+      
+      <!-- GN Mobile Hamburger Menu Button -->
+      <button class="gn-mobile-hamburger__button" aria-label="Toggle mobile menu" type="button">
+        <span class="gn-mobile-hamburger__line"></span>
+        <span class="gn-mobile-hamburger__line"></span>
+        <span class="gn-mobile-hamburger__line"></span>
       </button>
       
       <ul class="nav-links">
@@ -250,7 +252,7 @@
         </li>
         <li class="dropdown"><a href="#" class="nav-link">Education ▾</a>
           <ul class="dropdown-menu education-dropdown">
-            <li><a href="Education/workshops.html"><div class="dropdown-item-content"><img src="assets/workshops.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Webinars</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
+            <li><a href="Education/workshops.html"><div class="dropdown-item-content"><img src="assets/workshops.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Workshops</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
             <li><a href="Education/individual-trainings.html"><div class="dropdown-item-content"><img src="assets/indi training.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Individual Trainings</span><span class="item-description">Personalized learning programs tailored to your specific needs and learning pace.</span></div></div></a></li>            <li><a href="Education/corporate-trainings.html"><div class="dropdown-item-content"><img src="assets/corpo training.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Corporate Trainings</span><span class="item-description">Customized training solutions to upskill your teams and drive AI adoption within your organization.</span></div></div></a></li>
           </ul>
         </li>
@@ -285,18 +287,18 @@
             </div>
             <button type="submit" class="btn-primary btn-send-message">Send Message</button>
           </form>
-        </div> -->
-        <div class="contact-info-container widened-contact-info">
+        </div> -->        <div class="contact-info-container widened-contact-info">
           <h2>CONTACT INFORMATION</h2>
+          <div class="expert-advice-card">
+            <h3>Need Expert Advice?</h3>
+            <p>Schedule a free 30-minute consultation with our AI specialists</p>
+            <a href="https://schedule.fillout.com/t/3XsBwh8ipfus" class="btn-book-consultation btn-primary" class="btn-primary gn-mobile-button" target="_blank" rel="noopener noreferrer">Book a Free Consultation</a>
+          </div>
           <ul class="contact-details">
             <li><i class="fas fa-envelope"></i>info@gyannetra.com</li>
             <li><i class="fas fa-phone"></i>+91 89491-35299</li>
             <li><i class="fas fa-map-marker-alt"></i>Pune, Maharashtra, India</li>
-          </ul>          <div class="expert-advice-card">
-            <h3>Need Expert Advice?</h3>
-            <p>Schedule a free 30-minute consultation with our AI specialists</p>
-            <a href="https://schedule.fillout.com/t/3XsBwh8ipfus" class="btn-book-consultation btn-primary" class="btn-primary gn-mobile-button" target="_blank" rel="noopener noreferrer">Book Consultation</a>
-          </div>
+          </ul>
         </div>
       </div>
       <!-- Removed free-consultation-link as it's now part of the expert-advice-card or can be re-evaluated -->
@@ -342,12 +344,82 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms and Conditions</a></p>
-      </div>    </div>  </footer>
-  <script src="js/menu-dropdown.js" defer></script>
+      </div>    </div>    
+  
+</footer>
+
+<!-- GN Mobile Navigation Overlay -->
+  <div class="gn-mobile-nav__overlay">
+    <div class="gn-mobile-nav__container">
+      <div class="gn-mobile-nav__header">
+        <img src="assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="gn-mobile-nav__logo">
+        <button class="gn-mobile-nav__close" aria-label="Close mobile menu" type="button">
+          <span class="gn-mobile-nav__close-line"></span>
+          <span class="gn-mobile-nav__close-line"></span>
+        </button>
+      </div>
+      <nav class="gn-mobile-nav__menu">
+        <ul class="gn-mobile-nav__list">
+          <li class="gn-mobile-nav__item gn-mobile-nav__item--dropdown">            <button class="gn-mobile-nav__link gn-mobile-nav__dropdown-toggle" type="button">
+              Services
+              <span class="gn-mobile-nav__arrow">▾</span>
+            </button>
+            <ul class="gn-mobile-nav__submenu">
+              <li><a href="Services/machine-learning.html" class="gn-mobile-nav__sublink">Machine Learning</a></li>
+              <li><a href="Services/data-analysis.html" class="gn-mobile-nav__sublink">Data Analytics</a></li>
+              <li><a href="Services/generative-ai.html" class="gn-mobile-nav__sublink">Generative AI</a></li>
+              <li><a href="Services/agentic-ai.html" class="gn-mobile-nav__sublink">Agentic AI</a></li>
+              <li><a href="Services/automation-flows.html" class="gn-mobile-nav__sublink">Automation Flows</a></li>
+            </ul>
+          </li>
+          <li class="gn-mobile-nav__item gn-mobile-nav__item--dropdown">            <button class="gn-mobile-nav__link gn-mobile-nav__dropdown-toggle" type="button">
+              Industries
+              <span class="gn-mobile-nav__arrow">▾</span>
+            </button>
+            <ul class="gn-mobile-nav__submenu">
+              <li><a href="Industries/finance.html" class="gn-mobile-nav__sublink">Finance</a></li>
+              <li><a href="Industries/healthcare.html" class="gn-mobile-nav__sublink">Healthcare</a></li>
+              <li><a href="Industries/manufacturing.html" class="gn-mobile-nav__sublink">Manufacturing</a></li>
+              <li><a href="Industries/marketing.html" class="gn-mobile-nav__sublink">Marketing</a></li>
+              <li><a href="Industries/media-entertainment.html" class="gn-mobile-nav__sublink">Media & Entertainment</a></li>
+              <li><a href="Industries/travel.html" class="gn-mobile-nav__sublink">Travel</a></li>
+              <li><a href="Industries/retail.html" class="gn-mobile-nav__sublink">Retail</a></li>
+              <li><a href="Industries/case-studies.html" class="gn-mobile-nav__sublink">Case Studies</a></li>
+            </ul>
+          </li>
+          <li class="gn-mobile-nav__item gn-mobile-nav__item--dropdown">            <button class="gn-mobile-nav__link gn-mobile-nav__dropdown-toggle" type="button">
+              Education
+              <span class="gn-mobile-nav__arrow">▾</span>
+            </button>
+            <ul class="gn-mobile-nav__submenu">
+              <li><a href="Education/workshops.html" class="gn-mobile-nav__sublink">Webinars</a></li>
+              <li><a href="Education/individual-trainings.html" class="gn-mobile-nav__sublink">Individual Trainings</a></li>
+              <li><a href="Education/corporate-trainings.html" class="gn-mobile-nav__sublink">Corporate Trainings</a></li>
+            </ul>
+          </li>
+          <li class="gn-mobile-nav__item">
+            <a href="about.html" class="gn-mobile-nav__link">About Us</a>
+          </li>
+          <li class="gn-mobile-nav__item">
+            <a href="contact.html" class="gn-mobile-nav__link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>  <script src="js/menu-dropdown.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/form-handler.js" defer></script>
+  <!-- GN Mobile Navigation Script -->
+  <script src="js/gn-mobile-nav.js" defer></script>
 
 </html>
+
+
+
+
+
+
+
 
 
 

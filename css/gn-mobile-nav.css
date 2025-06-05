@@ -1,0 +1,443 @@
+/* ============================================
+   GN MOBILE NAVIGATION - ISOLATED STYLES
+   ============================================ */
+
+/* Mobile Hamburger Button */
+.gn-mobile-hamburger__button {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(82, 238, 245, 0.1);
+  border: 2px solid rgba(82, 238, 245, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.3s ease;
+  z-index: 10001;
+  position: relative;
+  touch-action: manipulation;
+}
+
+.gn-mobile-hamburger__button:hover {
+  transform: scale(1.05);
+  background: rgba(82, 238, 245, 0.2);
+  border-color: rgba(82, 238, 245, 0.5);
+}
+
+.gn-mobile-hamburger__button:focus {
+  outline: 2px solid #52eef5;
+  outline-offset: 2px;
+  background: rgba(82, 238, 245, 0.15);
+}
+
+.gn-mobile-hamburger__button:active {
+  transform: scale(0.95);
+}
+
+.gn-mobile-hamburger__line {
+  width: 24px;
+  height: 3px;
+  background: #52eef5;
+  margin: 2px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.gn-mobile-hamburger__button.gn-mobile-hamburger--active .gn-mobile-hamburger__line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.gn-mobile-hamburger__button.gn-mobile-hamburger--active .gn-mobile-hamburger__line:nth-child(2) {
+  opacity: 0;
+}
+
+.gn-mobile-hamburger__button.gn-mobile-hamburger--active .gn-mobile-hamburger__line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Navigation Overlay */
+.gn-mobile-nav__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(10, 10, 26, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gn-mobile-nav__overlay.gn-mobile-nav--active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.gn-mobile-nav__container {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gn-mobile-nav__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(82, 238, 245, 0.2);
+  margin-bottom: 30px;
+}
+
+.gn-mobile-nav__logo {
+  height: 40px;
+  width: auto;
+}
+
+.gn-mobile-nav__close {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+}
+
+.gn-mobile-nav__close-line {
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  background: #52eef5;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.gn-mobile-nav__close-line:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.gn-mobile-nav__close-line:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.gn-mobile-nav__close:hover .gn-mobile-nav__close-line {
+  background: #ffffff;
+}
+
+/* Mobile Navigation Menu */
+.gn-mobile-nav__menu {
+  flex: 1;
+}
+
+.gn-mobile-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gn-mobile-nav__item {
+  margin-bottom: 10px;
+}
+
+.gn-mobile-nav__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 0;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.gn-mobile-nav__link:hover,
+.gn-mobile-nav__link:focus {
+  color: #52eef5;
+  border-bottom-color: rgba(82, 238, 245, 0.3);
+}
+
+.gn-mobile-nav__arrow {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  color: #52eef5;
+}
+
+.gn-mobile-nav__dropdown-toggle.gn-mobile-nav--expanded .gn-mobile-nav__arrow {
+  transform: rotate(180deg);
+}
+
+/* Mobile Submenu */
+.gn-mobile-nav__submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: rgba(82, 238, 245, 0.05);
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.gn-mobile-nav__item--dropdown.gn-mobile-nav--expanded .gn-mobile-nav__submenu {
+  max-height: 500px;
+  padding: 15px 0;
+}
+
+.gn-mobile-nav__sublink {
+  display: block;
+  padding: 12px 20px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.gn-mobile-nav__sublink:hover,
+.gn-mobile-nav__sublink:focus {
+  color: #52eef5;
+  background: rgba(82, 238, 245, 0.1);
+  border-left-color: #52eef5;
+}
+
+/* Media Queries - Enhanced specificity */
+@media screen and (max-width: 768px) {
+  .gn-mobile-hamburger__button {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+  
+  /* CRITICAL: Hide desktop navigation completely on mobile */
+  .nav-links {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    z-index: -1 !important;
+  }
+  
+  /* Hide dropdown menus that might still be visible */
+  .dropdown-menu,
+  .services-dropdown,
+  .industries-dropdown,
+  .education-dropdown {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    z-index: -1 !important;
+  }
+  
+  /* Hide any dropdown items */
+  .nav-links li,
+  .nav-links .dropdown,
+  .nav-links .dropdown-item-content {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  
+  /* Force hide hamburger menus that are not our GN mobile system */
+  .hamburger-menu:not(.gn-mobile-hamburger__button) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+/* ============================================
+   ADDITIONAL DEFENSIVE STYLES - HIGHEST PRIORITY
+   ============================================ */
+
+/* Force hide desktop navigation elements on mobile with maximum specificity */
+@media screen and (max-width: 768px) {
+  /* Target all possible desktop navigation selectors */
+  .navbar .nav-links,
+  .site-header .nav-links,
+  header .nav-links,
+  nav .nav-links,
+  .nav-links.active,
+  .nav-links.show {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    z-index: -1 !important;
+  }
+  
+  /* Force hide all desktop dropdown menus */
+  .dropdown-menu,
+  .services-dropdown,
+  .industries-dropdown,
+  .education-dropdown,
+  .navbar .dropdown-menu,
+  .site-header .dropdown-menu,
+  .nav-links .dropdown-menu {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    z-index: -1 !important;
+  }
+  
+  /* Force hide dropdown arrows and any dropdown-related elements */
+  .nav-links .dropdown,
+  .nav-links .dropdown > a,
+  .nav-links .dropdown-toggle,
+  .nav-links li.dropdown {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
+  /* Ensure no desktop hover effects work on mobile */
+  .navbar .dropdown:hover .dropdown-menu,
+  .site-header .dropdown:hover .dropdown-menu,
+  .nav-links .dropdown:hover .dropdown-menu {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Override any inline styles that might conflict */
+  .nav-links[style*="display"],
+  .dropdown-menu[style*="display"],
+  .dropdown[style*="display"] {
+    display: none !important;
+  }
+}
+
+/* Ensure mobile navigation elements are always visible when needed */
+@media screen and (max-width: 768px) {
+  .gn-mobile-hamburger__button {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 10001 !important;
+  }
+  
+  .gn-mobile-nav__overlay.gn-mobile-nav--active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 10000 !important;
+  }
+}
+
+/* Animation Delays for Smooth Entry */
+.gn-mobile-nav__overlay.gn-mobile-nav--active .gn-mobile-nav__item {
+  animation: gnMobileSlideIn 0.5s ease forwards;
+}
+
+.gn-mobile-nav__overlay.gn-mobile-nav--active .gn-mobile-nav__item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.gn-mobile-nav__overlay.gn-mobile-nav--active .gn-mobile-nav__item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.gn-mobile-nav__overlay.gn-mobile-nav--active .gn-mobile-nav__item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.gn-mobile-nav__overlay.gn-mobile-nav--active .gn-mobile-nav__item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.gn-mobile-nav__overlay.gn-mobile-nav--active .gn-mobile-nav__item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes gnMobileSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.gn-mobile-nav--no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+/* Additional defensive styles to prevent conflicts */
+@media screen and (max-width: 768px) {
+  /* Ensure no desktop dropdown styles leak through */
+  .navbar .dropdown:hover .dropdown-menu,
+  .navbar .dropdown.active .dropdown-menu {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Force hide any desktop dropdown animations */
+  .dropdown-menu * {
+    display: none !important;
+  }
+  
+  /* Ensure mobile hamburger button is always on top */
+  .gn-mobile-hamburger__button {
+    z-index: 10001 !important;
+    position: relative !important;
+  }
+  
+  /* Ensure mobile overlay is properly layered */
+  .gn-mobile-nav__overlay {
+    z-index: 10000 !important;
+    position: fixed !important;
+  }
+}

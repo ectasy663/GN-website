@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -94,12 +94,13 @@
     }
       html.loaded { 
       visibility: visible;
-    }
-  </style>    <!-- CONSOLIDATED CSS - Optimized for Performance -->
+    }  </style>    <!-- CONSOLIDATED CSS - Optimized for Performance -->
     <link rel="stylesheet" href="css/core.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <!-- GN Mobile Navigation Styles -->
+    <link rel="stylesheet" href="css/gn-mobile-nav.css">
   
   <!-- Preload secondary resources -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -146,8 +147,7 @@
         transition: all 0.3s ease !important;
         border-radius: 2px !important;
       }
-      
-      .navbar {
+        .navbar {
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
@@ -155,27 +155,25 @@
         position: relative !important;
       }
       
+      /* DISABLED OLD MOBILE NAV - USING GN MOBILE NAV INSTEAD */
       .nav-links {
-        position: fixed !important;
-        top: 0 !important;
-        left: -100% !important;
-        width: 100% !important;
-        height: 100vh !important;
-        background: rgba(15, 15, 30, 0.98) !important;
-        backdrop-filter: blur(25px) !important;
-        z-index: 88888 !important;
-        transition: left 0.4s ease !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
-        align-items: center !important;
-        padding-top: 100px !important;
-        overflow-y: auto !important;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        left: -9999px !important;
+        top: -9999px !important;
+        z-index: -1 !important;
       }
       
       .nav-links.active,
       .nav-links.show {
-        left: 0 !important;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        left: -9999px !important;
       }    }
   </style>
     <!-- Optimized Page Loading Script -->
@@ -223,15 +221,15 @@
   </div>
   <!-- NAVBAR -->  
   <header class="site-header">
-    <nav class="navbar">
-      <a href="index.html" class="logo">
+    <nav class="navbar">      <a href="index.html" class="logo">
         <img src="assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="logo-img" class="gn-responsive-image">
       </a>
-        <!-- Hamburger menu button for mobile -->
-      <button class="hamburger-menu" aria-label="Toggle menu" onclick="toggleMobileMenu(event)">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
+      
+      <!-- GN Mobile Hamburger Menu Button -->
+      <button class="gn-mobile-hamburger__button" aria-label="Toggle mobile menu" type="button">
+        <span class="gn-mobile-hamburger__line"></span>
+        <span class="gn-mobile-hamburger__line"></span>
+        <span class="gn-mobile-hamburger__line"></span>
       </button>
       
       <ul class="nav-links">
@@ -259,7 +257,7 @@
           </ul>
         </li><li class="dropdown"><a href="#" class="nav-link">Education ▾</a>
           <ul class="dropdown-menu education-dropdown">
-            <li><a href="Education/workshops.html"><div class="dropdown-item-content"><img src="assets/workshops.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Webinars</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
+            <li><a href="Education/workshops.html"><div class="dropdown-item-content"><img src="assets/workshops.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Workshops</span><span class="item-description">Engaging and interactive sessions designed to introduce key AI concepts and practical skills.</span></div></div></a></li>
             <li><a href="Education/individual-trainings.html"><div class="dropdown-item-content"><img src="assets/indi training.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Individual Trainings</span><span class="item-description">Personalized learning programs tailored to your specific needs and learning pace.</span></div></div></a></li>
             <li><a href="Education/corporate-trainings.html"><div class="dropdown-item-content"><img src="assets/corpo training.png" alt="" class="dropdown-icon" / class="gn-responsive-image"><div class="text-content"><span class="item-title">Corporate Trainings</span><span class="item-description">Customized training solutions to upskill your teams and drive AI adoption within your organization.
             </span></div></div></a></li>
@@ -284,11 +282,11 @@
     <section id="about-us">
       <h1>ABOUT US</h1>      <div class="about-section">
         <h2>WHAT WE DO</h2>
-        <p>At Gyannetra Pvt Ltd, we specialize in crafting intelligent, AI-powered solutions tailored to drive data-centric transformation across industries. Our core expertise lies in developing custom tools and models in Artificial Intelligence, Data Science, and Software Engineering — empowering businesses to unlock insights, automate processes, and accelerate innovation. Whether it's building large language model (LLM)-based applications, intelligent OCR systems, analytics dashboards, or workflow automations, we help organizations harness the full potential of modern AI and data technologies.</p>
+        <p>At Gyannetra Pvt Ltd, we specialize in crafting intelligent, AI-powered solutions tailored to drive data-centric transformation across industries. Our core expertise lies in developing custom tools and models in Artificial Intelligence, Data Science, and Software Engineering â€” empowering businesses to unlock insights, automate processes, and accelerate innovation. Whether it's building large language model (LLM)-based applications, intelligent OCR systems, analytics dashboards, or workflow automations, we help organizations harness the full potential of modern AI and data technologies.</p>
       </div><div class="about-section mission-vision">        
         <div class="vision">
           <h2>OUR VISION</h2>
-          <p>To be a trusted global partner in AI-driven innovation — enabling businesses, governments, and educational institutions to evolve intelligently and sustainably. We envision a world where intelligent systems and human values work in harmony to solve real-world challenges, elevate decision-making, and create a better future for all.</p>
+          <p>To be a trusted global partner in AI-driven innovation â€” enabling businesses, governments, and educational institutions to evolve intelligently and sustainably. We envision a world where intelligent systems and human values work in harmony to solve real-world challenges, elevate decision-making, and create a better future for all.</p>
         </div>
         <div class="mission">
           <h2>OUR MISSION</h2>
@@ -346,14 +344,79 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2025 Gyannetra. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms and Conditions</a></p>
-      </div>
-    </div>  </footer>
+      </div>    </div>  </footer>
   
-  <script src="js/menu-dropdown.js" defer></script>
+  <!-- GN Mobile Navigation Overlay -->
+  <div class="gn-mobile-nav__overlay">
+    <div class="gn-mobile-nav__container">
+      <div class="gn-mobile-nav__header">
+        <img src="assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="gn-mobile-nav__logo">
+        <button class="gn-mobile-nav__close" aria-label="Close mobile menu" type="button">
+          <span class="gn-mobile-nav__close-line"></span>
+          <span class="gn-mobile-nav__close-line"></span>
+        </button>
+      </div>
+      <nav class="gn-mobile-nav__menu">
+        <ul class="gn-mobile-nav__list">        <li class="gn-mobile-nav__item gn-mobile-nav__item--dropdown">
+            <button class="gn-mobile-nav__link gn-mobile-nav__dropdown-toggle" type="button">
+              Services
+              <span class="gn-mobile-nav__arrow">▾</span>
+            </button>
+            <ul class="gn-mobile-nav__submenu">
+              <li><a href="Services/machine-learning.html" class="gn-mobile-nav__sublink">Machine Learning</a></li>
+              <li><a href="Services/data-analysis.html" class="gn-mobile-nav__sublink">Data Analytics</a></li>
+              <li><a href="Services/generative-ai.html" class="gn-mobile-nav__sublink">Generative AI</a></li>
+              <li><a href="Services/agentic-ai.html" class="gn-mobile-nav__sublink">Agentic AI</a></li>
+              <li><a href="Services/automation-flows.html" class="gn-mobile-nav__sublink">Automation Flows</a></li>
+            </ul>
+          </li>          <li class="gn-mobile-nav__item gn-mobile-nav__item--dropdown">
+            <button class="gn-mobile-nav__link gn-mobile-nav__dropdown-toggle" type="button">
+              Industries
+              <span class="gn-mobile-nav__arrow">▾</span>
+            </button>
+            <ul class="gn-mobile-nav__submenu">
+              <li><a href="Industries/finance.html" class="gn-mobile-nav__sublink">Finance</a></li>
+              <li><a href="Industries/healthcare.html" class="gn-mobile-nav__sublink">Healthcare</a></li>
+              <li><a href="Industries/manufacturing.html" class="gn-mobile-nav__sublink">Manufacturing</a></li>
+              <li><a href="Industries/marketing.html" class="gn-mobile-nav__sublink">Marketing</a></li>
+              <li><a href="Industries/media-entertainment.html" class="gn-mobile-nav__sublink">Media & Entertainment</a></li>
+              <li><a href="Industries/travel.html" class="gn-mobile-nav__sublink">Travel</a></li>
+              <li><a href="Industries/retail.html" class="gn-mobile-nav__sublink">Retail</a></li>
+              <li><a href="Industries/case-studies.html" class="gn-mobile-nav__sublink">Case Studies</a></li>
+            </ul>
+          </li>          <li class="gn-mobile-nav__item gn-mobile-nav__item--dropdown">
+            <button class="gn-mobile-nav__link gn-mobile-nav__dropdown-toggle" type="button">
+              Education
+              <span class="gn-mobile-nav__arrow">▾</span>
+            </button>
+            <ul class="gn-mobile-nav__submenu">
+              <li><a href="Education/workshops.html" class="gn-mobile-nav__sublink">Workshops</a></li>
+              <li><a href="Education/individual-trainings.html" class="gn-mobile-nav__sublink">Individual Trainings</a></li>
+              <li><a href="Education/corporate-trainings.html" class="gn-mobile-nav__sublink">Corporate Trainings</a></li>
+            </ul>
+          </li>
+          <li class="gn-mobile-nav__item">
+            <a href="about.html" class="gn-mobile-nav__link">About Us</a>
+          </li>
+          <li class="gn-mobile-nav__item">
+            <a href="contact.html" class="gn-mobile-nav__link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+    <script src="js/menu-dropdown.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/data-node-interactions.js" defer></script>
+  <!-- GN Mobile Navigation Script -->
+  <script src="js/gn-mobile-nav.js" defer></script>
 
 </html>
+
+
+
+
 
 
 

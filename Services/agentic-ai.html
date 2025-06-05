@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -71,6 +71,7 @@
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/pages.css">
   <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/gn-mobile-nav.css">
   
   <!-- Preload secondary resources -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -97,13 +98,35 @@
       } else {
         showPage();
       }
+        // Fast loading detection
+      function showPage() {
+        document.documentElement.classList.add('loaded');
+        document.body.classList.add('loaded');
+        
+        // Hide preloader immediately
+        const preloader = document.getElementById('page-preloader');
+        if (preloader) {
+          preloader.style.display = 'none';
+        }
+      }
+      
+      // Show page as soon as possible
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', showPage);
+      } else {
+        showPage();
+      }
       
       // Fallback timeout
-      setTimeout(showPage, 50);
+      setTimeout(showPage, 100);
     })();
   </script>
 </head>
-<body class="gn-mobile-no-overflow">
+<body class="theme-agentic" class="gn-mobile-no-overflow">
+  <!-- Preloader -->
+  <div id="page-preloader">
+    <div class="loader-text">Loading Service...</div>
+  </div>
   <div class="atmospheric-bg">
     <div class="light-effect-top"></div>
     <div class="light-effect-bottom"></div>
@@ -117,12 +140,11 @@
       <a href="../index.html" class="logo">
         <img src="../assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="logo-img" class="gn-responsive-image">
       </a>
-      
-      <!-- Hamburger menu button for mobile -->
-      <button class="hamburger-menu" aria-label="Toggle menu" onclick="toggleMobileMenu(event)">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
+        <!-- GN Mobile Hamburger Menu Button -->
+      <button class="gn-mobile-hamburger__button" aria-label="Toggle mobile menu" type="button">
+        <span class="gn-mobile-hamburger__line"></span>
+        <span class="gn-mobile-hamburger__line"></span>
+        <span class="gn-mobile-hamburger__line"></span>
       </button>
       
       <ul class="nav-links">
@@ -345,6 +367,74 @@
   <script src="../js/menu-dropdown.js" defer></script>
   <script src="../js/tech-marquee.js" defer></script>
 
+  <!-- GN Mobile Navigation Overlay -->
+  <div class="gn-mobile-nav__overlay">
+    <div class="gn-mobile-nav__container">
+      <div class="gn-mobile-nav__header">
+        <img src="../assets/Company Icons/GN logo with banner.svg" alt="Gyannetra Logo" class="gn-mobile-nav__logo">
+        <button class="gn-mobile-nav__close" aria-label="Close mobile menu" type="button">
+          <span class="gn-mobile-nav__close-line"></span>
+          <span class="gn-mobile-nav__close-line"></span>
+        </button>
+      </div>
+      <nav class="gn-mobile-nav__menu">
+        <ul class="gn-mobile-nav__list">
+          <li class="gn-mobile-nav__item gn-mobile-nav__item--dropdown">
+            <button class="gn-mobile-nav__link gn-mobile-nav__dropdown-toggle" type="button">
+              Services
+              <span class="gn-mobile-nav__arrow">▾</span>
+            </button>
+            <ul class="gn-mobile-nav__submenu">
+              <li><a href="./machine-learning.html" class="gn-mobile-nav__sublink">Machine Learning</a></li>
+              <li><a href="./data-analysis.html" class="gn-mobile-nav__sublink">Data Analytics</a></li>
+              <li><a href="./generative-ai.html" class="gn-mobile-nav__sublink">Generative AI</a></li>
+              <li><a href="./agentic-ai.html" class="gn-mobile-nav__sublink">Agentic AI</a></li>
+              <li><a href="./automation-flows.html" class="gn-mobile-nav__sublink">Automation Flows</a></li>
+            </ul>
+          </li>
+          <li class="gn-mobile-nav__item gn-mobile-nav__item--dropdown">
+            <button class="gn-mobile-nav__link gn-mobile-nav__dropdown-toggle" type="button">
+              Industries
+              <span class="gn-mobile-nav__arrow">▾</span>
+            </button>
+            <ul class="gn-mobile-nav__submenu">
+              <li><a href="../Industries/finance.html" class="gn-mobile-nav__sublink">Finance</a></li>
+              <li><a href="../Industries/healthcare.html" class="gn-mobile-nav__sublink">Healthcare</a></li>
+              <li><a href="../Industries/manufacturing.html" class="gn-mobile-nav__sublink">Manufacturing</a></li>
+              <li><a href="../Industries/marketing.html" class="gn-mobile-nav__sublink">Marketing</a></li>
+              <li><a href="../Industries/media-entertainment.html" class="gn-mobile-nav__sublink">Media & Entertainment</a></li>
+              <li><a href="../Industries/travel.html" class="gn-mobile-nav__sublink">Travel</a></li>
+              <li><a href="../Industries/retail.html" class="gn-mobile-nav__sublink">Retail</a></li>
+              <li><a href="../Industries/case-studies.html" class="gn-mobile-nav__sublink">Case Studies</a></li>
+            </ul>
+          </li>
+          <li class="gn-mobile-nav__item gn-mobile-nav__item--dropdown">
+            <button class="gn-mobile-nav__link gn-mobile-nav__dropdown-toggle" type="button">
+              Education
+              <span class="gn-mobile-nav__arrow">▾</span>
+            </button>
+            <ul class="gn-mobile-nav__submenu">
+              <li><a href="../Education/workshops.html" class="gn-mobile-nav__sublink">Workshops</a></li>
+              <li><a href="../Education/individual-trainings.html" class="gn-mobile-nav__sublink">Individual Trainings</a></li>
+              <li><a href="../Education/corporate-trainings.html" class="gn-mobile-nav__sublink">Corporate Trainings</a></li>
+            </ul>
+          </li>
+          <li class="gn-mobile-nav__item">
+            <a href="../about.html" class="gn-mobile-nav__link">About Us</a>
+          </li>
+          <li class="gn-mobile-nav__item">
+            <a href="../contact.html" class="gn-mobile-nav__link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <script src="../js/mobile-enhancements.js"></script>
+  <!-- GN Mobile Navigation Script -->
+  <script src="../js/gn-mobile-nav.js" defer></script>
+
+</body>
 </html>
 
 

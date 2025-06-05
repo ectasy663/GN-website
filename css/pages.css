@@ -1064,10 +1064,6 @@ section#transform-cta-section.container {
     background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.9) 0%, var(--primary-color) 100%);
 }
 
-.course-card .btn-primary:hover::before {
-    left: 100%;
-}
-
 /* Responsive Design for Courses */
 @media (max-width: 1024px) {
     .courses-grid {
@@ -1661,12 +1657,36 @@ section#transform-cta-section.container {
     letter-spacing: 2px !important;
 }
 
+/* Expert Advice Card - positioned first with proper bottom margin */
+.contact-page-container .widened-contact-info .expert-advice-card {
+    max-width: 900px !important;
+    margin: 0 auto 3.5rem auto !important; /* Increased bottom margin for better separation */
+    padding: 3rem !important;
+    background: rgba(82, 238, 245, 0.08) !important;
+    border: 3px solid rgba(82, 238, 245, 0.3) !important;
+    border-radius: 20px !important;
+}
+
+.contact-page-container .widened-contact-info .expert-advice-card h3 {
+    font-size: 2.4rem !important;
+    color: #52eef5 !important;
+    margin-bottom: 1rem !important;
+}
+
+.contact-page-container .widened-contact-info .expert-advice-card p {
+    font-size: 1.3rem !important;
+    margin-bottom: 2rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    line-height: 1.6 !important;
+}
+
+/* Contact Details - positioned after expert advice card with top margin reduced */
 .contact-page-container .widened-contact-info .contact-details {
     display: flex !important;
     flex-direction: column !important;
     gap: 2rem !important;
     max-width: 900px !important;
-    margin: 0 auto 3rem auto !important;
+    margin: 0 auto 0 auto !important; /* Removed bottom margin since it's now at the end */
 }
 
 .contact-page-container .widened-contact-info .contact-details li {
@@ -1693,66 +1713,6 @@ section#transform-cta-section.container {
     margin-right: 1.5rem !important;
     color: #52eef5 !important;
     min-width: 30px !important;
-}
-
-.contact-page-container .widened-contact-info .expert-advice-card {
-    max-width: 900px !important;
-    margin: 0 auto !important;
-    padding: 3rem !important;
-    background: rgba(82, 238, 245, 0.08) !important;
-    border: 3px solid rgba(82, 238, 245, 0.3) !important;
-    border-radius: 20px !important;
-}
-
-.contact-page-container .widened-contact-info .expert-advice-card h3 {
-    font-size: 2.4rem !important;
-    color: #52eef5 !important;
-    margin-bottom: 1rem !important;
-}
-
-.contact-page-container .widened-contact-info .expert-advice-card p {
-    font-size: 1.3rem !important;
-    margin-bottom: 2rem !important;
-    color: rgba(255, 255, 255, 0.9) !important;
-    line-height: 1.6 !important;
-}
-
-.contact-page-container .widened-contact-info .btn-book-consultation {
-    padding: 1rem 2.5rem !important;
-    font-size: 1.2rem !important;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-color-hover)) !important;
-    border: 2px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: 12px !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1.5px !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 6px 20px rgba(var(--primary-color-rgb), 0.3) !important;
-    position: relative !important;
-    overflow: hidden !important;
-}
-
-.contact-page-container .widened-contact-info .btn-book-consultation:before {
-    content: '' !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: -100% !important;
-    width: 100% !important;
-    height: 100% !important;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
-    transition: all 0.8s ease !important;
-    z-index: -1 !important;
-}
-
-.contact-page-container .widened-contact-info .btn-book-consultation:hover {
-    transform: translateY(-3px) scale(1.02) !important;
-    box-shadow: 0 15px 25px -10px rgba(var(--primary-color-rgb), 0.6) !important;
-    background: linear-gradient(135deg, var(--primary-color-hover), var(--primary-color)) !important;
-}
-
-.contact-page-container .widened-contact-info .btn-book-consultation:hover:before {
-    left: 100% !important;
 }
 
 /* Responsive design for widened contact info */
