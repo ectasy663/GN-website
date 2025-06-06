@@ -70,11 +70,11 @@
     #hero {
         min-height: calc(100vh - 80px);
         height: calc(100vh - 80px);
-        padding-top: 2rem;
+        padding-top: 1rem;
     }
     
     .hero-container {
-        padding: 3rem 5% 2rem 5%;
+        padding: 2rem 4% 1rem 4%;
         justify-content: center;
         align-items: center;
     }
@@ -82,33 +82,68 @@
     .hero-content {
         text-align: center;
         max-width: 100%;
-        padding: 0 1rem;
-        margin-top: 1rem;
+        padding: 0 0.5rem;
+        margin-top: 0.5rem;
     }
-      .hero-content h1 {
-        font-size: 4.5rem;
+    
+    .hero-content h1 {
+        font-size: 2.8rem;
         font-weight: 100;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-        letter-spacing: 0.5px;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        letter-spacing: 0.3px;
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
     }
     
-    .hero-content p {
-        font-size: 1.4rem;
-        line-height: 1.4;
-        margin-bottom: 2rem;
-        color: rgba(255, 255, 255, 0.9);
-        max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
+    /* Hero typewriter section mobile */
+    .hero-typewriter-section {
+        margin: 0.5rem 0 1rem 0;
+        width: 100%;
     }
     
+    .hero-subheading {
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .typewriter-container {
+        font-size: 2.2rem;
+        min-height: 2.8rem;
+        line-height: 1.1;
+        padding: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .typewriter-text {
+        display: inline-block;
+        word-break: break-word;
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .hero-supporting-text {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin: 1rem auto 1.5rem auto;
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 95%;
+        padding: 0 0.5rem;
+    }    
     .hero-content .btn-primary {
-        padding: 1rem 2rem;
-        font-size: 1.2rem;
-        border-radius: 12px;
-        min-width: 200px;
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 10px;
+        min-width: 180px;
+        margin: 0.3rem;
+    }
+    
+    /* Hero CTA buttons mobile */
+    .hero-cta-buttons {
+        gap: 0.8rem;
+        margin-top: 1rem;
+        flex-direction: column;
+        align-items: center;
     }
     
     /* Navigation mobile styles */
@@ -342,38 +377,66 @@
 /* ===== EXTRA SMALL MOBILE (480px and below) ===== */
 @media (max-width: 480px) {
     #hero {
-        height: 65vh;
-        min-height: 450px;
-        padding-top: 1.5rem;
+        height: auto;
+        min-height: calc(100vh - 80px);
+        padding-top: 1rem;
     }
     
     .hero-container {
-        padding: 2.5rem 3% 1rem 3%;
+        padding: 1.5rem 3% 1rem 3%;
     }
     
     .hero-content {
-        margin-top: 1.5rem;
+        margin-top: 1rem;
+        padding: 0 0.25rem;
     }
-      .hero-content h1 {
-        font-size: 4.5rem;
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
         font-weight: 100;
         line-height: 1.1;
         margin-bottom: 0.8rem;
         text-shadow: none !important;
-        letter-spacing: 0.3px;
+        letter-spacing: 0.2px;
         filter: brightness(1.08);
     }
-      .hero-content p {
-        font-size: 1.3rem;
-        margin-bottom: 1.2rem;
-        line-height: 1.8;
+    
+    /* Extra small mobile typewriter */
+    .hero-typewriter-section {
+        margin: 0.4rem 0 0.8rem 0;
+    }
+    
+    .hero-subheading {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .typewriter-container {
+        font-size: 1.8rem;
+        min-height: 2.2rem;
+        line-height: 1.0;
+    }
+    
+    .hero-supporting-text {
+        font-size: 1rem;
+        margin: 0.8rem auto 1.2rem auto;
+        line-height: 1.6;
+        max-width: 98%;
+        padding: 0 0.25rem;
     }
     
     .hero-content .btn-primary {
-        padding: 0.8rem 1.5rem;
-        font-size: 1.1rem;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.95rem;
+        min-width: 160px;
+        margin: 0.25rem;
     }
     
+    /* Hero CTA buttons extra small */
+    .hero-cta-buttons {
+        gap: 0.6rem;
+        margin-top: 1rem;
+    }    
     /* Logo extra small */
     .logo-img {
         height: 45px;
@@ -397,6 +460,37 @@
         max-width: 50px;
         max-height: 50px;
     }
+}
+
+/* ===== VERY SMALL MOBILE (360px and below) ===== */
+@media (max-width: 360px) {
+    .hero-content h1 {
+        font-size: 1.9rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .hero-subheading {
+        font-size: 0.9rem;
+    }
+    
+    .typewriter-container {
+        font-size: 1.5rem;
+        min-height: 1.8rem;
+    }
+    
+    .hero-supporting-text {
+        font-size: 0.95rem;
+        margin: 0.6rem auto 1rem auto;
+    }
+    
+    .hero-content .btn-primary {
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+        min-width: 140px;
+    }
+      .hero-container {
+        padding: 1rem 2% 0.5rem 2%;
+    }
     
     /* Expertise grid extra small */
     .exp-grid {
@@ -404,7 +498,8 @@
         padding: 0 1rem;
         grid-template-columns: 1fr;
     }
-      .exp-item {
+    
+    .exp-item {
         padding: 1.2rem;
         max-width: 350px;
         min-height: 260px;
@@ -968,7 +1063,7 @@
     }
 }
 
-/* ===== SPECIALIZED CARDS ANIMATIONS ===== */
+/* ===== SPECIALIZATION CARDS ANIMATIONS ===== */
 .hero-content h1,
 .hero-content p,
 .section-heading,
@@ -1454,3 +1549,94 @@ button.animate-on-scroll.animated {
     transform: scale(1.02);
     box-shadow: 0 6px 16px rgba(82, 238, 245, 0.15);
 }
+
+/* Hero section mobile adjustments - Fix excessive padding */
+    .hero-section,
+    #automation-flows-hero {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+    
+    .case-studies-hero {
+        padding: 4rem 0 3rem 0 !important;
+        min-height: 50vh !important;
+    }
+    
+    #generative-ai {
+        padding-top: 4.5rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    /* Hero headings mobile adjustments */
+    .hero-section h1,
+    #automation-flows-hero h1 {
+        font-size: 2.8rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .case-studies-hero h1 {
+        font-size: 2.5rem !important;
+        letter-spacing: 2px !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .generative-ai-header h1 {
+        font-size: 2.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* Hero text mobile adjustments */
+    .hero-section p,
+    #automation-flows-hero p,
+    .case-studies-hero p,
+    .generative-ai-header p {
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* Hero sections extra small mobile - Further reduce padding */
+    .hero-section,
+    #automation-flows-hero {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    .case-studies-hero {
+        padding: 3rem 0 2rem 0 !important;
+        min-height: 40vh !important;
+    }
+    
+    #generative-ai {
+        padding-top: 3.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+    
+    /* Hero headings extra small mobile */
+    .hero-section h1,
+    #automation-flows-hero h1 {
+        font-size: 2.2rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .case-studies-hero h1 {
+        font-size: 2rem !important;
+        letter-spacing: 1px !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .generative-ai-header h1 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Hero text extra small mobile */
+    .hero-section p,
+    #automation-flows-hero p,
+    .case-studies-hero p,
+    .generative-ai-header p,
+    .industry-hero p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1rem !important;
+    }

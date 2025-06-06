@@ -1789,43 +1789,6 @@ section#transform-cta-section.container {
         font-size: 1.1rem !important;
     }
 }
-/* Expertise Cards Heading Styles */
-.exp-item h3 {
-  font-size: 1.8rem;
-  line-height: 1.2;
-  margin-top: 0.5rem;
-  margin-bottom: 1.2rem;
-  color: #52eef5;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  white-space: nowrap;
-  overflow: visible;
-  text-overflow: clip;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .exp-item h3 {
-    font-size: 1.6rem;
-    white-space: nowrap;
-  }
-}
-
-@media (max-width: 768px) {
-  .exp-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    white-space: nowrap;
-  }
-}
-
-@media (max-width: 480px) {
-  .exp-item h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.8rem;
-    white-space: nowrap;
-  }
-}
 /* Fix for section-subheading readability in specializations section */
 #specializations .section-subheading {
     /* Remove any gradient or transparent text */

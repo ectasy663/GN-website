@@ -1219,12 +1219,11 @@ footer {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
     position: relative;
     z-index: 2;
-    max-width: 100%;
-    opacity: 0.9;
+    max-width: 100%;    opacity: 0.9;
     transition: opacity 0.3s ease;
 }
 
-/* Expertise card headings - prevent wrapping */
+/* Expertise card headings - allow wrapping on mobile */
 .exp-item h3 {
     font-size: 1.8rem;
     line-height: 1.2;
@@ -1233,13 +1232,20 @@ footer {
     color: #52eef5;
     font-weight: 600;
     letter-spacing: 0.5px;
-    white-space: nowrap;
-    overflow: visible;
-    text-overflow: clip;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     text-align: center;
     position: relative;
     z-index: 2;
     text-shadow: 0 3px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Prevent wrapping on larger screens */
+@media (min-width: 769px) {
+    .exp-item h3 {
+        white-space: nowrap;
+    }
 }
 
 /* Responsive design for expertise cards */
@@ -1271,10 +1277,8 @@ footer {
         font-size: 1rem;
         line-height: 1.4;
     }
-    
-    .exp-item h3 {
+      .exp-item h3 {
         font-size: 1.6rem;
-        white-space: nowrap;
     }
 }
 
@@ -1305,11 +1309,9 @@ footer {
         line-height: 1.4;
         margin-top: 0.5rem;
     }
-    
-    .exp-item h3 {
+      .exp-item h3 {
         font-size: 1.5rem;
         margin-bottom: 1rem;
-        white-space: nowrap;
     }
 }
 
@@ -1341,11 +1343,9 @@ footer {
         line-height: 1.5;
         margin-top: 0.5rem;
     }
-    
-    .exp-item h3 {
+      .exp-item h3 {
         font-size: 1.4rem;
         margin-bottom: 0.8rem;
-        white-space: nowrap;
     }
 }
 

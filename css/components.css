@@ -17,6 +17,7 @@
     background: none;
     visibility: visible !important;
     opacity: 1 !important;
+    z-index: 1; /* Ensure hero is below navbar */
 }
 
 .hero-container {
@@ -143,6 +144,69 @@
 @keyframes blink {
     0%, 50% { opacity: 1; }
     51%, 100% { opacity: 0; }
+}
+
+/* ===== MOBILE TYPEWRITER ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+    .typewriter-container {
+        font-size: 2.2rem;
+        min-height: 2.8rem;
+        padding: 0.1rem 0.5rem;
+        line-height: 1.1;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+    
+    .typewriter-text {
+        max-width: 100%;
+        text-align: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .hero-subheading {
+        font-size: 1.1rem;
+    }
+    
+    .hero-supporting-text {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        max-width: 95%;
+        padding: 0 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .typewriter-container {
+        font-size: 1.8rem;
+        min-height: 2.2rem;
+        padding: 0.1rem 0.25rem;
+    }
+    
+    .hero-subheading {
+        font-size: 1rem;
+    }
+    
+    .hero-supporting-text {
+        font-size: 1rem;
+        max-width: 98%;
+        padding: 0 0.25rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .typewriter-container {
+        font-size: 1.5rem;
+        min-height: 1.8rem;
+    }
+    
+    .hero-subheading {
+        font-size: 0.9rem;
+    }
+    
+    .hero-supporting-text {
+        font-size: 0.95rem;
+    }
 }
 
 /* ===== HERO CTA BUTTONS ===== */
@@ -510,19 +574,6 @@ button.animate-on-scroll.animated {
 
 #technologies .section-heading {
     margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-#technologies .section-heading::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-    bottom: -10px;
-    left: 0;
-    animation: glowLine 3s ease-in-out infinite;
 }
 
 @keyframes glowLine {
@@ -1919,7 +1970,7 @@ body.contact-page {
     background: 
         radial-gradient(circle at 20% 20%, rgba(109, 40, 217, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(82, 238, 245, 0.1) 0%, transparent 50%);
-    pointer-events: none;
+       pointer-events: none;
 }
 
 .testimonials-container {
@@ -2002,7 +2053,7 @@ body.contact-page {
 /* Individual Testimonial Card */
 .testimonial-card {
     flex: 0 0 600px; /* Increased width for landscape layout */
-    height: 350px; /* Increased height for bigger cards */
+    height: 420px; /* Further increased height to ensure course badges are fully visible */
     background: linear-gradient(135deg, rgba(25, 35, 55, 0.95) 0%, rgba(35, 45, 65, 0.98) 100%);
     border: 1px solid rgba(82, 238, 245, 0.2);
     border-radius: 20px;
@@ -2202,11 +2253,12 @@ body.contact-page {
 
 @media (max-width: 992px) {
     .testimonials-track-container {
-        height: 400px; /* Reduced from 500px to 400px */
+        height: 470px; /* Increased to accommodate taller cards */
     }
     
     .testimonial-card {
         flex: 0 0 320px;
+        height: 420px; /* Increased height for better visibility */
         padding: 2rem;
     }
     
@@ -2221,13 +2273,17 @@ body.contact-page {
     }
     
     .testimonials-track-container {
-        height: 350px; /* Reduced from 450px to 350px */
+        height: 650px; /* Increased height for complete card visibility */
     }
     
     .testimonial-card {
-        flex: 0 0 280px;
+        flex: 0 0 300px; /* Portrait width - narrower than landscape */
+        height: 600px; /* Increased height for full card visibility including course badges */
         padding: 1.5rem;
         margin: 0.5rem 0;
+        flex-direction: column; /* Switch to vertical layout for portrait */
+        text-align: center; /* Center content for portrait */
+        gap: 1.5rem; /* Vertical gap between sections */
     }
     
     .testimonials-heading h2 {
@@ -2239,18 +2295,30 @@ body.contact-page {
     }
     
     .customer-info {
-        flex-direction: row;
-        text-align: left;
+        flex-direction: column; /* Stack customer info vertically */
+        text-align: center;
+        margin-bottom: 0;
+        min-width: auto; /* Remove minimum width constraint */
     }
     
     .customer-avatar {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
+        width: 60px;
+        height: 60px;
+        font-size: 1.4rem;
+        margin: 0 auto 1rem auto; /* Center the avatar */
+    }
+    
+    .review-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     
     .review-text {
         font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
     }
 }
 
@@ -2260,12 +2328,56 @@ body.contact-page {
     }
     
     .testimonial-card {
-        flex: 0 0 260px;
+        flex: 0 0 280px; /* Slightly narrower for smaller screens */
+        height: 580px; /* Increased height for complete visibility including course badges */
         padding: 1.2rem;
+        gap: 1.2rem; /* Slightly reduced gap */
     }
     
     .testimonials-heading h2 {
         font-size: 2rem;
+    }
+    
+    .customer-avatar {
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
+    }
+    
+    .review-text {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 360px) {
+    .testimonial-card {
+        flex: 0 0 260px; /* Even narrower for very small screens */
+        height: 560px; /* Increased height for complete card visibility including course badges */
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .customer-avatar {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .review-text {
+        font-size: 0.9rem;
+    }
+    
+    .customer-details h4 {
+        font-size: 1.1rem;
+    }
+    
+    .customer-designation {
+        font-size: 0.85rem;
+    }
+    
+    .customer-company {
+        font-size: 0.8rem;
     }
 }
 
