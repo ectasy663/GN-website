@@ -94,12 +94,87 @@
     
     html.loaded { 
       visibility: visible;
+    }  </style>  <!-- Emergency mobile button fix -->
+  <style>
+    /* This is an emergency fix for the mobile buttons */
+    @media (max-width: 768px) {
+      .mobile-button-container {
+        flex-direction: column !important;
+        gap: 1rem !important;
+      }
+      
+      .mobile-button-container .btn-primary {
+        width: 100% !important;
+        max-width: 280px !important;
+        margin: 0.5rem auto !important;
+        text-align: center !important;
+        display: block !important;
+      }
+      
+      /* NEW DIRECT FIX FOR BUTTONS */
+      .btn-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 2rem auto !important;
+        padding: 0 1rem !important;
+      }
+      
+      .mobile-btn {
+        width: 100% !important;
+        max-width: 280px !important;
+        margin: 0.5rem auto !important;
+        text-align: center !important;
+        display: block !important;
+        border-radius: 10px !important;
+        padding: 0.8rem 1.5rem !important;
+      }
     }
-  </style>    <!-- Consolidated CSS files for optimal performance -->    <link rel="stylesheet" href="../css/core.css">
+      @media (max-width: 768px) {
+      /* Benefits cards grid mobile styling */
+      .benefits-cards-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* Single column on mobile */
+        gap: 1.5rem !important;
+        padding: 0 1rem !important;
+      }
+      
+      .benefit-card {
+        padding: 1.5rem !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+      }
+      
+      .benefit-card-icon {
+        margin-bottom: 0.5rem !important;
+      }
+      
+      .benefit-card h3 {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .mobile-button-container .btn-primary,
+      .mobile-btn {
+        max-width: 260px !important;
+        padding: 0.8rem 1.2rem !important;
+        font-size: 0.95rem !important;
+      }
+      
+      /* Benefits cards additional small mobile styling */
+      .benefit-card {
+        padding: 1.2rem !important;
+      }
+    }
+  </style>
+    <!-- Consolidated CSS files for optimal performance -->    <link rel="stylesheet" href="../css/core.css">
     <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/pages.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/pages.css">    <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/gn-mobile-nav.css">
+    <link rel="stylesheet" href="../css/emergency-button-fix.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Optimized Page Loading Script -->
@@ -312,9 +387,8 @@
                         </div>
                     </div>
                 </div>
-            </div>        </section>        <section id="transform-cta-section" class="why-choose-us-section container benefits-section">
-            <div class="workflow-cta">
-                <div class="cta-content">
+            </div>        </section>        <section id="transform-cta-section" class="why-choose-us-section container benefits-section">            <div class="workflow-cta">
+                <div class="cta-content" style="padding: 0 1rem;">
                     <h2 class="section-heading gn-mobile-section-heading">READY TO TRANSFORM YOUR TEAM'S AI CAPABILITIES?</h2>
                     <p>Let us design a custom training solution that perfectly aligns with your business workflows and objectives. Our expert team will work with you to create tailored AI training programs that deliver measurable results and accelerate your organization's AI adoption journey.</p>
                     
@@ -338,17 +412,18 @@
                             </div>
                             <h3>Upskilled Workforce</h3>
                             <p>Equip your team with the knowledge and practical skills they need to leverage AI effectively in their roles.</p>
-                        </div>
-                        <div class="benefit-card">
+                        </div>                        <div class="benefit-card">
                             <div class="benefit-card-icon">
                                 <i class="fas fa-chart-line"></i>
                             </div>
                             <h3>ROI-Focused Training</h3>
-                            <p>Maximize your investment with training that delivers measurable business outcomes and practical implementation skills.</p>                        </div>
+                            <p>Maximize your investment with training that delivers measurable business outcomes and practical implementation skills.</p>
+                        </div>
                     </div>
-                      <div class="transform-cta-buttons">
-                        <a href="mailto:education@gyannetra.com" class="btn-primary workflow-cta-btn gn-mobile-button">Request a Custom Training Proposal</a>
-                        <a href="https://schedule.fillout.com/t/3XsBwh8ipfus" class="btn-primary workflow-cta-btn gn-mobile-button" target="_blank" rel="noopener noreferrer">Get In Touch</a>
+                    
+                    <div class="btn-container">
+                        <a href="mailto:education@gyannetra.com" class="btn-primary mobile-btn">Request a Custom Training Proposal</a>
+                        <a href="https://schedule.fillout.com/t/3XsBwh8ipfus" class="btn-primary mobile-btn" target="_blank" rel="noopener noreferrer">Get In Touch</a>
                     </div>
                 </div>
             </div>
@@ -538,10 +613,122 @@
           <li class="gn-mobile-nav__item">
             <a href="../contact.html" class="gn-mobile-nav__link">Contact Us</a>
           </li>
-        </ul>
-      </nav>
+        </ul>      </nav>
     </div>
   </div>
+
+  <!-- Mobile Button Fixes Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      function applyMobileButtonFixes() {
+        if (window.innerWidth <= 768) {
+          // Get all transform-cta-buttons containers
+          var buttonContainers = document.querySelectorAll('.transform-cta-buttons');
+          
+          buttonContainers.forEach(function(container) {
+            // Apply styles to container
+            container.style.display = 'flex';
+            container.style.flexDirection = 'column';
+            container.style.alignItems = 'center';
+            container.style.width = '100%';
+            container.style.gap = '1rem';
+            container.style.margin = '2rem auto';
+            container.style.padding = '0 1rem';
+            container.style.boxSizing = 'border-box';
+            
+            // Apply styles to buttons
+            var buttons = container.querySelectorAll('.workflow-cta-btn, .gn-mobile-button');
+            buttons.forEach(function(button) {
+              button.style.width = '100%';
+              button.style.maxWidth = '280px';
+              button.style.margin = '0.5rem auto';
+              button.style.textAlign = 'center';
+              button.style.display = 'block';
+              button.style.borderRadius = '10px';
+            });
+          });
+        }
+      }
+      
+      // Apply on page load
+      applyMobileButtonFixes();
+        // Apply on resize
+      window.addEventListener('resize', applyMobileButtonFixes);
+    });
+  </script>
+  
+  <!-- Additional Mobile Button Alignment Fix -->
+  <script>
+    // This script adds extra CSS rules directly to the page
+    window.addEventListener('DOMContentLoaded', function() {
+      var styleTag = document.createElement('style');
+      styleTag.innerHTML = `
+        @media (max-width: 768px) {
+          .transform-cta-buttons {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+            gap: 1rem !important;
+            margin: 2rem auto !important;
+            padding: 0 1rem !important;
+            box-sizing: border-box !important;
+          }
+          
+          .transform-cta-buttons .workflow-cta-btn,
+          .transform-cta-buttons .gn-mobile-button {
+            width: 100% !important;
+            max-width: 280px !important;
+            margin: 0.5rem auto !important;
+            text-align: center !important;
+            display: block !important;
+            border-radius: 10px !important;
+          }
+        }
+      `;      document.head.appendChild(styleTag);
+    });
+  </script>
+  
+  <!-- Final emergency fix script -->
+  <script>
+    // Direct DOM manipulation for buttons
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get the button container
+      const btnContainer = document.querySelector('.btn-container');
+      
+      // Apply mobile styles immediately if on mobile
+      if (window.innerWidth <= 768) {
+        btnContainer.style.display = 'flex';
+        btnContainer.style.flexDirection = 'column';
+        btnContainer.style.alignItems = 'center';
+        btnContainer.style.width = '100%';
+        btnContainer.style.margin = '2rem auto';
+        btnContainer.style.padding = '0 1rem';
+        
+        // Style each button
+        const buttons = btnContainer.querySelectorAll('.mobile-btn');
+        buttons.forEach(function(button) {
+          button.style.width = '100%';
+          button.style.maxWidth = '280px';
+          button.style.margin = '0.5rem auto';
+          button.style.textAlign = 'center';
+          button.style.display = 'block';
+          button.style.borderRadius = '10px';
+          button.style.padding = '0.8rem 1.5rem';
+        });
+      }
+      
+      // Listen for resize events
+      window.addEventListener('resize', function() {
+        if (window.innerWidth <= 768) {
+          btnContainer.style.flexDirection = 'column';
+        } else {
+          btnContainer.style.flexDirection = 'row';
+        }
+      });
+    });
+  </script>
+</body>
 </html>
 
 
