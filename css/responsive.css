@@ -628,6 +628,184 @@
     }
 }
 
+/* ===== DESKTOP HERO FONT SIZE INCREASES (769px and up) ===== */
+/* Match hero text sizes to index page prominence for desktop view only */
+@media (min-width: 769px) {
+    /* ===== HERO HEADINGS - Reduced by 1rem for better proportions ===== */
+    
+    /* About Page Hero - improved size */
+    #about-us h1 {
+        font-size: 4.8rem !important; /* Reduced from 5.8rem - now 0.8rem larger than index 4rem */
+    }
+    
+    /* Contact Page Hero - improved size */
+    #contact-us-section .contact-header h1 {
+        font-size: 4.8rem !important; /* Reduced from 5.8rem - now 0.8rem larger than index 4rem */
+    }
+    
+    /* Services Pages Hero - improved size */
+    .hero-section h1:not(.hero-content h1) {
+        font-size: 5.2rem !important; /* Reduced from 6.2rem - now 1.2rem larger than index 4rem */
+    }
+    
+    /* Industry Pages Hero - improved size */
+    .industry-hero h1 {
+        font-size: 4.8rem !important; /* Reduced from 5.8rem - now 0.8rem larger than index 4rem */
+    }
+    
+    /* Case Studies Hero - improved size */
+    .case-studies-hero h1 {
+        font-size: 4.5rem !important; /* Reduced from 5.5rem - now 0.5rem larger than index 4rem */
+    }
+    
+    /* Services Pages Hero - Generative AI - improved size */
+    .generative-ai-header h1 {
+        font-size: 5.2em !important; /* Reduced from 6.2em - better proportioned */
+    }
+    
+    /* Services Pages Hero - Agentic AI - improved size */
+    .agentic-ai-header h1 {
+        font-size: 5.2em !important; /* Reduced from 6.2em - better proportioned */
+    }
+      /* ===== HERO BODY TEXT - Reduced by 1rem for better proportions ===== */
+    
+    /* Services Pages Body Text - improved size */
+    .hero-section p:not(.hero-content p) {
+        font-size: 1.7rem !important; /* Reduced from 1.9rem - still larger than index 1.55rem */
+        line-height: 1.6 !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Industry Pages Body Text - improved size */
+    .industry-hero p {
+        font-size: 1.7rem !important; /* Reduced from 1.9rem - still larger than index 1.55rem */
+        line-height: 1.6 !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Case Studies Body Text - improved size */
+    .case-studies-hero p {
+        font-size: 1.6rem !important; /* Reduced from 1.8rem - nicely balanced */
+        line-height: 1.6 !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Contact Page Body Text - improved size */
+    #contact-us-section .contact-header p {
+        font-size: 1.6rem !important; /* Reduced from 1.8rem - nicely balanced */
+        line-height: 1.6 !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Generative AI & Agentic AI Body Text - improved size */
+    .generative-ai-header p,
+    .agentic-ai-header p {
+        font-size: 1.7em !important; /* Reduced from 1.9em - better proportioned */
+        line-height: 1.6 !important;
+        margin-bottom: 2rem !important;
+    }
+}
+
+/* ===== LARGE DESKTOP HERO FONT SIZE INCREASES (1024px and up) ===== */
+@media (min-width: 1024px) {
+    /* ===== HERO HEADINGS - Reduced by 1rem for better proportions ===== */
+    
+    /* About Page Hero - improved size for large desktop */
+    #about-us h1 {
+        font-size: 5.8rem !important; /* Reduced from 6.8rem - well-proportioned for large screens */
+    }
+    
+    /* Contact Page Hero - improved size for large desktop */
+    #contact-us-section .contact-header h1 {
+        font-size: 5.8rem !important; /* Reduced from 6.8rem - well-proportioned for large screens */
+    }
+    
+    /* Services Pages Hero - improved size for large desktop */
+    .hero-section h1:not(.hero-content h1) {
+        font-size: 6.2rem !important; /* Reduced from 7.2rem - well-proportioned for large screens */
+    }
+    
+    /* Industry Pages Hero - improved size for large desktop */
+    .industry-hero h1 {
+        font-size: 5.8rem !important; /* Reduced from 6.8rem - well-proportioned for large screens */
+    }
+    
+    /* Case Studies Hero - improved size for large desktop */
+    .case-studies-hero h1 {
+        font-size: 5.5rem !important; /* Reduced from 6.5rem - well-proportioned for large screens */
+    }
+    
+    /* Services Pages Hero - Generative AI - improved size for large desktop */
+    .generative-ai-header h1 {
+        font-size: 6.2em !important; /* Reduced from 7.2em - well-proportioned for large screens */
+    }
+    
+    /* Services Pages Hero - Agentic AI - improved size for large desktop */
+    .agentic-ai-header h1 {
+        font-size: 6.2em !important; /* Reduced from 7.2em - well-proportioned for large screens */
+    }
+      /* ===== HERO BODY TEXT - Reduced by 1rem for better proportions ===== */
+    
+    /* Services Pages Body Text - improved size for large desktop */
+    .hero-section p:not(.hero-content p) {
+        font-size: 1.9rem !important; /* Reduced from 2.2rem - well-proportioned for large screens */
+        line-height: 1.7 !important;
+        margin-bottom: 2.5rem !important;
+    }
+    
+    /* Industry Pages Body Text - improved size for large desktop */
+    .industry-hero p {
+        font-size: 1.9rem !important; /* Reduced from 2.2rem - well-proportioned for large screens */
+        line-height: 1.7 !important;
+        margin-bottom: 2.5rem !important;
+    }
+    
+    /* Case Studies Body Text - improved size for large desktop */
+    .case-studies-hero p {
+        font-size: 1.8rem !important; /* Reduced from 2.1rem - well-proportioned for large screens */
+        line-height: 1.7 !important;
+        margin-bottom: 2.5rem !important;
+    }
+    
+    /* Contact Page Body Text - improved size for large desktop */
+    #contact-us-section .contact-header p {
+        font-size: 1.8rem !important; /* Reduced from 2.1rem - well-proportioned for large screens */
+        line-height: 1.7 !important;
+        margin-bottom: 2.5rem !important;
+    }
+      /* Generative AI & Agentic AI Body Text - improved size for large desktop */
+    .generative-ai-header p,
+    .agentic-ai-header p {
+        font-size: 1.9em !important; /* Reduced from 2.2em - well-proportioned for large screens */
+        line-height: 1.7 !important;
+        margin-bottom: 2.5rem !important;
+    }
+    
+    /* ===== HERO LAYOUT IMPROVEMENTS - Even tighter spacing for large desktop ===== */
+    
+    /* Extra tight line-height for very large headings on large desktop */
+    #about-us h1,
+    #contact-us-section .contact-header h1,
+    .hero-section h1:not(.hero-content h1),
+    .industry-hero h1,
+    .case-studies-hero h1,
+    .generative-ai-header h1,
+    .agentic-ai-header h1 {
+        line-height: 0.9 !important; /* Even tighter line spacing for very large headings */
+    }
+    
+    /* Maximum hero container widths for large desktop */
+    .hero-section.gn-responsive-container {
+        max-width: 1600px !important; /* Even more space on large desktop */
+        width: 98% !important; /* Use almost full width */
+    }
+    
+    #about-us,
+    #contact-us-section {
+        max-width: 1600px !important; /* Maximum space for hero content */
+    }
+}
+
 /* ===== CASE STUDIES RESPONSIVE ===== */
 @media (min-width: 768px) {
     .case-studies-grid {
@@ -1550,7 +1728,9 @@ button.animate-on-scroll.animated {
     box-shadow: 0 6px 16px rgba(82, 238, 245, 0.15);
 }
 
-/* Hero section mobile adjustments - Fix excessive padding */
+/* ===== MOBILE HERO ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+    /* Hero section mobile adjustments - Fix excessive padding */
     .hero-section,
     #automation-flows-hero {
         padding-top: 4rem !important;
@@ -1594,7 +1774,9 @@ button.animate-on-scroll.animated {
         line-height: 1.6 !important;
         margin-bottom: 1.5rem !important;
     }
-    
+}
+
+@media (max-width: 480px) {
     /* Hero sections extra small mobile - Further reduce padding */
     .hero-section,
     #automation-flows-hero {
@@ -1640,3 +1822,72 @@ button.animate-on-scroll.animated {
         line-height: 1.5 !important;
         margin-bottom: 1rem !important;
     }
+}
+
+/* ===== HERO LAYOUT IMPROVEMENTS - Better line spacing and container width ===== */
+@media (min-width: 769px) {
+    /* Tighter line-height for hero headings to prevent awkward wrapping */
+    #about-us h1 {
+        line-height: 0.95 !important; /* Tighter line spacing for large headings */
+    }
+    
+    #contact-us-section .contact-header h1 {
+        line-height: 0.95 !important; /* Tighter line spacing for large headings */
+    }
+    
+    .hero-section h1:not(.hero-content h1) {
+        line-height: 0.95 !important; /* Tighter line spacing for large headings */
+    }
+    
+    .industry-hero h1 {
+        line-height: 0.95 !important; /* Tighter line spacing for large headings */
+    }
+    
+    .case-studies-hero h1 {
+        line-height: 0.95 !important; /* Tighter line spacing for large headings */
+    }
+    
+    .generative-ai-header h1,
+    .agentic-ai-header h1 {
+        line-height: 0.95 !important; /* Tighter line spacing for large headings */
+    }
+    
+    /* Increase hero container widths to give more space for text */
+    .hero-section.gn-responsive-container {
+        max-width: 1400px !important; /* Increased from 1200px */
+        width: 96% !important; /* Increased from 92% */
+        padding-left: 1rem !important; /* Reduced padding for more text space */
+        padding-right: 1rem !important; /* Reduced padding for more text space */
+    }
+    
+    /* Increase specific hero section widths */
+    #about-us,
+    #contact-us-section {
+        max-width: 1400px !important; /* More space for hero content */
+    }
+}
+
+/* ===== HERO LAYOUT IMPROVEMENTS - Even tighter spacing for large desktop ===== */
+@media (min-width: 1024px) {
+    /* Extra tight line-height for very large headings on large desktop */
+    #about-us h1,
+    #contact-us-section .contact-header h1,
+    .hero-section h1:not(.hero-content h1),
+    .industry-hero h1,
+    .case-studies-hero h1,
+    .generative-ai-header h1,
+    .agentic-ai-header h1 {
+        line-height: 0.9 !important; /* Even tighter line spacing for very large headings */
+    }
+    
+    /* Maximum hero container widths for large desktop */
+    .hero-section.gn-responsive-container {
+        max-width: 1600px !important; /* Even more space on large desktop */
+        width: 98% !important; /* Use almost full width */
+    }
+    
+    #about-us,
+    #contact-us-section {
+        max-width: 1600px !important; /* Maximum space for hero content */
+    }
+}
